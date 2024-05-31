@@ -8,6 +8,7 @@ import { RegisterComponent } from './comps/register/register.component';
 import { LoginComponent } from './comps/login/login.component';
 import { HomeComponent } from './comps/home/home.component';
 import { MapComponent } from './comps/map/map.component';
+import { NavComponent } from './comps/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MapComponent } from './comps/map/map.component';
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    MapComponent
+    MapComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

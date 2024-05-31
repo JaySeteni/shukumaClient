@@ -1,1 +1,11 @@
-<p>register works!</p>
+<body>
+    <form>
+        <h3>Register</h3>    
+        <label for="username">Email</label>
+        <input type="email" name="email" placeholder="Email" id="username"  ngModel="signUpObj.email" >
+        
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password" id="password"  ngModel="signUpObj.password">
+        <button (click)="onSignUp()">Submit</button>
+    </form>
+</body>

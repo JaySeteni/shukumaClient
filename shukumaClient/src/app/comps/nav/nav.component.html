@@ -1,0 +1,15 @@
+<nav>
+    <select name="main-dropdown" id="dropdown-1" (change)="navigate($event)">
+        <option value="home">Home</option>
+        <option value="login">Login</option>
+        <option value="register">Register</option>
+        <option value="admin">Admin</option>
+    </select>
+
+<ul class="flex1">
+    <li><a class="nav-link" routerLink="/register">Register</a></li>
+    <li><a class="nav-link" routerLink="/login">Login</a></li>
+    <li><a class="nav-link" routerLink="/home">Home</a></li>
+    <li><a class="nav-link" routerLink="/admin">Admin</a></li>
+</ul>
+</nav>
