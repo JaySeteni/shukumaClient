@@ -10,6 +10,7 @@ import { NavComponent } from './comps/nav/nav.component';
 import { AdminComponent } from './comps/admin/admin.component';
 import { HomeComponent } from './comps/home/home.component';
 import { MapComponent } from './comps/map/map.component';
+import { LandingComponent } from './comps/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MapComponent } from './comps/map/map.component';
     NavComponent,
     AdminComponent,
     HomeComponent,
-    MapComponent
+    MapComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
