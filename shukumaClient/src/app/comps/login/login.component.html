@@ -1,10 +1,10 @@
-<form  formGroup="loginForm" (ngSubmit)="OnLogin()">
+<form  [formGroup]="loginForm" (ngSubmit)="OnLogin()">
     <h3>Log In</h3>
     
     <label for="username">Email</label>
-    <input type="email" formControlName="email" name="userEmail" placeholder="Email" id="username" ngModel="loginObj.email">
+    <input type="email" formControlName="email" name="userEmail" placeholder="Email" id="username" [(ngModel)]="loginObj.email">
 
     <label for="password">Password</label>
-    <input type="password" formControlName="password" name="userPassword" placeholder=" Password" id="password" ngModel="loginObj.password">
+    <input type="password" formControlName="password" name="userPassword" placeholder=" Password" id="password" [(ngModel)]="loginObj.password">
     <button type="submit">Login</button>
 </form>

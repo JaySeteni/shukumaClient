@@ -1,30 +1,35 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './comps/admin/admin.component';
-import { RegisterComponent } from './comps/register/register.component';
+import { RegisterComponent} from './comps/register/register.component'
 import { LoginComponent } from './comps/login/login.component';
+import { NavComponent } from './comps/nav/nav.component';
+import { AdminComponent } from './comps/admin/admin.component';
 import { HomeComponent } from './comps/home/home.component';
 import { MapComponent } from './comps/map/map.component';
-import { NavComponent } from './comps/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
     RegisterComponent,
     LoginComponent,
+    NavComponent,
+    AdminComponent,
     HomeComponent,
-    MapComponent,
-    NavComponent
+    MapComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    provideClientHydration()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
