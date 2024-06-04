@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,12 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent {
-  constructor(private router: Router) {}
+export class NavComponent implements OnInit{
 
-  navigate(event: Event): void {
-    const selectElement = event.target as HTMLSelectElement;
-    const route = selectElement.value;
-    this.router.navigate([`/${route}`]);
-  }
+  constructor(private router: Router) {}
+    ngOnInit(): void {
+    }
+
 }

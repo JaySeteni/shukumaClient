@@ -1,4 +1,4 @@
-.background{
+/* .background{
     max-width: 120px;
     max-height: 365px;
     position: absolute;
@@ -29,4 +29,40 @@
         );
         right: 0px;
         bottom: -80px;
+        } */
+
+        *{
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        .background{
+          margin-top:-20px;
+          margin-left: -15px;
+          min-width: 100%;
+          min-height:100%; 
+          position: absolute;
+          z-index:-100;
+          /* border-radius:0 0 80% 10%; */
+          background: linear-gradient(
+            to right,
+            #d3d3d3,
+            #ebeaea,
+            #ebeaea,
+            #d3d2d2
+          );
+          .shape{
+            position: absolute;
+            top: 0;
+            left:0;
+            width:14vw;
+            height: 14vh;
+            border-radius: 0 0 80px 0;
+            background: linear-gradient(
+              to right,
+              #131312,
+              #4d4d4c
+            );
+            
+            } 
         }

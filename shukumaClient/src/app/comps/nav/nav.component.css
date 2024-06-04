@@ -1,5 +1,38 @@
 
+.nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: fixed;
+    width:100%;
+    bottom:0;
+    z-index: 10;
+  }
+  
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-list li {
+    margin-right: 1rem;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .nav-list a:hover {
+    color: #ddd;
+  }
 
+
+/* current above */
 select{
     font-family: verdana;
     text-decoration: none;
@@ -13,16 +46,27 @@ select{
     line-height: 100%;
     letter-spacing: -0.125rem;
     border-radius: 0 0 500px 0;
-    
     padding: 7px;
     margin-bottom: 15px;
-    
+    border: none;
+    outline: none;
 }
+select option {
+    background-color: rgb(59, 11, 43);
+    color: white;
+    padding: 5px;
+}
+
+/* Style for the active (selected) option */
+.select-active-option {
+    background-color: var(--red-to-pink-to-purple-horizontal-gradient);
+    color: red;
+}
+
+
 .flex1{
     display: none;
 }
-
-
 @media screen and (min-width: 600px) {
     select {
         display: none;
