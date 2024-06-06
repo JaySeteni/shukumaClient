@@ -1,5 +1,5 @@
 
-.nav {
+/* .nav {
     background-color: #333;
     color: #fff;
     display: flex;
@@ -29,6 +29,22 @@
   
   .nav-list a:hover {
     color: #ddd;
+  } */
+
+  .nav{
+    background-color: #333;
+    color: white;
+    padding: 10px; 
+  }
+  .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .nav-list li {
+    display: inline;
   }
 
 
