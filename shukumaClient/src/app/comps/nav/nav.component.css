@@ -34,7 +34,12 @@
   .nav{
     background-color: #333;
     color: white;
-    padding: 10px; 
+    padding: 10px;
+    position: fixed;
+    width:110%; 
+    z-index:100;
+    bottom:0;
+    left: -25px;
   }
   .nav-list {
     list-style-type: none;
@@ -47,6 +52,16 @@
     display: inline;
   }
 
+
+  .nav-list li {
+    margin-right: 1rem;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: white
+    ;
+  }
 
 /* current above */
 select{
