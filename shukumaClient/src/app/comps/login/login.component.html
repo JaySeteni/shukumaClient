@@ -1,12 +1,24 @@
-
-<app-nav></app-nav>
-<form  [formGroup]="loginForm" (ngSubmit)="OnLogin()">
-    <h3>Log In</h3>
-    
-    <label for="username">Email</label>
-    <input type="email" formControlName="email" name="userEmail" placeholder="Email" id="username" [(ngModel)]="loginObj.email">
-
-    <label for="password">Password</label>
-    <input type="password" formControlName="password" name="userPassword" placeholder=" Password" id="password" [(ngModel)]="loginObj.password">
-    <button type="submit">Login</button>
-</form>
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="OnLogin()">
+      <h3>Login</h3>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input id="email" type="email" formControlName="email" class="form-control" placeholder="Type Email" required>
+        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="error">
+          <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
+          <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input id="password" type="password" formControlName="password" class="form-control" placeholder="Type Password" required>
+        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error">
+          <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+    </form>
+  </div>
+  

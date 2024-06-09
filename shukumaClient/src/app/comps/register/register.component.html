@@ -1,13 +1,11 @@
-<app-nav></app-nav>
-
 <body>
     <form>
         <h3>Register</h3>    
         <label for="username">Email</label>
-        <input type="email" name="email" placeholder="Email" id="username" [(ngModel)]="signUpObj.email" [ngModelOptions]="{standalone: true}">
+        <input type="email" name="email" placeholder="Type Email" id="username" [(ngModel)]="signUpObj.email" [ngModelOptions]="{standalone: true}">
         
         <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Password" id="password" [(ngModel)]="signUpObj.password" [ngModelOptions]="{standalone: true}">
+        <input type="password" name="password" placeholder="Type Password" id="password" [(ngModel)]="signUpObj.password" [ngModelOptions]="{standalone: true}">
         <button (click)="onSignUp()">Submit</button>
     </form>
 </body>
