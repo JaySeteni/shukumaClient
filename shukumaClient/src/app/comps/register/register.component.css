@@ -5,7 +5,7 @@ padding: 0;
 margin: 0;
 box-sizing: border-box;
 }
-body{
+.background{
     width:100vw;
 }
 form{
@@ -32,6 +32,7 @@ font-size: 32px;
 font-weight: 500;
 line-height: 42px;
 text-align: center;
+text-transform: uppercase;
 }
 
 label{
@@ -40,12 +41,17 @@ margin-top: 30px;
 font-size: 16px;
 font-weight: 500;
 }
-input{
+#username,
+#password{
 display: block;
 height: 50px;
 width: 100%;
 background-color: rgba(255,255,255,0.07);
-border-radius: 3px;
+border:none;
+outline: none;
+border-bottom:2px solid #389CF9;
+;
+/* border-radius: 3px; */
 padding: 0 10px;
 margin-top: 8px;
 font-size: 14px;
@@ -53,12 +59,19 @@ font-weight: 300;
 }
 ::placeholder{
     color: #f4dff888;
+    outline: none;
+
+}
+#username:focus, 
+#password:focus{
+  padding: 15px;
+  background-color: greenyellow;
 }
 button{
 margin-top: 50px;
 width: 100%;
 color:#F4DFF8 !important;
-padding: 15px 0;
+padding: 12px 0;
 text-transform: uppercase;
 font-size: 18px;
 font-weight: 600;
