@@ -15,6 +15,7 @@
   p {
     margin-bottom: 2rem;
     color: var(--dark-color);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   
   .features {

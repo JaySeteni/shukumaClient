@@ -77,7 +77,10 @@ background-color: #F4DFF8;
 color:#389CF9  !important;
 cursor: pointer;    
 }
-
+a:hover{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 
 /* 

@@ -17,7 +17,8 @@
           <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
         </div>
       </div>
-  
+  <br>
+  <p>Don't have an account <a href="register">register</a> </p>
       <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
     </form>
   </div>

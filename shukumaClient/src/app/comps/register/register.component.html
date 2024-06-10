@@ -6,6 +6,8 @@
         
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="Type Password" id="password" [(ngModel)]="signUpObj.password" [ngModelOptions]="{standalone: true}">
+        <br>
+        <p>Already have an account <a href="login">login</a> </p>
         <button (click)="onSignUp()">Submit</button>
     </form>
 </body>
