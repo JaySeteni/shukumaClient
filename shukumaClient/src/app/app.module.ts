@@ -13,6 +13,7 @@ import { MapComponent } from './comps/map/map.component';
 import { LandingComponent } from './comps/landing/landing.component';
 import { ProductCardComponent } from './comps/product-card/product-card.component';
 import { ProductsComponent } from './comps/products/products.component';
+import { FooterComponent } from './comps/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProductsComponent } from './comps/products/products.component';
     MapComponent,
     LandingComponent,
     ProductCardComponent,
-    ProductsComponent
+    ProductsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
