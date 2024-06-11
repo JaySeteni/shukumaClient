@@ -1,4 +1,4 @@
-  .topbar-list{
+  /* .topbar-list{
     background-color: #333;
     list-style-type: none;
     margin: 0;
@@ -11,6 +11,24 @@
     display: flex;
     justify-content: space-around;
   }
+
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .background{
+    width: 100vw;
+    z-index:-100;
+    background: linear-gradient(
+      to right,
+      #d3d3d3,
+      #ebeaea,
+      #ebeaea,
+      #d3d2d2
+    );
+  }
+
   .logo{
     text-transform: uppercase;
     font-style: italic;
@@ -49,7 +67,7 @@
   }
 
 /* current above */
-select{
+/* select{
     font-family: verdana;
     text-decoration: none;
     font-size: 20px;
@@ -71,10 +89,10 @@ select option {
     background-color: rgb(59, 11, 43);
     color: white;
     padding: 5px;
-}
+} */
 
 /* Style for the active (selected) option */
-.select-active-option {
+/* .select-active-option {
     background-color: var(--red-to-pink-to-purple-horizontal-gradient);
     color: red;
 }
@@ -91,15 +109,15 @@ select option {
         display: flex;
         justify-content: end;
         width: 100%;  /* Full width */
-        font-size: 14px;  /* Smaller font size */
-    }
+        /* font-size: 14px;  Smaller font size */
+    /* } */
 
-    body {
-        padding: 10px;  /* Example of adjusting padding */
-    }
+    /* body {
+        padding: 10px;  Example of adjusting padding */
+    /* } */
 
 
-    .flex1{
+    /* .flex1{
         display: flex;
         justify-content: space-around;
         padding: 10px;
@@ -119,4 +137,26 @@ select option {
         text-transform: uppercase;
         font-size: 20px;
     }
+} */ 
+.topbar{
+  background-color: #333 ;
+  justify-content: space-around;
+  color: white;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 50px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+.cmpny-name-logo{
+  font-style: inherit;
+}
+.body{
+  padding: 0;
+  margin: 0;
+}
+nav{
+  padding: 18%;
+  top:0;
+  right: 0;
 }
