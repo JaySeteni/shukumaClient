@@ -25,6 +25,18 @@
 
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 375px) {
+  .product-card {
+    padding: 8px;
+    margin: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
 
+  .product-image {
+    margin-bottom: 8px;
+  }
+
+  .price {
+    font-size: 1.2em;
+  }
 }
