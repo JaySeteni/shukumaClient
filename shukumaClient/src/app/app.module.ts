@@ -11,6 +11,8 @@ import { AdminComponent } from './comps/admin/admin.component';
 import { HomeComponent } from './comps/home/home.component';
 import { MapComponent } from './comps/map/map.component';
 import { LandingComponent } from './comps/landing/landing.component';
+import { ProductCardComponent } from './comps/product-card/product-card.component';
+import { ProductsComponent } from './comps/products/products.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LandingComponent } from './comps/landing/landing.component';
     AdminComponent,
     HomeComponent,
     MapComponent,
-    LandingComponent
+    LandingComponent,
+    ProductCardComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

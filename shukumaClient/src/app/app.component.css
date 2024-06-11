@@ -1,34 +1,16 @@
-                                /* .background{
-    max-width: 120px;
-    max-height: 365px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-    z-index: -1;
-    }
-    .background .shape{
-        height: 250px;
-        width: 250px;
-        position: absolute;
-        border-radius: 50%;
+    *{
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
         }
-        .shape:first-child{
-        background: linear-gradient(
-          #1845ad,
-          #23a2f6
-        );
-        left: 0px;
-        top: -80px;
+        .background{
+          width: 100vw;
+          z-index:-100;
+          background: linear-gradient(
+            to right,
+            #d3d3d3,
+            #ebeaea,
+            #ebeaea,
+            #d3d2d2
+          );
         }
-        .shape:last-child{
-        background: linear-gradient(
-          to right,
-          #ff512f,
-          #f09819
-        );
-        right: 0px;
-        bottom: -80px;
-        } */
-
-    
