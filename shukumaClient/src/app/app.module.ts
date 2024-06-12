@@ -14,6 +14,7 @@ import { LandingComponent } from './comps/landing/landing.component';
 import { ProductCardComponent } from './comps/product-card/product-card.component';
 import { ProductsComponent } from './comps/products/products.component';
 import { FooterComponent } from './comps/footer/footer.component';
+import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FooterComponent } from './comps/footer/footer.component';
     LandingComponent,
     ProductCardComponent,
     ProductsComponent,
-    FooterComponent
+    FooterComponent,
+    SingleproductComponent
   ],
   imports: [
     BrowserModule,
