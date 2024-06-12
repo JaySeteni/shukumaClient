@@ -28,6 +28,13 @@ export class ProductsComponent {
       description: 'This is the description for product 3.',
       price: 49.99,
       imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+      id: 4,
+      name: 'Product 4',
+      description: 'This is the description for product 4.',
+      price: 49.99,
+      imageUrl: 'https://via.placeholder.com/150'
     }
   ];
 }
