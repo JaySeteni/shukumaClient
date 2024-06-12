@@ -6,6 +6,9 @@ import { LoginComponent } from './comps/login/login.component';
 import { AdminComponent } from './comps/admin/admin.component';
 import { MapComponent } from './comps/map/map.component';
 import { LandingComponent } from './comps/landing/landing.component';
+import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
+
+
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -14,7 +17,8 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'map', component: MapComponent},
   {path: 'welcome', component: LandingComponent},
-  
+  {path: 'single', component: SingleproductComponent}
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes),],

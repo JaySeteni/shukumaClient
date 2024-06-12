@@ -15,6 +15,7 @@ import { ProductCardComponent } from './comps/product-card/product-card.componen
 import { ProductsComponent } from './comps/products/products.component';
 import { FooterComponent } from './comps/footer/footer.component';
 import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
+import { ProductComponent } from './comps/product/product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SingleproductComponent } from './comps/singleproduct/singleproduct.comp
     ProductCardComponent,
     ProductsComponent,
     FooterComponent,
-    SingleproductComponent
+    SingleproductComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

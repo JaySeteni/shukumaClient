@@ -1,0 +1,14 @@
+.single-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@media (max-width:375px){
+  .single-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 5px;
+    overflow:hidden;
+    margin:10px;
+  }
+}
