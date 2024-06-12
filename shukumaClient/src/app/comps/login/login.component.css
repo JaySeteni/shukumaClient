@@ -20,7 +20,7 @@ padding: 50px 35px;
 }
 form *{
 font-family: 'Poppins',sans-serif;
-color:white;
+color:#389CF9;
 
 letter-spacing: 0.5px;
 outline: none;
@@ -33,7 +33,7 @@ line-height: 42px;
 text-align: center;
 }
 form a{
-    color: #389CF9;
+    color: white;
 }
 label{
 display: block;
