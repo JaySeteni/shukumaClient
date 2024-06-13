@@ -70,7 +70,7 @@
   @media (max-width:375px){
     .carousel {
     position: relative;
-    margin-top: 50px;
+    margin-top: 5px;
     width: 100%;
     height:auto;
     /* min-width: 225px; */
@@ -110,6 +110,7 @@
     font-size: 1.2rem;
     cursor: pointer;
     justify-content: center;
+    margin-bottom: 10px;
   }
   .btn-primary:hover {
     background-color: #306fc9;
