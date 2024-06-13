@@ -16,6 +16,7 @@ import { ProductsComponent } from './comps/products/products.component';
 import { FooterComponent } from './comps/footer/footer.component';
 import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 import { ProductComponent } from './comps/product/product.component';
+import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProductComponent } from './comps/product/product.component';
     ProductsComponent,
     FooterComponent,
     SingleproductComponent,
-    ProductComponent
+    ProductComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,

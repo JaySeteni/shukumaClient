@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Product } from '../../product'
+import { Component ,OnInit} from '@angular/core';
+import { mockData } from '../../../mock-data'
 
 @Component({
   selector: 'app-singleproduct',
@@ -7,5 +7,10 @@ import { Product } from '../../product'
   styleUrl: './singleproduct.component.css'
 })
 export class SingleproductComponent {
-    @Input() product!: Product;
+    products: any = mockData
+
+    ngOnInit() :any
+
   }
+
+
