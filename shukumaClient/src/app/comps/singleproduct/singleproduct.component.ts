@@ -9,7 +9,9 @@ import { mockData } from '../../../mock-data'
 export class SingleproductComponent {
     products: any = mockData
 
-    ngOnInit() :any
+    ngOnInit() {
+      
+    }
 
   }
 
