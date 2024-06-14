@@ -15,9 +15,10 @@ import { LandingComponent } from './comps/landing/landing.component';
 import { ProductCardComponent } from './comps/product-card/product-card.component';
 import { ProductsComponent } from './comps/products/products.component';
 import { FooterComponent } from './comps/footer/footer.component';
-import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
+import { SingleProductComponent } from './comps/singleproduct/singleproduct.component';
 import { ProductComponent } from './comps/product/product.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
+import { CartComponent } from './comps/cart/cart.component';
 
 
 @NgModule({
@@ -33,9 +34,10 @@ import { UserprofileComponent } from './comps/userprofile/userprofile.component'
     ProductCardComponent,
     ProductsComponent,
     FooterComponent,
-    SingleproductComponent,
+    SingleProductComponent,
     ProductComponent,
     UserprofileComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

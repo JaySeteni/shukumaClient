@@ -6,7 +6,7 @@ import { LoginComponent } from './comps/login/login.component';
 import { AdminComponent } from './comps/admin/admin.component';
 import { MapComponent } from './comps/map/map.component';
 import { LandingComponent } from './comps/landing/landing.component';
-import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
+import { SingleProductComponent } from './comps/singleproduct/singleproduct.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 
 
@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'map', component: MapComponent},
   {path: 'welcome', component: LandingComponent},
-  {path: 'single', component: SingleproductComponent},
+  {path: 'single', component: SingleProductComponent},
   {path: 'userprofile', component: UserprofileComponent}
 
 ];
