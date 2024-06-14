@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { mockData } from '../../../mock-data';
 
 @Component({
@@ -9,8 +8,7 @@ import { mockData } from '../../../mock-data';
 })
 export class SingleProductComponent implements OnInit {
   product: any;
-
-  constructor(private route: ActivatedRoute) {}
+  route: any;
 
   ngOnInit(): void {
     const productId = this.route.snapshot.paramMap.get('id');
