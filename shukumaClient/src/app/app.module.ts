@@ -17,6 +17,7 @@ import { FooterComponent } from './comps/footer/footer.component';
 import { SingleProductComponent } from './comps/singleproduct/singleproduct.component';
 import { ProductComponent } from './comps/product/product.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
+import { CartComponent } from './comps/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserprofileComponent } from './comps/userprofile/userprofile.component'
     FooterComponent,
     SingleProductComponent,
     ProductComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
