@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent} from './comps/register/register.component'
@@ -18,6 +19,7 @@ import { SingleproductComponent } from './comps/singleproduct/singleproduct.comp
 import { ProductComponent } from './comps/product/product.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,7 @@ import { UserprofileComponent } from './comps/userprofile/userprofile.component'
     FooterComponent,
     SingleproductComponent,
     ProductComponent,
-    UserprofileComponent
+    UserprofileComponent,
   ],
   imports: [
     BrowserModule,
