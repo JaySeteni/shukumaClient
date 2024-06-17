@@ -9,6 +9,7 @@ import { LandingComponent } from './comps/landing/landing.component';
 import { SingleProductComponent } from './comps/singleproduct/singleproduct.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 import { CartComponent } from './comps/cart/cart.component';
+import { CategoriesComponent } from './comps/categories/categories.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path: 'map', component: MapComponent},
   {path: 'single', component: SingleProductComponent},
   {path: 'userprofile', component: UserprofileComponent},
-  {path: 'cart', component:CartComponent}
+  {path: 'cart', component:CartComponent},
+  {path: 'categories', component:CategoriesComponent},
+  
 
 ];
 @NgModule({

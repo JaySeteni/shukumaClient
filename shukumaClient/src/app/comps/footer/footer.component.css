@@ -1,18 +1,15 @@
 .footer{
     background-color: rgb(56, 52, 52);
-    justify-content: space-between;
-    display: flex;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
+    
 
 }
 li{
     color: white;
-    display: inline;
-    margin: 0 10px;
+   
     
 }
 li a{
