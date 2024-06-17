@@ -1,0 +1,17 @@
+/* Items */
+.card-body{
+    padding: 1rem;
+    padding-bottom: 0.5rem
+}
+figure{
+    height: 140px;
+
+}
+.card-title{
+    text-align: center;
+}
+.itemsImg{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
