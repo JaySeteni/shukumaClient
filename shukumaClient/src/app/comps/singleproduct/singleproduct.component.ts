@@ -16,7 +16,7 @@ constructor ( private route: ActivatedRoute,
   ngOnInit() {
     this.route.params.subscribe(params => {
       const productId = params['id'];
-      this.product = this.mainService.getProduct(productId);
+      this.product = this.mainService.getOneProduct(productId);
     });
   }
 }
