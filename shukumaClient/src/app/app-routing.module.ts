@@ -9,6 +9,7 @@ import { LandingComponent } from './comps/landing/landing.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 import { CategoriesComponent } from './comps/categories/categories.component';
 import { FooterComponent } from './comps/footer/footer.component';
+import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'map', component: MapComponent},
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'welcome', component:LandingComponent},
-  {path: 'categories', component:CategoriesComponent}
+  {path: 'categories', component:CategoriesComponent},
+  {path: 'product', component: SingleproductComponent}
 
 
 ];
