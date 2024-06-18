@@ -7,6 +7,7 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class MainService {
+
   private apiUrl = "http://localhost:3000/v1/product/";
 
   constructor(private http: HttpClient) {}
@@ -15,8 +16,8 @@ export class MainService {
     return this.http.get(this.apiUrl+ "get-all")
   }
 
-  // getOneProduct():Observable<any>{
-  //   return this.http.get(this.apiUrl+"product")
-  // }
+  getOneProduct(id: any): Observable<any> {
+    return this.http.get<any>(${this.apiUrl}${id})
+  }
 
 }
