@@ -29,20 +29,4 @@ export class CategoriesComponent implements OnInit {
   }
 
 }
-// export class CategoriesComponent implements OnInit {
-//   products: any[] = [];
-
-//   constructor(private mainService: MainService) { }
-
-//   ngOnInit(): void {
-//     this.mainService.getAllProducts().subscribe(data => {
-//       this.products = data.map((product: any) => ({
-//         name: product.name,
-//         imageUrl: product.imageUrl || 'default-image-url',
-//         description: product.description ,
-//         price : product.price
-//       }));
-//     });
-//   }
-// }
 
