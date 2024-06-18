@@ -41,22 +41,22 @@
 <app-nav></app-nav>
 <main class="mb-52">
     <div class="container border p-4">
-        <h1 class="text-2xl font-extrabold">Shop By Category</h1>
+        <h1 class="text-2xl font-extrabold">{{page}}</h1>
 
-        <div class="btn-group flex space-x-4">
+        <!-- <div class="btn-group flex space-x-4">
           <label *ngFor="let products of category " class="flex items-center space-x-2 cursor-pointer">
             <input class="radio form-radio h-4 w-4 text-blue-600" type="radio" name="mealType" [value]="products" [(ngModel)]="category" (change)="sortByCategory(products)">
             <span class="text-sm font-medium text-gray-700">{{ products }}</span>
           </label>
-        </div>
+        </div> -->
 
 
         <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5">
-            <div *ngFor="let product of allProduct" class="card w-36 bg-base-100 shadow-xl">
-                <figure><img class="itemsImg" [src]="product.imageUrl" alt="Product Image" /></figure>
+            <div *ngFor="let item of items" class="card w-36 bg-base-100 shadow-xl">
+                <figure><img class="itemsImg" [src]="item.imageUrl" alt="Product Image" /></figure>
                 <div class="card-body">
-                  <h2 class="card-title text-red-600">{{ product.name }}</h2>
-                  <p class="text-gray-700">{{ product.description }}</p>
+                  <h2 class="card-title text-red-600">{{ items.name }}</h2>
+                  <p class="text-gray-700">{{ items.description }}</p>
                   <div class="card-actions justify-center">
                     <button class="btn btn-sm btn-primary">View</button>
                   </div>

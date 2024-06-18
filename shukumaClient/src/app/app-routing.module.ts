@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'map', component: MapComponent},
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'welcome', component:LandingComponent},
-  {path: 'categories', component:CategoriesComponent},
+  {path: 'categories/:name', component:CategoriesComponent},
   {path: 'product', component: SingleproductComponent}
 
 
