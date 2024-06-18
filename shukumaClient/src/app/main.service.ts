@@ -17,6 +17,7 @@ export class MainService {
   }
 
   getOneProduct(id: any): Observable<any> {
+
     return this.http.get(`${this.apiUrl}${id}`);
   }
 
