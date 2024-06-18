@@ -1,19 +1,19 @@
-<!-- <div class="card w-36 bg-base-100 shadow-xl">
+<div class="card w-36 bg-base-100 shadow-xl justify-center">
     <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR3Xy8jxeZA1d8hXX2FPpLdIEUX146wEr5rtGCHx1UGkvmLLclywb7G6PWPWhErkv_dQuUY2INgfocyKNIWRr2TVw2H8ZivRFEywo1an1e_EcFnycZj7tqzTeQ1ZgEOLqPQzKC8jg&usqp=CAc" alt="Shoes" /></figure>
-    <div class="card-body">
-      <h2 class="card-title  text-red-600">9 kg</h2>
+    <div class="card-body justify-center">
+      <h2 class="card-title text-red-600 justify-center">9 kg</h2>
       <div class="card-actions justify-center">
-        <button class="btn btn-sm btn-primary">View</button>
+        <button class="btn btn-sm btn-primary" onclick="deductAmount()">-</button>
+        <button class="btn btn-sm btn-primary" onclick="addAmount()">+</button>
       </div>
     </div>
-</div> -->
-<div class="card w-36 bg-base-100 shadow-xl flex justify-center">
-    <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR3Xy8jxeZA1d8hXX2FPpLdIEUX146wEr5rtGCHx1UGkvmLLclywb7G6PWPWhErkv_dQuUY2INgfocyKNIWRr2TVw2H8ZivRFEywo1an1e_EcFnycZj7tqzTeQ1ZgEOLqPQzKC8jg&usqp=CAc" alt="Shoes" /></figure>
-    <div class="card-body">
-        <h2 class="card-title text-red-600">9 kg</h2>
-        <div class="card-actions justify-center">
-            <button id="addButton" class="btn btn-sm btn-primary" onclick="deductAmount()">-</button>
-            <button class="btn btn-sm btn-primary" onclick="addAmount()">+</button>
-        </div>
-    </div>
 </div>
+<div>
+ <div>
+    <!-- Product details -->
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.description }}</p>
+    
+    <!-- Category details -->
+    <h3>Category: {{ product.category.name }}</h3>
+  </div>
