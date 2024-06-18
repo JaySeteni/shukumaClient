@@ -10,6 +10,7 @@ import { MainService } from '../../main.service';
 export class HomeComponent implements OnInit {
   allProduct : any = []
   products: any;
+  categories = ["Gas Cylinders", "Stoves", "Accessories"]
 
   constructor(private mainServer: MainService){}
 
