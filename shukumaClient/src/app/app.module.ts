@@ -14,6 +14,7 @@ import { LandingComponent } from './comps/landing/landing.component';
 import { FooterComponent } from './comps/footer/footer.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 import { CategoriesComponent } from './comps/categories/categories.component';
+import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CategoriesComponent } from './comps/categories/categories.component';
     LandingComponent,
     FooterComponent,
     UserprofileComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    SingleproductComponent
   ],
   imports: [
     BrowserModule,
