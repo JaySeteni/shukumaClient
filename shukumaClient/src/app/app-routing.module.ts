@@ -6,10 +6,9 @@ import { LoginComponent } from './comps/login/login.component';
 import { AdminComponent } from './comps/admin/admin.component';
 import { MapComponent } from './comps/map/map.component';
 import { LandingComponent } from './comps/landing/landing.component';
-import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 import { CategoriesComponent } from './comps/categories/categories.component';
-import { FooterComponent } from './comps/footer/footer.component';
 import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
+import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 
 
 const routes: Routes = [
@@ -22,7 +21,10 @@ const routes: Routes = [
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'welcome', component:LandingComponent},
   {path: 'categories/:name', component:CategoriesComponent},
-  {path: 'product', component: SingleproductComponent}
+  {path: 'product', component: SingleproductComponent},
+  {path: 'userprofile', component: UserprofileComponent},
+  {path: 'categories', component:CategoriesComponent},
+  {path: 'welcome', component:LandingComponent},
 
 
 ];
