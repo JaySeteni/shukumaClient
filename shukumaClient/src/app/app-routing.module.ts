@@ -6,11 +6,10 @@ import { LoginComponent } from './comps/login/login.component';
 import { AdminComponent } from './comps/admin/admin.component';
 import { MapComponent } from './comps/map/map.component';
 import { LandingComponent } from './comps/landing/landing.component';
-import { SingleProductComponent } from './comps/singleproduct/singleproduct.component';
-import { UserprofileComponent } from './comps/userprofile/userprofile.component';
+import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 import { CartComponent } from './comps/cart/cart.component';
 import { CategoriesComponent } from './comps/categories/categories.component';
-
+import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -19,7 +18,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'map', component: MapComponent},
-  {path: 'single', component: SingleProductComponent},
+  {path: 'single', component: SingleproductComponent},
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'cart', component:CartComponent},
   {path: 'categories', component:CategoriesComponent},
