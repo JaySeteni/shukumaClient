@@ -6,10 +6,9 @@ import { LoginComponent } from './comps/login/login.component';
 import { AdminComponent } from './comps/admin/admin.component';
 import { MapComponent } from './comps/map/map.component';
 import { LandingComponent } from './comps/landing/landing.component';
-import { SingleProductComponent } from './comps/singleproduct/singleproduct.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
-import { CartComponent } from './comps/cart/cart.component';
 import { CategoriesComponent } from './comps/categories/categories.component';
+import { FooterComponent } from './comps/footer/footer.component';
 
 
 const routes: Routes = [
@@ -19,9 +18,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'map', component: MapComponent},
-  {path: 'single', component: SingleProductComponent},
   {path: 'userprofile', component: UserprofileComponent},
-  {path: 'cart', component:CartComponent},
   {path: 'welcome', component:LandingComponent},
   {path: 'categories', component:CategoriesComponent}
 
