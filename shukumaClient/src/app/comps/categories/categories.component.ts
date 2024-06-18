@@ -10,6 +10,14 @@ export class CategoriesComponent implements OnInit {
   allProduct : any = []
   products: any;
 
+  category: string[] = ['Gas Cylinders', 'Gas Accessories', 'Stoves'];
+
+
+  sortByCategory(category: string) {
+    console.log(`Selected category: ${category}`);
+  }
+
+
   constructor(private mainServer: MainService){}
 
   ngOnInit(): void {

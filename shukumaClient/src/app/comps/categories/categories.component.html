@@ -1,5 +1,5 @@
 <!-- Topp nav -->
-<div class="navbar bg-base-100 border-2">
+<!-- <div class="navbar bg-base-100 border-2">
     <div class="flex-1 backArrow ">
       <a class="btn btn-ghost text-xl">
         <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 24 24">
@@ -37,11 +37,19 @@
         </ul>
       </div>
     </div>
-  </div>
-  
+  </div> -->
+
 <main class="mb-52">
     <div class="container border p-4">
-        <h1 class="text-2xl font-extrabold">Gas Cylinders</h1>
+        <h1 class="text-2xl font-extrabold">Shop By Category</h1>
+
+        <div class="btn-group flex space-x-4">
+          <label *ngFor="let products of category " class="flex items-center space-x-2 cursor-pointer">
+            <input class="radio form-radio h-4 w-4 text-blue-600" type="radio" name="mealType" [value]="products" [(ngModel)]="category" (change)="sortByCategory(products)">
+            <span class="text-sm font-medium text-gray-700">{{ products }}</span>
+          </label>
+        </div>
+
 
         <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5">
             <div *ngFor="let product of allProduct" class="card w-36 bg-base-100 shadow-xl">

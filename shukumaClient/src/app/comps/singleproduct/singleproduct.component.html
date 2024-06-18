@@ -18,7 +18,7 @@
     <h3>Category: {{ product.category.name }}</h3>
   </div> -->
   <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5">
-    <div *ngFor="let product of allProduct" class="card w-36 bg-base-100 shadow-xl">
+    <div *ngFor="let product of products" class="card w-36 bg-base-100 shadow-xl">
         <figure><img class="itemsImg" [src]="product.imageUrl" alt="Product Image" /></figure>
         <div class="card-body">
           <h2 class="card-title text-red-600">{{ product.name }}</h2>
