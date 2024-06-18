@@ -23,6 +23,7 @@ const routes: Routes = [
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'cart', component:CartComponent},
   {path: 'categories', component:CategoriesComponent},
+  {path: 'welcome', component:LandingComponent},
   
 
 ];
