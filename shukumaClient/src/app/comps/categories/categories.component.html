@@ -4,10 +4,10 @@
         <h1 class="text-2xl font-extrabold">{{page}}</h1>
         <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5">
             <div *ngFor="let item of items" class="card w-36 bg-base-100 shadow-xl">
-                <figure><img class="itemsImg" [src]="item.imageUrl" alt="Product Image" /></figure>
+                <figure><img class="itemsImg" [src]="item.imageUrl" alt="Product Image" (click)="addToCart(item)"/></figure>
                 <div class="card-body">
-                  <h2 class="card-title text-red-600">{{ item.name }}</h2>
-                  <p class="text-gray-700">{{ item.description }}</p>
+                  <h2 class="card-title text-gray-600">{{ item.description.slice(0,4) }}</h2>
+                  <p class="text-red-700">R{{ item.price}}</p>
                   <div class="card-actions justify-center">
                     <button class="btn btn-sm btn-primary">View</button>
                   </div>
