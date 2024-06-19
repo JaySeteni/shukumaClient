@@ -1,20 +1,23 @@
+/* carousel starts*/
+/* carousel ends */
 
-.rounded-full{
-  background-color:rgb(43, 41, 196);
-}
-/* Items */
+/* categories */
+
 .card-body{
   padding: 1rem;
   padding-bottom: 0.5rem
 }
+
 figure{
   height: 140px;
   padding: 1rem;
 
 }
+/* item titles */
 .card-title{
   text-align: center;
 }
+/* card image */
 .itemsImg{
   object-fit: contain;
   height: 100%;
