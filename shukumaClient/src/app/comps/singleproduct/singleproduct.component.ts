@@ -8,8 +8,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './singleproduct.component.css'
 })
 export class SingleproductComponent implements OnInit {
-products: any;
-productId: string | null | undefined;
+  product : any = []
+  products : any;
 
 constructor ( private route: ActivatedRoute,
   private mainServer: MainService ){ }
@@ -17,12 +17,13 @@ constructor ( private route: ActivatedRoute,
   ngOnInit(): void {
     this.getOneProduct()
   }
-    getOneProduct(){
-
-    this.route.params.subscribe(params => {
-      const productId = params['id'];
-      this.products = this.mainServer.getOneProduct(productId);
-    });
-
-}
+  
+  getOneProduct(){
+    const single = this.route.snapshot.paramMap.get('id')
+    this.mainServer.getOneProduct(single).subscribe({
+      next: data =>{
+        this.product = data.products
+      }
+    })
+  }
 }
