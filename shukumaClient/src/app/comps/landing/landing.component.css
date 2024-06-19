@@ -90,8 +90,6 @@
   }
 
   
-  
-  
   .feature:nth-child(1){
     background-color: #F4E8D6;
   }
@@ -142,7 +140,6 @@
 .btns i{
   margin-left: 10px;
   position: absolute;
-  
 }
 
 .btns:focus > i{
