@@ -10,7 +10,6 @@ import { CategoriesComponent } from './comps/categories/categories.component';
 import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 
-
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -24,8 +23,7 @@ const routes: Routes = [
   {path: 'product', component: SingleproductComponent},
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'categories', component:CategoriesComponent},
-  {path: 'welcome', component:LandingComponent},
-
+  {path: 'welcome', component:LandingComponent}
 
 ];
 @NgModule({
