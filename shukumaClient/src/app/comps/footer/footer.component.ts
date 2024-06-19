@@ -22,8 +22,8 @@ export class FooterComponent implements OnInit {
     fcolor= '#e01219'
 
     ngOnInit(): void {
-      // this.favListCount$ = this.cartService.favList
-      // this.cartCount$ = this.cartService.cartItemcount
+      this.favListCount$ = this.cartService.favList
+      this.cartCount$ = this.cartService.cartItemcount
       console.log("Some")
     }
 
