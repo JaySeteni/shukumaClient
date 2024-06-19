@@ -1,9 +1,14 @@
-<div class="login-container ">
+<div class="login-container">
   <form [formGroup]="loginForm" (ngSubmit)="OnLogin()">
-      <h3>Login</h3>
+    <h2 class="tit">Shukuma</h2>
+    <div class="message">
+      <p>Access Delivery Excellence</p>
+      <p>with Your Account</p>
+    </div>
+      
       <div class="form-group">
         <label for="email">Email:</label>
-        <input id="email" type="email" formControlName="email" class="form-control" placeholder="Type Email" required>
+        <input id="email" type="email" formControlName="email" class="form-control" placeholder="email" required>
         <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="error">
           <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
           <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</div>
@@ -12,13 +17,14 @@
   
       <div class="form-group">
         <label for="password">Password:</label>
-        <input id="password" type="password" formControlName="password" class="form-control" placeholder="Type Password" required>
+        <input id="password" type="password" formControlName="password" class="form-control" placeholder="Password" required>
         <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error">
           <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
         </div>
       </div>
-  <br>
-  <p>Don't have an account <a href="register">register</a> </p>
+
+  <p class="other">Don't have an account <a href="register">register</a> </p>
+
       <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
     </form>
   </div>
