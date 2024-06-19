@@ -23,3 +23,8 @@ figure{
   height: 100%;
   width: 100%;
 }
+
+.block{
+  height:40vh;
+  width:100vw;
+}
