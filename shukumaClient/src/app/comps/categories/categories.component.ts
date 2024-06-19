@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../main.service';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+import { Product } from '../../product';
 
 @Component({
   selector: 'app-categories',
@@ -19,7 +21,7 @@ export class CategoriesComponent implements OnInit {
   }
 
 
-  constructor(private mainServer: MainService, private route: ActivatedRoute){}
+  constructor(private mainServer: MainService, private route: ActivatedRoute, private cartSservice: CartService){}
 
   ngOnInit(): void {
       this.getAllProducts()
@@ -43,6 +45,12 @@ filter(path:any){
 console.log(path)
 this.items = this.allProduct.filter((products:any) => products.category == path)
 console.log(this.items)
+}
+
+addToCart(item: Product){
+
+  this.cartSservice.addToCart(item)
+ 
 }
 }
 
