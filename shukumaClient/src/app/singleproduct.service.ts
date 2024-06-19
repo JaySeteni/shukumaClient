@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable,  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -6,7 +6,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SingleproductService {
-
   constructor(private http: HttpClient) { }
+  // ngOnInit(): void {
+  //   this.getOneProduct()
+
+  }
+ 
 
 }
