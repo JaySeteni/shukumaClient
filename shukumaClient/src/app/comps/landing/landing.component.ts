@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 
 @Component({
@@ -9,6 +10,12 @@ import { Component } from '@angular/core';
 export class LandingComponent {
   
 
-  constructor() { }
+  constructor(private route:Router) { }
+
+  mShowLogin(){
+    setTimeout(() => {
+      this.route.navigate(["login"]);
+    }, 500)
+  }
  
 }

@@ -1,19 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { mockData } from '../../../mock-data';
+import { MainService } from '../../main.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-single-product',
+  selector: 'app-singleproduct',
   templateUrl: './singleproduct.component.html',
-  styleUrls: ['./singleproduct.component.css']
+  styleUrl: './singleproduct.component.css'
 })
-export class SingleProductComponent implements OnInit {
-  product: any;
-  route: any;
+export class SingleproductComponent implements OnInit {
+products: any;
+productId: string | null | undefined;
+
+constructor ( private route: ActivatedRoute,
+  private mainServer: MainService ){ }
 
   ngOnInit(): void {
-    const productId = this.route.snapshot.paramMap.get('id');
-    this.product = mockData.find(p => p.id === parseInt(productId!));
+    this.getOneProduct()
   }
+    getOneProduct(){
+
+    this.route.params.subscribe(params => {
+      const productId = params['id'];
+      this.products = this.mainServer.getOneProduct(productId);
+    });
+
 }
-
-
+}

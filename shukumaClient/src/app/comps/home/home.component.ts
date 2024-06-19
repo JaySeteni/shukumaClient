@@ -1,39 +1,33 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MainService } from '../../main.service';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements OnInit {
+  allProduct : any = []
+  products: any;
+ 
 
-  currentIndex: number = 0;
-  totalSlides!: number;
+  constructor(private mainServer: MainService){}
 
-  ngAfterViewInit(): void {
-    const items = document.querySelectorAll('.carousel-item');
-    this.totalSlides = items.length;
-    this.showSlide(this.currentIndex);
-  }
+  ngOnInit(): void {
+    this.getAllProducts()
+}
+getAllProducts(){
 
-  showSlide(index: number): void {
-    const items = document.querySelectorAll('.carousel-item');
-    items.forEach((item, i) => {
-      if (i === index) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-  }
+  this.mainServer.getAllProducts().subscribe({
+    next: data =>{
+    this.allProduct = data.products
+      console.log(data)
+    },
+    error: err=>{
+      console.log(err)
+    }
+  })
+}
 
-  prevSlide(): void {
-    this.currentIndex = (this.currentIndex === 0) ? this.totalSlides - 1 : this.currentIndex - 1;
-    this.showSlide(this.currentIndex);
-  }
-
-  nextSlide(): void {
-    this.currentIndex = (this.currentIndex === this.totalSlides - 1) ? 0 : this.currentIndex + 1;
-    this.showSlide(this.currentIndex);
-  }
 }

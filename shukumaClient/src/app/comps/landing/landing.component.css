@@ -1,77 +1,168 @@
-   .get-started-container {
+    .get-started-container {
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
     background-color: #525252;
-    
-    width: 100%;
-  }
+    padding-bottom: 5px;
+  }  
   
-  h1 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: whitesmoke;
-    font-size: 65px;
-  }
+  /* TOP INTRO SECTION */
+  .land-1{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: auto ;
+    justify-content: center;
+    background-color: white;
+    gap: 10px;
+    
+   }
 
-    p {
-      margin-bottom: 10px;
-      
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      color: cadetblue;
-      font-size: 16px;
+  h1 {
+    margin-bottom: 1rem;
+    color: rgb(41, 41, 41);
+    font-size: 30px;
+    font-weight: 900;
+    text-align: left;
+    margin:0px;
+      padding: 0px;
+      margin-left: 15px;
     }
 
-
-  .features {
-    display: flex;
-    justify-content: space-around;
-    bottom: 16px;
-  }
-  
-  .feature {
-    bottom: 14px;
-
-  }
-  .feature h2 {
-    color: var(--primary-color);
-    bottom: 16px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: whitesmoke;
-  
-}
-  .btn-primary {
-    background-color:#306fc9;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .btn-primary:hover {
-    background-color: #306fc9;
-  }
- 
-   @media screen and (max-width:320px) {
-  
-   
-   img{
-    height: 100vh;
-    background: url("https://i.postimg.cc/0NzDYGh1/delivery-page.jpg");
-    background-size: cover;
+  .underline{
+    height: 5px;
+    border-radius: 10px;
+    margin-left: 15px;
+    width: 42%;
+    background-color: #525252;
    }
-  }
-  nav{ 
-      position: fixed;
+
+    svg{ 
+      position: absolute;
       bottom: 0;
       left: 0;
-      width: 100%;
-      height: 60px; /* Adjust this value based on your navbar height */
-      background-color: #f8f8f8;
-      border-top: 1px solid #ddd;
-      display: flex;
-      justify-content: center;
+      right: 0;
+      width: 100vw;
+    }
+
+    p {
+      margin:0px;
+      padding: 0px;
+      text-align: left ;
       align-items: center;
+      justify-content: center;
+      font-style: italic;
+      margin-right: 8px;
+      margin-left: 20px;
+      font-size: 17px;
+    }
+
+    span{
+      color: #0099ff;
+      font-weight: bold;
+    }
+
+    .land-1 img{
+      height: auto;
+      width: 100%;
+    }
+
+  /* FEATURES SECTION */
+  .title{
+    color: white;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    padding-top: 5px;
+    gap: 15px;
+  }
+
+  .feature{
+    height: auto;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  
+  
+  
+  .feature:nth-child(1){
+    background-color: #F4E8D6;
+  }
+
+.feature:nth-child(1) img{
+    height: auto;
+    width: 40%;
+  }
+
+
+  .feature:nth-child(2){
+    background-color: #CEE3A9;
+  }
+
+  .feature:nth-child(2) img{
+    height: auto;
+    width: 100%;
+  }
+
+  .feature:nth-child(3){
+    background-color: white;
+  }
+
+  .feature:nth-child(3) img{
+    height: auto;
+    width: 100%;
+  }
+
+
+  .feature h2 { 
+    color: rgb(0, 0, 0);
+}
+
+
+.btns{
+  padding: 9.5px 5px;
+  background-color:#306fc9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btns i{
+  margin-left: 10px;
+  position: absolute;
+  
+}
+
+.btns:focus > i{
+  animation: truckdrive .9s .1s normal;
+}
+
+@keyframes truckdrive {
+  0%{
+    margin-left: 10px;
+    position: absolute;
+  }
+
+  100%{
+    margin-left: 75px;
+    position: absolute;
+  }
+  
+}
+
+   @media screen and (max-width:320px) {
+    
+
   }
