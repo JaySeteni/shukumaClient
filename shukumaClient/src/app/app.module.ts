@@ -19,6 +19,7 @@ import { SingleproductComponent } from './comps/singleproduct/singleproduct.comp
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 import { SearchComponent } from './comps/search/search.component';
 import { CartComponent } from './comps/cart/cart.component';
+import { OrderComponent } from './comps/order/order.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CartComponent } from './comps/cart/cart.component';
     CategoriesComponent,
     SingleproductComponent,
     SearchComponent,
-    CartComponent
+    CartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

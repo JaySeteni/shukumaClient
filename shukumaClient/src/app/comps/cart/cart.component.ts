@@ -14,6 +14,14 @@ export class CartComponent {
   
   constructor(private cartService : CartService){}
 
+  ngOnInit(): void {
+    
+
+    console.log(this.totalAmount)
+    this.items = this.cartService.getItems();
+    console.log(this.items)
+    this.Total()
+  }
 
 
   Total() {
@@ -24,6 +32,7 @@ export class CartComponent {
       //this.cartTotal.next(this.totalAmount);
       //console.log(this.cartTotal)
       localStorage.setItem('Total',JSON.stringify(this.totalAmount))
+      localStorage.setItem('CartItems',JSON.stringify(this.items))
     })
     
     this.cartService.cartTotal.next(this.totalAmount);

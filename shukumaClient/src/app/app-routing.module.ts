@@ -10,6 +10,7 @@ import { CategoriesComponent } from './comps/categories/categories.component';
 import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 import { CartComponent } from './comps/cart/cart.component';
+import { OrderComponent } from './comps/order/order.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'home' , pathMatch: 'full'},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'categories', component:CategoriesComponent},
   {path: 'welcome', component:LandingComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'view_item/', component: SingleproductComponent}
+  {path: 'view_item/', component: SingleproductComponent},
+  {path: 'order',component: OrderComponent}
 
 ];
 @NgModule({
