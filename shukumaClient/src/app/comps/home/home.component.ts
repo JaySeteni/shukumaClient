@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   allProduct : any = []
 
   products: any;
+ 
 
   constructor(private mainServer: MainService){}
 
