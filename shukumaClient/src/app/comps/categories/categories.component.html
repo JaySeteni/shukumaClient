@@ -6,8 +6,82 @@
             <div *ngFor="let item of items" class="card w-36 bg-base-100 shadow-xl">
                 <figure><img class="itemsImg" [src]="item.imageUrl" alt="Product Image" /></figure>
                 <div class="card-body">
+<<<<<<< HEAD
+                  <h2 class="card-title  text-red-600">3 kg</h2>
+                  <div class="card-actions justify-center">
+                    <button class="btn btn-sm btn-primary">View</button>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card w-36 bg-base-100 shadow-xl">
+                <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR3Xy8jxeZA1d8hXX2FPpLdIEUX146wEr5rtGCHx1UGkvmLLclywb7G6PWPWhErkv_dQuUY2INgfocyKNIWRr2TVw2H8ZivRFEywo1an1e_EcFnycZj7tqzTeQ1ZgEOLqPQzKC8jg&usqp=CAc" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title  text-red-600">9 kg</h2>
+                  <div class="card-actions justify-center">
+                    <button class="btn btn-sm btn-primary">View</button>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card w-36 bg-base-100 shadow-xl">
+                <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR3Xy8jxeZA1d8hXX2FPpLdIEUX146wEr5rtGCHx1UGkvmLLclywb7G6PWPWhErkv_dQuUY2INgfocyKNIWRr2TVw2H8ZivRFEywo1an1e_EcFnycZj7tqzTeQ1ZgEOLqPQzKC8jg&usqp=CAc" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title  text-red-600">14 kg</h2>
+                  <div class="card-actions justify-center">
+                    <button class="btn btn-sm btn-primary">View</button>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card w-36 bg-base-100 shadow-xl">
+              <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR3Xy8jxeZA1d8hXX2FPpLdIEUX146wEr5rtGCHx1UGkvmLLclywb7G6PWPWhErkv_dQuUY2INgfocyKNIWRr2TVw2H8ZivRFEywo1an1e_EcFnycZj7tqzTeQ1ZgEOLqPQzKC8jg&usqp=CAc" alt="Shoes" /></figure>
+              <div class="card-body">
+                <h2 class="card-title  text-red-600">19 kg</h2>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-sm btn-primary">View</button>
+                </div>
+              </div>
+          </div>
+
+            <div class="card w-36 bg-base-100 shadow-xl">
+                <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR3Xy8jxeZA1d8hXX2FPpLdIEUX146wEr5rtGCHx1UGkvmLLclywb7G6PWPWhErkv_dQuUY2INgfocyKNIWRr2TVw2H8ZivRFEywo1an1e_EcFnycZj7tqzTeQ1ZgEOLqPQzKC8jg&usqp=CAc" alt="Shoes" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title  text-red-600">48 kg</h2>
+                  <div class="card-actions justify-center">
+                    <button class="btn btn-sm btn-primary">View</button>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container pt-14">
+        <h1 class="text-xl fontbold" >More related products ...</h1>
+
+
+
+        <div class="flex mt-6">
+
+
+        </div>
+    </div>
+  </main> -->
+  <main class="mb-52">
+    <div class="container border p-4">
+        <h1 class="text-2xl font-extrabold">Gas Cylinders</h1>
+
+        <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5">
+            <div *ngFor="let product of allProduct" class="card w-36 bg-base-100 shadow-xl">
+                <figure><img class="itemsImg" [src]="product.imageUrl" alt="Product Image" /></figure>
+                <div class="card-body">
+                  <h2 class="card-title text-red-600">{{ product.name }}</h2>
+                  <p class="text-gray-700">{{ product.description }}</p>
+=======
                   <h2 class="card-title text-red-600">{{ items.name }}</h2>
                   <p class="text-gray-700">{{ items.description }}</p>
+>>>>>>> 2936ee4d79246ae732afb8c24e081da67188e3d3
                   <div class="card-actions justify-center">
                     <button class="btn btn-sm btn-primary">View</button>
                   </div>
