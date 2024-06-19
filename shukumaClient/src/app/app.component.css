@@ -19,7 +19,7 @@ position: fixed;
 top: 20px;
 right: 20px;
 }
-        
+
 .settings select {
 padding: 8px 16px;
 border-radius: 4px;
@@ -27,9 +27,4 @@ background-color: #f1f1f1;
 color: #333333;
 font-weight: bold;
 cursor: pointer;
-}
-        
-.dark-theme {
-background-color: #333333;
-color: #ffffff;
 }
