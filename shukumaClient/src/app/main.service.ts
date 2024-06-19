@@ -13,12 +13,12 @@ export class MainService {
   constructor(private http: HttpClient) {}
 
   getAllProducts():Observable<any>{
-    return this.http.get(this.apiUrl+ "get-all")
+    return this.http.get(this.apiUrl + "get-all")
   }
 
   getOneProduct(id: any): Observable<any> {
 
-    return this.http.get(`${this.apiUrl}${id}`);
+    return this.http.get(`${this.apiUrl} + ${id}`);
   }
 
 

@@ -17,6 +17,7 @@ import { MapComponent } from './comps/map/map.component';
 import { NavComponent } from './comps/nav/nav.component';
 import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
+import { SearchComponent } from './comps/search/search.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { UserprofileComponent } from './comps/userprofile/userprofile.component'
     SingleproductComponent,
     UserprofileComponent,
     CategoriesComponent,
-    SingleproductComponent
+    SingleproductComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
