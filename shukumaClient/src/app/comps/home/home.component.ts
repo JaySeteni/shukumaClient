@@ -9,6 +9,7 @@ import { MainService } from '../../main.service';
 })
 export class HomeComponent implements OnInit {
   allProduct : any = []
+
   products: any;
  
 
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getAllProducts()
 }
+
 getAllProducts(){
 
   this.mainServer.getAllProducts().subscribe({
@@ -29,5 +31,6 @@ getAllProducts(){
     }
   })
 }
+
 
 }
