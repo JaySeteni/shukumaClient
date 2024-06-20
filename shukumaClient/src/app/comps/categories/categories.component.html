@@ -10,7 +10,7 @@
   </section>
   <div class="prod-holder">
         
-            <div *ngFor="let item of items" class="card" class="p-1 flex flex-wrap items-center justify-center">
+            <div *ngFor="let item of items" class="card" class="p-1 flex flex-wrap items-center justify-center"  (click)="addToCart(item)">
 
                 <div class="flex-shrink-0 m-2 relative overflow-hidden bg-white-500 rounded-lg max-w-xs shadow-lg">
                     <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
@@ -25,10 +25,10 @@
                         <img class="relative w-40 " [src]="item.imageUrl" alt="Product Image">
                     </div>
                     <div class="relative text-black px-6 pb-6 mt-6">
-                        <span class="block opacity-75 -mb-1">{{ item.name }}</span>
+                        <span class="block opacity-75 -mb-1">{{ item.description.slice(0,4) }}</span>
                         <div class="flex justify-between">
-                            <span class="block font-semibold text-xl">Peace Lily</span>
-                            <span class="block bg-black rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$36.00</span>
+                            <span class="block font-semibold text-xl">sold by .... </span>
+                            <span class="block bg-black rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">R{{ item.price}}</span>
                         </div>
                     </div>
                 </div>
