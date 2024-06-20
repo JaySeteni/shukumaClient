@@ -87,10 +87,12 @@
     height: auto;
     border-radius: 8px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  
-  
   
   .feature:nth-child(1){
     background-color: #F4E8D6;
@@ -142,7 +144,6 @@
 .btns i{
   margin-left: 10px;
   position: absolute;
-  
 }
 
 .btns:focus > i{

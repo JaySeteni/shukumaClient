@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 842aaddf495ba5320b04ae2845de1435b1405058
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Protest+Strike&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -6,7 +9,10 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 842aaddf495ba5320b04ae2845de1435b1405058
 
 *{
   font-family: "Lato", sans-serif;
@@ -15,6 +21,12 @@
 }
 
 body{
+<<<<<<< HEAD
   background-color: #525252;
 }
 
+=======
+  background-color: #f2f2f2;
+
+}
+>>>>>>> 842aaddf495ba5320b04ae2845de1435b1405058
