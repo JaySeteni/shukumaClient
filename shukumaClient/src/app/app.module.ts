@@ -18,6 +18,8 @@ import { NavComponent } from './comps/nav/nav.component';
 import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 import { SearchComponent } from './comps/search/search.component';
+import { CartComponent } from './comps/cart/cart.component';
+import { OrderComponent } from './comps/order/order.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { SearchComponent } from './comps/search/search.component';
     UserprofileComponent,
     CategoriesComponent,
     SingleproductComponent,
-    SearchComponent
+    SearchComponent,
+    CartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
