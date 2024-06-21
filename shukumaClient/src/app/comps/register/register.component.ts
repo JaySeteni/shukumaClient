@@ -25,7 +25,7 @@ export class RegisterComponent {
     console.log(this.signUpUsers);
     alert('registered successfully')
     this.signUpObj = { 
-      email: '',
+      email: '', 
       password: ''
     };
   }
