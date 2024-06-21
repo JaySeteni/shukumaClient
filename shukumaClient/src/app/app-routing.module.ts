@@ -13,7 +13,7 @@ import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'home' , pathMatch: 'full'},
+  {path: '', redirectTo:'welcome' , pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
@@ -25,7 +25,6 @@ const routes: Routes = [
   {path: 'product', component: SingleproductComponent},
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'categories', component:CategoriesComponent},
-  {path: 'welcome', component:LandingComponent},
   {path: 'cart', component: CartComponent},
   {path: 'view_item/', component: SingleproductComponent},
   {path: 'order',component: OrderComponent}

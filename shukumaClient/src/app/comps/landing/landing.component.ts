@@ -8,14 +8,14 @@ import { Route, Router } from '@angular/router';
   styleUrl: './landing.component.css'
 })
 export class LandingComponent {
-  
+
 
   constructor(private route:Router) { }
 
   mShowLogin(){
     setTimeout(() => {
-      this.route.navigate(["login"]);
+      this.route.navigate(["home"]);
     }, 500)
   }
- 
+
 }
