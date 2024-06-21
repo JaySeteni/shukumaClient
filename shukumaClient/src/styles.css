@@ -6,19 +6,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
 =======
->>>>>>> feature/Sfiso1.3
+>>>>>>> 709d28fbe32d0804a71a878984d2e559dde3c327
 *{
   font-family: "Lato", sans-serif;
   padding: 0;
   margin: 0;
 }
 
+<<<<<<< HEAD
 body{
-  background-color: #525252;
-}
+  background-color: #f2f2f2;
 
+}
+=======
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+>>>>>>> 709d28fbe32d0804a71a878984d2e559dde3c327
