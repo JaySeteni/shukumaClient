@@ -27,3 +27,11 @@ figure{
   height:40vh;
   width:100vw;
 }
+
+@media only screen and (max-width: 360px) {
+  footer {
+    position:fixed;
+  }
+}
+
+
