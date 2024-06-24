@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SingleproductComponent implements OnInit {
   product : any = []
   products : any;
+  items:any = []
 
 constructor ( private route: ActivatedRoute,
   private mainServer: MainService ){ }

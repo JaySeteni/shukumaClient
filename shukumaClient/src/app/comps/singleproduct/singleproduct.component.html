@@ -1,3 +1,22 @@
+<!-- <div class="card w-36 bg-base-100 shadow-xl justify-center">
+    <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR3Xy8jxeZA1d8hXX2FPpLdIEUX146wEr5rtGCHx1UGkvmLLclywb7G6PWPWhErkv_dQuUY2INgfocyKNIWRr2TVw2H8ZivRFEywo1an1e_EcFnycZj7tqzTeQ1ZgEOLqPQzKC8jg&usqp=CAc" alt="Shoes" /></figure>
+    <div class="card-body justify-center">
+      <h2 class="card-title text-red-600 justify-center">9 kg</h2>
+      <div class="card-actions justify-center">
+        <button class="btn btn-sm btn-primary" onclick="deductAmount()">-</button>
+        <button class="btn btn-sm btn-primary" onclick="addAmount()">+</button>
+      </div>
+    </div>
+</div>
+<div>
+ <div>
+
+    <h2>{{ products.title }}</h2>
+    <p>{{ product.description }}</p>
+
+
+    <h3>Category: {{ product.category.name }}</h3>
+  </div> -->
   <div class="max-w-fit border-1 border-solid pb-7 rounded-b-3xl drop-shadow-2xl bg-white">
 
     <div class="absolute mt-3 ml-3">
@@ -12,7 +31,7 @@
         </svg>
     </div>
 
-    <div class="rounded-md">
+    <div class="rounded-md" *ngFor="let item of items" class="card" class="p-1 flex flex-wrap items-center justify-center">
         <svg class="rounded" width="251" height="202" viewBox="0 0 251 202" fill="none"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <rect width="251" height="202" fill="url(#pattern0)" />
@@ -20,8 +39,10 @@
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                     <use xlink:href="#image0_688_3954" transform="translate(0 -0.431931) scale(0.0025 0.00310644)" />
                 </pattern>
+                <!-- <image class="relative w-40 " [src]="item.imageUrl" alt="Product Image"/> -->
             </defs>
         </svg>
+
     </div>
 
     <div class="flex flex-col space-y-3.5 mt-8 px-5">
