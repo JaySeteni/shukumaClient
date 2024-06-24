@@ -100,23 +100,23 @@ button{
     width: 100%;
 }
 button:hover{
-width: 100%;
-padding: 15px 0;
-font-size: 18px;
-font-weight: 600;
-border-radius: 5px;
-background-color: #F4DFF8;
-color:#389CF9  !important;
-cursor: pointer;    
-}
-a:hover{
-    color: white;
-    font-family: 'Franklin Gothic Medium', 
-                'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #F4DFF8;
+    color:#389CF9  !important;
+    cursor: pointer;    
 }
 a{
     color: #389CF9;
     font-weight: bold;
+}
+a:hover{
+    color: white;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .other{
