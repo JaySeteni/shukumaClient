@@ -34,10 +34,9 @@ export class RegisterComponent {
                 </svg>
             </button>
         </div>
-    `;
-    document.body.appendChild(toast);
-
+    `
     // alert('registered successfully')
+    document.body.appendChild(toast);
     this.signUpObj = { 
       userName: '', 
       email: '', 
