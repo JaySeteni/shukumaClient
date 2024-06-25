@@ -9,6 +9,7 @@ import { HttpClient} from '@angular/common/http';
 export class MainService {
 
   private apiUrl = "http://localhost:3000/v1/product/";
+  private orderUrl = "http://localhost:3000/v1/orders";
 
   constructor(private http: HttpClient) {}
 
@@ -21,5 +22,8 @@ export class MainService {
     return this.http.get(`${this.apiUrl} + ${id}`);
   }
 
-
+  getAllOrders(): Observable<any> {
+    return this.http.get(this.orderUrl + "get-all")
+  }
 }
+
