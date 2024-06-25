@@ -12,7 +12,7 @@ import { UserprofileComponent } from './comps/userprofile/userprofile.component'
 import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
 import { CheckoutComponent } from './comps/checkout/checkout.component';
-
+import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -28,7 +28,8 @@ const routes: Routes = [
   {path: 'categories', component:CategoriesComponent},
   {path: 'cart', component: CartComponent},
   {path: 'order',component: OrderComponent},
-  {path: 'checkout', component: CheckoutComponent}
+  {path: 'checkout', component: CheckoutComponent},
+  {path: 'orders', component: CusOrdersComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes),],
