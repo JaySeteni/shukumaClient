@@ -22,8 +22,8 @@ constructor ( private cartService: CartService, private route: ActivatedRoute,
   originalProducts: Product[] = [];
 
   ngOnInit():void{
-    // this.getOne()
-    // this.getAllProducts()
+    this.getOne()
+    this.getAllProducts()
   }
 
   getOne(){
@@ -50,18 +50,18 @@ constructor ( private cartService: CartService, private route: ActivatedRoute,
     this.cartService.addToWishlist(product)
   }
 
-  // getAllProducts() {
-  //   this.mainServer.getProducts().subscribe({
-  //     next: (data: any) => {
-  //       this.originalProducts = data.allArticles;
+  getAllProducts() {
+    this.mainServer.getAllProducts().subscribe({
+      next: (data: any) => {
+        this.originalProducts = data.allArticles;
       
-  //       console.log('All products:', this.originalProducts);
-  //       // this.products = this.originalProducts; 
-  //     },
-  //     error: (err: any) => {
-  //       console.error("An error occurred while fetching products:", err);
-  //     }
-  //   });
-  // }
+        console.log('All products:', this.originalProducts);
+        // this.products = this.originalProducts; 
+      },
+      error: (err: any) => {
+        console.error("An error occurred while fetching products:", err);
+      }
+    });
+  }
 }
 

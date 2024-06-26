@@ -11,6 +11,8 @@ import { Product } from './product';
 export class MainService {
 
   private apiUrl = "http://localhost:3000/v1/product/";
+  private orderUrl = "http://localhost:3000/v1/orders";
+
 
   cartCount = new BehaviorSubject<number>(0)
 
@@ -41,7 +43,11 @@ export class MainService {
     return this.http.get<Product>(`${this.apiUrl}${id}`)
   }
 
+<<<<<<< HEAD
   getTrackingInfo(orderId: string) {
     return this.http.get(`your-api-endpoint/${orderId}`);
   }
+=======
+
+>>>>>>> 8941f3549560ef6e291ba993776027d04a4655fd
 }
