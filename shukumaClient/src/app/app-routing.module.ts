@@ -11,8 +11,8 @@ import { SingleproductComponent } from './comps/singleproduct/singleproduct.comp
 import { UserprofileComponent } from './comps/userprofile/userprofile.component';
 import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
-import { CheckoutComponent } from './comps/checkout/checkout.component';
-import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
+import { FooterComponent } from './comps/footer/footer.component';
+
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -27,9 +27,10 @@ const routes: Routes = [
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'categories', component:CategoriesComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'view_item/', component: SingleproductComponent},
   {path: 'order',component: OrderComponent},
-  {path: 'checkout', component: CheckoutComponent},
-  {path: 'orders', component: CusOrdersComponent}
+  {path: 'footer', component: FooterComponent}
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes),],

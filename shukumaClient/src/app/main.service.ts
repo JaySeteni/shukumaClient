@@ -11,7 +11,6 @@ import { Product } from './product';
 export class MainService {
 
   private apiUrl = "http://localhost:3000/v1/product/";
-  private orderUrl = "http://localhost:3000/v1/orders";
 
   constructor(private http: HttpClient) {}
 
@@ -21,11 +20,7 @@ export class MainService {
 
   getOneProduct(id: any): Observable<any> {
 
-    return this.http.get(`${this.apiUrl} + ${id}`);
+    return this.http.get(`${this.apiUrl}${id}`);
   }
 
-  getAllOrders(): Observable<any> {
-    return this.http.get(this.orderUrl + "get-all")
-  }
 }
-
