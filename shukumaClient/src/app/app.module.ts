@@ -21,6 +21,7 @@ import { SearchComponent } from './comps/search/search.component';
 import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
 import { CheckoutComponent } from './comps/checkout/checkout.component';
+import { TrackDeliveriesComponent } from './track-deliveries/track-deliveries.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { CheckoutComponent } from './comps/checkout/checkout.component';
     SearchComponent,
     CartComponent,
     OrderComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    TrackDeliveriesComponent
   ],
   imports: [
     BrowserModule,
