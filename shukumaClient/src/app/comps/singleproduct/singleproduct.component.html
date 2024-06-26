@@ -17,7 +17,8 @@
 
     <h3>Category: {{ product.category.name }}</h3>
   </div> -->
-  <div class="max-w-fit border-1 border-solid pb-7 rounded-b-3xl drop-shadow-2xl bg-white">
+
+  <!-- <div class="max-w-fit border-1 border-solid pb-7 rounded-b-3xl drop-shadow-2xl bg-white">
 
     <div class="absolute mt-3 ml-3">
         <button class="h-6 bg-[#E74040] text-white px-3 text-sm rounded font-medium">Sale</button>
@@ -39,7 +40,6 @@
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                     <use xlink:href="#image0_688_3954" transform="translate(0 -0.431931) scale(0.0025 0.00310644)" />
                 </pattern>
-                <!-- <image class="relative w-40 " [src]="item.imageUrl" alt="Product Image"/> -->
             </defs>
         </svg>
 
@@ -77,4 +77,53 @@
         </div>
 
     </div>
+</div> -->
+
+<app-nav></app-nav>
+
+<div class="product" *ngIf="product">
+    <div class="flex">
+        <div class="flex1">
+            <div class="product-image">
+                <img src="{{product.image}}" 
+                alt="{{product.title}}" />
+            </div>
+        </div>
+        <div class="flex2">
+            <p class="product-name">
+            {{product.title}}
+            </p>
+            <div class="detail">
+                R {{product.price}}
+            </div>
+
+            <div class="cartButton">
+                <button class="heart" (click)='saveForLaterButton(product)'> <i class="fa fa-heart"  ></i></button>
+                    
+                <button class="cart" (click)= 'addToCart(product)' [style]="{'color': isAdded ? 'green': 'white' }"> add to cart</button>
+            </div>
+            <p class="description">
+            {{product.description}}
+            </p>
+            <div class="rating">
+                <label class="rating-rate">Rating: 
+                {{product.reviews[0].rating}}
+                <i class="fa-solid fa-star"></i>
+                </label>
+                <label class="rating-count">
+                    reviews({{product.reviews.length}})
+                </label>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="mt-3"><h3 class="text-center">We thought you might like the following products...</h3></div>
+<ul class="products-list mt-2 mb-5" >
+
+    <li *ngFor="let product of originalProducts.slice(1,6)">
+      <a routerLink="/viewone/{{product.id}}">
+        <img src="{{product.imageUrl}}" class="product-image2" alt="">
+      </a>
+      </li>
+  </ul>
