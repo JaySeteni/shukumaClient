@@ -22,6 +22,7 @@ import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
 import { CheckoutComponent } from './comps/checkout/checkout.component';
 import { TrackDeliveriesComponent } from './track-deliveries/track-deliveries.component';
+import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { TrackDeliveriesComponent } from './track-deliveries/track-deliveries.co
     CartComponent,
     OrderComponent,
     CheckoutComponent,
-    TrackDeliveriesComponent
+    TrackDeliveriesComponent,
+    CusOrdersComponent,
   ],
   imports: [
     BrowserModule,
