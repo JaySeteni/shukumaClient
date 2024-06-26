@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'view_item/', component: SingleproductComponent},
   {path: 'order',component: OrderComponent},
-  { path: 'footer', component: FooterComponent}
+  {path: 'footer', component: FooterComponent}
 
 ];
 @NgModule({
