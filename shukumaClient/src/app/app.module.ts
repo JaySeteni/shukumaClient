@@ -20,10 +20,7 @@ import { UserprofileComponent } from './comps/userprofile/userprofile.component'
 import { SearchComponent } from './comps/search/search.component';
 import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
-<<<<<<< HEAD
-=======
 import { CheckoutComponent } from './comps/checkout/checkout.component';
->>>>>>> parent of 9734ddf (pushing orders)
 
 
 @NgModule({
@@ -44,12 +41,8 @@ import { CheckoutComponent } from './comps/checkout/checkout.component';
     SingleproductComponent,
     SearchComponent,
     CartComponent,
-<<<<<<< HEAD
-    OrderComponent
-=======
     OrderComponent,
     CheckoutComponent
->>>>>>> parent of 9734ddf (pushing orders)
   ],
   imports: [
     BrowserModule,
