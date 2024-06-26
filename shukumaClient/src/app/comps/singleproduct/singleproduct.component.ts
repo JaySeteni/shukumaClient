@@ -13,12 +13,13 @@ import { CartService } from '../../services/cart.service';
 })
 export class SingleproductComponent implements OnInit {
   isAdded:any;
-  product:any
-
-  originalProducts: Product[] = [];
 
 constructor ( private cartService: CartService, private route: ActivatedRoute,
   private mainServer: MainService ){ }
+
+  product:any
+
+  originalProducts: Product[] = [];
 
   ngOnInit():void{
     // this.getOne()
@@ -26,28 +27,28 @@ constructor ( private cartService: CartService, private route: ActivatedRoute,
   }
 
   getOne(){
-  //   const id = this.route.snapshot.paramMap.get('id')
+    const id = this.route.snapshot.paramMap.get('id')
   
-  //   this.mainServer.getProduct(id).subscribe({
-  //     next:(product)=>{
-  //       this.product = product
-  //       console.log(product)
-  //     },
-  //     error:(err: any)=>{
-  //       console.error(err)
-  //     },
-  //   })
-  // }
+    this.mainServer.getProduct(id).subscribe({
+      next:(product)=>{
+        this.product = product
+        console.log(product)
+      },
+      error:(err: any)=>{
+        console.error(err)
+      },
+    })
+  }
 
-  // addToCart(item: Product){
+  addToCart(item: Product){
 
-  //   this.cartService.addToCart(item)
-  //   this.isAdded = this.cartService.getAdded()
-  // }
+    this.cartService.addToCart(item)
+    this.isAdded = this.cartService.getAdded()
+  }
 
-  // saveForLaterButton(product: Product) {
-  //   this.cartService.addToWishlist(product)
-  // }
+  saveForLaterButton(product: Product) {
+    this.cartService.addToWishlist(product)
+  }
 
   // getAllProducts() {
   //   this.mainServer.getProducts().subscribe({
@@ -61,6 +62,6 @@ constructor ( private cartService: CartService, private route: ActivatedRoute,
   //       console.error("An error occurred while fetching products:", err);
   //     }
   //   });
-  }
+  // }
 }
 
