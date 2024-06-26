@@ -24,9 +24,5 @@ export class MainService {
   }
 
 
-<<<<<<< HEAD
-}
-=======
 
 }
->>>>>>> parent of 9734ddf (pushing orders)
