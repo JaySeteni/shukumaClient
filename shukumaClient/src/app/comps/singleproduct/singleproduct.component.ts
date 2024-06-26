@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../main.service';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from '../../product';
+import { CartService } from '../../services/cart.service';
+
+
 
 @Component({
   selector: 'app-singleproduct',
@@ -8,21 +12,55 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './singleproduct.component.css'
 })
 export class SingleproductComponent implements OnInit {
-products: any;
-productId: string | null | undefined;
+  isAdded:any;
+  product:any
 
-constructor ( private route: ActivatedRoute,
+  originalProducts: Product[] = [];
+
+constructor ( private cartService: CartService, private route: ActivatedRoute,
   private mainServer: MainService ){ }
 
-  ngOnInit(): void {
-    this.getOneProduct()
+  ngOnInit():void{
+    // this.getOne()
+    // this.getAllProducts()
   }
-    getOneProduct(){
 
-    this.route.params.subscribe(params => {
-      const productId = params['id'];
-      this.products = this.mainServer.getOneProduct(productId);
-    });
+  getOne(){
+  //   const id = this.route.snapshot.paramMap.get('id')
+  
+  //   this.mainServer.getProduct(id).subscribe({
+  //     next:(product)=>{
+  //       this.product = product
+  //       console.log(product)
+  //     },
+  //     error:(err: any)=>{
+  //       console.error(err)
+  //     },
+  //   })
+  // }
 
+  // addToCart(item: Product){
+
+  //   this.cartService.addToCart(item)
+  //   this.isAdded = this.cartService.getAdded()
+  // }
+
+  // saveForLaterButton(product: Product) {
+  //   this.cartService.addToWishlist(product)
+  // }
+
+  // getAllProducts() {
+  //   this.mainServer.getProducts().subscribe({
+  //     next: (data: any) => {
+  //       this.originalProducts = data.allArticles;
+      
+  //       console.log('All products:', this.originalProducts);
+  //       // this.products = this.originalProducts; 
+  //     },
+  //     error: (err: any) => {
+  //       console.error("An error occurred while fetching products:", err);
+  //     }
+  //   });
+  }
 }
-}
+
