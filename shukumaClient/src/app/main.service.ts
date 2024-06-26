@@ -23,4 +23,9 @@ export class MainService {
     return this.http.get(`${this.apiUrl}${id}`);
   }
 
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> parent of 9734ddf (pushing orders)
