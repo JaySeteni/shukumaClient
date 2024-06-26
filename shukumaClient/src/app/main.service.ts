@@ -40,7 +40,7 @@ export class MainService {
   }
 
   getProduct(id: any): Observable<Product> {
-    return this.http.get<Product>(`${this.apiUrl}${id}`)
+    return this.http.get<Product>(`${this.apiUrl}/get-one/:id'${id}`)
   }
 
 
