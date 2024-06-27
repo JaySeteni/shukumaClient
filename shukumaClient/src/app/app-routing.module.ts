@@ -12,6 +12,7 @@ import { UserprofileComponent } from './comps/userprofile/userprofile.component'
 import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
 import { FooterComponent } from './comps/footer/footer.component';
+import { CheckoutComponent } from './comps/checkout/checkout.component';
 import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
 import { TrackDeliveriesComponent } from './comps/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/settings/settings.component';
@@ -36,7 +37,9 @@ const routes: Routes = [
   {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'track-deliveries', component: TrackDeliveriesComponent},
-  {path: 'settings', component: SettingsComponent}
+  {path: 'settings', component: SettingsComponent},
+  {path: 'checkout', component: CheckoutComponent},
+  {path: 'track-deliveries', component: TrackDeliveriesComponent},
 
 ];
 @NgModule({
