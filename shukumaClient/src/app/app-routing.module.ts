@@ -12,7 +12,9 @@ import { UserprofileComponent } from './comps/userprofile/userprofile.component'
 import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
 import { FooterComponent } from './comps/footer/footer.component';
+import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
 import { TrackDeliveriesComponent } from './track-deliveries/track-deliveries.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -30,6 +32,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'view_item/', component: SingleproductComponent},
   {path: 'order',component: OrderComponent},
+  {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'track-deliveries', component: TrackDeliveriesComponent}
 
