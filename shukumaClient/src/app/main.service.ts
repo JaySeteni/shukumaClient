@@ -46,5 +46,4 @@ export class MainService {
   getTrackingInfo(orderId: string) {
     return this.http.get(`${this.apiUrl}${orderId}`);
   }
-
 }
