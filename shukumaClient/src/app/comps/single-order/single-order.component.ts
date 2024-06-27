@@ -11,15 +11,15 @@ export class SingleOrderComponent implements OnInit {
   total:any
   orderedItems: any
   orderNumber: any = "";
+  orderId: any = ""
   user: any = "";
 
   ngOnInit(): void {
     this.total = JSON.parse(`${localStorage.getItem('Total')}`)
     this.orderedItems = JSON.parse(`${localStorage.getItem('CartItems')}`) 
-    this.orderNumber = this.generateUniqueOrderNumber();
-    this.user = 
-
-    console.log(this.orderNumber)
+    this.orderId = this.generateUniqueOrderNumber();
+    localStorage.setItem("orderId:", this.orderId.value);
+    console.log(this.orderId)
   }
 
   generateUniqueOrderNumber(): string {
@@ -27,3 +27,7 @@ export class SingleOrderComponent implements OnInit {
   }
 
 }
+
+// .back-btn{
+//   d
+// }
