@@ -79,9 +79,9 @@
     </div>
 </div> -->
 
-<app-nav></app-nav>
 
-<div class="product" *ngIf ="selectedProduct" >
+
+<!-- <div class="product" *ngIf ="selectedProduct" >
   <div class="flex">
     <div class="flex1">
       <div class="product-image">
@@ -114,4 +114,60 @@
 
 <div *ngIf="!selectedProduct">
   <p class="loading">Loading product...</p>
+</div> -->
+
+
+
+<!-- <div class="order border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 product-card" *ngIf ="selectedProduct">
+  <div class="p-5 product flex flex-col items-center ">
+    <div class="img">
+      <img class="rounded-t-lg" src="{{ selectedProduct.imageUrl }}" alt="{{ selectedProduct.name }}" />
+    </div>
+    <div class="content">
+      <a href="#">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ selectedProduct.title }}</h5>
+      </a>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> {{ selectedProduct.description }}</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> {{ selectedProduct.price }}</p>
+      
+      <div class="flex gap-20 btns">
+        <button class="heart" (click)="saveForLaterButton(selectedProduct)">
+          <i class="fa fa-heart"></i>
+        </button>
+        
+        <button class="cart" (click)="addToCart(selectedProduct)" [style.color]="isAdded ? 'green' : 'red'">
+          add to cart
+        </button>
+      </div>
+    </div>
+
+    
+  </div>
+
+</div> -->
+
+
+ <app-nav></app-nav>
+
+ <div *ngIf ="selectedProduct" class="mt-16 flex flex-row justify-around items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+  <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{selectedProduct.title}}</h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{selectedProduct.description}}</p>
+      <p class="mb-3 font-normal text-black-700 dark:text-gray-400">R {{selectedProduct.price}}</p>
+
+      <div class="flex gap-10 btns">
+        <button class="heart " (click)="saveForLaterButton(selectedProduct)">
+          <i class="fa fa-heart"></i>
+        </button>
+        
+        <button class="cart" (click)="addToCart(selectedProduct)" [style.color]="isAdded ? 'green' : 'red'">
+          add to cart
+        </button>
+      </div>
+    </div>
+    <img class="object-contain w-48 rounded-t-lg h-96 md:h-auto md:max-w-48 md:rounded-none md:rounded-s-lg product-img" src="{{ selectedProduct.imageUrl }}" alt="{{ selectedProduct.name }}">
 </div>
+<div *ngIf="!selectedProduct">
+  <p class="loading">Loading product...</p>
+</div>
+<app-footer></app-footer>
