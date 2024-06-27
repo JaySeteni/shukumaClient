@@ -43,11 +43,8 @@ export class MainService {
     return this.http.get<Product>(`${this.apiUrl}${id}`)
   }
 
-<<<<<<< HEAD
   getTrackingInfo(orderId: string) {
-    return this.http.get(`your-api-endpoint/${orderId}`);
+    return this.http.get(`${this.apiUrl}${orderId}`);
   }
-=======
 
->>>>>>> 8941f3549560ef6e291ba993776027d04a4655fd
 }
