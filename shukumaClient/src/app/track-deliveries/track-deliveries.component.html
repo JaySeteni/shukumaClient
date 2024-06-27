@@ -1,19 +1,26 @@
-<p>track-deliveries works!</p>
+<app-nav></app-nav>
+<h2>Track Your Delivery</h2>
 
-
-<!-- <div class="track-delivery">
-    <h2>Track Delivery</h2>
-    <p>Enter your order ID:</p>
-    <input type="text" [(ngModel)]="orderId" placeholder="Order ID">
-    <button (click)="getTrackingInfo()">Track</button>
-  
-    <div *ngIf="trackingData" class="tracking-info">
-      <h3>Tracking Details</h3>
-      <ul>
-        <li *ngFor="let step of trackingData.steps">
-          {{ step.location }} - {{ step.status }} ({{ step.dateTime }})
-        </li>
-      </ul>
-    </div>
-  </div> -->
-  
+<table class="table table-striped sm:w-1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Status</th>
+      <th>Courier</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let delivery of deliveries">
+      <td>{{ delivery.id }}</td>
+      <td>{{ delivery.origin }}</td>
+      <td>{{ delivery.destination }}</td>
+      <td>{{ delivery.status }}</td>
+      <td>{{ delivery.courier }}</td>
+      <td>{{ delivery.lastUpdated | date:'mediumDate' }}</td>
+    </tr>
+  </tbody>
+</table>
+<app-footer></app-footer>

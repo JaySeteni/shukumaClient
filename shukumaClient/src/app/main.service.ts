@@ -13,7 +13,6 @@ export class MainService {
   private apiUrl = "http://localhost:3000/v1/product/";
   private orderUrl = "http://localhost:3000/v1/orders";
 
-
   cartCount = new BehaviorSubject<number>(0)
 
   broadcaster(someValue: number){
@@ -32,7 +31,6 @@ export class MainService {
     throw new Error('Method not implemented.');
   }
   
-
   constructor(private http: HttpClient) {}
 
   getAllProducts():Observable<any>{
@@ -43,7 +41,4 @@ export class MainService {
     return this.http.get<Product>(`${this.apiUrl}${id}`)
   }
 
-  getTrackingInfo(orderId: string) {
-    return this.http.get(`${this.apiUrl}${orderId}`);
-  }
 }
