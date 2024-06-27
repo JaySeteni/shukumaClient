@@ -23,6 +23,7 @@ import { OrderComponent } from './comps/order/order.component';
 import { CheckoutComponent } from './comps/checkout/checkout.component';
 import { TrackDeliveriesComponent } from './track-deliveries/track-deliveries.component';
 import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
+import { SingleOrderComponent } from './comps/single-order/single-order.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
     CheckoutComponent,
     TrackDeliveriesComponent,
     CusOrdersComponent,
+    SingleOrderComponent,
   ],
   imports: [
     BrowserModule,
