@@ -46,7 +46,7 @@
 
     
                 <ul>
-                    <a routerLink="/order">
+                    <a routerLink="/vieworder">
                     <li *ngFor="let item of order.items">
                         {{ item.name }} (x{{ item.quantity }}) - R{{ item.price.toFixed(2) }}
                     </li>
