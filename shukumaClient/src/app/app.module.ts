@@ -21,8 +21,9 @@ import { SearchComponent } from './comps/search/search.component';
 import { CartComponent } from './comps/cart/cart.component';
 import { OrderComponent } from './comps/order/order.component';
 import { CheckoutComponent } from './comps/checkout/checkout.component';
-import { TrackDeliveriesComponent } from './track-deliveries/track-deliveries.component';
+import { TrackDeliveriesComponent } from './comps/track-deliveries/track-deliveries.component';
 import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
+import { SettingsComponent } from './comps/settings/settings.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
     CheckoutComponent,
     TrackDeliveriesComponent,
     CusOrdersComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
