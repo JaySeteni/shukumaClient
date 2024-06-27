@@ -37,12 +37,11 @@ const routes: Routes = [
   {path: 'order',component: OrderComponent},
   {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
-  {path: 'track-deliveries', component: TrackDeliveriesComponent},
+  {path: 'tracking', component: TrackDeliveriesComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
-  {path: 'track-deliveries', component: TrackDeliveriesComponent},
-  {path: 'track-deliveries', component: TrackDeliveriesComponent},
+
 
 ];
 @NgModule({
