@@ -14,6 +14,7 @@ import { OrderComponent } from './comps/order/order.component';
 import { FooterComponent } from './comps/footer/footer.component';
 import { CheckoutComponent } from './comps/checkout/checkout.component';
 import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
+import { SingleOrderComponent } from './comps/single-order/single-order.component';
 import { TrackDeliveriesComponent } from './comps/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/settings/settings.component';
 
@@ -39,6 +40,8 @@ const routes: Routes = [
   {path: 'track-deliveries', component: TrackDeliveriesComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
+  {path: 'vieworder', component: SingleOrderComponent},
+  {path: 'track-deliveries', component: TrackDeliveriesComponent},
   {path: 'track-deliveries', component: TrackDeliveriesComponent},
 
 ];
