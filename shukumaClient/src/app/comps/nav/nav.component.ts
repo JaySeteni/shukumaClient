@@ -8,19 +8,25 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit{
 
-<<<<<<< HEAD
-   constructor(private router: Router) {
-    localStorage.setItem('userName', 'Jay')
-=======
+  isNavbarOpen = false;
+  collapsed = false;
 
-  constructor(private router: Router) {
->>>>>>> 664a9af7524d72e8b0422b858827c96c76549357
+  constructor(private router: Router) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
-  
-  
-    ngOnInit(): void {
-    }
-    
-    
+
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
+    this.collapsed = this.isNavbarOpen;
+  }
+
+  // navigateTo(path: string) {
+  //   this.router.navigate([path]);
+  //   this.toggleNavbar(); // Close the navbar after navigation
+  // }
+  closeNavbar() {
+    this.isNavbarOpen = false;
+  }
 
 }
