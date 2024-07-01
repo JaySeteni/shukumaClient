@@ -10,6 +10,8 @@ import { Product } from '../../product';
   styleUrl: './categories.component.css'
 })
 export class CategoriesComponent implements OnInit {
+  selectedCategory: string = 'all';
+
   allProduct : any = []
   products: any;
   page:any
@@ -17,7 +19,14 @@ export class CategoriesComponent implements OnInit {
   items:any = []
 
   sortByCategory(category: string) {
-    console.log(`Selected category: ${category}`);
+    // console.log(`Selected category: ${category}`);
+    this.selectedCategory = category;
+    if (category === 'all') {
+      this.products = [...this.products];
+    } else {
+      this.products = this.products.filter((product: { category: string; }) => product.category === category);
+    }
+    console.log('Selected category:', this.selectedCategory);
   }
 
 
@@ -25,7 +34,7 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
       this.getAllProducts()
-      // this.filter()
+      this.filter(this.products)
   }
   getAllProducts(){
     const path = this.route.snapshot.paramMap.get('name')

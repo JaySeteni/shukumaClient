@@ -9,7 +9,7 @@
   </section>
   <div class="prod-holder">
         
-            <div *ngFor="let item of items" class="card" class="p-1 flex flex-wrap items-center justify-center"  (click)="addToCart(item)">
+            <div *ngFor="let item of items" class="card" class="p-1 flex flex-wrap items-center justify-center" routerLink="/product{{items.id}}">
 
                 <div class="flex-shrink-0 m-2 relative overflow-hidden bg-white-500 rounded-lg max-w-xs shadow-lg">
                     <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
