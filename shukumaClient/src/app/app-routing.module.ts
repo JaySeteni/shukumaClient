@@ -39,11 +39,16 @@ const routes: Routes = [
   {path: 'order',component: OrderComponent},
   {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
+
+
+
   // {path: 'tracking', component: TrackDeliveriesComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
   {path: 'nav', component: NavComponent}
+
+  // Driver Routes
 
 
 ];
