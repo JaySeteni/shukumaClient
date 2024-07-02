@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 // import { HomeComponent } from './comps/BusinessUI/home/home.component';
 import { NavComponent } from './comps/UserUI/nav/nav.component';
-import {HomeComponent} from './comps/UserUI/homeUser/homeUser.component'
+import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './comps/UserUI/register/register.component';
 import { LoginComponent } from './comps/UserUI/login/login.component';
-import { AdminComponent } from './comps/UserUI/admin/admin.component';
+import { AdminComponent } from './comps/BusinessUI/admin/admin.component';
 import { MapComponent } from './comps/UserUI/map/map.component';
 import { LandingComponent } from './comps/UserUI/landing/landing.component';
 import { CategoriesComponent } from './comps/UserUI/categories/categories.component';
@@ -19,16 +19,35 @@ import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.compone
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 // import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
+import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
+import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admin-dashboard.component';
+import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
+import { StatsComponent } from './comps/BusinessUI/stats/stats.component';
+import { SidenavComponent } from './comps/BusinessUI/sidenav/sidenav.component';
+import { ViewOrdersComponent } from './comps/BusinessUI/view-orders/view-orders.component';
+import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
+import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
+import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  
+  {path : 'addproduct', component: AddproductComponent},
+  {path : 'oneproduct', component: ViewOneProductComponent},
+  {path : 'products', component: ViewProductsComponent},
+  {path : 'orders', component: ViewOrdersComponent},
+  {path : 'sidenav',component:SidenavComponent},
+  {path: 'settingsBusiness',component:SettingsComponent},
+  {path: 'stats', component:StatsComponent},
+  {path: 'chats', component:ChatsComponent},
+  {path: 'dashboard', component:AdminDashboardComponent},
+  {path: 'userhome', component:UserhomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'map', component: MapComponent},
-  {path: 'userprofile', component: UserprofileComponent},
+  {path: 'businessprofile', component: BusinessprofileComponent},
   {path: 'welcome', component:LandingComponent},
   {path: 'categories/:name', component:CategoriesComponent},
   {path: 'product', component: SingleproductComponent},

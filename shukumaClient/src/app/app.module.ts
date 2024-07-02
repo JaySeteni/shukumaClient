@@ -35,6 +35,9 @@ import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/vie
 import { ViewOrdersComponent } from './comps/BusinessUI/view-orders/view-orders.component';
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-one-order.component';
+import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
+import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
+
 
 
 @NgModule({
@@ -47,7 +50,7 @@ import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-on
     MapComponent,
     LandingComponent,
     FooterComponent,
-    
+    SingleproductComponent,
     UserprofileComponent,
     CategoriesComponent,
     SearchComponent,
@@ -66,6 +69,9 @@ import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-on
     ViewOrdersComponent,
     ViewProductsComponent,
     ViewOneOrderComponent,
+    BusinessprofileComponent,
+    UserhomeComponent,
+
   ],
   imports: [
     BrowserModule,
