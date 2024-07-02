@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 // import { HomeComponent } from './comps/BusinessUI/home/home.component';
-
+import { NavComponent } from './comps/UserUI/nav/nav.component';
 import {HomeComponent} from './comps/UserUI/homeUser/homeUser.component'
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './comps/UserUI/register/register.component';
@@ -43,6 +43,7 @@ const routes: Routes = [
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
+  {path: 'nav', component: NavComponent}
 
 
 ];
