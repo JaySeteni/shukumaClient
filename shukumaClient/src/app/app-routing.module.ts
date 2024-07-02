@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './comps/home/home.component';
-import { RegisterComponent } from './comps/register/register.component';
-import { LoginComponent } from './comps/login/login.component';
-import { AdminComponent } from './comps/admin/admin.component';
-import { MapComponent } from './comps/map/map.component';
-import { LandingComponent } from './comps/landing/landing.component';
-import { CategoriesComponent } from './comps/categories/categories.component';
-import { SingleproductComponent } from './comps/singleproduct/singleproduct.component';
-import { UserprofileComponent } from './comps/userprofile/userprofile.component';
-import { CartComponent } from './comps/cart/cart.component';
-import { OrderComponent } from './comps/order/order.component';
-import { FooterComponent } from './comps/footer/footer.component';
-import { CheckoutComponent } from './comps/checkout/checkout.component';
-import { CusOrdersComponent } from './comps/cus-orders/cus-orders.component';
-import { SingleOrderComponent } from './comps/single-order/single-order.component';
-import { TrackDeliveriesComponent } from './comps/track-deliveries/track-deliveries.component';
-import { SettingsComponent } from './comps/settings/settings.component';
+import { HomeComponent } from './comps/UserUI/home/home.component';
+import { RegisterComponent } from './comps/UserUI/register/register.component';
+import { LoginComponent } from './comps/UserUI/login/login.component';
+import { AdminComponent } from './comps/UserUI/admin/admin.component';
+import { MapComponent } from './comps/UserUI/map/map.component';
+import { LandingComponent } from './comps/UserUI/landing/landing.component';
+import { CategoriesComponent } from './comps/UserUI/categories/categories.component';
+import { SingleproductComponent } from './comps/UserUI/singleproduct/singleproduct.component';
+import { UserprofileComponent } from './comps/UserUI/userprofile/userprofile.component';
+import { CartComponent } from './comps/UserUI/cart/cart.component';
+import { OrderComponent } from './comps/UserUI/order/order.component';
+import { FooterComponent } from './comps/UserUI/footer/footer.component';
+import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
+import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.component';
+import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
+import { TrackDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
+import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 
 
 const routes: Routes = [

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Product } from '../product';
+import { Product } from '../interface/product';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +21,10 @@ export class CartService {
   constructor() { }
 
   addToCart(product: Product ) {
-      
+
     const productExistInCart = this.items.find(({id}) => id === product.id);
     if (!productExistInCart) {
-    this.items.push(product); 
+    this.items.push(product);
     this.isAddedToCart = true
     this.cartItemcount.next(this.cartItemcount.value + 1);
     console.log(this.items)
@@ -39,8 +39,8 @@ export class CartService {
     const productAlready = this.wishList.find(({id}) => id === product.id);
     if (!productAlready) {
 
-      this.wishList.push(product);      
-      this.favList.next(this.favList.value + 1); 
+      this.wishList.push(product);
+      this.favList.next(this.favList.value + 1);
       console.log(this.favList.value)
       return;
     }else{
@@ -49,7 +49,7 @@ export class CartService {
   }
 
     Total() {
-    
+
       this.totalAmount = 0
       this.items.forEach((item:any) => {
         this.totalAmount += (item.price * item.quantity)
@@ -57,10 +57,10 @@ export class CartService {
         console.log(this.cartTotal)
         localStorage.setItem('Total',JSON.stringify(this.totalAmount))
       })
-      
+
       this.cartTotal.next(this.totalAmount);
       localStorage.setItem('for', JSON.stringify(this.items))
-      
+
     }
     getItems(): Product[] {
 
@@ -75,7 +75,7 @@ export class CartService {
       return this.isAddedToCart;
     }
     getTotal(){
-      
+
     }
-  
+
 }
