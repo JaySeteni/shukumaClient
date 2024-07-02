@@ -30,6 +30,9 @@
     </button>
     <div class="navbar-brand">
       <a href="#" class="text-xl font-bold">Shukuma</a>
+      <span class="mx-2">
+      <a [routerLink]="['/favourites']" class="fas fa-heart"></a>
+      </span>
     </div>
     <div class="navbar-nav" [ngClass]="{'hidden':!isNavbarOpen}">
     </div>
@@ -43,12 +46,13 @@
       </button>
     </div>
     <ul>
-      <li><a [routerLink]="['/home']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-home mr-2"></i>Home</a></li>
-      <li><a [routerLink]="['/admin']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a></li>
-      <li><a [routerLink]="['/stats']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-chart-line mr-2"></i>Stats</a></li>
-      <li><a [routerLink]="['/settings']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-cog mr-2"></i>Settings</a></li>
-      <li><a [routerLink]="['/chats']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-envelope mr-2"></i>Chats</a></li>
+      <li><a [routerLink]="['/userhome']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-home mr-2"></i>Home</a></li><br>
+      <li><a [routerLink]="['/admin']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-briefcase"></i>Business</a></li><br>
+      <li><a [routerLink]="['/dashboard']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a></li><br>
+      <li><a [routerLink]="['/stats']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-chart-line mr-2"></i>Stats</a></li><br>
+      <li><a [routerLink]="['/settings']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-cog mr-2"></i>Settings</a></li><br>
+      <li><a [routerLink]="['/chats']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-envelope mr-2"></i>Chats</a></li><br>
     </ul>
   </div>
 <router-outlet></router-outlet>
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer>

@@ -3,6 +3,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 import { AppComponent } from './app.component';
 
@@ -37,6 +38,7 @@ import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-pro
 import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-one-order.component';
 import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
 import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
+import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
 
 
 
@@ -71,6 +73,7 @@ import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
     ViewOneOrderComponent,
     BusinessprofileComponent,
     UserhomeComponent,
+    FavouritesComponent,
 
   ],
   imports: [

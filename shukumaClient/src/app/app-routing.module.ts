@@ -28,7 +28,7 @@ import { ViewOrdersComponent } from './comps/BusinessUI/view-orders/view-orders.
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
 import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
-
+import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -62,8 +62,8 @@ const routes: Routes = [
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
-  {path: 'nav', component: NavComponent}
-
+  {path: 'nav', component: NavComponent},
+  {path: 'favourites', component:FavouritesComponent}
 
 ];
 @NgModule({
