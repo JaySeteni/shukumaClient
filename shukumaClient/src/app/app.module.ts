@@ -10,7 +10,7 @@ import { RegisterComponent} from './comps/UserUI/register/register.component'
 import { AdminComponent } from './comps/UserUI/admin/admin.component';
 import { CategoriesComponent } from './comps/UserUI/categories/categories.component';
 import { FooterComponent } from './comps/UserUI/footer/footer.component';
-import { HomeComponent } from './comps/UserUI/home/home.component';
+// import { HomeComponent } from './comps/UserUI/homeUser/home.component';
 import { LandingComponent } from './comps/UserUI/landing/landing.component';
 import { LoginComponent } from './comps/UserUI/login/login.component';
 import { MapComponent } from './comps/UserUI/map/map.component';
@@ -21,7 +21,7 @@ import { SearchComponent } from './comps/UserUI/search/search.component';
 import { CartComponent } from './comps/UserUI/cart/cart.component';
 import { OrderComponent } from './comps/UserUI/order/order.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
-import { TrackDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
+// import { TrackDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
@@ -47,7 +47,7 @@ import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-on
     MapComponent,
     LandingComponent,
     FooterComponent,
-
+    
     UserprofileComponent,
     CategoriesComponent,
     SearchComponent,

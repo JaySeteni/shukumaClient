@@ -1,5 +1,4 @@
-<app-nav></app-nav>
-<h2>Track Your Delivery</h2>
+<!-- <h2>Track Your Delivery</h2>
 
 <table class="table table-striped sm:w-1">
   <thead>
@@ -22,5 +21,28 @@
       <td>{{ delivery.lastUpdated | date:'mediumDate' }}</td>
     </tr>
   </tbody>
+</table> -->
+<h2>Track Your Delivery</h2>
+
+<table class="table table-striped sm:w-1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Status</th>
+      <th>Courier</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let delivery of deliveries">
+      <td>{{ delivery.id }}</td>
+      <td>{{ delivery.origin }}</td>
+      <td>{{ delivery.destination }}</td>
+      <td>{{ delivery.status }}</td>
+      <td>{{ delivery.courier }}</td>
+      <td>{{ delivery.lastUpdated | date:'yyyy-MM-dd' }}</td>
+    </tr>
+  </tbody>
 </table>
-<app-footer></app-footer>

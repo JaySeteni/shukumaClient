@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-// import { MainService } from '../../../main.service';
+import { MainService } from '../../../services/main.service';
 
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './homeUser.component.html',
+  styleUrls: ['./homeUser.component.css']
 })
 export class HomeComponent implements OnInit {
   allProduct : any = []

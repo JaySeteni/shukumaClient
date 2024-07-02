@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
+// import { HomeComponent } from './comps/BusinessUI/home/home.component';
+
+import {HomeComponent} from './comps/UserUI/homeUser/homeUser.component'
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './comps/UserUI/home/home.component';
 import { RegisterComponent } from './comps/UserUI/register/register.component';
 import { LoginComponent } from './comps/UserUI/login/login.component';
 import { AdminComponent } from './comps/UserUI/admin/admin.component';
@@ -15,7 +17,7 @@ import { FooterComponent } from './comps/UserUI/footer/footer.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
 import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
-import { TrackDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
+// import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 
 
@@ -37,7 +39,7 @@ const routes: Routes = [
   {path: 'order',component: OrderComponent},
   {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
-  {path: 'tracking', component: TrackDeliveriesComponent},
+  // {path: 'tracking', component: TrackDeliveriesComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
