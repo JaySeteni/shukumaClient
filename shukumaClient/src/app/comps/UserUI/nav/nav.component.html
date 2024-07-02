@@ -1,3 +1,4 @@
+<nav class="navbar bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
  <nav class="navbar bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
   <button class="navbar-toggler focus:outline-none" (click)="toggleNavbar()">
     <i class="fas fa-bars"></i>
@@ -7,7 +8,7 @@
   </div>
   <div class="navbar-nav" [ngClass]="{'hidden':!isNavbarOpen}">
   </div>
-</nav> 
+</nav>
 
 <div class="sidebar bg-gray-700 text-white fixed top-0 left-0 w-64 h-full p-4 transition-left"
      [ngClass]="{'left-0':isNavbarOpen, '-left-64': !isNavbarOpen}">
@@ -23,7 +24,8 @@
     <li><a [routerLink]="['/settings']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-cog mr-2"></i>Settings</a></li>
     <li><a [routerLink]="['/chats']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-envelope mr-2"></i>Chats</a></li>
   </ul>
-</div> 
+</div>
+<!-- </div> -->
 <!-- <nav class="navbar bg-black text-blue-500 px-4 py-3 flex justify-between items-center">
   <button class="navbar-toggler focus:outline-none" (click)="toggleNavbar()">
     <i class="fas fa-bars"></i>
@@ -49,4 +51,4 @@
     <li><a [routerLink]="['/settings']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-cog mr-2"></i>Settings</a></li>
     <li><a [routerLink]="['/chats']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-envelope mr-2"></i>Chats</a></li>
   </ul>
-</div> -->
+</div>-->
