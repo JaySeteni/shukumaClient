@@ -1,0 +1,29 @@
+<section>
+    <h1>How your day is looking today</h1>
+
+    <div class="order-holder">
+        <div *ngFor="let order of orderData" class="order-item" routerLink="/view-one">
+
+            <img src="../../../../assets/D183066B-A44A-48E7-88D2-6C123BBFD18B_4_5005_c.jpeg" />
+
+            <div class="del-det">
+                <div class="side-by-side">
+                  <label>{{order.orderNo}}</label>  
+                    <div class="on-going"></div>
+                   
+                </div>
+                
+                <label>{{order.name}}</label>
+                <div class="side-by-side">
+                    <label>{{order.pay_mode}}</label>
+                    <label>{{order.price | currency:"R"}}</label>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    
+</section>
+
+<app-driver-bottom-nav></app-driver-bottom-nav>
