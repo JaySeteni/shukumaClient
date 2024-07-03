@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 // import { HomeComponent } from './comps/BusinessUI/home/home.component';
-import { NavComponent } from './comps/UserUI/nav/nav.component';
 import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './comps/UserUI/register/register.component';
@@ -32,7 +31,7 @@ import { FavouritesComponent } from './comps/UserUI/favourites/favourites.compon
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
-  
+
   {path : 'addproduct', component: AddproductComponent},
   {path : 'oneproduct', component: ViewOneProductComponent},
   {path : 'products', component: ViewProductsComponent},
@@ -62,7 +61,6 @@ const routes: Routes = [
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
-  {path: 'nav', component: NavComponent},
   {path: 'favourites', component:FavouritesComponent}
 
 ];

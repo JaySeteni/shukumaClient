@@ -15,7 +15,7 @@ import { FooterComponent } from './comps/UserUI/footer/footer.component';
 import { LandingComponent } from './comps/UserUI/landing/landing.component';
 import { LoginComponent } from './comps/UserUI/login/login.component';
 import { MapComponent } from './comps/UserUI/map/map.component';
-import { NavComponent } from './comps/UserUI/nav/nav.component';
+
 import { SingleproductComponent } from './comps/UserUI/singleproduct/singleproduct.component';
 import { UserprofileComponent } from './comps/UserUI/userprofile/userprofile.component';
 import { SearchComponent } from './comps/UserUI/search/search.component';
@@ -47,7 +47,6 @@ import { FavouritesComponent } from './comps/UserUI/favourites/favourites.compon
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    NavComponent,
     AdminComponent,
     MapComponent,
     LandingComponent,
