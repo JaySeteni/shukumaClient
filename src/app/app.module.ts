@@ -39,6 +39,7 @@ import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-on
 import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
 import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
+import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 
 
 
@@ -73,6 +74,7 @@ import { FavouritesComponent } from './comps/UserUI/favourites/favourites.compon
     BusinessprofileComponent,
     UserhomeComponent,
     FavouritesComponent,
+    SpinnerComponent,
 
   ],
   imports: [

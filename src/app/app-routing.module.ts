@@ -28,6 +28,7 @@ import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-pro
 import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
 import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
+import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -61,7 +62,8 @@ const routes: Routes = [
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
-  {path: 'favourites', component:FavouritesComponent}
+  {path: 'favourites', component:FavouritesComponent},
+  {path: 'spinner', component:SpinnerComponent }
 
 ];
 @NgModule({
