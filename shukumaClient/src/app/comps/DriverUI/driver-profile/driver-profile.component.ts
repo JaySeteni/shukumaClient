@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class DriverProfileComponent {
 
+  Editable:boolean = false;
+
+  DeleteProfile(){
+    confirm("Leaving us so soon?")
+  }
+
+  EditProfile(){
+    this.Editable = true;
+
+  }
+
 }
