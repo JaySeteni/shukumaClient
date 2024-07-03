@@ -19,6 +19,9 @@ import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.compone
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 // import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
+import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
+import { ViewOrderComponent } from './comps/DriverUI/view-order/view-order.component';
+import { DriverProfileComponent } from './comps/DriverUI/driver-profile/driver-profile.component';
 
 
 const routes: Routes = [
@@ -46,10 +49,12 @@ const routes: Routes = [
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
-  {path: 'nav', component: NavComponent}
+  {path: 'nav', component: NavComponent},
 
   // Driver Routes
-
+  {path: 'driver/dash', component: DriverDashComponent},
+  {path: 'view-one', component: ViewOrderComponent},
+  {path: 'driver/profile', component: DriverProfileComponent}
 
 ];
 @NgModule({

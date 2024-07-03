@@ -37,6 +37,8 @@ import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-pro
 import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-one-order.component';
 import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
 import { DriverProfileComponent } from './comps/DriverUI/driver-profile/driver-profile.component';
+import { ViewOrderComponent } from './comps/DriverUI/view-order/view-order.component';
+import { DriverBottomNavComponent } from './comps/DriverUI/driver-bottom-nav/driver-bottom-nav.component';
 
 
 @NgModule({
@@ -70,6 +72,8 @@ import { DriverProfileComponent } from './comps/DriverUI/driver-profile/driver-p
     ViewOneOrderComponent,
     DriverDashComponent,
     DriverProfileComponent,
+    ViewOrderComponent,
+    DriverBottomNavComponent,
   ],
   imports: [
     BrowserModule,
