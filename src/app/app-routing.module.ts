@@ -70,7 +70,7 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
   {path: 'favourites', component:FavouritesComponent},
-  {path: 'spinner', component:SpinnerComponent }
+  {path: 'spinner', component:SpinnerComponent },
 
   // Driver Routes
   {path: 'driver/dash', component: DriverDashComponent},
