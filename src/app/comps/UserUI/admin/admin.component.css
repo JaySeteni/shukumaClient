@@ -4,6 +4,7 @@
     --second-text-color: #009d63; /* Updated to green color */
     --second-bg-color: #C1efde;
   }
+
   
   .primary-text {
     color: var(--main-text-color);

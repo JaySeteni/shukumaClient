@@ -18,6 +18,10 @@ import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.compone
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 // import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
+import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
+import { ViewOrderComponent } from './comps/DriverUI/view-order/view-order.component';
+import { DriverProfileComponent } from './comps/DriverUI/driver-profile/driver-profile.component';
+
 import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
 import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admin-dashboard.component';
 import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
@@ -58,12 +62,21 @@ const routes: Routes = [
   {path: 'order',component: OrderComponent},
   {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
+
+
+
   // {path: 'tracking', component: TrackDeliveriesComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
   {path: 'favourites', component:FavouritesComponent},
   {path: 'spinner', component:SpinnerComponent }
+
+  // Driver Routes
+  {path: 'driver/dash', component: DriverDashComponent},
+  {path: 'view-one', component: ViewOrderComponent},
+  {path: 'driver/profile', component: DriverProfileComponent},
+  {path: 'favourites', component:FavouritesComponent}
 
 ];
 @NgModule({

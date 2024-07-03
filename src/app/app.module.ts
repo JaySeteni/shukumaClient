@@ -36,6 +36,10 @@ import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/vie
 import { ViewOrdersComponent } from './comps/BusinessUI/view-orders/view-orders.component';
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-one-order.component';
+import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
+import { DriverProfileComponent } from './comps/DriverUI/driver-profile/driver-profile.component';
+import { ViewOrderComponent } from './comps/DriverUI/view-order/view-order.component';
+import { DriverBottomNavComponent } from './comps/DriverUI/driver-bottom-nav/driver-bottom-nav.component';
 import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
 import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
@@ -71,6 +75,10 @@ import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
     ViewOrdersComponent,
     ViewProductsComponent,
     ViewOneOrderComponent,
+    DriverDashComponent,
+    DriverProfileComponent,
+    ViewOrderComponent,
+    DriverBottomNavComponent,
     BusinessprofileComponent,
     UserhomeComponent,
     FavouritesComponent,
