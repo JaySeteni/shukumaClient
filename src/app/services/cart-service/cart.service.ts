@@ -1,81 +1,69 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from '../../interfaces/product';
+import { CartItem } from '../../interfaces/cartItem';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-  //global values
   cartItemcount = new BehaviorSubject<number>(0);
-  favList = new BehaviorSubject<number>(0)
-  public cartTotal = new BehaviorSubject<number>(0);
-  wishList:Product[] = []
-  items: Product[] = [];
-  isAddedToCart: Boolean = false
+  favList = new BehaviorSubject<number>(0);
+  cartTotal = new BehaviorSubject<number>(0);
+  wishList: Product[] = [];
+  items: CartItem[] = [];
+  isAddedToCart: Boolean = false;
 
+  totalAmount = 0;
 
-  totalAmount=0;
+  constructor() {}
 
+  addToCart(cartItem: CartItem) {
+    const productExistsInCart = this.items.find(
+      ({ productId }) => productId === cartItem.productId
+    );
 
-  constructor() { }
-
-  addToCart(product: Product ) {
-
-    const productExistInCart = this.items.find(({id}) => id === product.id);
-    if (!productExistInCart) {
-    this.items.push(product);
-    this.isAddedToCart = true
-    this.cartItemcount.next(this.cartItemcount.value + 1);
-    console.log(this.items)
-    return;
-   }
-
-    productExistInCart.quantity = productExistInCart.quantity + 1;
-    this.cartItemcount.next(this.cartItemcount.value + 1);
-    console.log(this.items)
-}
-  addToWishlist(product: Product){
-    const productAlready = this.wishList.find(({id}) => id === product.id);
-    if (!productAlready) {
-
-      this.wishList.push(product);
-      this.favList.next(this.favList.value + 1);
-      console.log(this.favList.value)
-      return;
-    }else{
-      console.log("Product already Exist!")
+    if (!productExistsInCart) {
+      this.items.push(cartItem);
+      this.isAddedToCart = true;
+      this.cartItemcount.next(this.cartItemcount.value + 1);
+    } else {
+      productExistsInCart.quantity += 1;
+      this.cartItemcount.next(this.cartItemcount.value + 1);
     }
   }
 
-    Total() {
+  addToWishlist(product: Product) {
+    const productAlready = this.wishList.find(({ id }) => id === product.id);
 
-      this.totalAmount = 0
-      this.items.forEach((item:any) => {
-        this.totalAmount += (item.price * item.quantity)
-        //this.cartTotal.next(this.totalAmount);
-        console.log(this.cartTotal)
-        localStorage.setItem('Total',JSON.stringify(this.totalAmount))
-      })
-
-      this.cartTotal.next(this.totalAmount);
-      localStorage.setItem('for', JSON.stringify(this.items))
-
+    if (!productAlready) {
+      this.wishList.push(product);
+      this.favList.next(this.favList.value + 1);
+    } else {
+      console.log('Product already Exist!');
     }
-    getItems(): Product[] {
+  }
 
-      return this.items;
-    }
+  getTotal() {
+    this.totalAmount = 0;
+    this.items.forEach((item: CartItem) => {
+      this.totalAmount += item.price * item.quantity;
+      localStorage.setItem('Total', JSON.stringify(this.totalAmount));
+    });
 
-    getWishilist():Product[]{
-      return this.wishList;
-    }
+    this.cartTotal.next(this.totalAmount);
+    localStorage.setItem('cartItems', JSON.stringify(this.items));
+  }
 
-    getAdded(){
-      return this.isAddedToCart;
-    }
-    getTotal(){
+  getItems(): CartItem[] {
+    return this.items;
+  }
 
-    }
+  getWishilist(): Product[] {
+    return this.wishList;
+  }
 
+  checkCartItemAddition() {
+    return this.isAddedToCart;
+  }
 }
