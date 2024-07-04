@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
     if (isUserExist !== undefined) {
       alert('Logged in successfully');
       this.loginForm.reset();
-      this.router.navigate(['/home']); // navigate to the home screen
+      this.router.navigate(['userhome']); // navigate to the home screen
     } else {
       alert('Incorrect credentials');
     }
