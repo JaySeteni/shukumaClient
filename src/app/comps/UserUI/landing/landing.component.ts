@@ -14,7 +14,7 @@ export class LandingComponent {
 
   mShowLogin(){
     setTimeout(() => {
-      this.route.navigate(["home"]);
+      this.route.navigate(["userhome"]);
     }, 500)
   }
 
