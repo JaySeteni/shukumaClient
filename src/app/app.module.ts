@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { GoogleMapsModule} from '@angular/google-maps';
 // import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 import { AppComponent } from './app.component';
@@ -87,6 +88,7 @@ import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
     FavouritesComponent,
     SpinnerComponent,
     NavigationComponent,
+    
 
   ],
   imports: [
@@ -96,6 +98,7 @@ import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    GoogleMapsModule,
   ],
   providers: [
     provideClientHydration()
