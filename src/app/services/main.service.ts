@@ -10,7 +10,7 @@ import { Product } from '../interface/product';
 })
 export class MainService {
 
-  private apiUrl = "http://localhost:3000/v1/product/";
+  private apiUrl = "http://localhost:4000/v1/product/";
   private orderUrl = "http://localhost:3000/v1/orders";
 
   cartCount = new BehaviorSubject<number>(0)
@@ -26,11 +26,11 @@ export class MainService {
   deleteProduct(id: number) {
     throw new Error('Method not implemented.');
   }
-  
+
   addProduct(arg0: Product) {
     throw new Error('Method not implemented.');
   }
-  
+
   constructor(private http: HttpClient) {}
 
   getAllProducts():Observable<any>{

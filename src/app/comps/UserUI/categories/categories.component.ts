@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { MainService } from '../../../main.service';
+import { MainService } from '../../../services/main.service';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../../../services/cart.service';
 import { Product } from '../../../interface/product';
@@ -31,7 +31,7 @@ export class CategoriesComponent implements OnInit {
 
 
   constructor(
-    // private mainServer: MainService
+    private mainServer: MainService ,
      private route: ActivatedRoute, private cartSservice: CartService){}
 
   ngOnInit(): void {
@@ -41,16 +41,16 @@ export class CategoriesComponent implements OnInit {
   getAllProducts(){
     const path = this.route.snapshot.paramMap.get('name')
     this.page = path
-    // this.mainServer.getAllProducts().subscribe({
-    //   next: data =>{
-    //   this.allProduct = data.products
-    //   console.log(path)
-    //   this.filter(path)
-    //   },
-    //   error: err=>{
-    //     console.log(err)
-    //   }
-    // })
+    this.mainServer.getAllProducts().subscribe({
+      next: data =>{
+      this.allProduct = data.products
+      console.log(path)
+      this.filter(path)
+      },
+      error: err=>{
+        console.log(err)
+      }
+    })
   }
 filter(path:any){
 console.log(path)
