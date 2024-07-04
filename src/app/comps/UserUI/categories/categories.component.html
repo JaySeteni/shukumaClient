@@ -1,4 +1,4 @@
-<!-- 
+<!--
     <div class="holderr">
         <h1 class="title">{{page}}</h1>
          <section>
@@ -8,7 +8,7 @@
     </div>
   </section>
   <div class="prod-holder">
-        
+
             <div *ngFor="let item of items" class="card" class="p-1 flex flex-wrap items-center justify-center" routerLink="/product{{items.id}}">
 
                 <div class="flex-shrink-0 m-2 relative overflow-hidden bg-white-500 rounded-lg max-w-xs shadow-lg">
@@ -24,7 +24,7 @@
                         <img class="relative w-40 " [src]="item.imageUrl" alt="Product Image">
                     </div>
                     <div class="relative text-black px-6 pb-6 mt-6">
-                        
+
                         <div class="flex justify-between">
                             <span class="block font-semibold text-xl">{{ item.description.slice(0,4) }} </span>
                             <span class="block bg-black rounded-full text-white text-xs font-bold px-3 py-2 leading-none flex items-center">R{{ item.price}}</span>
@@ -40,7 +40,7 @@
         <div class="flex mt-6">
         </div>
     </div> -->
-    <div class="holderr">
+<div class="holderr">
         <h1 class="title">{{page}}</h1>
         <section>
           <div class="mt-5 text-center">
@@ -57,7 +57,7 @@
             class="card p-1 flex flex-wrap items-center justify-center"
             routerLink="/product{{items.id}}"
           >
-            <div
+            <div    
               class="flex-shrink-0 m-2 relative overflow-hidden bg-white rounded-lg max-w-xs shadow-lg"
             >
               <svg
@@ -88,13 +88,13 @@
                 <div
                   class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3 bg-gradient-to-r from-black to-transparent opacity-20 rotate-[20deg] scale-[1,0.6]"
                 ></div>
-                <img class="relative w-40" [src]="item.imageUrl" alt="Product Image" />
+                <img class="relative w-40" src="item.imageUrl" alt="Product Image" />
               </div>
               <div class="relative text-black px-6 pb-6 mt-6">
                 <div class="flex justify-between">
                   <span class="block font-semibold text-xl">{{ item.description.slice(0,4) }}</span>
                   <span
-                    class="block bg-black rounded-full text-white text-xs font-bold px-3 py-2 leading-none flex items-center"
+                    class="block bg-black rounded-full text-white text-xs font-bold px-3 py-2 leading-none items-center"
                     >R{{ item.price }}</span
                   >
                 </div>
@@ -103,7 +103,7 @@
             </div>
           </div>
         </div>
-      
+
         <div class="container pt-14">
           <h1 class="text-xl font-bold">More related products ...</h1>
           <div class="flex mt-6 gap-4">
