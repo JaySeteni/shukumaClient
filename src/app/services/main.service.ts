@@ -11,7 +11,6 @@ import { Product } from '../interface/product';
 export class MainService {
 
   private apiUrl = "http://localhost:3000/v1/product/";
-  private orderUrl = "http://localhost:3000/v1/orders";
 
   cartCount = new BehaviorSubject<number>(0)
 
