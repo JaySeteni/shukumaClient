@@ -44,11 +44,9 @@ import { DriverBottomNavComponent } from './comps/DriverUI/driver-bottom-nav/dri
 import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
 import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
-<<<<<<< HEAD
-import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
-=======
 import { NavigationComponent } from './comps/UserUI/navigation/navigation.component';
->>>>>>> c2ab2563eb827eb7052974ccdc6b477cd744d220
+import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
+
 
 
 
@@ -87,11 +85,8 @@ import { NavigationComponent } from './comps/UserUI/navigation/navigation.compon
     BusinessprofileComponent,
     UserhomeComponent,
     FavouritesComponent,
-<<<<<<< HEAD
     SpinnerComponent,
-=======
     NavigationComponent,
->>>>>>> c2ab2563eb827eb7052974ccdc6b477cd744d220
 
   ],
   imports: [
