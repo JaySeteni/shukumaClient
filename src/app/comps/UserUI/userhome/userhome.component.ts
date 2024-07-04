@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../../../services/main.service';
+import { ProductService } from '../../../services/product-service/product.service';
 @Component({
   selector: 'app-userhome',
   templateUrl: './userhome.component.html',
   styleUrl: './userhome.component.css'
 })
 export class UserhomeComponent implements OnInit {
-  allProduct : any = []
+  allProducts : any = []
 
-  products: any;
+  // products: any;
 
 
   constructor(
-    private mainServer: MainService
+    private _productService: ProductService
   ){}
 
   ngOnInit(): void {
@@ -21,10 +21,10 @@ export class UserhomeComponent implements OnInit {
 
 getAllProducts(){
 
-  this.mainServer.getAllProducts().subscribe({
-    next: data =>{
-    this.allProduct = data.products
-      console.log(data)
+  this._productService.getAllProducts().subscribe({
+    next: (data: any) =>{
+    this.allProducts = data.products
+      console.log(this.allProducts)
     },
     error: err=>{
       console.log(err)
