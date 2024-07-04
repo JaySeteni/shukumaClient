@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../../../services/main.service';
+import { ProductService } from '../../../services/product-service/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../../../services/cart-service/cart.service';
-import { Product } from '../../../interface/product';
 
 @Component({
   selector: 'app-categories',
@@ -12,10 +10,10 @@ import { Product } from '../../../interface/product';
 export class CategoriesComponent implements OnInit {
   selectedCategory: string = 'all';
 
-  allProduct : any = []
+  allProducts : any = []
   products: any;
   page:any
-  category: string[] = ['Gas Cylinders', 'Gas Accessories', 'Stoves'];
+  categories: string[] = ['Gas Cylinders', 'Gas Accessories', 'Stoves'];
   items:any = []
 
   sortByCategory(category: string) {
@@ -31,20 +29,24 @@ export class CategoriesComponent implements OnInit {
 
 
   constructor(
-    private mainServer: MainService ,
-     private route: ActivatedRoute, private cartSservice: CartService){}
+    private _productService : ProductService,
+     private route: ActivatedRoute){}
 
   ngOnInit(): void {
       this.getAllProducts()
       this.filter(this.products)
   }
+
   getAllProducts(){
     const path = this.route.snapshot.paramMap.get('name')
     this.page = path
-    this.mainServer.getAllProducts().subscribe({
-      next: data =>{
-      this.allProduct = data.products
+
+
+    this._productService.getAllProducts().subscribe({
+      next: (data: any) =>{
+      this.allProducts = data.products
       console.log(path)
+      console.log(this.allProducts)
       this.filter(path)
       },
       error: err=>{
@@ -52,17 +54,13 @@ export class CategoriesComponent implements OnInit {
       }
     })
   }
+
 filter(path:any){
-console.log(path)
-this.items = this.allProduct.filter((products:any) => products.category == path)
-console.log(this.items)
+// console.log(path)
+this.items = this.allProducts.filter((products:any) => products.category == path)
+// console.log(this.items)
 }
 
-addToCart(item: Product){
-
-  this.cartSservice.addToCart(item)
-
-}
 }
 
 
