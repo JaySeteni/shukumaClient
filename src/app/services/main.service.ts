@@ -41,8 +41,5 @@ export class MainService {
     return this.http.get<Product>(`${this.apiUrl}/get-one/:id'${id}`)
   }
 
-  registerUser(userData: any) {
-    return this.http.post('/api/register', userData); // Replace with your API endpoint
-  }
 
 }
