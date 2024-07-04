@@ -24,7 +24,6 @@ export class FooterComponent implements OnInit {
     ngOnInit(): void {
       this.favListCount$ = this.cartService.favList
       this.cartCount$ = this.cartService.cartItemcount
-      console.log("Some")
     }
 
 }
