@@ -1,78 +1,36 @@
-<app-navigation></app-navigation>
-<!-- Carousel starts -->
- <main>
-<div id="default-carousel" class="relative w-full" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-         <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <h2>content 1</h2>
-            <img src="../../../assets/digitalLogistics.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="../../../assets/gasLady.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="../../../assets/gasCarry.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="../../../assets/2287_generated.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="../../../assets/1320_U1RVRElPIFBDIDE2MTQtMjI.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
+<div class="flex justify-between items-center space-x-4">
+  <img src="../../../../assets/Screenshot_2024-07-03_060625-removebg-preview.png" class="picture">
+  <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+    <div class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500 flex items-center justify-center">
+      <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" class="rounded-full">
     </div>
-    <!-- Slider indicators -->
-    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-        <button type="button" class="w-1.5 h-1.5 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        <button type="button" class="w-1.5 h-1.5 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-        <button type="button" class="w-1.5 h-1.5 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        <button type="button" class="w-1.5 h-1.5 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-        <button type="button" class="w-1.5 h-1.5 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-    </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-2 h-2 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-2 h-2 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
   </div>
-  
-  <!-- Remove the user search here. Create a heading "Shop by categories" instead -->
-    <!-- <section>
-      <div class="mt-5 text-center ">
-          <input class="mx-auto " type="text" placeholder="Search here..." class="input input-bordered w-full max-w-xs" />
-  
-      </div>
-    </section> -->
-    <div class="mb-52 mt-6 bg-gray-800">
-      <div class="container  p-4">
-          <h1 class="text-xl font-bold">Shop By Category</h1>
-  
-  
-          <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5 h-auto">
+</div>
+<img class="h-auto max-w-sm rounded-sm" src="../../../../assets/gasCarry.jpg" alt="image description" id="picturebox">
+
+
+<h1 class="text-xl font-bold mt-6 m-2">Shop By Category</h1>
+<div class="container grid grid-cols-2 gap-3 m-10 mb-10 pb-10">
+  <img class="h-auto max-w-32 rounded-md" src="../../../../assets/download.png" alt="image description">
+  <img class="h-auto max-w-32 rounded-md" src="../../../../assets/stove.png" alt="image description">
+  <img class="h-auto max-w-32 rounded-md" src="../../../../assets/download.png" alt="image description">
+  <img class="h-auto max-w-32 rounded-md" src="../../../../assets/download.png" alt="image description">
+</div>
+
+
+
+<!-- <main class="mb-52 mt-6 bg-gray-800">
+    <div class="container  p-4">
+
+
+          <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5">
               <div routerLink="/categories/Gas Cylinder" class="card w-36 bg-base-100 shadow-xl">
                   <figure><img class="itemsImg" src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQiRm5k26vM7hC_ZXtL_v1ZbB9X_b-4X6hAiMXa3jKl1qg8LMjF1BpuDLQXi-CfxBjwHz4R5TdZ1PfBTyz5PCYBFVUzgSaJDbSXhCYKNroQ9ZU6kgZ0ZFtpbZLE4_8PKw5qaSM2ig&usqp=CAc" alt="Product Image" /></figure>
                   <div class="card-body">
                     <h2 class="card-title text-red-600">Gas Cylinders</h2>
-  
+
                     <div class="card-actions justify-center">
-  
+
                     </div>
                   </div>
               </div>
@@ -80,9 +38,9 @@
                   <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRCmz-qVOiNEJEcdqLWxHaMNnqaqK0NrZ_jPjKcvU6IUcoEFEiXq8xJV18UZAJNwSDdVKY8k1XffC6XWOX11czOTQGnUW4a4gORYgYp2eOoZJ2cVZDuGNTk_Zi9cC8gp3qJVm92UJyBWjA&usqp=CAc" alt="Product Image" /></figure>
                   <div class="card-body">
                     <h2 class="card-title text-red-600">Gas Stoves </h2>
-  
+
                     <div class="card-actions justify-center">
-                      
+
                     </div>
                   </div>
               </div>
@@ -90,9 +48,9 @@
                   <figure><img class="itemsImg" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRt9yWzp83KMe--xBjsUbkoka7GJn9piw1xkFF7zjHR5gtO-L5e9H4bGU-EQ10z9RNIrTVZXV1ucTUJfXMrah-cYqSgnYqbkP7_z6O53yO7rwjd0JHU8qs0UyvgrygvybislZUVSw&usqp=CAc" /></figure>
                   <div class="card-body">
                     <h2 class="card-title text-red-600">Gas Accessories </h2>
-  
+
                     <div class="card-actions justify-center">
-  
+
                     </div>
                   </div>
               </div>
@@ -107,6 +65,4 @@
               </div>
           </div>
       </div>
-      <app-footer></app-footer>
-    </div>
- </main>
+    </main> -->

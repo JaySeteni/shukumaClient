@@ -1,3 +1,13 @@
-main{
-    height: 165vh;
+.picture{
+  width:200px;
+  /* height:auto; */
 }
+
+#avator{
+  width:150px;
+  height:auto;
+}
+
+/* #picturebox{
+  width:330px;
+} */
