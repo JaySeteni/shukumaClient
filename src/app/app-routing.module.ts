@@ -21,7 +21,7 @@ import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
 import { ViewOrderComponent } from './comps/DriverUI/view-order/view-order.component';
 import { DriverProfileComponent } from './comps/DriverUI/driver-profile/driver-profile.component';
-
+// import { NavigationComponent } from './comps/UserUI/navigation/navigation.component';
 import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
 import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admin-dashboard.component';
 import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
@@ -61,7 +61,7 @@ const routes: Routes = [
   {path: 'order',component: OrderComponent},
   {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
-
+  // {path: 'nav', component: NavigationComponent},
 
 
   // {path: 'tracking', component: TrackDeliveriesComponent},

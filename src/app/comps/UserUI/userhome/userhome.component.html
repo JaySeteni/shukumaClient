@@ -1,4 +1,6 @@
+<app-navigation></app-navigation>
 <!-- Carousel starts -->
+ <main>
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -52,18 +54,18 @@
   </div>
   
   <!-- Remove the user search here. Create a heading "Shop by categories" instead -->
-    <section>
+    <!-- <section>
       <div class="mt-5 text-center ">
           <input class="mx-auto " type="text" placeholder="Search here..." class="input input-bordered w-full max-w-xs" />
   
       </div>
-    </section>
-    <main class="mb-52 mt-6 bg-gray-800">
+    </section> -->
+    <div class="mb-52 mt-6 bg-gray-800">
       <div class="container  p-4">
           <h1 class="text-xl font-bold">Shop By Category</h1>
   
   
-          <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5">
+          <div class="flex border-red-100 flex-wrap justify-center gap-3 mt-5 h-auto">
               <div routerLink="/categories/Gas Cylinder" class="card w-36 bg-base-100 shadow-xl">
                   <figure><img class="itemsImg" src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQiRm5k26vM7hC_ZXtL_v1ZbB9X_b-4X6hAiMXa3jKl1qg8LMjF1BpuDLQXi-CfxBjwHz4R5TdZ1PfBTyz5PCYBFVUzgSaJDbSXhCYKNroQ9ZU6kgZ0ZFtpbZLE4_8PKw5qaSM2ig&usqp=CAc" alt="Product Image" /></figure>
                   <div class="card-body">
@@ -105,4 +107,6 @@
               </div>
           </div>
       </div>
-    </main>
+      <app-footer></app-footer>
+    </div>
+ </main>

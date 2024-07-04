@@ -3,6 +3,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 // import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 import { AppComponent } from './app.component';
@@ -43,6 +44,7 @@ import { DriverBottomNavComponent } from './comps/DriverUI/driver-bottom-nav/dri
 import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
 import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
+import { NavigationComponent } from './comps/UserUI/navigation/navigation.component';
 
 
 
@@ -81,6 +83,7 @@ import { FavouritesComponent } from './comps/UserUI/favourites/favourites.compon
     BusinessprofileComponent,
     UserhomeComponent,
     FavouritesComponent,
+    NavigationComponent,
 
   ],
   imports: [
@@ -88,7 +91,8 @@ import { FavouritesComponent } from './comps/UserUI/favourites/favourites.compon
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
   ],
   providers: [
     provideClientHydration()
