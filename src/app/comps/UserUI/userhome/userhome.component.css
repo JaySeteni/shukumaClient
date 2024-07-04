@@ -8,6 +8,6 @@
   height:auto;
 }
 
-/* #picturebox{
-  width:330px;
-} */
+#picturebox{
+  width:100%;
+}

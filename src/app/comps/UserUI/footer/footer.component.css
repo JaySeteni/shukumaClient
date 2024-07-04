@@ -1,13 +1,14 @@
 .footer{
     background-color: #525252;
     position: fixed;
+    z-index: 500;
     bottom: 0;
     left: 0;
-    width: 100%;
-    padding: 0px;
+    width: 97%;
+    height:10%;
     display: flex;
     border-radius: 10px 10px 0 0;
-
+    
 }
 
 .fa-regular{
@@ -19,12 +20,10 @@ ul{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 0px 15px;
 }
 li{
     color: white;
-   
-    
+    padding: 0px 20px;
 }
 li a{
     color: white;
