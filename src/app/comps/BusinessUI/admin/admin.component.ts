@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { initFlowbite } from 'flowbite';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -15,8 +16,23 @@ export class AdminComponent implements OnInit{
     url: '/addproduct'
   },
 ];
+ isNavbarOpen = false;
+  collapsed = false;
 
-constructor() {}
+  constructor(private router: Router) {}
 
-ngOnInit(): void {}
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
+    this.collapsed = this.isNavbarOpen;
+  }
+
+  
+  closeNavbar() {
+    this.isNavbarOpen = false;
+  }
+
+
+ngOnInit(): void {
+  initFlowbite();
+}
 }

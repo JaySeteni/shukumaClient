@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 
@@ -7,27 +7,24 @@ import { initFlowbite } from 'flowbite';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  isNavbarOpen = false;
-  collapsed = false;
+export class AppComponent {
+  // isNavbarOpen = false;
+  // collapsed = false;
 
-  constructor(private router: Router) {}
+  // constructor(private router: Router) {}
 
-  toggleNavbar() {
-    this.isNavbarOpen = !this.isNavbarOpen;
-    this.collapsed = this.isNavbarOpen;
-  }
-
-  // navigateTo(path: string) {
-  //   this.router.navigate([path]);
-  //   this.toggleNavbar(); // Close the navbar after navigation
+  // toggleNavbar() {
+  //   this.isNavbarOpen = !this.isNavbarOpen;
+  //   this.collapsed = this.isNavbarOpen;
   // }
-  closeNavbar() {
-    this.isNavbarOpen = false;
-  }
 
-  ngOnInit(): void {
-    initFlowbite();
-  }
+  
+  // closeNavbar() {
+  //   this.isNavbarOpen = false;
+  // }
+
+  // ngOnInit(): void {
+  //   initFlowbite();
+  // }
 }
 

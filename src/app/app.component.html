@@ -24,7 +24,8 @@
       <li><a [routerLink]="['/chats']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-envelope mr-2"></i>Chats</a></li>
     </ul>
   </div> -->
-  <nav class="navbar bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
+<app-sidenav></app-sidenav>  
+  <!-- <nav class="navbar bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
     <button class="navbar-toggler focus:outline-none" (click)="toggleNavbar()">
       <i class="fas fa-bars"></i>
     </button>
@@ -53,7 +54,7 @@
       <li><a [routerLink]="['/settings']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-cog mr-2"></i>Settings</a></li><br>
       <li><a [routerLink]="['/chats']" class="block py-2 hover:text-gray-400" (click)="closeNavbar()"><i class="fas fa-envelope mr-2"></i>Chats</a></li><br>
     </ul>
-  </div>
+  </div> -->
 <router-outlet></router-outlet>
 
 <!-- Remove the footer from the app component. Call it in the other components -->
