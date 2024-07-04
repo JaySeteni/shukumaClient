@@ -4,7 +4,7 @@
     z-index: 500;
     bottom: 0;
     left: 0;
-    width: 97%;
+    width: 100%;
     height:10%;
     display: flex;
     border-radius: 10px 10px 0 0;
@@ -15,16 +15,20 @@
     font-size: medium;
 }
 
+ul li{
+    padding: 0 22px;
+}
 ul{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+ 
 }
 li{
     color: white;
-    padding: 0px 20px;
 }
 li a{
+    /* padding: 0px 20px; */
     color: white;
 }
