@@ -33,6 +33,7 @@ import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/vie
 import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
+import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -63,6 +64,7 @@ const routes: Routes = [
   {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
+  {path: 'registerBusiness', component:RegisterBusinessComponent},
 
 
   // {path: 'tracking', component: TrackDeliveriesComponent},
