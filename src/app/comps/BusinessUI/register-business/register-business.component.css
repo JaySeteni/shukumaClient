@@ -1,0 +1,22 @@
+/* body {
+    overflow: hidden;
+  }
+  
+  #registerSection,
+  #loginSection {
+    width: 100%;
+    height: 100vh;
+    transition: transform 0.3s ease;
+  }
+  
+  #registerSection {
+    transform: translateX(0);
+  }
+  
+  #loginSection {
+    transform: translateX(100%);
+  }
+  
+  .collapsed {
+    transform: translateX(-100%);
+  } */
