@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../../interface/product';
+import { Product } from '../../../interfaces/product';
 import { products } from '../../../../../mock-product';
 @Component({
   selector: 'app-view-one-product',
