@@ -3,6 +3,7 @@ import { ProductService } from '../../../services/product-service/product.servic
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../interfaces/product';
 import { CartService } from '../../../services/cart-service/cart.service';
+import { ProductDbResponse } from '../../../interfaces/productDbResponse';
 
 @Component({
   selector: 'app-singleproduct',
@@ -12,7 +13,7 @@ import { CartService } from '../../../services/cart-service/cart.service';
 export class SingleproductComponent implements OnInit {
   products: any [] = []
   isAdded: any
-  selectedProduct: any
+  selectedProduct?: Product;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,24 +23,26 @@ export class SingleproductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllProducts()
-  
+    this.getOneProduct()
   }
 
   getAllProducts(){
 
-    // this.mainService.getAllProducts().subscribe({
-    //   next: data =>{
-    //   this.products = data.products
-    //   },
-    //   error: err=>{
-    //     console.log(err)
-    //   }
-    // })
+    this._productService.getAllProducts().subscribe({
+      next: (data: ProductDbResponse) =>{
+      this.products = data.products
+
+      console.log(this.products)
+      },
+      error: err=>{
+        console.log(err)
+      }
+    })
   }
+
   getOneProduct(): void {
     const id = this.route.snapshot.paramMap.get('id');
-
-
+console.log(id)
       // this.mainService.getProduct(id).subscribe({
       //   next: (res: any) => {
       //     this.selectedProduct = res.product;
