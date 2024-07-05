@@ -8,6 +8,7 @@ import { initFlowbite } from 'flowbite';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+[x: string]: any;
   // isNavbarOpen = false;
   // collapsed = false;
 
