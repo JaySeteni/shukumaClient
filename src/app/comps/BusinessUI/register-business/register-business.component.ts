@@ -1,16 +1,19 @@
-
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register-business',
+  templateUrl: './register-business.component.html',
+  styleUrl: './register-business.component.css'
 })
-export class LoginComponent implements OnInit {
-
+export class RegisterBusinessComponent {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
+  showLoginPage: boolean = true;
+  registerBusinessPage: boolean = false;
+  
   signUpUsers: any[] = [];
   loginObj: { [key: string]: string } = { 
     email: '',
@@ -18,6 +21,7 @@ export class LoginComponent implements OnInit {
   }
   
   loginForm: FormGroup;
+registerForm: any;
   
   constructor(private router: Router, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
