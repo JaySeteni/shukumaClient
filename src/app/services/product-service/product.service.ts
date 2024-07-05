@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl: string = "http://localhost:3000/v1/product/";
+  private baseUrl: string = "http://localhost:3000/v1/products/";
 
   constructor (private _http : HttpClient) {
 

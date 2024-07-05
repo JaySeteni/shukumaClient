@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../../services/main.service';
+import { ProductService } from '../../../services/product-service/product.service';
+import { Product } from '../../../interface/product';
 @Component({
   selector: 'app-userhome',
   templateUrl: './userhome.component.html',
@@ -7,12 +9,15 @@ import { MainService } from '../../../services/main.service';
 })
 export class UserhomeComponent implements OnInit {
   allProduct : any = []
-
+  Cylinders :any = []
+  Stoves :any = []
+  Spares :any = []
+  
   products: any;
 
 
   constructor(
-    private mainServer: MainService
+    private mainServer: MainService, private product: ProductService
   ){}
 
   ngOnInit(): void {
@@ -21,15 +26,122 @@ export class UserhomeComponent implements OnInit {
 
 getAllProducts(){
 
-  this.mainServer.getAllProducts().subscribe({
-    next: data =>{
+  this.product.getAllProducts().subscribe({
+    next: (data: any) =>{
     this.allProduct = data.products
       console.log(data)
+      this.filterItemsByCylinders()
+      this.filterStoves()
+      this.filterSpares()
+
     },
     error: err=>{
       console.log(err)
     }
   })
 }
+
+filterItemsByCylinders() {
+  this.Cylinders = this.allProduct.filter((item:any) => {
+    return (item.category.includes('Cylinders'))
+});
+  console.log(this.Cylinders)
+}
+
+filterStoves() {
+  this.Stoves = this.allProduct.filter((item:any) => {
+    return (item.category.includes('Stoves'))
+});
+  console.log(this.Stoves)
+}
+
+filterSpares() {
+  this.Spares = this.allProduct.filter((item:any) => {
+    return (item.category.includes('Accessories. Spares' && 'Accessories, Spares'))
+});
+  console.log(this.Spares)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

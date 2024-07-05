@@ -11,3 +11,26 @@
 #picturebox{
   width:100%;
 }
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+.cardCont1{
+  background: rgb(241 199 240 / 54%)
+}
+.cardCont2{
+  background: rgb(197 223 235 / 54%)
+}
+.cardCont3{
+  background: rgb(239 188 183 / 54%)
+}
+
+.joinH1{
+  text-decoration: underline;
+  text-decoration-color: #fd8754;
+  /* text-underline-offset: 10px; */
+  text-decoration-thickness: 4px;
+}
