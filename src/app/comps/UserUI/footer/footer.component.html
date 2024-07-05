@@ -1,0 +1,165 @@
+ <!-- <footer class="footer p-3 z-1000 bg-black text-blue-500">
+  <ul class="border-white">
+    <li>
+      <a routerLink="/home">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                  Home</svg>
+        </div>
+    </a>
+    </li>
+
+    <li>
+      <a routerLink="/cart">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <div class="indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              <span class="badge badge-sm indicator-item ">{{cartCount$ | async}}</span>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li >
+        <a >
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <i class="fa-regular fa-message" style="color: #ffffff;"></i>
+          </div>
+        </a>
+      </li>
+
+    <li>
+      <a routerLink="/orders">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2M5 20V7h14V6l.002 14z" />
+            <path fill="currentColor" d="M7 9h10v2H7zm0 4h5v2H7z" />
+          </svg>
+        </div>
+
+      </a>
+    </li>
+
+      <li>
+        <a routerLink="/userprofile">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+              <div class="w-7 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+
+  </ul>
+
+
+  </footer> -->
+  <!-- <footer class="footer p-3 z-1000 bg-black text-blue-500 border-t border-white">
+    <ul class="flex justify-around">
+      <li>
+        <a routerLink="/home">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" fill="currentColor" class="bi bi-house-door-fill text-blue-500" viewBox="0 0 16 16">
+              <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/cart">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <div class="indicator">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span class="badge badge-sm indicator-item ">{{cartCount$ | async}}</span>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a>
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <i class="fa-regular fa-message text-blue-500"></i>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/orders">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" viewBox="0 0 24 24" class="text-blue-500">
+              <path fill="currentColor" d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2M5 20V7h14V6l.002 14z" />
+              <path fill="currentColor" d="M7 9h10v2H7zm0 4h5v2H7z" />
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/userprofile">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+            <div class="w-7 rounded-full">
+              <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </footer> -->
+  <!-- <footer class="footer p-3 z-1000 bg-navy-900 text-white border-t border-white">
+    <ul class="flex justify-around">
+      <li>
+        <a routerLink="/userhome">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" fill="currentColor" class="bi bi-house-door-fill text-blue-400" viewBox="0 0 16 16">
+              <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+            </svg>
+          </div>
+        </a>
+      </li>
+  
+      <li>
+        <a routerLink="/cart">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <div class="indicator">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span class="badge badge-sm indicator-item ">{{cartCount$ | async}}</span>
+            </div>
+          </div>
+        </a>
+      </li>
+  
+      <li>
+        <a routerLink="/chats">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+
+            <i class="fa-regular fa-message text-white-200 "></i>
+
+            <i class="fa-regular fa-message text-blue-200"></i>
+      </li>
+       <li> 
+        <a routerLink="/orders">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" viewBox="0 0 24 24" class="text-blue-400">
+              <path fill="currentColor" d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2M5 20V7h14V6l.002 14z" />
+              <path fill="currentColor" d="M7 9h10v2H7zm0 4h5v2H7z" />
+            </svg>
+          </div>
+        </a>
+      </li>
+      <li>
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+            <div class="w-7 rounded-full">
+            </div>
+          </div>
+      </li> 
+    </ul>
+  </footer> -->

@@ -1,0 +1,101 @@
+
+<!-- <h2>User Profile</h2>
+<div class="profile-card">
+  <img class="avatar" [src]="mockUserProfile.avatarUrl" alt="Profile Picture">
+  <div class="user-info">
+    <h2>{{ mockUserProfile.firstName }} {{ mockUserProfile.lastName }}</h2>
+    <p>{{ mockUserProfile.bio }}</p>
+    <ul class="contact-info">
+      <li><i class="fas fa-envelope"></i> {{ mockUserProfile.email }}</li>
+      <li><i class="fas fa-phone"></i> {{ mockUserProfile.phoneNumber }}</li>
+      <li *ngIf="mockUserProfile.location"><i class="fas fa-map-marker-alt"></i> {{ mockUserProfile.location }}</li>
+      <li *ngIf="mockUserProfile.website"><i class="fas fa-globe"></i> <a href="{{ mockUserProfile.website }}">{{ mockUserProfile.website }}</a></li>
+    </ul>
+    <ul class="social-links">
+      <li *ngIf="mockUserProfile.socialLinks?.twitter"><i class="fab fa-twitter"></i> <a href="https://twitter.com/{{ mockUserProfile.socialLinks.twitter }}">{{ mockUserProfile.socialLinks.twitter }}</a></li>
+      <li *ngIf="mockUserProfile.socialLinks?.instagram"><i class="fab fa-instagram"></i> <a href="https://instagram.com/{{ mockUserProfile.socialLinks.instagram }}">{{ mockUserProfile.socialLinks.instagram }}</a></li>
+      </ul>
+  </div>
+</div> -->
+<!-- <header class="bg-slate-600 py-4">
+<div class=" bg-slate-600 justify-center my-8">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-md">
+    <div class="flex flex-col items-center p-6">
+      <img class="w-24 h-24 rounded-full mb-4" [src]="mockUserProfile.avatarUrl" alt="Profile Picture">
+      <h2 class="text-2xl font-bold mb-2">{{ mockUserProfile.firstName }} {{ mockUserProfile.lastName }}</h2>
+      <p class="text-gray-600 mb-4">{{ mockUserProfile.bio }}</p>
+      <ul class="text-gray-700 space-y-2 w-full">
+        <li *ngIf="mockUserProfile.email" class="flex items-center">
+          <i class="fas fa-envelope mr-2"></i>
+          <span>{{ mockUserProfile.email }}</span>
+        </li>
+        <li *ngIf="mockUserProfile.phoneNumber" class="flex items-center">
+          <i class="fas fa-phone mr-2"></i>
+          <span>{{ mockUserProfile.phoneNumber }}</span>
+        </li>
+        <li *ngIf="mockUserProfile.location" class="flex items-center">
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <span>{{ mockUserProfile.location }}</span>
+        </li>
+        <li *ngIf="mockUserProfile.website" class="flex items-center">
+          <i class="fas fa-globe mr-2"></i>
+          <a [href]="mockUserProfile.website" class="text-blue-500 hover:text-blue-700">{{ mockUserProfile.website }}</a>
+        </li>
+      </ul>
+      <div class="mt-4 space-x-4">
+        <a *ngIf="mockUserProfile.socialLinks?.twitter" [href]="'https://twitter.com/' + mockUserProfile.socialLinks.twitter" class="text-blue-500 hover:text-blue-700">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a *ngIf="mockUserProfile.socialLinks?.instagram" [href]="'https://instagram.com/' + mockUserProfile.socialLinks.instagram" class="text-pink-500 hover:text-pink-700">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</header> -->
+<section class="bg-slate-600 py-6">
+  
+    <h1 class="text-black font-bold text-2xl font-bold">User Profile</h1>
+  
+
+
+<div class="bg-slate-100 py-8">
+  <div class="container mx-auto px-4">
+    <div class="bg-white rounded-lg shadow-lg max-w-md mx-auto">
+      <div class="flex flex-col items-center p-8">
+        <img class="w-32 h-32 rounded-full mb-4 object-cover" [src]="mockUserProfile.avatarUrl" alt="Profile Picture">
+        <h2 class="text-2xl font-bold mb-2">{{ mockUserProfile.firstName }} {{ mockUserProfile.lastName }}</h2>
+        <p class="text-gray-600 mb-6">{{ mockUserProfile.bio }}</p>
+        <ul class="text-gray-700 space-y-3 w-full">
+          <li *ngIf="mockUserProfile.email" class="flex items-center">
+            <i class="fas fa-envelope text-gray-500 mr-3"></i>
+            <span>{{ mockUserProfile.email }}</span>
+          </li>
+          <li *ngIf="mockUserProfile.phoneNumber" class="flex items-center">
+            <i class="fas fa-phone text-gray-500 mr-3"></i>
+            <span>{{ mockUserProfile.phoneNumber }}</span>
+          </li>
+          <li *ngIf="mockUserProfile.location" class="flex items-center">
+            <i class="fas fa-map-marker-alt text-gray-500 mr-3"></i>
+            <span>{{ mockUserProfile.location }}</span>
+          </li>
+          <li *ngIf="mockUserProfile.website" class="flex items-center">
+            <i class="fas fa-globe text-gray-500 mr-3"></i>
+            <a [href]="mockUserProfile.website" class="text-blue-500 hover:text-blue-700">{{ mockUserProfile.website }}</a>
+          </li>
+        </ul>
+        <div class="mt-6 space-x-4">
+          <a *ngIf="mockUserProfile.socialLinks?.twitter" [href]="'https://twitter.com/' + mockUserProfile.socialLinks.twitter" class="text-blue-500 hover:text-blue-700">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a *ngIf="mockUserProfile.socialLinks?.instagram" [href]="'https://instagram.com/' + mockUserProfile.socialLinks.instagram" class="text-pink-500 hover:text-pink-700">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,68 @@
+<!-- stats.component.html -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Overview -->
+    <div class="bg-blue-500 text-white rounded-lg p-4 shadow-md cursor-pointer hover:bg-blue-600 transition-colors duration-300" (click)="toggleBox('overview')">
+      <div class="flex items-center mb-2">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        <h3 class="text-lg font-bold">Overview</h3>
+      </div>
+      <div *ngIf="openedBox === 'overview'" class="space-y-2">
+        <!-- Overview items -->
+      </div>
+    </div>
+  
+    <!-- Delivery Breakdown -->
+    <div class="bg-green-500 text-white rounded-lg p-4 shadow-md cursor-pointer hover:bg-green-600 transition-colors duration-300" (click)="toggleBox('delivery')">
+      <div class="flex items-center mb-2">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
+        </svg>
+        <h3 class="text-lg font-bold">Delivery Breakdown</h3>
+      </div>
+      <div *ngIf="openedBox === 'delivery'" class="grid grid-cols-2 gap-2">
+        <!-- Delivery Breakdown items -->
+      </div>
+    </div>
+  
+    <!-- Top Delivery Locations -->
+    <div class="bg-yellow-500 text-white rounded-lg p-4 shadow-md cursor-pointer hover:bg-yellow-600 transition-colors duration-300" (click)="toggleBox('locations')">
+      <div class="flex items-center mb-2">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+        <h3 class="text-lg font-bold">Top Delivery Locations</h3>
+      </div>
+      <div *ngIf="openedBox === 'locations'" class="list-decimal list-inside space-y-2">
+        <!-- Top Delivery Locations items -->
+      </div>
+    </div>
+  
+    <!-- Popular Menu Items -->
+    <div class="bg-red-500 text-white rounded-lg p-4 shadow-md cursor-pointer hover:bg-red-600 transition-colors duration-300" (click)="toggleBox('menu')">
+      <div class="flex items-center mb-2">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        <h3 class="text-lg font-bold">Popular Menu Items</h3>
+      </div>
+      <div *ngIf="openedBox === 'menu'" class="list-decimal list-inside space-y-2">
+        <!-- Popular Menu Items items -->
+      </div>
+    </div>
+  
+    <!-- Customer Feedback -->
+    <div class="bg-purple-500 text-white rounded-lg p-4 shadow-md cursor-pointer hover:bg-purple-600 transition-colors duration-300" (click)="toggleBox('feedback')">
+      <div class="flex items-center mb-2">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+        <h3 class="text-lg font-bold">Customer Feedback</h3>
+      </div>
+      <div *ngIf="openedBox === 'feedback'" class="space-y-4">
+        <!-- Customer Feedback items -->
+      </div>
+    </div>
+  </div>
