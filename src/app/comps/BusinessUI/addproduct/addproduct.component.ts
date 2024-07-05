@@ -7,12 +7,19 @@ import { Product } from '../../../interfaces/product';
 })
 export class AddproductComponent {
   product: Product = {
-    id: 0,
-    name: '',
+    id: "0",
+    title: '',
     description: '',
     price: 0,
     imageUrl: '',
-    quantity: 0
+    quantity: 0,
+    businessId: '',
+    category: [],
+    onPromo: false,
+    rating: 0,
+    ratingCount: 0,
+    stock: 0,
+    variant: ''
   };
 
   addProduct() {

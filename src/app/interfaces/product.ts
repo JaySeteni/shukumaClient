@@ -10,7 +10,8 @@ export interface Product {
   price: number, 
   stock: number, 
   imageUrl: string, 
-  variant: "4B" 
+  variant: string,
+  quantity: number,
 }
 
 

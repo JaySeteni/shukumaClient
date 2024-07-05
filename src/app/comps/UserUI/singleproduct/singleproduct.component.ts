@@ -52,8 +52,8 @@ export class SingleproductComponent implements OnInit {
   }
 
   addToCart(item: Product): void {
-    this.cartService.addToCart(item); // Assuming cartService exists in your setup
-    this.isAdded = this.cartService.getAdded(); // Assuming getAdded returns a boolean
+    // this.cartService.addToCart(item); // Assuming cartService exists in your setup
+    // this.isAdded = this.cartService.getAdded(); // Assuming getAdded returns a boolean
   }
 
   saveForLaterButton(product: Product): void {
