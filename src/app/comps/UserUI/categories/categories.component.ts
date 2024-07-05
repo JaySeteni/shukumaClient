@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../../services/product-service/product.service';
+import { MainService } from '../../main.service';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+import { Product } from '../../product';
 
 @Component({
   selector: 'app-categories',
@@ -10,10 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoriesComponent implements OnInit {
   selectedCategory: string = 'all';
 
-  allProducts : any = []
+  allProduct : any = []
   products: any;
   page:any
-  categories: string[] = ['Gas Cylinders', 'Gas Accessories', 'Stoves'];
+  category: string[] = ['Gas Cylinders', 'Gas Accessories', 'Stoves'];
   items:any = []
 
   sortByCategory(category: string) {
@@ -28,25 +30,19 @@ export class CategoriesComponent implements OnInit {
   }
 
 
-  constructor(
-    private _productService : ProductService,
-     private route: ActivatedRoute){}
+  constructor(private mainServer: MainService, private route: ActivatedRoute, private cartSservice: CartService){}
 
   ngOnInit(): void {
       this.getAllProducts()
       this.filter(this.products)
   }
-
   getAllProducts(){
     const path = this.route.snapshot.paramMap.get('name')
     this.page = path
-
-
-    this._productService.getAllProducts().subscribe({
-      next: (data: any) =>{
-      this.allProducts = data.products
+    this.mainServer.getAllProducts().subscribe({
+      next: data =>{
+      this.allProduct = data.products
       console.log(path)
-      console.log(this.allProducts)
       this.filter(path)
       },
       error: err=>{
@@ -54,13 +50,17 @@ export class CategoriesComponent implements OnInit {
       }
     })
   }
-
 filter(path:any){
-// console.log(path)
-this.items = this.allProducts.filter((products:any) => products.category == path)
-// console.log(this.items)
+console.log(path)
+this.items = this.allProduct.filter((products:any) => products.category == path)
+console.log(this.items)
 }
 
+addToCart(item: Product){
+
+  this.cartSservice.addToCart(item)
+ 
+}
 }
 
 

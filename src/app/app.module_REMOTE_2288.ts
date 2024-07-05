@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { GoogleMapsModule} from '@angular/google-maps';
 // import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 import { AppComponent } from './app.component';
@@ -99,7 +98,6 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    GoogleMapsModule,
   ],
   providers: [
     provideClientHydration()

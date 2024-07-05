@@ -47,7 +47,6 @@ import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
 import { NavigationComponent } from './comps/UserUI/navigation/navigation.component';
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
-import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
 
 
 
@@ -89,7 +88,7 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     FavouritesComponent,
     SpinnerComponent,
     NavigationComponent,
-    RegisterBusinessComponent,
+    
 
   ],
   imports: [

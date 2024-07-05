@@ -89,7 +89,11 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     FavouritesComponent,
     SpinnerComponent,
     NavigationComponent,
+<<<<<<< HEAD
+    
+=======
     RegisterBusinessComponent,
+>>>>>>> feature/Dini
 
   ],
   imports: [
