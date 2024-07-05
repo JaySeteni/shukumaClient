@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../../main.service';
+import { ProductService } from '../../../services/product-service/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../../services/cart.service';
-import { Product } from '../../product';
+import { CartService } from '../../../services/cart-service/cart.service';
+import { Product } from '../../../interfaces/product';
+import { ProductDbResponse } from '../../../interfaces/productDbResponse';
+import { CartItem } from '../../../interfaces/cartItem';
 
 @Component({
   selector: 'app-categories',
@@ -30,7 +32,7 @@ export class CategoriesComponent implements OnInit {
   }
 
 
-  constructor(private mainServer: MainService, private route: ActivatedRoute, private cartSservice: CartService){}
+  constructor(private _productService: ProductService, private route: ActivatedRoute, private cartSservice: CartService){}
 
   ngOnInit(): void {
       this.getAllProducts()
@@ -39,8 +41,8 @@ export class CategoriesComponent implements OnInit {
   getAllProducts(){
     const path = this.route.snapshot.paramMap.get('name')
     this.page = path
-    this.mainServer.getAllProducts().subscribe({
-      next: data =>{
+    this._productService.getAllProducts().subscribe({
+      next: (data: ProductDbResponse )=>{
       this.allProduct = data.products
       console.log(path)
       this.filter(path)
@@ -56,7 +58,7 @@ this.items = this.allProduct.filter((products:any) => products.category == path)
 console.log(this.items)
 }
 
-addToCart(item: Product){
+addToCart(item: CartItem){
 
   this.cartSservice.addToCart(item)
  
