@@ -1,79 +1,50 @@
 <div id="animation-carousel" class="relative w-full" data-carousel="static">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-      <!-- Component 1 -->
-      <div class="hidden duration-200 ease-linear" data-carousel-item>
-        <a routerLink="/login">
-          <!-- Content and functionality of Component 1 -->
-          <div *ngIf="showLoginPage; ngIfElse registerBusinessPage" class="login-container">
-            <form [formGroup]="loginForm" (ngSubmit)="OnLogin()">
-              <h2 class="tit">
-                <a routerLink="/welcome" class="text-black ml-20">
-                  <i class="fas fa-arrow-left"></i>
-                </a>
-                Shukuma
-              </h2>
-                <div class="message">
-                    <p>Access Delivery Excellence</p>
-                    <p>with Your Account</p>
-                </div>
-          
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input id="email" type="email" formControlName="email" class="form-control text-black" placeholder="email" required>
-                    <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="error">
-                        <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
-                        <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</div>
-                    </div>
-                </div>
-          
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input id="password" type="password" formControlName="password" class="form-control text-black" placeholder="Password" required>
-                    <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error">
-                        <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
-                    </div>
-                </div>
-          
-                <p class="other">Don't have an account <a href="register">register</a> </p>
-          
-                <button type="submit" class="btn btn-primary" routerLink="/userhome" [disabled]="loginForm.invalid">Login</button>
-            </form>
-          </div>  
-      <!-- Component 2 -->
-      <div *ngIf="true" class="hidden duration-200 ease-linear" data-carousel-item>
-        <a routerLink="/registerBusiness">
-          <!-- Content and functionality of Component 2 -->
-          <body class="bg-gray-100 py-6">
-            <div class="max-w-md mx-auto bg-white rounded p-8 shadow-md">
-              <h2 class="text-2xl font-bold mb-6">Register Your Business</h2>
-              <form>
-                <div class="mb-4">
-                  <label for="name" class="block text-gray-700 font-medium mb-2">Business Name</label>
-                  <input type="text" id="name" name="name" class="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" required>
-                </div>
-                <div class="mb-4">
-                  <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                  <input type="email" id="email" name="email" class="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" required>
-                </div>
-                <div class="mb-4">
-                  <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
-                  <input type="password" id="password" name="password" class="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" required>
-                </div>
-                <div class="mb-6">
-                  <label for="confirm-password" class="block text-gray-700 font-medium mb-2">Confirm Password</label>
-                  <input type="password" id="confirm-password" name="confirm-password" class="w-full border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500" required>
-                </div>
-                <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Register</button>
-              </form>
-              <p class="text-gray-600 text-sm mt-4">Already have an account? <a href="#" class="text-blue-500 font-medium">Log in</a></p>
+  <!-- Carousel wrapper -->
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <!-- Component 1 -->
+    <div class="hidden duration-200 ease-linear" data-carousel-item>
+      <a routerLink="/login">
+        <!-- Content and functionality of Component 1 -->
+        <div *ngIf="showLoginPage; ngIfElse registerBusinessPage" class="login-container">
+          <form [formGroup]="loginForm" (ngSubmit)="OnLogin()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md">
+            <div class="flex items-center justify-between mb-4">
+              <a routerLink="/welcome" class="text-black">
+                <i class="fas fa-arrow-left"></i>
+              </a>
+              <h2 class="text-2xl font-bold">Shukuma</h2>
             </div>
-          </body>
-        </a>
-      </div>
+            <div class="message mb-4">
+              <p class="text-gray-700 font-medium">Access Delivery Excellence</p>
+              <p class="text-gray-700 font-medium">with Your Account</p>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
+              <input id="email" type="email" formControlName="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="email" required>
+              <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-red-500 text-sm mt-1">
+                <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
+                <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label for="password" class="block text-gray-700 font-bold mb-2">Password:</label>
+              <input id="password" type="password" formControlName="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" required>
+              <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-red-500 text-sm mt-1">
+                <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-gray-600 text-sm">Don't have an account? <a href="register" class="text-blue-500 hover:text-blue-700">Register</a></p>
+              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" [disabled]="loginForm.invalid">Login</button>
+            </div>
+          </form>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
   
     <!-- Slider controls -->
-    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+    <!-- <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
       <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
         <svg class="w-4 h-4 text-gray-800 dark:text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
@@ -89,4 +60,4 @@
         </svg>
         <span class="sr-only">Next</span>
       </span>
-    </button>
+    </button> -->

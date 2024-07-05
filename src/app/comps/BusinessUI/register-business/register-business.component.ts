@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrl: './register-business.component.css'
 })
 export class RegisterBusinessComponent {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
   showLoginPage: boolean = true;
   registerBusinessPage: boolean = false;
   
@@ -18,6 +21,7 @@ export class RegisterBusinessComponent {
   }
   
   loginForm: FormGroup;
+registerForm: any;
   
   constructor(private router: Router, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
