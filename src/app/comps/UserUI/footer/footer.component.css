@@ -1,33 +1,30 @@
 .footer{
-    background-color: #525252;
     position: fixed;
     z-index: 500;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height:10%;
+    /* width: 100%; */
+    height:48px !important;
     display: flex;
-    border-radius: 10px 10px 0 0;
-    
+    justify-content: space-between;
+    border-radius: 10px 10px 0 0; 
 }
 
 .fa-regular{
     font-size: medium;
 }
-
-ul li{
-    padding: 0 22px;
-}
-ul{
+/* ul{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
- 
+} */
+ul li{
+    /* padding-left: 30px; */
+    font-size: 22px;
 }
 li{
     color: white;
+    padding: 0 20px;
 }
 li a{
+    width:100%;
     color: white;
 }
