@@ -50,10 +50,10 @@ export class CategoriesComponent implements OnInit {
       }
     })
   }
-filter(path:any){
-console.log(path)
-this.items = this.allProduct.filter((products:any) => products.category == path)
-console.log(this.items)
+  filter(path:any){
+  console.log(path)
+  this.items = this.allProduct.filter((products:any) => products.category == path)
+  console.log(this.items)
 }
 
 addToCart(item: Product){
