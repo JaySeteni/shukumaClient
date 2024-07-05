@@ -27,28 +27,28 @@ export class SingleproductComponent implements OnInit {
 
   getAllProducts(){
 
-    this.mainService.getAllProducts().subscribe({
-      next: data =>{
-      this.products = data.products
-      },
-      error: err=>{
-        console.log(err)
-      }
-    })
+    // this.mainService.getAllProducts().subscribe({
+    //   next: data =>{
+    //   this.products = data.products
+    //   },
+    //   error: err=>{
+    //     console.log(err)
+    //   }
+    // })
   }
   getOneProduct(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
 
-      this.mainService.getProduct(id).subscribe({
-        next: (res: any) => {
-          this.selectedProduct = res.product;
-        },
-        error: (err: any) => {
-          console.error("An error occurred while fetching product:", err);
-          // Handle errors gracefully (e.g., display an error message)
-        }
-      });
+      // this.mainService.getProduct(id).subscribe({
+      //   next: (res: any) => {
+      //     this.selectedProduct = res.product;
+      //   },
+      //   error: (err: any) => {
+      //     console.error("An error occurred while fetching product:", err);
+      //     // Handle errors gracefully (e.g., display an error message)
+      //   }
+      // });
   }
 
   addToCart(item: Product): void {
@@ -57,6 +57,6 @@ export class SingleproductComponent implements OnInit {
   }
 
   saveForLaterButton(product: Product): void {
-    this.cartService.addToWishlist(product); // Assuming cartService exists
+    // this.cartService.addToWishlist(product); // Assuming cartService exists
   }
 }
