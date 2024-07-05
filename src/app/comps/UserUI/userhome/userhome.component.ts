@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product-service/product.service';
 import { Product } from '../../../interfaces/product';
+import { ProductDbResponse } from '../../../interfaces/productDbResponse';
 
 @Component({
   selector: 'app-userhome',
@@ -24,8 +25,8 @@ export class UserhomeComponent implements OnInit {
 getAllProducts(){
 
   this._productService.getAllProducts().subscribe({
-    next: (data: Product[]) =>{
-    this.allProducts = data
+    next: (data: ProductDbResponse) =>{
+    this.allProducts = data.products
       console.log(data)
     },
     error: err=>{
