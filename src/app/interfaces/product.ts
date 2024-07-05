@@ -11,6 +11,8 @@ export interface Product {
   stock: number, 
   imageUrl: string, 
   variant: string 
+  variant: string,
+  quantity: number,
 }
 
 
