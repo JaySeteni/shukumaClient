@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../../../services/main.service';
 import { ProductService } from '../../../services/product-service/product.service';
-import { Product } from '../../../interface/product';
+// import { Product } from '../../../interface/product';
 @Component({
   selector: 'app-userhome',
   templateUrl: './userhome.component.html',
