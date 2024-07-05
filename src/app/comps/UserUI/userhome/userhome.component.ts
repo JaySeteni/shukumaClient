@@ -10,7 +10,7 @@ import { ProductDbResponse } from '../../../interfaces/productDbResponse';
   styleUrl: './userhome.component.css'
 })
 export class UserhomeComponent implements OnInit {
-  allProduct : any = []
+  allProducts :Product[] = []
   Cylinders :any = []
   Stoves :any = []
   Spares :any = []
@@ -18,8 +18,7 @@ export class UserhomeComponent implements OnInit {
   products: any;
 
 
-  constructor(
-    private mainServer: MainService, private product: ProductService
+  constructor( private _productService: ProductService
   ){}
 
   ngOnInit(): void {
@@ -44,21 +43,21 @@ getAllProducts(){
 }
 
 filterItemsByCylinders() {
-  this.Cylinders = this.allProduct.filter((item:any) => {
+  this.Cylinders = this.allProducts.filter((item:any) => {
     return (item.category.includes('Cylinders'))
 });
   console.log(this.Cylinders)
 }
 
 filterStoves() {
-  this.Stoves = this.allProduct.filter((item:any) => {
+  this.Stoves = this.allProducts.filter((item:any) => {
     return (item.category.includes('Stoves'))
 });
   console.log(this.Stoves)
 }
 
 filterSpares() {
-  this.Spares = this.allProduct.filter((item:any) => {
+  this.Spares = this.allProducts.filter((item:any) => {
     return (item.category.includes('Accessories. Spares' && 'Accessories, Spares'))
 });
   console.log(this.Spares)
