@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../../../services/main.service';
+import { ProductService } from '../../../services/product-service/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../../../interfaces/product'; // Assuming Product interface
+import { Product } from '../../../interfaces/product';
 import { CartService } from '../../../services/cart-service/cart.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class SingleproductComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private mainService: MainService,
+    private _productService: ProductService,
     private cartService: CartService,
   ) { }
 

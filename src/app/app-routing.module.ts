@@ -58,7 +58,7 @@ const routes: Routes = [
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'categories', component:CategoriesComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'view_item/', component: SingleproductComponent},
+  {path: 'view_item', component: SingleproductComponent},
   {path: 'order',component: OrderComponent},
   {path: 'orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
