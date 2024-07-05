@@ -6,16 +6,8 @@ import { Product } from '../../../interfaces/product';
   styleUrl: './addproduct.component.css'
 })
 export class AddproductComponent {
-  product: Product = {
-    id: 0,
-    name: '',
-    description: '',
-    price: 0,
-    imageUrl: '',
-    quantity: 0
-  };
 
   addProduct() {
-    console.log(this.product);
+ 
   }
 }
