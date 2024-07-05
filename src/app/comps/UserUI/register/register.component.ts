@@ -10,13 +10,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+// Component code
 
-  signUpUsers: any[] = [];
-  signUpObj: any = { 
+  signUpObj: { userName: string, email: string, password: string } = {
     userName: '',
     email: '',
     password: ''
   };
+
+  // Rest of your component code
+
+  // signUpUsers: any[] = [];
+  // signUpObj: any = { 
+  //   userName: '',
+  //   email: '',
+  //   password: ''
+  // };
 
   constructor() { }
 
