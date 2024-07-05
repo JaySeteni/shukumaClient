@@ -8,7 +8,7 @@ import { ProductDbResponse } from '../../interfaces/productDbResponse';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl: string = 'http://localhost:3000/v1/products';
+  private baseUrl: string = "http://localhost:3000/v1/products/";
 
   constructor(private _http: HttpClient) {}
 
