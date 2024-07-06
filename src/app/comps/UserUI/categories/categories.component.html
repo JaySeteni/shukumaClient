@@ -1,74 +1,38 @@
-<div class="holderr">
-        <!-- <h1 class="title">{{page}}</h1> -->
-        <section>
-          <div class="mt-5 text-center">
-            <input
-              class="mx-auto block w-full max-w-xs px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              type="text"
-              placeholder="Search here..."
-            />
-          </div>
-        </section>
-        <div class="prod-holder">
-          <div
-            *ngFor="let item of allProduct"
-            class="card p-1 flex flex-wrap items-center justify-center"
+<app-navigation></app-navigation>
+<section id="Projects"
+    class="w-fit mx-auto mb-20 grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-5 gap-x-2 mt-10 ">
 
-          >
-            <div
-              class="flex-shrink-0 m-2 relative overflow-hidden bg-white rounded-lg max-w-xs shadow-lg"
-            >
-              <svg
-                class="absolute bottom-0 left-0 mb-8"
-                viewBox="0 0 375 283"
-                fill="none"
-                style="transform: scale(1.5); opacity: 0.1"
-              >
-                <rect
-                  x="159.52"
-                  y="175"
-                  width="152"
-                  height="152"
-                  rx="8"
-                  transform="rotate(-45 159.52 175)"
-                  fill="white"
-                />
-                <rect
-                  y="107.48"
-                  width="152"
-                  height="152"
-                  rx="8"
-                  transform="rotate(-45 0 107.48)"
-                  fill="white"
-                />
-              </svg>
-              <div class="relative pt-10 px-10 flex items-center justify-center">
-                <div
-                  class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3 bg-gradient-to-r from-black to-transparent opacity-20 rotate-[20deg] scale-[1,0.6]"
-                ></div>
-                <img class="relative w-40" [src]="item.imageUrl" alt="Product Image" />
-              </div>
-              <div class="relative text-black px-6 pb-6 mt-6">
-                <div class="flex justify-between">
-                  <span class="block font-semibold text-xl">{{ item.description.slice(0,4) }}</span>
-                  <span
-                    class="block bg-black rounded-full text-white text-xs font-bold px-3 py-2 leading-none items-center"
-                    >R{{ item.price }}</span
-                  >
+    <!--   ✅ Product card 1 - Starts Here 👇 -->
+    <div *ngFor="let item of items" class="w-40 h-52 px-1 shadow-md  rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+        <a>
+          <div class="border-2 h-28 w-full i mt-2 flex justify-center items-center rounded-md ">
+            <img src="{{item.imageUrl}}"
+                    alt="Product" class=" w-28 h-24" /> 
+          </div>
+            
+            <div class=" overflow-hidden text-ellipsis mt-2">
+                <span class="text-gray-400 mr-3 uppercase text-xs  truncate ">{{item.title}}</span>
+            
+                <div class="flex items-center mt-2">
+                    <p class="text-lg font-bold text-red-700 cursor-auto ">R{{item.price}}</p>
+                    <del>
+                        
+                    </del>
+                    <div class="ml-auto me-2 ">
+                      <div class="border-3 w-11 h-7 rounded-lg flex justify-center items-center  text-white bg-blue-700">
+                        <svg class="w-6 h-6 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                          <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+                          <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                        </svg>
+                        
+                      </div>
+                    </div>
                 </div>
-                <span class="block opacity-75 -mb-1"></span>
-                <button class="routerlink" [routerLink]="'/product'">Product</button>
-
-              </div>
             </div>
-          </div>
-        </div>
+        </a>
+    </div>
 
-        <div class="container pt-14">
-          <h1 class="text-xl font-bold">More related products ...</h1>
-          <div class="flex mt-6 gap-4">
-            <!-- Add your related products here -->
-          </div>
-        </div>
-      </div>
-<!-- <app-footer></app-footer> -->
+
+</section>
+
+<app-footer></app-footer>

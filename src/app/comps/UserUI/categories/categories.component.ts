@@ -16,7 +16,7 @@ export class CategoriesComponent implements OnInit {
 
   allProduct : any = []
   products: any;
-  // page:any
+  page:any
   items:any = []
 
   // sortByCategory(category: string) {
@@ -38,31 +38,38 @@ export class CategoriesComponent implements OnInit {
       // this.filter(this.products)
   }
   getAllProducts(){
-    // const path = this.route.snapshot.paramMap.get('name')
-    // this.page = path
+    const path = this.route.snapshot.paramMap.get('catname')
+    this.page = path
     this._productService.getAllProducts().subscribe({
       next: (data: ProductDbResponse )=>{
       this.allProduct = data.products
       console.log(this.allProduct)
-    //   console.log(path)
-    //   this.filter(path)
+      this.filterItems(path)
       },
       error: err=>{
         console.log(err)
       }
     })
   }
-// filter(path:any){
-// console.log(path)
-// this.items = this.allProduct.filter((products:any) => products.category == path)
-// console.log(this.allProduct)
-}
+    filter(path:any){
+    console.log(path)
+    this.items = this.allProduct.filter((products:any) => products.category.includes(path) )
+    console.log(this.allProduct)
+    }
+
+    filterItems(path: any) {
+      console.log(path)
+      this.items = this.allProduct.filter((item:any) => {
+        return (item.category.includes(path))
+    });
+      console.log(this.items)
+    }
 
 // addToCart(item: CartItem){
 
 //   this.cartSservice.addToCart(item)
 
-// }
+}
 
 
 

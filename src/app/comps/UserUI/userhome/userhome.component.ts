@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product-service/product.service';
 import { Product } from '../../../interfaces/product';
 import { ProductDbResponse } from '../../../interfaces/productDbResponse';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userhome',
@@ -13,12 +14,12 @@ export class UserhomeComponent implements OnInit {
   Cylinders :any = []
   Stoves :any = []
   Spares :any = []
-  catname: any
+  catname = "Cylinders"
 
   products: any;
 
 
-  constructor( private _productService: ProductService
+  constructor( private _productService: ProductService, private router:Router
   ){}
 
   ngOnInit(): void {
@@ -63,7 +64,12 @@ filterSpares() {
   console.log(this.Spares)
 }
 
+getValue(value: any){
+  this.catname = value
+  console.log(this.catname)
+  this.router.navigate([`category/`], )
 
+}
 
 
 

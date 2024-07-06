@@ -52,7 +52,7 @@ const routes: Routes = [
   {path: 'map', component: MapComponent},
   {path: 'businessprofile', component: BusinessprofileComponent},
   {path: 'welcome', component:LandingComponent},
-  {path: 'categories/:name', component:CategoriesComponent},
+  {path: 'category/:catname', component:CategoriesComponent},
   {path: 'product', component: SingleproductComponent},
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'categories', component:CategoriesComponent},
