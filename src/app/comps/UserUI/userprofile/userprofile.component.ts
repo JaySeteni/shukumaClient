@@ -30,7 +30,7 @@ export class UserprofileComponent implements OnInit {
     lastName: 'Doe',
     email: 'john.doe@example.com',
     phoneNumber: '+1234567890',
-    avatarUrl: 'https://placeimg.com/150/150/people', 
+    avatarUrl: 'https://www.denofgeek.com/wp-content/uploads/2021/09/Anthony-Mackie.png?fit=1200%2C883', 
     bio: 'Software Engineer passionate about building web applications.',
     location: 'New York, USA',
     website: 'https://johndoe.com',
