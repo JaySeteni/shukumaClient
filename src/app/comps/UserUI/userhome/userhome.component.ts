@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MainService } from '../../../services/main.service';
 import { ProductService } from '../../../services/product-service/product.service';
 import { Product } from '../../../interfaces/product';
 import { ProductDbResponse } from '../../../interfaces/productDbResponse';
@@ -15,6 +14,7 @@ export class UserhomeComponent implements OnInit {
   Stoves :any = []
   Spares :any = []
   catname: any
+
   products: any;
 
 

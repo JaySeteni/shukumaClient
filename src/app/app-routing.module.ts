@@ -14,7 +14,7 @@ import { CartComponent } from './comps/UserUI/cart/cart.component';
 import { OrderComponent } from './comps/UserUI/order/order.component';
 import { FooterComponent } from './comps/UserUI/footer/footer.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
-import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.component';
+import { CusOrdersComponent } from './comps/BusinessUI/cus-orders/cus-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 // import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
@@ -27,7 +27,6 @@ import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admi
 import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
 import { StatsComponent } from './comps/BusinessUI/stats/stats.component';
 import { SidenavComponent } from './comps/BusinessUI/sidenav/sidenav.component';
-import { ViewOrdersComponent } from './comps/BusinessUI/view-orders/view-orders.component';
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
 import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
@@ -41,7 +40,6 @@ const routes: Routes = [
   {path : 'addproduct', component: AddproductComponent},
   {path : 'oneproduct', component: ViewOneProductComponent},
   {path : 'products', component: ViewProductsComponent},
-  {path : 'orders', component: ViewOrdersComponent},
   {path : 'sidenav',component:SidenavComponent},
   {path: 'settingsBusiness',component:SettingsComponent},
   {path: 'stats', component:StatsComponent},
@@ -60,8 +58,8 @@ const routes: Routes = [
   {path: 'categories', component:CategoriesComponent},
   {path: 'cart', component: CartComponent},
   {path: 'view_item', component: SingleproductComponent},
-  {path: 'order',component: OrderComponent},
-  {path: 'orders',component: CusOrdersComponent},
+  {path: 'orders',component: OrderComponent},
+  {path: 'business-orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
   {path: 'registerBusiness', component:RegisterBusinessComponent},

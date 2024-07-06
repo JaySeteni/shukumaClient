@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../../services/auth.service';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,18 +12,18 @@ import { AuthService } from '../../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   signUpUsers: any[] = [];
-  loginObj: { [key: string]: string } = { 
+  loginObj: { [key: string]: string } = {
     email: '',
     password: '',
   }
-  
+
   loginForm: FormGroup;
-  
+
   constructor(private router: Router, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
-    }); 
+    });
   }
 
   ngOnInit(): void {

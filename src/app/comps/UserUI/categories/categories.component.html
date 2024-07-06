@@ -1,5 +1,5 @@
 <div class="holderr">
-        <h1 class="title">{{page}}</h1>
+        <!-- <h1 class="title">{{page}}</h1> -->
         <section>
           <div class="mt-5 text-center">
             <input
@@ -11,11 +11,11 @@
         </section>
         <div class="prod-holder">
           <div
-            *ngFor="let item of items"
+            *ngFor="let item of allProduct"
             class="card p-1 flex flex-wrap items-center justify-center"
-            routerLink="/product{{items.id}}"
+
           >
-            <div    
+            <div
               class="flex-shrink-0 m-2 relative overflow-hidden bg-white rounded-lg max-w-xs shadow-lg"
             >
               <svg
@@ -46,7 +46,7 @@
                 <div
                   class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3 bg-gradient-to-r from-black to-transparent opacity-20 rotate-[20deg] scale-[1,0.6]"
                 ></div>
-                <img class="relative w-40" src="item.imageUrl" alt="Product Image" />
+                <img class="relative w-40" [src]="item.imageUrl" alt="Product Image" />
               </div>
               <div class="relative text-black px-6 pb-6 mt-6">
                 <div class="flex justify-between">
@@ -57,6 +57,8 @@
                   >
                 </div>
                 <span class="block opacity-75 -mb-1"></span>
+                <button class="routerlink" [routerLink]="'/product'">Product</button>
+
               </div>
             </div>
           </div>
@@ -69,4 +71,4 @@
           </div>
         </div>
       </div>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
