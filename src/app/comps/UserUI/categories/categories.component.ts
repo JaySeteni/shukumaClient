@@ -40,16 +40,17 @@ export class CategoriesComponent implements OnInit {
   getAllProducts(){
     // const path = this.route.snapshot.paramMap.get('name')
     // this.page = path
-    // this._productService.getAllProducts().subscribe({
-    //   next: (data: ProductDbResponse )=>{
-    //   this.allProduct = data.products
+    this._productService.getAllProducts().subscribe({
+      next: (data: ProductDbResponse )=>{
+      this.allProduct = data.products
+      console.log(this.allProduct)
     //   console.log(path)
     //   this.filter(path)
-    //   },
-    //   error: err=>{
-    //     console.log(err)
-    //   }
-    // })
+      },
+      error: err=>{
+        console.log(err)
+      }
+    })
   }
 // filter(path:any){
 // console.log(path)
