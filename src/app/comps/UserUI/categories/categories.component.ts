@@ -16,54 +16,53 @@ export class CategoriesComponent implements OnInit {
 
   allProduct : any = []
   products: any;
-  page:any
-  category: string[] = ['Gas Cylinders', 'Gas Accessories', 'Stoves'];
+  // page:any
   items:any = []
 
-  sortByCategory(category: string) {
-    // console.log(`Selected category: ${category}`);
-    this.selectedCategory = category;
-    if (category === 'all') {
-      this.products = [...this.products];
-    } else {
-      this.products = this.products.filter((product: { category: string; }) => product.category === category);
-    }
-    console.log('Selected category:', this.selectedCategory);
-  }
+  // sortByCategory(category: string) {
+  //   // console.log(`Selected category: ${category}`);
+  //   this.selectedCategory = category;
+  //   if (category === 'all') {
+  //     this.products = [...this.products];
+  //   } else {
+  //     this.products = this.products.filter((product: { category: string; }) => product.category === category);
+  //   }
+  //   console.log('Selected category:', this.selectedCategory);
+  // }
 
 
-  constructor(private _productService: ProductService, private route: ActivatedRoute, private cartSservice: CartService){}
+  constructor(private _productService: ProductService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
       this.getAllProducts()
-      this.filter(this.products)
+      // this.filter(this.products)
   }
   getAllProducts(){
-    const path = this.route.snapshot.paramMap.get('name')
-    this.page = path
-    this._productService.getAllProducts().subscribe({
-      next: (data: ProductDbResponse )=>{
-      this.allProduct = data.products
-      console.log(path)
-      this.filter(path)
-      },
-      error: err=>{
-        console.log(err)
-      }
-    })
+    // const path = this.route.snapshot.paramMap.get('name')
+    // this.page = path
+    // this._productService.getAllProducts().subscribe({
+    //   next: (data: ProductDbResponse )=>{
+    //   this.allProduct = data.products
+    //   console.log(path)
+    //   this.filter(path)
+    //   },
+    //   error: err=>{
+    //     console.log(err)
+    //   }
+    // })
   }
-filter(path:any){
-console.log(path)
-this.items = this.allProduct.filter((products:any) => products.category == path)
-console.log(this.items)
+// filter(path:any){
+// console.log(path)
+// this.items = this.allProduct.filter((products:any) => products.category == path)
+// console.log(this.allProduct)
 }
 
-addToCart(item: CartItem){
+// addToCart(item: CartItem){
 
-  this.cartSservice.addToCart(item)
- 
-}
-}
+//   this.cartSservice.addToCart(item)
+
+// }
+
 
 
 

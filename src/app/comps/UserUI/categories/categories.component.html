@@ -1,5 +1,5 @@
 <div class="holderr">
-        <h1 class="title">{{page}}</h1>
+        <!-- <h1 class="title">{{page}}</h1> -->
         <section>
           <div class="mt-5 text-center">
             <input
@@ -11,11 +11,11 @@
         </section>
         <div class="prod-holder">
           <div
-            *ngFor="let item of items"
+            *ngFor="let item of allProduct"
             class="card p-1 flex flex-wrap items-center justify-center"
             routerLink="/product{{items.id}}"
           >
-            <div    
+            <div
               class="flex-shrink-0 m-2 relative overflow-hidden bg-white rounded-lg max-w-xs shadow-lg"
             >
               <svg
