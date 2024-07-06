@@ -15,6 +15,7 @@ export class SingleproductComponent implements OnInit {
   isAdded: any
   selectedProduct?: Product;
 
+
   constructor(
     private route: ActivatedRoute,
     private _productService: ProductService,
@@ -22,36 +23,35 @@ export class SingleproductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getAllProducts()
-    this.getOneProduct()
+    // this.getAllProducts()
+    this.getProduct()
   }
 
-  getAllProducts(){
+  // getAllProducts(){
 
-    this._productService.getAllProducts().subscribe({
-      next: (data: ProductDbResponse) =>{
-      this.products = data.products
+  //   this._productService.getAllProducts().subscribe({
+  //     next: (data: ProductDbResponse) =>{
+  //     this.products = data.products
 
-      console.log(this.products)
-      },
-      error: err=>{
-        console.log(err)
-      }
-    })
-  }
+  //     console.log(this.products)
+  //     },
+  //     error: err=>{
+  //       console.log(err)
+  //     }
+  //   })
+  // }
 
-  getOneProduct(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-console.log(id)
-      // this.mainService.getProduct(id).subscribe({
-      //   next: (res: any) => {
-      //     this.selectedProduct = res.product;
-      //   },
-      //   error: (err: any) => {
-      //     console.error("An error occurred while fetching product:", err);
-      //     // Handle errors gracefully (e.g., display an error message)
-      //   }
-      // });
+  getProduct(): void {
+    const id = String(this.route.snapshot.paramMap.get('id'));
+    console.log(id)
+      this._productService.getProduct(id).subscribe({
+        next: (res: any) => {
+          this.selectedProduct = res.product;
+        },
+        error: (err: any) => {
+          console.error("An error occurred while fetching product:", err);
+        }
+      });
   }
 
   addToCart(item: Product): void {
