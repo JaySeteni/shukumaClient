@@ -14,7 +14,7 @@ export class UserhomeComponent implements OnInit {
   Cylinders :any = []
   Stoves :any = []
   Spares :any = []
-  
+  catname: any
   products: any;
 
 
