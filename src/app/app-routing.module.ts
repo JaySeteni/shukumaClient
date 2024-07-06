@@ -27,7 +27,6 @@ import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admi
 import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
 import { StatsComponent } from './comps/BusinessUI/stats/stats.component';
 import { SidenavComponent } from './comps/BusinessUI/sidenav/sidenav.component';
-import { ViewOrdersComponent } from './comps/BusinessUI/view-orders/view-orders.component';
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
 import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
@@ -41,7 +40,6 @@ const routes: Routes = [
   {path : 'addproduct', component: AddproductComponent},
   {path : 'oneproduct', component: ViewOneProductComponent},
   {path : 'products', component: ViewProductsComponent},
-  {path : 'orders', component: ViewOrdersComponent},
   {path : 'sidenav',component:SidenavComponent},
   {path: 'settingsBusiness',component:SettingsComponent},
   {path: 'stats', component:StatsComponent},
