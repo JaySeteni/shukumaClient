@@ -25,7 +25,7 @@ import { CartComponent } from './comps/UserUI/cart/cart.component';
 import { OrderComponent } from './comps/UserUI/order/order.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
 // import { TrackDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
-import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.component';
+import { CusOrdersComponent } from './comps/BusinessUI/cus-orders/cus-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 
