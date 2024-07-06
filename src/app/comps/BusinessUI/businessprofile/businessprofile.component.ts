@@ -44,7 +44,7 @@ export class BusinessprofileComponent implements OnInit{
     description: 'Mzimkhulu is a gas selling company LTD. ',
     tel_no: '+1234567890',
     industry: 'gas',
-    avatarUrl: 'https://placeimg.com/150/150/people', 
+    avatarUrl: 'https://www.denofgeek.com/wp-content/uploads/2021/09/Anthony-Mackie.png?fit=1200%2C883', 
     address: '123 Joe Crescent, New York, USA, 7785',
     img: 'https://www.thesait.org.za/global_graphics/default-store-350x350.jpg'
   }
