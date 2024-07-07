@@ -60,14 +60,14 @@
     <p *ngIf="allOrders.length === 0">No orders found.</p> -->
 
 
-    <div *ngIf="!orders.length">
+    <div >
         No orders found.
     </div>
       
-    <div *ngIf="orders.length > 0">
+    <div>
         <h2>Your Orders</h2>
-        <ul>
-          <li *ngFor="let order of orders">
+        <ul *ngFor="let order of orders">
+          <li >
             Order ID: {{ order.id }}<br>
             <br>
           </li>

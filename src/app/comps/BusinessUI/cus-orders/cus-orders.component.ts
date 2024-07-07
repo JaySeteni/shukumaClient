@@ -58,17 +58,18 @@ export class CusOrdersComponent implements OnInit {
   ngOnInit(): void {
     this.getAllOrders()
 
-  }
+  } 
 
   getAllOrders(){
 
     this.ordersService.getAllOrders().subscribe({
-      next: (data: ProductDbResponse) =>{
+      next: (data: any) =>{
 
-      this.orders = data.Orders
-      console.log('Data received from getAllOrders:', data); // Log the entire response object
-        console.log(this.orders)
-  
+        this.orders = data;
+        
+      // this.orders = data.Orders
+      console.log('Data received from getAllOrders:', this.orders); // Log the entire response object
+        
       },
       error: (err) => {
         console.error('Error fetching orders:', err);
