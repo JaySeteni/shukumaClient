@@ -8,6 +8,6 @@ import { Product } from '../../../interfaces/product';
 export class AddproductComponent {
 
   addProduct() {
- 
+    
   }
 }
