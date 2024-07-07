@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { UserRegister } from '../../interfaces/userRegister';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   
-  registerUser(userData: any) {
-    return this.http.post('/api/register', userData); // Replace with your API endpoint
+  registerUser(userData: UserRegister) {
+    return this.http.post('http://localhost:3000/v1/auth/register', userData); // Replace with your API endpoint
   }
 }
