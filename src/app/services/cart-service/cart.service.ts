@@ -39,6 +39,10 @@ export class CartService {
     return this._http.get<any>(`${this.likesUrl}`, id)
   }
 
+  removeFromCart(payload:any): Observable<any>{
+    return this._http.delete<any>(`${this.baseUrl}one/`, payload)
+  }
+
   getTotal() {
     this.totalAmount = 0;
     this.items.forEach((item: CartItem) => {
