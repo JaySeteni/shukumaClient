@@ -26,6 +26,7 @@ export class FooterComponent implements OnInit {
       this.cartCount$ = this.cartService.cartItemcount
 
       this.fetchFavs()
+      this.getCart()
     }
 
     
@@ -42,12 +43,12 @@ export class FooterComponent implements OnInit {
     })
   }
 
-  geCart(){
+  getCart(){
     const id = "66865064ad57296a97884bc3"
     this.cartService.getCart(id).subscribe({
       next: (res: any) => {
-          this.cartCounter = res.length
-        console.log(res) 
+          this.cartCounter = res[0].items.length
+        console.log(res[0].items.length) 
       },
       error: (err: any) => {
         console.error("An error occurred while fetching product:", err);
