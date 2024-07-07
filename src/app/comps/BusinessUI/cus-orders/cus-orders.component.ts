@@ -1,42 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cart-service/cart.service';
 import { of } from 'rxjs';
+import { OrdersService } from '../../../services/orders/orders.service';
+import { Order } from '../../../interfaces/order';
+import { ActivatedRoute } from '@angular/router';
+import { ProductDbResponse } from '../../../interfaces/productDbResponse';
 
-const mockOrders: any[] = [
-  {
-    id: 1,
-    orderNumber: '#ORD0001',
-    items: [
-      { name: '5kg Gas cylinder', quantity: 1, price: 199.99 },
-      { name: 'Gas defribillator', quantity: 1, price:124.99 },
-    ],
-    total: 349.99,
-    status: 'placed',
-    createdAt: new Date('2024-06-25T10:00:00'),
-  },
-  {
-    id: 2,
-    orderNumber: '#ORD0002',
-    items: [
-      { name: 'T-Shirt', quantity: 3, price: 199.99 },
-      { name: 'Water Bottle', quantity: 1, price: 14.95 },
-    ],
-    total: 74.92,
-    status: 'shipped',
-    createdAt: new Date('2024-06-20T15:30:00'),
-  },
-  {
-    id: 3,
-    orderNumber: '#ORD0003',
-    items: [
-      { name: 'gas Tank', quantity: 1, price: 120.00 },
-    ],
-    total: 74.92,
-    status: 'shipped',
-    createdAt: new Date('2024-06-20T15:30:00'),
-  },
 
-];
+// const mockOrders: any[] = [
+//   {
+//     id: 1,
+//     orderNumber: '#ORD0001',
+//     items: [
+//       { name: '5kg Gas cylinder', quantity: 1, price: 199.99 },
+//       { name: 'Gas defribillator', quantity: 1, price:124.99 },
+//     ],
+//     total: 349.99,
+//     status: 'placed',
+//     createdAt: new Date('2024-06-25T10:00:00'),
+//   },
+//   {
+//     id: 2,
+//     orderNumber: '#ORD0002',
+//     items: [
+//       { name: 'T-Shirt', quantity: 3, price: 199.99 },
+//       { name: 'Water Bottle', quantity: 1, price: 14.95 },
+//     ],
+//     total: 74.92,
+//     status: 'shipped',
+//     createdAt: new Date('2024-06-20T15:30:00'),
+//   },
+//   {
+//     id: 3,
+//     orderNumber: '#ORD0003',
+//     items: [
+//       { name: 'gas Tank', quantity: 1, price: 120.00 },
+//     ],
+//     total: 74.92,
+//     status: 'shipped',
+//     createdAt: new Date('2024-06-20T15:30:00'),
+//   },
+
+// ];
 
 @Component({
   selector: 'app-cus-orders',
@@ -44,16 +49,33 @@ const mockOrders: any[] = [
   styleUrl: './cus-orders.component.css',
 })
 export class CusOrdersComponent implements OnInit {
-  allOrders: any[] = mockOrders;
+  orders: Order[] = [];
+  error: string | null = null;
+  
 
-  constructor() {}
+  constructor( private ordersService: OrdersService) {}
 
   ngOnInit(): void {
-    this.getAllOrders();
-    console.log(this.allOrders)
+    this.getAllOrders()
+
+  } 
+
+  getAllOrders(){
+
+    this.ordersService.getAllOrders().subscribe({
+      next: (data: any) =>{
+
+        this.orders = data;
+        
+      // this.orders = data.Orders
+      console.log('Data received from getAllOrders:', this.orders); // Log the entire response object
+        
+      },
+      error: (err) => {
+        console.error('Error fetching orders:', err);
+      }
+    })
   }
 
-  getAllOrders() {
-    return of(mockOrders);
-  }
+
 }
