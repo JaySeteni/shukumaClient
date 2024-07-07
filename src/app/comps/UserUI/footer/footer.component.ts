@@ -35,7 +35,7 @@ export class FooterComponent implements OnInit {
     this.cartService.fetchFavs(id).subscribe({
       next: (res: any) => {
           this.favsCount = res.length
-        console.log(res) 
+       
       },
       error: (err: any) => {
         console.error("An error occurred while fetching product:", err);

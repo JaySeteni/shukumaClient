@@ -19,6 +19,10 @@ export class ProductService {
   getProduct(id: string | null): Observable<Product> {
     return this._http.get<Product>(`${this.baseUrl}/article/${id}`);
   }
+  createProduct(product: Product): Observable<Product> {
+    return this._http.post<Product>(`${this.baseUrl}/articles`, product);
+}
+
 
   // deleteProduct(id: string) : Observable<Product> {
   //   return this._http.delete<Product>(`${this.baseUrl}/articles/${id}`)
