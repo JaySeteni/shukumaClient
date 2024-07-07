@@ -29,7 +29,7 @@ import { StatsComponent } from './comps/BusinessUI/stats/stats.component';
 import { SidenavComponent } from './comps/BusinessUI/sidenav/sidenav.component';
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
-import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
+import { AddProductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
@@ -37,7 +37,7 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
 
-  {path : 'addproduct', component: AddproductComponent},
+  {path : 'addproduct', component: AddProductComponent},
   {path : 'oneproduct', component: ViewOneProductComponent},
   {path : 'products', component: ViewProductsComponent},
   {path : 'sidenav',component:SidenavComponent},
