@@ -1,1 +1,0 @@
-card p-1 flex flex-wrap items-center justify-center

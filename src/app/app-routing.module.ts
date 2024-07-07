@@ -14,7 +14,7 @@ import { CartComponent } from './comps/UserUI/cart/cart.component';
 import { OrderComponent } from './comps/UserUI/order/order.component';
 import { FooterComponent } from './comps/UserUI/footer/footer.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
-import { CusOrdersComponent } from './comps/BusinessUI/cus-orders/cus-orders.component';
+import { BusinessOrdersComponent } from './comps/BusinessUI/business-orders/business-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 // import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
@@ -59,7 +59,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'view_item/:id', component: SingleproductComponent},
   {path: 'orders',component: OrderComponent},
-  {path: 'business-orders',component: CusOrdersComponent},
+  {path: 'business-orders',component: BusinessOrdersComponent},
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
   {path: 'registerBusiness', component:RegisterBusinessComponent},
