@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../../interfaces/product';
 import { CartItem } from '../../interfaces/cartItem';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -16,32 +17,26 @@ export class CartService {
 
   totalAmount = 0;
 
-  constructor() {}
 
-  addToCart(cartItem: CartItem) {
-    const productExistsInCart = this.items.find(
-      ({ productId }) => productId === cartItem.productId
-    );
+  private baseUrl: string = "http://localhost:3000/v1/cart/";
+  private likesUrl: string = "http://localhost:3000/v1/favourites/"
 
-    if (!productExistsInCart) {
-      this.items.push(cartItem);
-      this.isAddedToCart = true;
-      this.cartItemcount.next(this.cartItemcount.value + 1);
-    } else {
-      productExistsInCart.quantity += 1;
-      this.cartItemcount.next(this.cartItemcount.value + 1);
-    }
+  constructor(private _http: HttpClient) {}
+
+  getCart(id: any): Observable<any> {
+    return this._http.get<any>(`${this.baseUrl}/ ${id}`);
   }
 
-  addToWishlist(product: Product) {
-    const productAlready = this.wishList.find(({ id }) => id === product.id);
+  addtoCart(payload: any ):Observable<any>{
+    return this._http.post<any>(`${this.baseUrl}/add/`, payload  )
+  } 
+  
+  addToWishlist(payload: any):Observable<any> {
+    return this._http.post<any>(`${this.likesUrl}`, payload)
+  }
 
-    if (!productAlready) {
-      this.wishList.push(product);
-      this.favList.next(this.favList.value + 1);
-    } else {
-      console.log('Product already Exist!');
-    }
+  fetchFavs(id: any):Observable<any> {
+    return this._http.get<any>(`${this.likesUrl}`, id)
   }
 
   getTotal() {

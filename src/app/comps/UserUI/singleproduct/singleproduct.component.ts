@@ -14,7 +14,7 @@ export class SingleproductComponent implements OnInit {
   products: any [] = []
   isAdded: any
   selectedProduct?: Product;
-
+  errMessage: any = ""
 
   constructor(
     private route: ActivatedRoute,
@@ -42,10 +42,11 @@ export class SingleproductComponent implements OnInit {
   // }
 
   getProduct(): void {
-    const id = String(this.route.snapshot.paramMap.get('id'));
+    const id = this.route.snapshot.paramMap.get('id');
     console.log(id)
       this._productService.getProduct(id).subscribe({
         next: (res: any) => {
+          console.log(res)
           this.selectedProduct = res.product;
         },
         error: (err: any) => {
@@ -55,11 +56,31 @@ export class SingleproductComponent implements OnInit {
   }
 
   addToCart(item: Product): void {
-    // this.cartService.addToCart(item); // Assuming cartService exists in your setup
-    // this.isAdded = this.cartService.getAdded(); // Assuming getAdded returns a boolean
+    
+    this.cartService.addtoCart({productId: item.id, quantity: 1}).subscribe({
+      next: (res)=>{
+        console.log(res)
+      }, error:(err)=>{
+        console.error("here",err)
+      }
+    })
+
   }
 
-  saveForLaterButton(product: Product): void {
-    // this.cartService.addToWishlist(product); // Assuming cartService exists
+  addToFavs(product: Product): void {
+
+    this.cartService.addToWishlist({userId: "66865064ad57296a97884bc3", itemId: product.id}).subscribe({
+      next: (res)=>{
+        console.log(res)
+      }, error:(err)=>{
+        this.errMessage = err.error.message
+        console.error(err.error.message)
+      }
+    });
+
+  }
+
+  getFavs(){
+    
   }
 }

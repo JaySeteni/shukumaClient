@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from '../../../services/cart-service/cart.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,23 +10,22 @@ import { Router } from '@angular/router';
 export class NavigationComponent {
   isNavbarOpen = false;
   collapsed = false;
+  likes :any
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,  private cartService: CartService ) {}
 
   toggleNavbar() {
     this.isNavbarOpen = !this.isNavbarOpen;
     this.collapsed = this.isNavbarOpen;
   }
 
-  // navigateTo(path: string) {
-  //   this.router.navigate([path]);
-  //   this.toggleNavbar(); // Close the navbar after navigation
-  // }
+
   closeNavbar() {
     this.isNavbarOpen = false;
   }
   ngOnInit(): void {
     
   }
+
 }
 

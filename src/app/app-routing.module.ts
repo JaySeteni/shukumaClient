@@ -57,7 +57,7 @@ const routes: Routes = [
   {path: 'userprofile', component: UserprofileComponent},
   {path: 'categories', component:CategoriesComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'view_item', component: SingleproductComponent},
+  {path: 'view_item/:id', component: SingleproductComponent},
   {path: 'orders',component: OrderComponent},
   {path: 'business-orders',component: CusOrdersComponent},
   {path: 'footer', component: FooterComponent},
@@ -74,7 +74,7 @@ const routes: Routes = [
 
   // Driver Routes
   {path: 'driver/dash', component: DriverDashComponent},
-  {path: 'view-one', component: ViewOrderComponent},
+  {path: 'view-one/', component: ViewOrderComponent},
   {path: 'driver/profile', component: DriverProfileComponent},
   {path: 'favourites', component:FavouritesComponent}
 

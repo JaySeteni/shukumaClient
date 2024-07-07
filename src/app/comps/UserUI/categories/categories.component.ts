@@ -65,6 +65,9 @@ export class CategoriesComponent implements OnInit {
       console.log(this.items)
     }
 
+    view(id: Product["id"]){
+      
+    }
 // addToCart(item: CartItem){
 
 //   this.cartSservice.addToCart(item)
