@@ -29,7 +29,7 @@ import { CusOrdersComponent } from './comps/BusinessUI/cus-orders/cus-orders.com
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 
-import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
+import { AddProductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
 import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admin-dashboard.component';
 import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
 import { SidenavComponent } from './comps/BusinessUI/sidenav/sidenav.component';
@@ -70,7 +70,7 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     CusOrdersComponent,
     SingleOrderComponent,
     SettingsComponent,
-    AddproductComponent,
+    AddProductComponent,
     AdminDashboardComponent,
     ChatsComponent,
     SidenavComponent,
