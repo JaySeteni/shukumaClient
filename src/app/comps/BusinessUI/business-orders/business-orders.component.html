@@ -2,7 +2,7 @@
   <h1 class="p-4 flex justify-center w-80 text-xl order-gray-200 rounded-lg shadow dark:bg-black-800 dark:border-gray-700"> 
     Your Business Orders
   </h1>
-  <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" *ngIf="orders.length > 0" >
+  <div class="w-80 max-w-md p-4 flex gap-2 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" *ngIf="orders.length > 0" >
     <a routerLink="/orders">
     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700"  >
       <li class="py-3 sm:py-4"  *ngFor="let order of orders">
@@ -16,8 +16,11 @@
         <p class="pb-2">ordered Date: {{ order.createdAt }}</p>
 
         <p class="pb-2">Total: R{{ order.total }}</p>
-        <button class="flex mx-auto p-2 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> assign to driver</button>
+        <button class="flex mx-auto p-2 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> 
+          assign to driver
+        </button>
       </li>
+      <hr class="bg-red-700">
     </ul>
   </a>
   </div>
