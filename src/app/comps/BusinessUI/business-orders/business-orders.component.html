@@ -1,31 +1,30 @@
-<!-- <div class="p-1 flex flex-wrap items-center justify-center"> -->
-    
-    <!-- <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" >
-        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-            <li class="py-3 sm:py-4" *ngFor="let order of orders">
-                <div class="flex-shrink-0">
-                    <p>({{ order.id }})</p>
-                    <h3>Order #{{ order. total }}</h3> 
-                    <p>Created: {{ order.description }}</p>
-                </div>
+<div class="p-1 flex flex-wrap items-center justify-center"> 
+  <h1> 
+    Orders
+  </h1>
+  <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" *ngIf="orders.length > 0" >
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700"  >
+      <li class="py-3 sm:py-4"  *ngFor="let order of orders">
+        <p>user : {{order}}</p>
+        <h1>Order Id: #{{ order.id }}</h1> 
+        <p>Order Description:   {{ order.description }}</p>
+        <p>Number Of Items: {{ order.items}}</p>
+        <p>ordered Date: ({{ order.createdAt }})</p>
+        <p>order address At: {{order.address}}</p>
 
-    
-               <ul>
-                    <a routerLink="/vieworder">
-                    <li *ngFor="let order of orders">
-                        {{ order.id }} (x{{ order }}) - R{{ order.total.toFixed(2) }}
-                    </li>
-                    <p> Total: R{{ order.total }} </p>
-                    </a>
-                </ul> 
-            </li>
-        </ul>
-    
-    </div> -->
+        <p>Total: R{{ order.total.toFixed(2) }}</p>
+      </li>
+      <button routerLink="/order" class="flex mx-auto p-2 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> view order</button>
+    </ul>
+  </div>
+</div>
+<div *ngIf="!orders">
+  No orders found.
+</div>
 
-
-
-        <!-- <h2>Customer Orders</h2>
+<app-footer></app-footer>
+        
+<!-- <h2>Customer Orders</h2>
         <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
             <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
                 style="transform: scale(1.5); opacity: 0.1;">
@@ -43,30 +42,30 @@
                 <div class="flex justify-between">
                     <span class="block font-semibold text-xl">#ORD0001</span>
                     <span routerLink="/map" class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">Track order</span>
-    <ul *ngIf="allOrders.length > 0">
-      <li *ngFor="let order of allOrders">
+    <ul *ngIf="orders.length > 0">
+      <li *ngFor="let order of orders">
         <h3>Order #{{ order.orderNumber }}</h3> ({{ order.id }})
         <p>Created: {{ order.createdAt | date:'medium' }}</p>
         <h4>Items</h4>
         <ul>
-          <li *ngFor="let item of order.items">
-            {{ item.name }} (x{{ item.quantity }}) - ${{ item.price.toFixed(2) }}
+          <li *ngFor="let order of orders">
+            {{ order.id }} (x{{ order.orderNumber }}) - ${{ order.total.toFixed(2) }}
           </li>
         </ul>
         <p><b>Total:</b> ${{ order.total.toFixed(2) }}</p>
-        <p><b>Status:</b> {{ order.status }}</p>
+        <p><b>Status:</b> {{ order.address }}</p>
       </li>
     </ul>
-    <p *ngIf="allOrders.length === 0">No orders found.</p> -->
+    <p *ngIf="orders.length === 0">No orders found.</p> -->
 
 
-    <div >
+    <!-- <div *ngIf="!orders">
         No orders found.
     </div>
       
-    <div>
+    <div *ngFor="let order of orders">
         <h2>Your Orders</h2>
-        <ul *ngFor="let order of orders">
+        <ul >
           <li >
             Order ID: {{ order.id }}<br>
             <br>
@@ -76,5 +75,4 @@
       
       <div *ngIf="error">
         Error: {{ error }}
-      </div>
-      
+      </div> -->
