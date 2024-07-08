@@ -2,11 +2,16 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../../interfaces/product';
 import { CartItem } from '../../interfaces/cartItem';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class CartService {
   cartItemcount = new BehaviorSubject<number>(0);
   favList = new BehaviorSubject<number>(0);
@@ -17,6 +22,9 @@ export class CartService {
 
   totalAmount = 0;
 
+  httpOptions = {
+    "Accept": "application/json"
+  }
 
   private baseUrl: string = "http://localhost:3000/v1/cart/";
   private likesUrl: string = "http://localhost:3000/v1/favourites/"
@@ -40,7 +48,7 @@ export class CartService {
   }
 
   removeFromCart(payload:any): Observable<any>{
-    return this._http.delete<any>(`${this.baseUrl}one/`, payload)
+    return this._http.delete<any>(`${this.baseUrl}one/`, payload,)
   }
 
   getTotal() {

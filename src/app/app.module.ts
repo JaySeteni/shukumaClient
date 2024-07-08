@@ -8,6 +8,7 @@ import { GoogleMapsModule} from '@angular/google-maps';
 // import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 import { AppComponent } from './app.component';
+import { authInterceptorProviders } from './auth-interceptor.interceptor';
 
 import { RegisterComponent} from './comps/UserUI/register/register.component'
 import { AdminComponent } from './comps/UserUI/admin/admin.component';
@@ -100,7 +101,8 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     GoogleMapsModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
