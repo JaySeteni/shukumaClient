@@ -16,9 +16,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  
+
   registerUser(userData: UserRegister) {
-    return this.http.post('http://localhost:3000/v1/auth/register', userData); // Replace with your API endpoint
+    return this.http.post('http://localhost:3000/v1/auth/register', userData);
   }
 
   login(userData: UserLogin) {
