@@ -14,7 +14,7 @@ import { CartComponent } from './comps/UserUI/cart/cart.component';
 import { OrderComponent } from './comps/UserUI/order/order.component';
 import { FooterComponent } from './comps/UserUI/footer/footer.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
-import { CusOrdersComponent } from './comps/BusinessUI/cus-orders/cus-orders.component';
+import { BusinessOrdersComponent } from './comps/BusinessUI/business-orders/business-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 // import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
@@ -29,7 +29,7 @@ import { StatsComponent } from './comps/BusinessUI/stats/stats.component';
 import { SidenavComponent } from './comps/BusinessUI/sidenav/sidenav.component';
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
-import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
+import { AddProductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
@@ -37,7 +37,7 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
 
-  {path : 'addproduct', component: AddproductComponent},
+  {path : 'addproduct', component: AddProductComponent},
   {path : 'oneproduct', component: ViewOneProductComponent},
   {path : 'products', component: ViewProductsComponent},
   {path : 'sidenav',component:SidenavComponent},
@@ -59,7 +59,7 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'view_item/:id', component: SingleproductComponent},
   {path: 'orders',component: OrderComponent},
-  {path: 'business-orders',component: CusOrdersComponent},
+  {path: 'business-orders',component: BusinessOrdersComponent},
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
   {path: 'registerBusiness', component:RegisterBusinessComponent},
