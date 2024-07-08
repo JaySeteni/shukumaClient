@@ -1,18 +1,18 @@
 <div class="p-1 flex flex-wrap items-center justify-center"> 
-  <h1> 
-    Orders
+  <h1 class="p-4"> 
+    Your Orders
   </h1>
   <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" *ngIf="orders.length > 0" >
     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700"  >
       <li class="py-3 sm:py-4"  *ngFor="let order of orders">
-        <p>user : {{order}}</p>
+        <!-- <p>user : {{order.userId}}</p> -->
         <h1>Order Id: #{{ order.id }}</h1> 
         <p>Order Description:   {{ order.description }}</p>
-        <p>Number Of Items: {{ order.items}}</p>
-        <p>ordered Date: ({{ order.createdAt }})</p>
+        <p>Number Of Items: {{ order.items.length}}</p>
+        <p>ordered Date: {{ order.createdAt }}</p>
         <p>order address At: {{order.address}}</p>
 
-        <p>Total: R{{ order.total.toFixed(2) }}</p>
+        <p>Total: R{{ order.total }}</p>
       </li>
       <button routerLink="/order" class="flex mx-auto p-2 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> view order</button>
     </ul>
@@ -22,7 +22,7 @@
   No orders found.
 </div>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
         
 <!-- <h2>Customer Orders</h2>
         <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
@@ -76,3 +76,62 @@
       <div *ngIf="error">
         Error: {{ error }}
       </div> -->
+
+<!-- <section class="py-3 relative px-4 ">
+  <div class="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto pb-4 border-x-2 shadow-xl">
+  
+    <h3 class="font-manrope text-center font-bold text-2xl sm:text-4xl leading-10 text-black mb-11 py-5">
+        Your Orders 
+    </h3>    
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8 py-6 border-y border-gray-900 mb-6">
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Date</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black">{{order.createdAt}}</h6>
+        </div>
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Order</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black">#ORD00001</h6>
+        </div>
+    
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Address</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black">718 Joe Slovo Crescent, Nyanga 7750
+            </h6>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center sm:justify-end w-full my-6" *ngFor="let order of orders; index as i">
+        <div class=" w-full">
+          <div class="flex items-center justify-between mb-6">
+              <p class="font-normal text-xl leading-8 text-gray-500">Items:  </p>
+              <p>{{order.items}}</p> 
+          </div>
+
+          <div class="flex items-center justify-between  mb-4">
+              {{order.id}}<p class=" leading-8 text-gray-500">{{order.description}}</p>
+              <p class=" leading-8 text-gray-900">R{{order.total}}</p>
+          </div>
+          
+          <div class="flex items-center justify-between mb-6">
+              <p class="font-normal leading-8 text-gray-500">Discount</p>
+              <p class="font-semibold leading-8 text-gray-900">R0.00</p>
+          </div>
+
+          <div class="flex items-center justify-between py-6 border-y  border-grey-900">
+              <p class="font-manrope font-semibold text-2xl leading-9 text-gray-900">Total</p>
+              <p class="font-manrope font-bold text-2xl leading-9 text-indigo-600">R{{order.total}}</p>
+          </div>
+        </div>
+    </div>
+    <div class="data mb-6">
+        
+        <h6 class="font-manrope font-bold text-xl leading-9 text-black mb-3">Thank you for shopping
+            with us!</h6>
+
+        <h6 class="text-center text-blue-600 uppercase underline-offset-2 " routerLink="/home">Continue Shopping?</h6>
+        
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>     -->
