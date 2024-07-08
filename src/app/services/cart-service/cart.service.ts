@@ -36,7 +36,7 @@ export class CartService {
   }
 
   addtoCart(payload: any ):Observable<any>{
-    return this._http.post<any>(`${this.baseUrl}/add/`, payload  )
+    return this._http.post<any>(`${this.baseUrl}add/`, payload  )
   } 
   
   addToWishlist(payload: any):Observable<any> {
@@ -47,8 +47,8 @@ export class CartService {
     return this._http.get<any>(`${this.likesUrl}`, id)
   }
 
-  removeFromCart(payload:any): Observable<any>{
-    return this._http.delete<any>(`${this.baseUrl}one/`, payload,)
+  removeFromCart(userId:any, productId: any ): Observable<any>{
+    return this._http.delete<any>(`${this.baseUrl}one?userId=${userId}&productId=${productId}`, )
   }
 
   getTotal() {
