@@ -1,11 +1,11 @@
-<nav class="navbar bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
+<nav class="navbar bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 flex justify-between items-center">
     <!-- <button class="navbar-toggler focus:outline-none" (click)="toggleNavbar()">
       <i class="fas fa-bars"></i>
     </button> -->
     <div class="navbar-brand">
       <a href="#" class="text-xl font-bold">Shukuma</a>
       <span class="mx-2">
-      <a [routerLink]="['/favourites']" class="fas fa-heart"></a>
+      <a [routerLink]="['/favourites']" class="fas fa-heart ml-20"></a>
       </span>
     </div>
     <div class="navbar-nav" [ngClass]="{'hidden':!isNavbarOpen}">

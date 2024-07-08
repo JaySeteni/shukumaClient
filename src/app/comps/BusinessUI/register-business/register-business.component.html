@@ -1,48 +1,78 @@
-<div id="animation-carousel" class="relative w-full" data-carousel="static">
-  <!-- Carousel wrapper -->
-  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-    <!-- Component 1 -->
-    <div class="hidden duration-200 ease-linear" data-carousel-item>
-      <a routerLink="/login">
-        <!-- Content and functionality of Component 1 -->
-        <div *ngIf="showLoginPage; ngIfElse registerBusinessPage" class="login-container">
-          <form [formGroup]="loginForm" (ngSubmit)="OnLogin()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md">
-            <div class="flex items-center justify-between mb-4">
-              <a routerLink="/welcome" class="text-black">
-                <i class="fas fa-arrow-left"></i>
-              </a>
-              <h2 class="text-2xl font-bold">Shukuma</h2>
-            </div>
-            <div class="message mb-4">
-              <p class="text-gray-700 font-medium">Access Delivery Excellence</p>
-              <p class="text-gray-700 font-medium">with Your Account</p>
-            </div>
-            <div class="mb-4">
-              <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
-              <input id="email" type="email" formControlName="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="email" required>
-              <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-red-500 text-sm mt-1">
-                <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
-                <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format.</div>
-              </div>
-            </div>
-            <div class="mb-6">
-              <label for="password" class="block text-gray-700 font-bold mb-2">Password:</label>
-              <input id="password" type="password" formControlName="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" required>
-              <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-red-500 text-sm mt-1">
-                <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
-              </div>
-            </div>
-            <div class="flex items-center justify-between">
-              <p class="text-gray-600 text-sm">Don't have an account? <a href="register" class="text-blue-500 hover:text-blue-700">Register</a></p>
-              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" [disabled]="loginForm.invalid">Login</button>
-            </div>
-          </form>
+<app-sidenav></app-sidenav>
+<body class="bg-gray-800">
+  <div class="container mx-auto py-8">
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-center text-white bg-gradient-to-r from-pink-500 to-orange-500 mb-6" style="background: linear-gradient(45deg, #FF0080, #FF8C00)">Business Registration</h2>
+      <form (ngSubmit)="onSignUp()">
+        <div class="max-w-sm mx-auto">
+          <label for="business-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <h1 style="font-size: 15px; color: #333; font-weight: bold; margin-bottom: 10px;">Business Name</h1>
+          </label>
+          <div class="flex">
+            <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+              </svg>
+            </span>
+            <input type="text" id="business-name" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Business" [(ngModel)]="signUpObj.businessName">
+          </div>
         </div>
-      </a>
+        <form class="max-w-sm mx-auto">
+          <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><h1 style="font-size: 15px; color: #333; font-weight: bold; margin-bottom: 10px;">Your Email</h1></label>
+          <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+              </svg>
+            </div>
+            <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@email.com">
+          </div>
+        </form>
+        
+        <form class="max-w-sm mx-auto">
+          <label for="password-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><h1 style="font-size: 15px; color: #333; font-weight: bold; margin-bottom: 10px;">Your Password</h1></label>
+          <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+              </svg>
+            </div>
+            <input type="password" id="password-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="********">
+          </div>
+        </form>
+        
+        <form class="max-w-sm mx-auto">
+          <label for="phone-icon" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><h1 style="font-size: 15px; color: #333; font-weight: bold; margin-bottom: 10px;">Phone Number</h1></label>
+          <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12c6.617 0 12-5.383 12-12S18.617 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm5 9h-2v2h-2v-2h-2V9h2V7h2v2h2z"/>
+              </svg>
+            </div>
+            <input type="tel" id="phone-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your phone number">
+          </div>
+        </form>
+        <br>
+        <button type="submit" id="registerBtn" class="bg-primary flex mx-auto hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md" (click)="onSignUp()">Register</button>
+        </form>
+        </div>
     </div>
-  </div>
+</body>
+
+
+        
+
+<div id="spinner" [hidden]="spinnerHidden" class="flex items-center justify-center mt-4">
+<svg class="animate-spin h-6 w-6 text-white" viewBox="0 0 24 24">
+  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+</svg>
+<span class="ml-2 text-white">Loading...</span>
 </div>
-  
+
+<div *ngFor="let business of signUpBusinesses">{{ business.businessName }}, {{ business.email }}, {{ business.password }}, {{ business.phoneNumber }}</div>
     <!-- Slider controls -->
     <!-- <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
       <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
