@@ -9,6 +9,9 @@ import { SignInData } from '../../interfaces/signInData';
   providedIn: 'root'
 })
 export class AuthService {
+  registerBusiness(businessData: UserRegister) {
+    return this.http.post('http://localhost:3000/v1/auth/register', businessData);
+  };
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

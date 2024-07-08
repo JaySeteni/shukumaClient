@@ -15,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
         
       if (req.body) {
         req = req.clone({ setHeaders: { 'Content-Type': 'application/json' } });
-        console.log("From Auth int")
+        console.log("From Auth int", req)
       }
       return next.handle(req);
     }
