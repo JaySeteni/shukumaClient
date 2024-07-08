@@ -3,19 +3,23 @@
     Your Orders
   </h1>
   <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700" *ngIf="orders.length > 0" >
+    <a routerLink="/orders">
     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700"  >
       <li class="py-3 sm:py-4"  *ngFor="let order of orders">
-        <!-- <p>user : {{order.userId}}</p> -->
-        <h1>Order Id: #{{ order.id }}</h1> 
-        <p>Order Description:   {{ order.description }}</p>
-        <p>Number Of Items: {{ order.items.length}}</p>
+        <p> number No: {{orders.indexOf(order)+1}}
+        <h1>Order Id: #{{ order.orderNumber }}</h1> 
+        <!-- <p>Order cart:   {{ order.cartId }}</p> -->
+        <!-- <p>Order Description:   {{ order.description }}</p> -->
+        <p>Number Of Items: {{ order.items.productId}}</p>
         <p>ordered Date: {{ order.createdAt }}</p>
         <p>order address At: {{order.address}}</p>
+        <p>Status: {{order.status}}</p>
 
         <p>Total: R{{ order.total }}</p>
+        <button class="flex mx-auto p-2 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> view order</button>
       </li>
-      <button routerLink="/order" class="flex mx-auto p-2 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> view order</button>
     </ul>
+  </a>
   </div>
 </div>
 <div *ngIf="!orders">
