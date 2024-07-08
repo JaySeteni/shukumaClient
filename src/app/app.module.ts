@@ -25,17 +25,16 @@ import { CartComponent } from './comps/UserUI/cart/cart.component';
 import { OrderComponent } from './comps/UserUI/order/order.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
 // import { TrackDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
-import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.component';
+import { BusinessOrdersComponent } from './comps/BusinessUI/business-orders/business-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 
-import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
+import { AddProductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
 import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admin-dashboard.component';
 import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
 import { SidenavComponent } from './comps/BusinessUI/sidenav/sidenav.component';
 import { StatsComponent } from './comps/BusinessUI/stats/stats.component';
 import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
-import { ViewOrdersComponent } from './comps/BusinessUI/view-orders/view-orders.component';
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-one-order.component';
 import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
@@ -68,16 +67,15 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     CartComponent,
     OrderComponent,
     CheckoutComponent,
-    CusOrdersComponent,
+    BusinessOrdersComponent,
     SingleOrderComponent,
     SettingsComponent,
-    AddproductComponent,
+    AddProductComponent,
     AdminDashboardComponent,
     ChatsComponent,
     SidenavComponent,
     StatsComponent,
     ViewOneProductComponent,
-    ViewOrdersComponent,
     ViewProductsComponent,
     ViewOneOrderComponent,
     DriverDashComponent,

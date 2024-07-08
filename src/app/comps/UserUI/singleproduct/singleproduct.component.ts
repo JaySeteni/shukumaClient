@@ -3,6 +3,7 @@ import { ProductService } from '../../../services/product-service/product.servic
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../interfaces/product';
 import { CartService } from '../../../services/cart-service/cart.service';
+import { ProductDbResponse } from '../../../interfaces/productDbResponse';
 
 @Component({
   selector: 'app-singleproduct',
@@ -12,7 +13,8 @@ import { CartService } from '../../../services/cart-service/cart.service';
 export class SingleproductComponent implements OnInit {
   products: any [] = []
   isAdded: any
-  selectedProduct: any
+  selectedProduct?: Product;
+  errMessage: any = ""
 
   constructor(
     private route: ActivatedRoute,
@@ -21,42 +23,64 @@ export class SingleproductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getAllProducts()
-  
+    // this.getAllProducts()
+    this.getProduct()
   }
 
-  getAllProducts(){
+  // getAllProducts(){
 
-    // this.mainService.getAllProducts().subscribe({
-    //   next: data =>{
-    //   this.products = data.products
-    //   },
-    //   error: err=>{
-    //     console.log(err)
-    //   }
-    // })
-  }
-  getOneProduct(): void {
+  //   this._productService.getAllProducts().subscribe({
+  //     next: (data: ProductDbResponse) =>{
+  //     this.products = data.products
+
+  //     console.log(this.products)
+  //     },
+  //     error: err=>{
+  //       console.log(err)
+  //     }
+  //   })
+  // }
+
+  getProduct(): void {
     const id = this.route.snapshot.paramMap.get('id');
-
-
-      // this.mainService.getProduct(id).subscribe({
-      //   next: (res: any) => {
-      //     this.selectedProduct = res.product;
-      //   },
-      //   error: (err: any) => {
-      //     console.error("An error occurred while fetching product:", err);
-      //     // Handle errors gracefully (e.g., display an error message)
-      //   }
-      // });
+    console.log(id)
+      this._productService.getProduct(id).subscribe({
+        next: (res: any) => {
+          console.log(res)
+          this.selectedProduct = res.product;
+        },
+        error: (err: any) => {
+          console.error("An error occurred while fetching product:", err);
+        }
+      });
   }
 
   addToCart(item: Product): void {
-    // this.cartService.addToCart(item); // Assuming cartService exists in your setup
-    // this.isAdded = this.cartService.getAdded(); // Assuming getAdded returns a boolean
+    
+    this.cartService.addtoCart({productId: item.id, quantity: 1}).subscribe({
+      next: (res)=>{
+        console.log(res)
+      }, error:(err)=>{
+        console.error("here",err)
+      }
+    })
+
   }
 
-  saveForLaterButton(product: Product): void {
-    // this.cartService.addToWishlist(product); // Assuming cartService exists
+  addToFavs(product: Product): void {
+
+    this.cartService.addToWishlist({userId: "66865064ad57296a97884bc3", itemId: product.id}).subscribe({
+      next: (res)=>{
+        console.log(res)
+      }, error:(err)=>{
+        this.errMessage = err.error.message
+        console.error(err.error.message)
+      }
+    });
+
+  }
+
+  getFavs(){
+    
   }
 }
