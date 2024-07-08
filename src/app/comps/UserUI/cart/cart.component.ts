@@ -44,11 +44,10 @@ export class CartComponent {
   }
 
   removeProduct(item:any,e:Event) {
+    const id = "66865064ad57296a97884bc3"
     const productId = item.productId
-    const cart_id = this.fullCart.id
-
-    console.log(typeof(cart_id), productId._id)
-    this.cartService.removeFromCart({_id: cart_id, productId: productId._id}).subscribe({
+    console.log(productId._id)
+    this.cartService.removeFromCart({userId: id, productId: productId._id}).subscribe({
       next: (res)=>{
         console.log(res)
       },
