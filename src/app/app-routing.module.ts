@@ -16,7 +16,6 @@ import { FooterComponent } from './comps/UserUI/footer/footer.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
 import { BusinessOrdersComponent } from './comps/BusinessUI/business-orders/business-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
-// import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
 import { ViewOrderComponent } from './comps/DriverUI/view-order/view-order.component';
@@ -33,6 +32,7 @@ import { AddProductComponent } from './comps/BusinessUI/addproduct/addproduct.co
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
+import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -63,9 +63,10 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
   {path: 'registerBusiness', component:RegisterBusinessComponent},
+  {path: 'tracking', component: TrackDeliveryComponent},
 
 
-  // {path: 'tracking', component: TrackDeliveriesComponent},
+
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
