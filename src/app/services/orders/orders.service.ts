@@ -12,6 +12,7 @@ import { Order } from '../../interfaces/order';
   providedIn: 'root'
 })
 export class OrdersService {
+
     private baseUrl = "http://localhost:3000/v1/orders";   
     orders: Order[] = [];
     error: string | null = null;
@@ -27,5 +28,12 @@ export class OrdersService {
     
   getAllOrders(): Observable<ProductDbResponse> {
     return this.http.get<ProductDbResponse>(`${this.baseUrl}/orders`);
+  }
+  addOrder(payload: any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}`, payload)
+  }
+
+  fetchOrder(id:any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}`, id)
   }
 }

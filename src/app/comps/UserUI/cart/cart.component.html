@@ -1,7 +1,7 @@
 
 <app-navigation></app-navigation>
 
-<section class="bg-slate-100 py-8 antialiased dark:bg-gray-900 md:py-16">
+<section class="bg-slate-100 pt-8 pb-16 antialiased h-full dark:bg-gray-900 md:py-16">
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
       <h2 class="text-xl font-semibold text-white-800  sm:text-2xl">Shopping Cart</h2>
 
@@ -54,19 +54,69 @@
 
             
           </div>
-<div class="container mt-9 ">
-  <div class="flex justify-around items-center h-10 rounded-lg">
+<div class="container mt-9 mb-20 ">
+  <div class="flex justify-around items-center h-10 rounded-lg mb-10">
     <!-- <h1 class="text-xl font-bold text-white">Total:  <span class="">{{totalAmount | currency:"R"}}</span></h1> -->
-    <button type='button' class='py-2.5 px-6 text-lg border border-gray-300 rounded-lg shadow-xs bg-white  text-red-700 font-extrabold transition-all duration-500 hover:bg-gray-50'>Total:  <span class="">{{totalAmount | currency:"R"}}</span></button>
+    <button type='button' class='py-2.5 px-6 text-lg border border-gray-300 rounded-lg shadow-xs bg-white  text-red-700 font-extrabold transition-all duration-500 hover:bg-gray-50'>Total:  <span class="">{{totalAmount | currency:"R"}}</span>
+    </button>
+
+    
+  </div>
+
+  <div class="  h-24 rounded-lg mt-2 ">
+    <!-- <h1 class="text-xl font-bold text-white">Total:  <span class="">{{totalAmount | currency:"R"}}</span></h1> -->
+    <div class="flex items-center mb-2">
+      <input (click)="hide()"  id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+      <label for="default-radio-1"  class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Collect In-Store</label>
+  </div>
+  <div class="flex items-center mb-4">
+      <input (click)="showAddress()" checked id="default-radio-2" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+      <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Delivery</label>
+  </div>
+
+  <div class="flex flex-col gap-5 mb-10" *ngIf="isHidden">
+    <div class="relative">
+    <label class="flex  items-center mb-2 text-gray-600 text-xs font-medium"> Address <svg width="7" height="7" class="ml-1" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.11222 6.04545L3.20668 3.94744L1.43679 5.08594L0.894886 4.14134L2.77415 3.18182L0.894886 2.2223L1.43679 1.2777L3.20668 2.41619L3.11222 0.318182H4.19105L4.09659 2.41619L5.86648 1.2777L6.40838 2.2223L4.52912 3.18182L6.40838 4.14134L5.86648 5.08594L4.09659 3.94744L4.19105 6.04545H3.11222Z" fill="#EF4444"></path></svg>
+    </label>
+    <input [(ngModel)]="address"  type="text" id="default-search" class="block w-full max-w-xs px-4 py-2 text-sm font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none leading-relaxed"  required="">
+    </div>
+      
+  </div>
+  
 
   </div>
 
 </div>
 
-<div class="container-fluid mt-5">
-  <div class="flex justify-around items-center h-10 ">
+<!-- <div class="flex flex-col gap-5 mb-4">
+  <div class="relative">
+  <label class="flex  items-center mb-2 text-gray-600 text-xs font-medium"> Address <svg width="7" height="7" class="ml-1" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M3.11222 6.04545L3.20668 3.94744L1.43679 5.08594L0.894886 4.14134L2.77415 3.18182L0.894886 2.2223L1.43679 1.2777L3.20668 2.41619L3.11222 0.318182H4.19105L4.09659 2.41619L5.86648 1.2777L6.40838 2.2223L4.52912 3.18182L6.40838 4.14134L5.86648 5.08594L4.09659 3.94744L4.19105 6.04545H3.11222Z" fill="#EF4444"></path></svg>
+  </label>
+  <input type="text" id="default-search" class="block w-full max-w-xs px-4 py-2 text-sm font-normal shadow-xs text-gray-900 bg-transparent border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none leading-relaxed"  required="">
+  </div>
+    
+</div> -->
 
-    <button class="btn btn-secondary w-100 font-extrabold">PROCEED TO CHECKOUT </button>
+<div class="container-fluid mt-10">
+  <div class="flex flex-col justify-around items-center gap-4 h-10 w-100 ">
+    <div *ngIf="isSuccesful" class="z-40 w-full text-center ">
+      <span id="badge-dismiss-default" class="inline-flex items-center px-2 py-1 me-2 text-lg font-medium text-blue-800 bg-blue-100 rounded dark:bg-blue-900 dark:text-blue-300">
+        {{message}}
+        <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300" data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
+        <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+        <span class="sr-only">Remove badge</span>
+        </button>
+        </span>
+    </div>
+  <button class="btn btn-secondary w-100 font-extrabold" (click)="placeOrder()">PROCEED TO CHECKOUT </button>
 
   </div>
 </div>
+</div>
+</div>
+</div>
+</section>

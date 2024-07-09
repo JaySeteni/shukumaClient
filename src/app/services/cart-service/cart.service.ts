@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Product } from '../../interfaces/product';
 import { CartItem } from '../../interfaces/cartItem';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -18,16 +18,13 @@ export class CartService {
   cartTotal = new BehaviorSubject<number>(0);
   wishList: Product[] = [];
   items: CartItem[] = [];
-  isAddedToCart: Boolean = false;
-
   totalAmount = 0;
 
-  httpOptions = {
-    "Accept": "application/json"
-  }
+ 
 
   private baseUrl: string = "http://localhost:3000/v1/cart/";
   private likesUrl: string = "http://localhost:3000/v1/favourites/"
+  
 
   constructor(private _http: HttpClient) {}
 
@@ -70,7 +67,23 @@ export class CartService {
     return this.wishList;
   }
 
-  checkCartItemAddition() {
-    return this.isAddedToCart;
+  updateCArt(newCount: number){
+    this.cartItemcount.next(this.cartItemcount.value + newCount);
+    console.log(this.cartItemcount.value)
   }
+
+  updateFavCount(newCount: number){
+    this.favList.next(this.favList.value + newCount);
+    console.log(this.favList.value)
+  }
+  
+  getcartCount(){
+    return this.cartItemcount
+  }
+  
+
+
+  
+
+  
 }

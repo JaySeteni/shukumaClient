@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cart-service/cart.service';
 import { BehaviorSubject } from 'rxjs';
 
@@ -9,10 +9,11 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class FooterComponent implements OnInit {
   favListCount$ = new BehaviorSubject<number>(0);
-  cartCount$ = new BehaviorSubject<any>(0)
+  cartCount$ = new BehaviorSubject<number>(0)
   favsCount : any;
   cartCounter: any;
-
+  cartCount: number = 0;
+  @Input() some : any
 
 
 
@@ -35,7 +36,7 @@ export class FooterComponent implements OnInit {
     this.cartService.fetchFavs(id).subscribe({
       next: (res: any) => {
           this.favsCount = res.length
-       
+
       },
       error: (err: any) => {
         console.error("An error occurred while fetching product:", err);
@@ -47,8 +48,7 @@ export class FooterComponent implements OnInit {
     const id = "66865064ad57296a97884bc3"
     this.cartService.getCart(id).subscribe({
       next: (res: any) => {
-          this.cartCounter = res[0].items.length
-        console.log(res[0].items.length) 
+        console.log(res[0].items.length)
       },
       error: (err: any) => {
         console.error("An error occurred while fetching product:", err);

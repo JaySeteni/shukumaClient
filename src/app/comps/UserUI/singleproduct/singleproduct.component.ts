@@ -15,7 +15,7 @@ export class SingleproductComponent implements OnInit {
   isAdded: any
   selectedProduct?: Product;
   errMessage: any = ""
-
+  not = 0
   constructor(
     private route: ActivatedRoute,
     private _productService: ProductService,
@@ -60,7 +60,8 @@ export class SingleproductComponent implements OnInit {
     this.cartService.addtoCart({productId: item.id, quantity: 1}).subscribe({
       next: (res)=>{
         console.log(res)
-      }, error:(err)=>{
+        this.cartService.updateCArt(1)
+            }, error:(err)=>{
         console.error("here",err)
       }
     })
@@ -72,6 +73,7 @@ export class SingleproductComponent implements OnInit {
     this.cartService.addToWishlist({userId: "66865064ad57296a97884bc3", itemId: product.id}).subscribe({
       next: (res)=>{
         console.log(res)
+        
       }, error:(err)=>{
         this.errMessage = err.error.message
         console.error(err.error.message)
