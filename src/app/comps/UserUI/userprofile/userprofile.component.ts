@@ -24,7 +24,9 @@ interface UserProfile {
 })
 
 export class UserprofileComponent implements OnInit {
+    
 
+    
     mockUserProfile: any = {
     firstName: 'John',
     lastName: 'Doe',
