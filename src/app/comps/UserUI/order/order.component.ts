@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../../services/orders/orders.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-order',
@@ -17,7 +18,7 @@ export class OrderComponent implements OnInit {
     this.orderedItems = JSON.parse(`${localStorage.getItem('CartItems')}`) 
   }
 
-  // getOrder(){
-  //   this.orderService.fetchOrder().use
-  // }
+  getOrder(){
+    // this.orderService.fetchOrder().use
+  }
 }
