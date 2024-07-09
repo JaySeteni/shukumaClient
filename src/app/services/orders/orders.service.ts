@@ -29,11 +29,12 @@ export class OrdersService {
   getAllOrders(): Observable<ProductDbResponse> {
     return this.http.get<ProductDbResponse>(`${this.baseUrl}/orders`);
   }
+
   addOrder(payload: any):Observable<any>{
     return this.http.post<any>(`${this.baseUrl}`, payload)
   }
 
-  fetchOrder(id:any):Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}`, id)
+  fetchOrder(cartId:any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/${cartId}`)
   }
 }

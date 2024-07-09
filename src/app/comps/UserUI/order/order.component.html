@@ -24,7 +24,13 @@
             </div>
         </div>
 
-       
+       <div *ngIf="orderedItems">
+        <div>{{orderedItems.userId.email}}</div>
+        <div *ngFor="let product of orderedItems.items">
+            <h1>{{product.productId.title}}</h1>
+        </div>
+       </div>
+
 
 
         
@@ -36,6 +42,7 @@
                     <p class="font-normal text-xl leading-8 text-gray-500">Items: </p>
                 
                 </div>
+                
                 <div class="flex items-center justify-between  mb-4" *ngFor="let item of orderedItems; index as i">
                     {{item.quantity}}<p class=" leading-8 text-gray-500">{{item.description}}</p>
                     <p class=" leading-8 text-gray-900">R{{item.price}}</p>
@@ -56,7 +63,7 @@
             <h6 class="font-manrope font-bold text-xl leading-9 text-black mb-3">Thank you for shopping
                 with us!</h6>
 
-            <h6 class="text-center text-blue-600 uppercase underline-offset-2 " routerLink="/home">Continue Shopping?</h6>
+            <h6 class="text-center text-blue-600 uppercase underline-offset-2 " routerLink="/userhome">Continue Shopping?</h6>
             
         </div>
     </div>

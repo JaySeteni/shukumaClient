@@ -121,6 +121,7 @@ export class CartComponent {
 
   placeOrder(){
     const uid = "66865064ad57296a97884bc3"
+    
     this.fullCart._id
     this.orderService.addOrder({userId: uid, cartId:this.fullCart._id, address: this.address}).subscribe(
       {

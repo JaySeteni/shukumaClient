@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../../services/orders/orders.service';
+import { BehaviorSubject } from 'rxjs';
+import { CartService } from '../../../services/cart-service/cart.service';
 
 @Component({
   selector: 'app-order',
@@ -10,14 +12,27 @@ export class OrderComponent implements OnInit {
   date = new Date().toLocaleString()
   total:any
   orderedItems: any
-  constructor(private orderService : OrdersService ){}
+  orderTotal$ = new BehaviorSubject<number>(0)
+
+  constructor(private orderService : OrdersService, private cartService: CartService){}
 
   ngOnInit(): void {
     this.total = JSON.parse(`${localStorage.getItem('Total')}`)
-    this.orderedItems = JSON.parse(`${localStorage.getItem('CartItems')}`) 
+    this.getOrder()
+
   }
 
   getOrder(){
-    this.orderService.fetchOrder().use
+    const userId = "66865064ad57296a97884bc3"
+    const cartId = "66865190d6231df3b77815f9"
+    this.orderService.fetchOrder(cartId).subscribe({
+      next: (res)=>{
+        console.log(res)
+        this.orderedItems = res
+        
+      },error: (err)=>{
+        console.error("or",{userId, cartId} ,err)
+      },
+    })
   }
 }
