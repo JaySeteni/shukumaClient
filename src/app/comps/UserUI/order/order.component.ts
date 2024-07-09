@@ -18,6 +18,6 @@ export class OrderComponent implements OnInit {
   }
 
   getOrder(){
-    this.orderService.fetchOrder().use
+    // this.orderService.fetchOrder().use
   }
 }
