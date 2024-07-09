@@ -16,7 +16,6 @@ import { FooterComponent } from './comps/UserUI/footer/footer.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
 import { BusinessOrdersComponent } from './comps/BusinessUI/business-orders/business-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
-// import { TrackingDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
 import { ViewOrderComponent } from './comps/DriverUI/view-order/view-order.component';
@@ -33,6 +32,8 @@ import { AddProductComponent } from './comps/BusinessUI/addproduct/addproduct.co
 import { FavouritesComponent } from './comps/UserUI/favourites/favourites.component';
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
+import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
+import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -58,14 +59,15 @@ const routes: Routes = [
   {path: 'categories', component:CategoriesComponent},
   {path: 'cart', component: CartComponent},
   {path: 'view_item/:id', component: SingleproductComponent},
-  {path: 'orders',component: OrderComponent},
+  {path: 'order',component: OrderComponent},
   {path: 'business-orders',component: BusinessOrdersComponent},
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
   {path: 'registerBusiness', component:RegisterBusinessComponent},
+  {path: 'tracking', component: TrackDeliveryComponent},
 
 
-  // {path: 'tracking', component: TrackDeliveriesComponent},
+
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
@@ -76,7 +78,8 @@ const routes: Routes = [
   {path: 'driver/dash', component: DriverDashComponent},
   {path: 'view-one/', component: ViewOrderComponent},
   {path: 'driver/profile', component: DriverProfileComponent},
-  {path: 'favourites', component:FavouritesComponent}
+  {path: 'favourites', component:FavouritesComponent},
+  {path: 'driver/track', component: DriverTrackComponent}
 
 ];
 @NgModule({

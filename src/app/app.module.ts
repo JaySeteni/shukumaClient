@@ -25,7 +25,7 @@ import { SearchComponent } from './comps/UserUI/search/search.component';
 import { CartComponent } from './comps/UserUI/cart/cart.component';
 import { OrderComponent } from './comps/UserUI/order/order.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
-// import { TrackDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
+
 import { BusinessOrdersComponent } from './comps/BusinessUI/business-orders/business-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
@@ -48,6 +48,8 @@ import { FavouritesComponent } from './comps/UserUI/favourites/favourites.compon
 import { NavigationComponent } from './comps/UserUI/navigation/navigation.component';
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
+import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
+import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 
 
 
@@ -89,6 +91,9 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     SpinnerComponent,
     NavigationComponent,
     RegisterBusinessComponent,
+    TrackDeliveryComponent,
+    DriverTrackComponent,
+    
 
   ],
   imports: [
