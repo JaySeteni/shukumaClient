@@ -18,7 +18,7 @@ export class OrderComponent implements OnInit {
     this.orderedItems = JSON.parse(`${localStorage.getItem('CartItems')}`) 
   }
 
-  // getOrder(){
-  //   this.orderService.fetchOrder().use
-  // }
+  getOrder(){
+    // this.orderService.fetchOrder().use
+  }
 }
