@@ -33,6 +33,7 @@ import { FavouritesComponent } from './comps/UserUI/favourites/favourites.compon
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
 import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
+import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -77,7 +78,8 @@ const routes: Routes = [
   {path: 'driver/dash', component: DriverDashComponent},
   {path: 'view-one/', component: ViewOrderComponent},
   {path: 'driver/profile', component: DriverProfileComponent},
-  {path: 'favourites', component:FavouritesComponent}
+  {path: 'favourites', component:FavouritesComponent},
+  {path: 'driver/track', component: DriverTrackComponent}
 
 ];
 @NgModule({

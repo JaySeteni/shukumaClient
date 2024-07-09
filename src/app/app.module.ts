@@ -49,6 +49,7 @@ import { NavigationComponent } from './comps/UserUI/navigation/navigation.compon
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
 import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
+import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 
 
 
@@ -91,6 +92,7 @@ import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-deli
     NavigationComponent,
     RegisterBusinessComponent,
     TrackDeliveryComponent,
+    DriverTrackComponent,
     
 
   ],
