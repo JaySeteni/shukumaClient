@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../interfaces/product';
 import { CartService } from '../../../services/cart-service/cart.service';
+import { OrdersService } from '../../../services/orders/orders.service';
+import { Route, Router, RouterFeature } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -14,11 +16,18 @@ export class CartComponent {
   cartItems1: any
   cart_id :any
   fullCart: any;
+  address:string = ""
+  isHidden: boolean = false
+  message = ""
+  isSuccesful = false
 
-  constructor(private cartService : CartService){}
+  constructor(private cartService : CartService, 
+            private orderService : OrdersService,
+            private router: Router ){}
 
   ngOnInit(): void {
     this.getCart()
+
 
     console.log(this.totalAmount)
     this.items = this.cartService.getItems();
@@ -92,7 +101,7 @@ export class CartComponent {
       next: (res: any) => {
           this.cartItems1 = res[0].items
           this.fullCart = res[0]
-        console.log(res, this.cartItems1) 
+        console.log(res[0].id) 
         this.Total()
       },
       error: (err: any) => {
@@ -100,6 +109,36 @@ export class CartComponent {
       }
     })
     
+  }
+
+  showAddress(){
+    this.isHidden = true;
+  }
+
+  hide(){
+    this.isHidden = false
+  }
+
+  placeOrder(){
+    const uid = "66865064ad57296a97884bc3"
+    this.fullCart._id
+    this.orderService.addOrder({userId: uid, cartId:this.fullCart._id, address: this.address}).subscribe(
+      {
+        next: (res)=>{
+          console.log(res)
+          this.isSuccesful = true
+          this.message = res.message
+          setTimeout(()=>{
+            this.router.navigateByUrl("/order")
+          },3000)
+          
+
+        },
+        error: (err)=>{
+          console.log("err here", err)
+        }
+      }
+    )
   }
 
 }

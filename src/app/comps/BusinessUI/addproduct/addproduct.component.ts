@@ -27,6 +27,11 @@ export class AddProductComponent {
           formData.append(key, this.product[key]);
         }
       }
+      formData.append('imageUrl', this.product.imageUrl)
+
+      // for (let i = 0; i < this.product.images.length; i++) {
+      //   formData.append('images', this.product.images[i]);
+      // }
       this.productService.createProduct(formData).subscribe({
         next: response  => {
           console.log('Product added successfully', response);
@@ -40,9 +45,11 @@ export class AddProductComponent {
      onFileSelected(event: any) {
       if (event.target.files) {
           this.product.images.file;
+          console.log(this.product.images.file)
         }
       }
     }
+
 
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { ProductDbResponse } from '../../interfaces/productDbResponse';
 import { Order } from '../../interfaces/order';
@@ -12,6 +12,7 @@ import { Order } from '../../interfaces/order';
   providedIn: 'root'
 })
 export class OrdersService {
+
     private baseUrl = "http://localhost:3000/v1/orders";   
     orders: Order[] = [];
     error: string | null = null;
@@ -27,5 +28,25 @@ export class OrdersService {
     
   getAllOrders(): Observable<ProductDbResponse> {
     return this.http.get<ProductDbResponse>(`${this.baseUrl}/orders`);
+  }
+  addOrder(payload: any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}`, payload)
+  }
+
+  fetchOrder(id:any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}`, id)
+  }
+
+  updateOrder(orderId: string, updatedOrderData: Partial<Order>): Observable<any> {
+    const url = `${this.baseUrl}/${orderId}`;
+    return this.http.put<any>(url, updatedOrderData)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  private handleError(error: any): Observable<any> {
+    console.error('Error updating order:', error);
+    return throwError('Error updating order. Please try again.');
   }
 }
