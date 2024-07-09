@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule} from '@angular/google-maps';
-// import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 import { AppComponent } from './app.component';
 import { authInterceptorProviders } from './auth-interceptor.interceptor';
@@ -14,7 +13,6 @@ import { RegisterComponent} from './comps/UserUI/register/register.component'
 import { AdminComponent } from './comps/UserUI/admin/admin.component';
 import { CategoriesComponent } from './comps/UserUI/categories/categories.component';
 import { FooterComponent } from './comps/UserUI/footer/footer.component';
-// import { HomeComponent } from './comps/UserUI/homeUser/home.component';
 import { LandingComponent } from './comps/UserUI/landing/landing.component';
 import { LoginComponent } from './comps/UserUI/login/login.component';
 import { MapComponent } from './comps/UserUI/map/map.component';
@@ -49,6 +47,7 @@ import { NavigationComponent } from './comps/UserUI/navigation/navigation.compon
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
 import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
+import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 
 
 
@@ -91,6 +90,7 @@ import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-deli
     NavigationComponent,
     RegisterBusinessComponent,
     TrackDeliveryComponent,
+    DriverTrackComponent,
     
 
   ],

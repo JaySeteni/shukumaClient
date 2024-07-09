@@ -45,10 +45,11 @@ export class AddProductComponent {
      onFileSelected(event: any) {
       if (event.target.files) {
           this.product.images.file;
+          console.log(this.product.images.file)
         }
       }
     }
-  
+
 
 
 

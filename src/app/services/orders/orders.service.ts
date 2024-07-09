@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { ProductDbResponse } from '../../interfaces/productDbResponse';
 import { Order } from '../../interfaces/order';
@@ -36,5 +36,18 @@ export class OrdersService {
 
   fetchOrder(cartId:any):Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/${cartId}`)
+  }
+
+  updateOrder(orderId: string, updatedOrderData: Partial<Order>): Observable<any> {
+    const url = `${this.baseUrl}/${orderId}`;
+    return this.http.put<any>(url, updatedOrderData)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  private handleError(error: any): Observable<any> {
+    console.error('Error updating order:', error);
+    return throwError('Error updating order. Please try again.');
   }
 }

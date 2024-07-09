@@ -39,6 +39,21 @@ export class DriverDashComponent implements OnInit{
     })
   }
 
+  updateOrderStatus(orderId: string, newStatus: string) {
+    const updatedOrder: Partial<Order> = { status: newStatus };
+    this.ordersService.updateOrder(orderId, updatedOrder)
+      .subscribe(
+        response => {
+          // Handle successful update (e.g., update order object in your component)
+          console.log('Order updated successfully!', this.orders);
+        },
+        error => {
+          // Handle error (e.g., display error message to the user)
+          console.error('Error updating order:', error);
+        }
+      );
+  }
+
 //   orderData = [
 //     {
 //       orderNo:"SHU23456789",

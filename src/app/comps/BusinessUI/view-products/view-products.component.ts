@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../interfaces/product';
+import { ProductService } from '../../../services/product-service/product.service';
 @Component({
   selector: 'app-view-products',
   templateUrl: './view-products.component.html',
@@ -7,8 +8,11 @@ import { Product } from '../../../interfaces/product';
 })
 export class ViewProductsComponent {
 
-  constructor() { }
+  products:any
+
+  constructor( productService:ProductService) { }
 
   ngOnInit(): void {
+    
   }
 }
