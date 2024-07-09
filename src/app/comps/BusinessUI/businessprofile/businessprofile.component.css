@@ -11,7 +11,11 @@
     border-radius: 50%;
     margin-bottom: 20px;
   }
-  
+  .profilePic{
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+  }
   @media (max-width: 576px) {
     .profile-card {
       padding: 10px;

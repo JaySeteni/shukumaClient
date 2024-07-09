@@ -4,9 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { GoogleMapsModule} from '@angular/google-maps';
 // import { NgxChartsModule } from '@swimlane/ngx-charts'
 
 import { AppComponent } from './app.component';
+import { authInterceptorProviders } from './auth-interceptor.interceptor';
 
 import { RegisterComponent} from './comps/UserUI/register/register.component'
 import { AdminComponent } from './comps/UserUI/admin/admin.component';
@@ -23,18 +25,17 @@ import { SearchComponent } from './comps/UserUI/search/search.component';
 import { CartComponent } from './comps/UserUI/cart/cart.component';
 import { OrderComponent } from './comps/UserUI/order/order.component';
 import { CheckoutComponent } from './comps/UserUI/checkout/checkout.component';
-// import { TrackDeliveriesComponent } from './comps/UserUI/track-deliveries/track-deliveries.component';
-import { CusOrdersComponent } from './comps/UserUI/cus-orders/cus-orders.component';
+
+import { BusinessOrdersComponent } from './comps/BusinessUI/business-orders/business-orders.component';
 import { SingleOrderComponent } from './comps/UserUI/single-order/single-order.component';
 import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 
-import { AddproductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
+import { AddProductComponent } from './comps/BusinessUI/addproduct/addproduct.component';
 import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admin-dashboard.component';
 import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
 import { SidenavComponent } from './comps/BusinessUI/sidenav/sidenav.component';
 import { StatsComponent } from './comps/BusinessUI/stats/stats.component';
 import { ViewOneProductComponent } from './comps/BusinessUI/view-one-product/view-one-product.component';
-import { ViewOrdersComponent } from './comps/BusinessUI/view-orders/view-orders.component';
 import { ViewProductsComponent } from './comps/BusinessUI/view-products/view-products.component';
 import { ViewOneOrderComponent } from './comps/BusinessUI/view-one-order/view-one-order.component';
 import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
@@ -47,6 +48,7 @@ import { FavouritesComponent } from './comps/UserUI/favourites/favourites.compon
 import { NavigationComponent } from './comps/UserUI/navigation/navigation.component';
 import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
+import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
 
 
 
@@ -67,16 +69,15 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     CartComponent,
     OrderComponent,
     CheckoutComponent,
-    CusOrdersComponent,
+    BusinessOrdersComponent,
     SingleOrderComponent,
     SettingsComponent,
-    AddproductComponent,
+    AddProductComponent,
     AdminDashboardComponent,
     ChatsComponent,
     SidenavComponent,
     StatsComponent,
     ViewOneProductComponent,
-    ViewOrdersComponent,
     ViewProductsComponent,
     ViewOneOrderComponent,
     DriverDashComponent,
@@ -89,6 +90,8 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     SpinnerComponent,
     NavigationComponent,
     RegisterBusinessComponent,
+    TrackDeliveryComponent,
+    
 
   ],
   imports: [
@@ -98,9 +101,11 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    GoogleMapsModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

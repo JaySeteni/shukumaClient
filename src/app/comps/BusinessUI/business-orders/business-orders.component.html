@@ -1,0 +1,144 @@
+<div class="p-1 flex flex-wrap items-center justify-center"> 
+  <h1 class="p-4 flex justify-center w-80 text-xl order-gray-200 rounded-lg shadow dark:bg-black-800 dark:border-gray-700"> 
+    Your Business Orders
+  </h1>
+  <div class="w-80 max-w-md p-4 mb-22 flex m-2 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"  *ngFor="let order of orders">
+    <a routerLink="/orders">
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" >
+        <li class="py-3 sm:py-4 " *ngIf="orders.length > 0 " >
+          <p class="pb-2">Order Number: {{orders.indexOf(order)+1}}
+          <p>User Id:   #{{ order.userId }}</p>
+          <p class="pb-2">Order Id: #{{ order.id }}</p> 
+          <p>Order Description:   {{ order.description }}</p>
+          <p class="pb-2">order address At: {{order.address}}</p>
+          <p class="pb-2">Status: {{order.status}}</p>
+          <p class="pb-2">Number Of Items: {{ order.items.quantity}}</p>
+          <p class="pb-2">ordered Date: {{ order.createdAt }}</p>
+
+          <p class="pb-2">Total: R{{ order.total }}</p>
+          <button class="flex mx-auto p-2 mt-4 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> 
+          assign to driver
+        </button>
+        <hr class="bg-red-700 mt-10">
+      </li>
+    </ul>
+    </a>
+  </div>
+</div>
+<div *ngIf="!orders">
+  No orders found.
+</div>
+
+<app-sidenav></app-sidenav>
+        
+<!-- <h2>Customer Orders</h2>
+        <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+            <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
+                style="transform: scale(1.5); opacity: 0.1;">
+                <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white" />
+                <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+            </svg>
+            <div class="relative pt-10 px-10 flex items-center justify-center">
+                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
+                    style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;">
+                </div>
+                <img class="relative w-40" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlxF19h6rpnDCEHDkWvamGkom43CBJO3lGxQ&s" alt="">
+            </div>
+            <div class="relative text-white px-6 pb-6 mt-6">
+                <span class="block opacity-75 -mb-1">Order</span>
+                <div class="flex justify-between">
+                    <span class="block font-semibold text-xl">#ORD0001</span>
+                    <span routerLink="/map" class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">Track order</span>
+    <ul *ngIf="orders.length > 0">
+      <li *ngFor="let order of orders">
+        <h3>Order #{{ order.orderNumber }}</h3> ({{ order.id }})
+        <p>Created: {{ order.createdAt | date:'medium' }}</p>
+        <h4>Items</h4>
+        <ul>
+          <li *ngFor="let order of orders">
+            {{ order.id }} (x{{ order.orderNumber }}) - ${{ order.total.toFixed(2) }}
+          </li>
+        </ul>
+        <p><b>Total:</b> ${{ order.total.toFixed(2) }}</p>
+        <p><b>Status:</b> {{ order.address }}</p>
+      </li>
+    </ul>
+    <p *ngIf="orders.length === 0">No orders found.</p> -->
+
+
+    <!-- <div *ngIf="!orders">
+        No orders found.
+    </div>
+      
+    <div *ngFor="let order of orders">
+        <h2>Your Orders</h2>
+        <ul >
+          <li >
+            Order ID: {{ order.id }}<br>
+            <br>
+          </li>
+        </ul>
+      </div>
+      
+      <div *ngIf="error">
+        Error: {{ error }}
+      </div> -->
+
+<!-- <section class="py-3 relative px-4 ">
+  <div class="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto pb-4 border-x-2 shadow-xl">
+  
+    <h3 class="font-manrope text-center font-bold text-2xl sm:text-4xl leading-10 text-black mb-11 py-5">
+        Your Orders 
+    </h3>    
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8 py-6 border-y border-gray-900 mb-6">
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Date</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black">{{order.createdAt}}</h6>
+        </div>
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Order</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black">#ORD00001</h6>
+        </div>
+    
+        <div class="box group">
+            <p class="font-normal text-base leading-7 text-gray-500 mb-3 transition-all duration-500 group-hover:text-gray-700">Address</p>
+            <h6 class="font-semibold font-manrope leading-9 text-black">718 Joe Slovo Crescent, Nyanga 7750
+            </h6>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center sm:justify-end w-full my-6" *ngFor="let order of orders; index as i">
+        <div class=" w-full">
+          <div class="flex items-center justify-between mb-6">
+              <p class="font-normal text-xl leading-8 text-gray-500">Items:  </p>
+              <p>{{order.items}}</p> 
+          </div>
+
+          <div class="flex items-center justify-between  mb-4">
+              {{order.id}}<p class=" leading-8 text-gray-500">{{order.description}}</p>
+              <p class=" leading-8 text-gray-900">R{{order.total}}</p>
+          </div>
+          
+          <div class="flex items-center justify-between mb-6">
+              <p class="font-normal leading-8 text-gray-500">Discount</p>
+              <p class="font-semibold leading-8 text-gray-900">R0.00</p>
+          </div>
+
+          <div class="flex items-center justify-between py-6 border-y  border-grey-900">
+              <p class="font-manrope font-semibold text-2xl leading-9 text-gray-900">Total</p>
+              <p class="font-manrope font-bold text-2xl leading-9 text-indigo-600">R{{order.total}}</p>
+          </div>
+        </div>
+    </div>
+    <div class="data mb-6">
+        
+        <h6 class="font-manrope font-bold text-xl leading-9 text-black mb-3">Thank you for shopping
+            with us!</h6>
+
+        <h6 class="text-center text-blue-600 uppercase underline-offset-2 " routerLink="/home">Continue Shopping?</h6>
+        
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>     -->

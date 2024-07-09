@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <app-sidenav></app-sidenav>
 <div class="container">
     <div class="row justify-content-center">
@@ -16,6 +17,38 @@
           <a href="settings.html" class="btn btn-secondary">Settings</a>
         </div>
       </div>
+=======
+<section class="bg-slate-600 py-6">
+  
+  <h1 class="text-black font-bold text-2xl text-center text-white-300 font-bold">Business Profile</h1>
+
+
+
+<div class="bg-slate-100 py-8">
+<div class="container mx-auto px-4">
+  <div class="bg-white rounded-lg shadow-lg max-w-md mx-auto">
+    <div class="flex flex-col items-center p-8">
+      <img class="w-32 h-32 rounded-full mb-4 object-cover" [src]="mockBusinessProfile.img" alt="Profile Picture">
+      <h2 class="text-2xl font-bold mb-2">{{ mockBusinessProfile.name }} </h2>
+      <p class="text-gray-600 mb-6">{{ mockBusinessProfile.description }}</p>
+      <ul class="text-gray-700 space-y-3 w-full">
+        <li *ngIf="mockBusinessProfile.email" class="flex items-center">
+          <i class="fas fa-envelope text-gray-500 mr-3"></i>
+          <span>{{ mockBusinessProfile.email }}</span>
+        </li>
+        <li *ngIf="mockBusinessProfile.tel_no" class="flex items-center">
+          <i class="fas fa-phone text-gray-500 mr-3"></i>
+          <span>{{ mockBusinessProfile.tel_no }}</span>
+        </li>
+        <li *ngIf="mockBusinessProfile.address" class="flex items-center">
+          <i class="fas fa-map-marker-alt text-gray-500 mr-3"></i>
+          <span>{{ mockBusinessProfile.address }}</span>
+        </li>
+      </ul>
+>>>>>>> f9c78facf5c5af22d9d11608500c6a3f34d6809b
     </div>
   </div>
-  
+</div>
+</div>
+</section>
+<app-footer></app-footer>
