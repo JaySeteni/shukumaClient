@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdersService } from '../../../services/orders/orders.service';
 
 @Component({
   selector: 'app-order',
@@ -9,8 +10,14 @@ export class OrderComponent implements OnInit {
   date = new Date().toLocaleString()
   total:any
   orderedItems: any
+  constructor(private orderService : OrdersService ){}
+
   ngOnInit(): void {
     this.total = JSON.parse(`${localStorage.getItem('Total')}`)
     this.orderedItems = JSON.parse(`${localStorage.getItem('CartItems')}`) 
+  }
+
+  getOrder(){
+    this.orderService.fetchOrder().use
   }
 }

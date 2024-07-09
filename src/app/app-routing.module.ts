@@ -59,7 +59,7 @@ const routes: Routes = [
   {path: 'categories', component:CategoriesComponent},
   {path: 'cart', component: CartComponent},
   {path: 'view_item/:id', component: SingleproductComponent},
-  {path: 'orders',component: OrderComponent},
+  {path: 'order',component: OrderComponent},
   {path: 'business-orders',component: BusinessOrdersComponent},
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
