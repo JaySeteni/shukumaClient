@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { TokenService } from '../../../service/token.service';
+import { UserService } from '../../../services/user.service';
 
 interface UserProfile {
   firstName: string;
@@ -25,24 +27,44 @@ interface UserProfile {
 
 export class UserprofileComponent implements OnInit {
     
+  constructor(private tokenService: TokenService, private userService :  UserService){}
+
+  user:any
+
+      
+  ngOnInit(): void {
+    this.getAllUser()
+    this.getUser()
+  }
+
+  getUser(){
+    const user = this.tokenService.getUser()
+    console.log(user)
+    this.userService.getUser(user.id).subscribe({
+      next:(data)=>{
+        console.log(data)
+        this.user= data.user
+      }, error: (err)=>{
+        console.error(err)
+      }
+    })
 
     
-    mockUserProfile: any = {
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@example.com',
-    phoneNumber: '+1234567890',
-    avatarUrl: 'https://www.denofgeek.com/wp-content/uploads/2021/09/Anthony-Mackie.png?fit=1200%2C883', 
-    bio: 'Software Engineer passionate about building web applications.',
-    location: 'New York, USA',
-    website: 'https://johndoe.com',
-    socialLinks: {
-      twitter: 'johndoe',
-      instagram: 'johndoe_dev',
-    }
+
   }
-  
-  ngOnInit(): void {
+
+  getAllUser(){
+   
+    this.userService.getAllUsers().subscribe({
+      next:(data)=>{
+        console.log(data.user)
+        
+      }, error: (err)=>{
+        console.error(err)
+      }
+    })
+
     
+
   }
 }
