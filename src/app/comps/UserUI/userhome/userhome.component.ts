@@ -61,6 +61,7 @@ filterSpares() {
   this.Spares = this.allProducts.filter((item:any) => {
     return (item.category.includes('Spares'))
 });
+
   console.log(this.Spares)
 }
 

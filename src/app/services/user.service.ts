@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  headers = new HttpHeaders()
+  // .append('content-type', 'application/json')
+  .append('Accept', '/')
 
   user_API = "http://localhost:3000/v1/users"
   constructor(private http: HttpClient) { }
@@ -16,6 +19,10 @@ export class UserService {
 
   getAllUsers():Observable<any>{
     return this.http.get<any>(`${this.user_API}/all`);
+  }
+
+  update(id: any, payload: any):Observable<any> {
+    return this.http.put<any>(`${this.user_API}/user/${id}`, payload )
   }
 
 

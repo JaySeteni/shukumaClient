@@ -132,10 +132,114 @@
       </svg>
     </button>
   </h2>
-  <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-3">
-    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+  <div id="accordion-open-body-3" class="" aria-labelledby="accordion-open-heading-3">
+    <div class=" border border-t-0 border-gray-200 dark:border-gray-700">
       <p class="mb-2 text-gray-500 dark:text-gray-400"></p>
       
+      <form [formGroup]="myForm" class="row g-3 mt-3 mx-auto" (ngSubmit)="updateUser()" *ngIf="user">
+        <div class="col-md-4">
+            <label for="inputName" class="form-label" >First Name</label>
+            <input type="text" class="form-control  rounded-lg" id="inputName" formControlName="fname" [value]="" >
+            <div>
+
+            </div>
+                <div *ngIf="(myForm.value.fname=='' && myForm.controls['fname'].touched)"  >
+                <p class=" text-center text-red-600">Name is required</p>
+                </div>
+        </div>
+        <div class="col-md-4">
+        <label for="inputLname" class="form-label">Last Name</label>
+        <input type="text" class="form-control rounded-lg" id="inputLname" formControlName="lname">
+        </div>
+        <div class="col-md-4">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control rounded-lg" id="inputEmail4" formControlName="email">
+            <div *ngIf="(myForm.value.email=='' && myForm.controls['email'].touched)"  >
+                <p class=" text-center text-danger">Email is required</p>
+                </div>
+        </div>
+        <div class="col-md-4">
+          <label for="inputEmail4" class="form-label">Username</label>
+          <input type="text" class="form-control rounded-lg" id="inputEmail4" formControlName="username">
+          <!-- <div *ngIf="(myForm.value.username=='' && myForm.controls['email'].touched)"  >
+              <p class="border text-center text-danger">Email is required</p>
+              </div> -->
+      </div>
+        
+        <!-- <div class="col-md-4">
+            <label for="inputPosition" class="form-label">Position</label>
+            <select id="inputPosition" formControlName="pos_id">
+                <option value="">Select option</option>
+                <option value="1">Jnr Software Developer</option>
+                <option value="2">CFO</option>
+                <option value="3">Cleaner</option>
+                <option value="4">Admin Manager</option>
+            </select>
+            <div *ngIf="(myForm.value.position=='' && myForm.controls['position'].touched)"  >
+                <p class="border text-center text-danger">Position is required</p>
+                </div>
+        </div> -->
+        <!-- <div class="col-md-4">
+            <label for="inputStatus" class="form-label">Status</label>
+             <select id="inputStatus" formControlName="status">
+                <option value="">Select option</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+               
+                
+            </select>
+            <div *ngIf="(myForm.value.status=='' && myForm.controls['status'].touched)"  >
+                <p class="border text-center text-danger">Name is required</p>
+                </div>
+        </div> -->
+        
+
+        
+        <div class="col-md-6">
+        <label for="inputPhone" class="form-label">Phone #</label>
+        <input type="tel" class="form-control w-100" id="inputPhone" formControlName="contact_num">
+        </div>
+        <div class="col-md-6">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input type="text" class="form-control rounded-lg" id="inputAddress" formControlName="address">
+        </div>
+
+        <div class="successToaster pt-3" *ngIf="submitted" [ngClass]="success">
+            <p class="text-center">Profile updated successfully!</p>
+        </div>
+        <div class="errorToaster pt-3" *ngIf="is_Error" [ngClass]="onError" >
+              <p class="text-center">An error occured could not update profile!</p>
+        </div>
+
+        
+        
+
+        <div class="form-group mt-2">
+            
+          <label > Image:</label>
+          <img [src]="imagePreview" alt="" class="Img mb-1" srcset="">
+          
+          <input type="file"
+                  formControlName="img"
+                  class="form-control hidden"
+                  id="img"
+                  hidden
+                  name="img"
+
+                  (change)="fileSelect($event)"/>
+          
+          <label for="img" class="btn btn-success imgL">Upload Image</label>
+          
+        </div>
+
+        <div class="footer text-center mt-4">
+          <button class="btn btn-primary w-100 flex justify-center items-center" type="submit"><Span>Save</Span></button> 
+          <button class="btn btn-primary w-100 flex justify-center items-center" type="reset" (click)="clearinputs()">Clear</button> 
+         
+      </div>
+        
+      </form>
+
     </div>
   </div>
 </div>
