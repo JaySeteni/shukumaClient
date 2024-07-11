@@ -11,32 +11,32 @@ const TOKEN_HEADER_KEY = 'Authorization'
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    throw new Error("Method not implemented.");
-  }
-}
-//   tokenService  = inject(TokenService)
-//   authToken = this.tokenService.getToken()
+  // intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  //   throw new Error("Method not implemented.");
+  // }
 
-//     constructor( ) { }
+  tokenService  = inject(TokenService)
+  authToken = this.tokenService.getToken()
 
-    // intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    constructor( ) { }
+
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       
-    //   if (req.body) {
-    //     req = req.clone({ 
-    //       setHeaders: { 
-    //         'Content-Type': 'application/json',
-    //         Authorization: `Bearer ${this.authToken}`,
-    //         // x_access_token: this.authToken 
+      if (req.body) {
+        req = req.clone({ 
+          setHeaders: { 
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${this.authToken}`,
+            // x_access_token: this.authToken 
         
-    //        } });
-    //     console.log("From Auth int", req)
-    //   }
-    //   return next.handle(req);
-    // }
-    // }
+           } });
+        console.log("From Auth int", req)
+      }
+      return next.handle(req);
+    }
+  }
 
 
-// export const authInterceptorProviders = [
-//     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
-// ]
+export const authInterceptorProviders = [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+]

@@ -48,7 +48,7 @@ import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
 import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
 import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
-import { BusinessAdminComponent } from './BusinessUI/business-admin/business-admin.component';
+import { BusinessAdminComponent } from './comps/BusinessUI/business-admin/business-admin.component';
 
 
 

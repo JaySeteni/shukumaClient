@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { OrdersService } from '../../../services/orders/orders.service';
 import { BehaviorSubject } from 'rxjs';
 import { CartService } from '../../../services/cart-service/cart.service';
@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './order.component.html',
   styleUrl: './order.component.css'
 })
-export class OrderComponent implements OnInit {
+export class OrderComponent {
 
   orderForm: FormGroup ;
   orderData: any;
@@ -19,15 +19,17 @@ export class OrderComponent implements OnInit {
   // orderedItems: any
   // orderTotal$ = new BehaviorSubject<number>(0)
 
-  constructor(private orderService : OrdersService, private cartService: CartService,   private fb: FormBuilder){}
+  constructor(private orderService : OrdersService, private cartService: CartService,   private fb: FormBuilder){
 
-    ngOnInit (){
       this.orderForm = this.fb.group({
         userId: ['', Validators.required],
         cartId: ['', Validators.required],
         address: ['', Validators.required]
       });
     }
+  
+
+  
   
   
  
