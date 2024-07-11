@@ -109,40 +109,56 @@ export class UserprofileComponent implements OnInit {
 
 
   newFunction(){
-    const formData = new FormData();
+    const formData:any = new FormData();
     formData.append('name', 'John Doe');
     formData.append('email', 'johndoe@example.com');
 
-    console.log(formData)
+    for(var key of formData.entries()) {
+      console.log("sdsds", key[0] + ', ' + key[1]);
+  }
+  var obj :any = {}
+
+  for (let x of formData){
+    
+    let key = x[0]
+    let value = x[1]
+    obj[key as keyof typeof obj] = value
+    
+ }
+
+  console.log(obj)
 
 }
 
   updateUser(){
     const user_id = this.user.id
-    console.log(this.myForm.value)
-    console.log(this.myForm.get('fname')?.value)
+  
+    const formData: any = new FormData();
+    formData.append('fname', this.myForm.get('fname')?.value)
+    formData.append('lname', this.myForm.get('lname')?.value)
+    formData.append('email', this.myForm.get('email')?.value)
+    formData.append('username', this.myForm.get('username')?.value)
+    formData.append('contact_num', this.myForm.get('contact_num')?.value)
+    formData.append('img', this.imagePreview)
+    
+  //   for(var key of formData.entries()) {
+  //     console.log("sdsds", key[0] + ', ' + key[1]);
+  // }
 
-    const formData = new FormData();
-    formData.append('name', 'John Doe');
-    formData.append('email', 'johndoe@example.com');
 
-    console.log(formData)
+    var obj :any = {}
 
-  //   var obj :any = {}
-
-  //   for (let x of data){
+    for (let x of formData){
       
-  //     let key = x[0]
-  //     let value = x[1]
-  //     obj[key as keyof typeof obj] = value
-      {
-        name: "Vuyo"
-      }
-  //  }
+      let key = x[0]
+      let value = x[1]
+      obj[key as keyof typeof obj] = value
+     
+   }
 
-  //   console.log(obj)
+    console.log(obj)
 
-    this.userService.update(user_id, formData).subscribe({
+    this.userService.update(user_id, obj ).subscribe({
       next: (data)=>{
         console.log(data)
         this.submitted = true

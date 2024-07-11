@@ -12,9 +12,8 @@ export class AddProductComponent {
   category: "",
   title: "",
   description: "",
-  price: "",
-  imageUrl: "",
-  quantity: "",
+  price: 0,
+  stock: 0
 
 }
 selectedFile!: File;
@@ -25,16 +24,29 @@ imagePreview:any
     private productService: ProductService) {}
 
     onSubmit(form: NgForm) {
-      const formData = new FormData();
+      const formData: any= new FormData();
 
       for (let key in this.product) {
-        if (key !== 'images') {
+        if (key !== 'imgUrl') {
           formData.append(key, this.product[key]);
         }
       }
-      formData.append('imageUrl', this.selectedFile)
+      formData.append('imgUrl',this.selectedFile)
+      formData.append('businessId',"66864f8dad57296a97884bc0")
+      
 
       console.log(formData)
+      var obj :any = {}
+
+    for (let x of formData){
+      
+      let key = x[0]
+      let value = x[1]
+      obj[key as keyof typeof obj] = value
+     
+   }
+
+    console.log(obj)
       // for (let i = 0; i < this.product.images.length; i++) {
       //   formData.append('images', this.product.images[i]);
       // }
@@ -59,13 +71,13 @@ imagePreview:any
       fileSelect(event: any) {
         if (event.target.files[0]) {
           this.selectedFile = event.target.files[0];
+
           this.reader = new FileReader();
           this.reader.readAsDataURL(this.selectedFile);
     
           this.reader.onload = (event: any) => {
             this.imagePreview = event.target.result;
             console.log(this.imagePreview)
-    
             
           };
     
