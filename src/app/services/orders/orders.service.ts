@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { ProductDbResponse } from '../../interfaces/productDbResponse';
 import { Order } from '../../interfaces/order';
@@ -26,12 +26,19 @@ export class OrdersService {
   //     );
   //   }
     
+  getAllDriverOrders(driverId:any): Observable<ProductDbResponse> {
+    return this.http.get<ProductDbResponse>(`${this.baseUrl}/${driverId}`);
+  }
+
   getAllOrders(): Observable<ProductDbResponse> {
-    return this.http.get<ProductDbResponse>(`${this.baseUrl}/orders`);
+    return this.http.get<ProductDbResponse>(`${this.baseUrl}`);
   }
 
   addOrder(payload: any):Observable<any>{
-    return this.http.post<any>(`${this.baseUrl}`, payload)
+    const headers = new HttpHeaders()
+    // .append('content-type', 'application/json')
+    .append('Accept', '/')
+    return this.http.post<any>(`${this.baseUrl}`, payload, {headers})
   }
 
   fetchOrder(cartId:any):Observable<any>{
@@ -49,5 +56,15 @@ export class OrdersService {
   private handleError(error: any): Observable<any> {
     console.error('Error updating order:', error);
     return throwError('Error updating order. Please try again.');
+  }
+
+   orderData = new BehaviorSubject<any>({});
+  mPassOrder(order:Order){
+    this.orderData = new BehaviorSubject<any>({});
+    this.orderData.next(order);
+  }
+
+  mGetPassOrder():Observable<any>{
+    return this.orderData
   }
 }

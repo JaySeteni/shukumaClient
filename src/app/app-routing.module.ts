@@ -76,7 +76,7 @@ const routes: Routes = [
 
   // Driver Routes
   {path: 'driver/dash', component: DriverDashComponent},
-  {path: 'view/one', component: ViewOrderComponent},
+  {path: 'driver/view-one/:id', component: ViewOrderComponent},
   {path: 'driver/profile', component: DriverProfileComponent},
   {path: 'favourites', component:FavouritesComponent},
   {path: 'driver/track', component: DriverTrackComponent}

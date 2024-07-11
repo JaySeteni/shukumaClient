@@ -1,15 +1,15 @@
 <section>
 
-    <button class="long-options">Complete Order</button>
+    <button class="long-options">{{ButtonText}}</button>
 
     <img src="../../../../assets/D183066B-A44A-48E7-88D2-6C123BBFD18B_4_5005_c.jpeg" />
 
-    <h1>SHU23456789</h1>
+    <h1>{{order?.id}}</h1>
     <label>To: Sfiso </label>
-    <label>Address: Cwas 15</label>
+    <label>Address: {{order?.shippingAddress?.address}}</label>
 
     <div class="side-by-side">
-        <label> Item: 19KG</label>
+        <label> Item: {{order?.items?.length}}</label>
 
         <label>Qty: 1</label>
     </div>
