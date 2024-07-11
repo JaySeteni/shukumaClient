@@ -76,7 +76,7 @@
         </div>
         
         <div *ngIf="isSuccessful"  class="z-40 w-full text-center my-3 ">
-          <span id="badge-dismiss-default" class="inline-flex items-center px-2 py-1 me-2 text-lg font-extrabold text-white-800 bg-green-500 rounded dark:bg-blue-900 dark:text-blue-300">
+          <span id="badge-dismiss-default" class="inline-flex items-center px-2 py-1 me-2 text-lg font-extrabold text-white bg-green-500 rounded dark:bg-blue-900 dark:text-blue-300">
             {{errorMessage}}
             <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-black-900 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300" data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
             <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -87,11 +87,14 @@
             </span>
         </div>
 
-        <button type="submit" id="registerBtn" class="bg-primary flex mx-auto hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md" (click)="onSignUp()">Register</button>
+        <button type="submit" id="registerBtn" class="bg-primary flex mx-auto hover:bg-blue-600 text-white font-semibold mt-2 py-2 px-4 rounded-md" (click)="onSignUp()">Register</button>
         </form>
         </div>
     </div>
 </body>
+
+
+
 
 
         

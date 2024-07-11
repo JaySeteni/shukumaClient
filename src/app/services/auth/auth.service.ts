@@ -10,6 +10,12 @@ import { SignInData } from '../../interfaces/signInData';
 })
 export class AuthService {
 
+  businessId = ''
+
+  getId(id: any) {
+    return this.businessId = id
+  }
+
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -29,6 +35,7 @@ export class AuthService {
   registerBusiness(payload: any):Observable<any> {
     return this.http.post<any>('http://localhost:3000/v1/business', payload);
   }
+  
 
   
 }

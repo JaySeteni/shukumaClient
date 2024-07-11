@@ -34,6 +34,7 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
 import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
 import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 import { BusinessAdminComponent } from './comps/BusinessUI/business-admin/business-admin.component';
+import { AddUserComponent } from './comps/BusinessUI/add-user/add-user.component';
 
 
 
@@ -63,7 +64,7 @@ const routes: Routes = [
   {path: 'order',component: OrderComponent},
   {path: 'business-orders',component: BusinessOrdersComponent},
   {path: 'footer', component: FooterComponent},
-  // {path: 'nav', component: NavigationComponent},
+  {path: 'add', component: AddUserComponent},
   {path: 'registerBusiness', component:RegisterBusinessComponent},
   {path: 'tracking', component: TrackDeliveryComponent},
   {path: 'admin', component: BusinessAdminComponent},

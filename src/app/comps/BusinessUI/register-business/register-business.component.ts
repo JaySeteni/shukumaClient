@@ -35,10 +35,14 @@ export class RegisterBusinessComponent {
     next: (res)=> {
       this.isSuccessful = true
         this.errorMessage = "Registration is successfull!"
+        console.log(res)
 
-        // setTimeout(()=>{
-        //   this.router.navigate(['/login'])
-        // }, 3000)
+        localStorage.setItem("BI", res.id)
+
+        this.auth.getId(res.id)
+        setTimeout(()=>{
+          this.router.navigate(['/login'])
+        }, 3000)
 
     }, error: (err)=>{
       console.error(err)
