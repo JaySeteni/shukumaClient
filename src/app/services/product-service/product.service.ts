@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '../../interfaces/product';
 import { ProductDbResponse } from '../../interfaces/productDbResponse';
 
@@ -19,8 +19,11 @@ export class ProductService {
   getProduct(id: string | null): Observable<Product> {
     return this._http.get<Product>(`${this.baseUrl}article/${id}`);
   }
-  createProduct(product: any): Observable<any> {
-    return this._http.post<Product>(`${this.baseUrl}articles`, product);
+  createProduct(formData: any): Observable<any> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
+    return this._http.post<Product>(`${this.baseUrl}articles/`, formData, {headers});
 }
 
 

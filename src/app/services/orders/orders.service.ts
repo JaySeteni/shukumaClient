@@ -50,4 +50,9 @@ export class OrdersService {
     console.error('Error updating order:', error);
     return throwError('Error updating order. Please try again.');
   }
+
+
+  createOrder(orderData: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/`, orderData);
+  }
 }

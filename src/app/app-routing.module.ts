@@ -4,7 +4,6 @@ import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './comps/UserUI/register/register.component';
 import { LoginComponent } from './comps/UserUI/login/login.component';
-import { AdminComponent } from './comps/BusinessUI/admin/admin.component';
 import { MapComponent } from './comps/UserUI/map/map.component';
 import { LandingComponent } from './comps/UserUI/landing/landing.component';
 import { CategoriesComponent } from './comps/UserUI/categories/categories.component';
@@ -34,6 +33,9 @@ import { SpinnerComponent } from './comps/UserUI/spinner/spinner.component';
 import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/register-business.component';
 import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
 import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
+import { BusinessAdminComponent } from './comps/BusinessUI/business-admin/business-admin.component';
+
+
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
@@ -49,7 +51,6 @@ const routes: Routes = [
   {path: 'userhome', component:UserhomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'admin', component: AdminComponent},
   {path: 'map', component: MapComponent},
   {path: 'businessprofile', component: BusinessprofileComponent},
   {path: 'welcome', component:LandingComponent},
@@ -63,8 +64,9 @@ const routes: Routes = [
   {path: 'business-orders',component: BusinessOrdersComponent},
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
-  {path: 'registerBusiness', component:RegisterBusinessComponent},
+  {path: 'business_reg', component:RegisterBusinessComponent},
   {path: 'tracking', component: TrackDeliveryComponent},
+  {path: 'admin', component: BusinessAdminComponent},
 
 
 
@@ -72,9 +74,7 @@ const routes: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
   {path: 'favourites', component:FavouritesComponent},
-  {path: 'spinner', component:SpinnerComponent },
-
-  // Driver Routes
+  {path: 'spinner', component:SpinnerComponent },  // Driver Routes
   {path: 'driver/dash', component: DriverDashComponent},
   {path: 'view/one', component: ViewOrderComponent},
   {path: 'driver/profile', component: DriverProfileComponent},
