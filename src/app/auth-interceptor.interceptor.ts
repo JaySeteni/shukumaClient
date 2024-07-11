@@ -11,6 +11,10 @@ const TOKEN_HEADER_KEY = 'Authorization'
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
+  // intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  //   throw new Error("Method not implemented.");
+  // }
+
   tokenService  = inject(TokenService)
   authToken = this.tokenService.getToken()
 
@@ -30,7 +34,7 @@ export class AuthInterceptor implements HttpInterceptor {
       }
       return next.handle(req);
     }
-    }
+  }
 
 
 export const authInterceptorProviders = [
