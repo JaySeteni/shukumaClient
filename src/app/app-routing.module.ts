@@ -64,7 +64,7 @@ const routes: Routes = [
   {path: 'business-orders',component: BusinessOrdersComponent},
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
-  {path: 'business_reg', component:RegisterBusinessComponent},
+  {path: 'registerBusiness', component:RegisterBusinessComponent},
   {path: 'tracking', component: TrackDeliveryComponent},
   {path: 'admin', component: BusinessAdminComponent},
 
