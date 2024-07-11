@@ -1,8 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth/auth.service';
+import { TokenService } from '../../../service/token.service';
 
 @Component({
   selector: 'app-login',
@@ -11,39 +12,64 @@ import { AuthService } from '../../../services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  signUpUsers: any[] = [];
-  loginObj: { [key: string]: string } = {
-    email: '',
-    password: '',
-  }
+  imagePreview: any;
+  somevalue:any
+  userForm:any = FormGroup
+  name: FormControl = new FormControl("", [Validators.required]);
+  email: FormControl = new FormControl("");
+  password: FormControl = new FormControl("",[Validators.required, Validators.minLength(8)]);
+  // img: FormControl = new FormConrol()
 
-  loginForm: FormGroup;
 
-  constructor(private router: Router, private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
+
+  isLogginFailed = false
+  isSuccessful = false
+  errorMessage = ''
+  constructor(private router: Router, private fb: FormBuilder, private auth: AuthService, private tokenStorage : TokenService) {
+    this.userForm = this.fb.group({
+
+      username: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
-    const localData = localStorage.getItem('signUpUsers');
-    if (localData != null) {
-      this.signUpUsers = JSON.parse(localData);
-    }
+  
+    
+  }
+  login(){
+    console.log(this.userForm.value)
+    this.auth.login(this.userForm.value).subscribe({
+      next: (data)=>{
+        console.log(data)
+        this.tokenStorage.saveToken(data.token)
+        this.tokenStorage.saveUser(data)
+        this.isSuccessful=true
+        this.errorMessage = "Login is successful!"
+        setTimeout(()=>{
+          this.router.navigate(['/userhome'])
+        }, 3000)
+      },
+      error: (err)=>{
+        console.error("An err", err)
+        this.isLogginFailed= true
+        this.errorMessage = "Login failed!"
+      }
+    })
+
   }
 
-  OnLogin(): void {
-    const isUserExist = this.signUpUsers.find(
-      user => user['email'] === this.loginForm.value.email && user['password'] === this.loginForm.value.password
-    );
+  // onSubmit(): void {
+    
+  //   );
 
-    if (isUserExist !== undefined) {
-      alert('Logged in successfully');
-      this.loginForm.reset();
-      this.router.navigate(['userhome']); // navigate to the home screen
-    } else {
-      alert('Incorrect credentials');
-    }
-  }
+  //   if (isUserExist !== undefined) {
+  //     alert('Logged in successfully');
+  //     this.loginForm.reset();
+  //     this.router.navigate(['userhome']); // navigate to the home screen
+  //   } else {
+  //     alert('Incorrect credentials');
+  //   }
+  // }
 }

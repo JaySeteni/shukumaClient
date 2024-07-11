@@ -29,12 +29,13 @@ export class OrdersService {
   getAllOrders(): Observable<ProductDbResponse> {
     return this.http.get<ProductDbResponse>(`${this.baseUrl}/orders`);
   }
+
   addOrder(payload: any):Observable<any>{
     return this.http.post<any>(`${this.baseUrl}`, payload)
   }
 
-  fetchOrder(id:any):Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}`, id)
+  fetchOrder(cartId:any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/${cartId}`)
   }
 
   updateOrder(orderId: string, updatedOrderData: Partial<Order>): Observable<any> {
@@ -48,5 +49,10 @@ export class OrdersService {
   private handleError(error: any): Observable<any> {
     console.error('Error updating order:', error);
     return throwError('Error updating order. Please try again.');
+  }
+
+
+  createOrder(orderData: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/`, orderData);
   }
 }

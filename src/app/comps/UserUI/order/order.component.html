@@ -1,4 +1,4 @@
-<section class="py-3 relative px-4 ">
+<!-- <section class="py-3 relative px-4 ">
     <div class="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto pb-4 border-x-2 shadow-xl">
 
         <h3 class="font-manrope text-center font-bold text-2xl sm:text-4xl leading-10 text-black mb-11 py-5">
@@ -24,7 +24,13 @@
             </div>
         </div>
 
-       
+       <div *ngIf="orderedItems">
+        <div>{{orderedItems.userId.email}}</div>
+        <div *ngFor="let product of orderedItems.items">
+            <h1>{{product.productId.title}}</h1>
+        </div>
+       </div>
+
 
 
         
@@ -36,6 +42,7 @@
                     <p class="font-normal text-xl leading-8 text-gray-500">Items: </p>
                 
                 </div>
+                
                 <div class="flex items-center justify-between  mb-4" *ngFor="let item of orderedItems; index as i">
                     {{item.quantity}}<p class=" leading-8 text-gray-500">{{item.description}}</p>
                     <p class=" leading-8 text-gray-900">R{{item.price}}</p>
@@ -60,5 +67,33 @@
             
         </div>
     </div>
-</section>
-            
+</section>-->
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div class="mb-4">
+      <label for="userId" class="block text-gray-700 font-bold mb-2">User ID:</label>
+      <input id="userId" formControlName="userId" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+      <div *ngIf="orderForm.get('userId')?.invalid && orderForm.get('userId')?.touched" class="text-red-500 text-sm mt-1">
+        User ID is required.
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="cartId" class="block text-gray-700 font-bold mb-2">Cart ID:</label>
+      <input id="cartId" formControlName="cartId" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+      <div *ngIf="orderForm.get('cartId')?.invalid && orderForm.get('cartId')?.touched" class="text-red-500 text-sm mt-1">
+        Cart ID is required.
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="address" class="block text-gray-700 font-bold mb-2">Address:</label>
+      <input id="address" formControlName="address" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+      <div *ngIf="orderForm.get('address')?.invalid && orderForm.get('address')?.touched" class="text-red-500 text-sm mt-1">
+        Address is required.
+      </div>
+    </div>
+    <button type="submit" [disabled]="orderForm.invalid" class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600 disabled:bg-gray-400">
+      Submit Order
+    </button>
+  </form>
+  
+  
+  

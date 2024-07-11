@@ -3,6 +3,7 @@ import { Product } from '../../../interfaces/product';
 import { CartService } from '../../../services/cart-service/cart.service';
 import { OrdersService } from '../../../services/orders/orders.service';
 import { Route, Router, RouterFeature } from '@angular/router';
+import { TokenService } from '../../../service/token.service';
 
 @Component({
   selector: 'app-cart',
@@ -23,7 +24,8 @@ export class CartComponent {
 
   constructor(private cartService : CartService, 
             private orderService : OrdersService,
-            private router: Router ){}
+            private router: Router,
+            private tokenService: TokenService ){}
 
   ngOnInit(): void {
     this.getCart()
@@ -46,10 +48,13 @@ export class CartComponent {
   }
 
   removeProduct(item:any,e:Event) {
-    const userId = "66865064ad57296a97884bc3"
+    // const userId = "66865064ad57296a97884bc3"
+    const user = this.tokenService.getUser()
+    console.log(user.userId)
+    
     const productId = item.productId
     console.log(productId._id)
-    this.cartService.removeFromCart(userId,productId._id).subscribe({
+    this.cartService.removeFromCart(user.id.toString(),productId._id).subscribe({
       next: (res)=>{
         console.log(res)
       },
@@ -121,6 +126,7 @@ export class CartComponent {
 
   placeOrder(){
     const uid = "66865064ad57296a97884bc3"
+    
     this.fullCart._id
     this.orderService.addOrder({userId: uid, cartId:this.fullCart._id, address: this.address}).subscribe(
       {
