@@ -1,15 +1,15 @@
 <section>
 
-    <button class="long-options">Complete Order</button>
+    <button *ngIf="ButtonText != 'complete'" (click)="updateOrderStatus()" class="long-options">{{ButtonText}}</button>
 
     <img src="../../../../assets/D183066B-A44A-48E7-88D2-6C123BBFD18B_4_5005_c.jpeg" />
 
-    <h1>SHU23456789</h1>
+    <h1>{{order?.id}}</h1>
     <label>To: Sfiso </label>
-    <label>Address: Cwas 15</label>
+    <label>Address: {{order?.shippingAddress?.address}}</label>
 
     <div class="side-by-side">
-        <label> Item: 19KG</label>
+        <label> Item: {{order?.items?.length}}</label>
 
         <label>Qty: 1</label>
     </div>
@@ -21,9 +21,11 @@
         <label class="price">R200</label>
     </div>
 
+    <div id="map" *ngIf="order?.status == 'in-progress'"></div>
+    
 <div class="divider"></div>    
 
-    <div class="opts">
+    <div *ngIf="ButtonText != 'complete'" class="opts">
         <select class="long-options">
             <option>Cancel</option>
             <option>Reschedule</option>
@@ -31,6 +33,7 @@
         
         <button class="long-options">Confirm</button>
     </div>
+    <p *ngIf="ButtonText == 'complete'" style="width: 100%; text-align: center;">Order Completed</p>
 </section>
 
 <app-driver-bottom-nav></app-driver-bottom-nav>

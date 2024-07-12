@@ -72,7 +72,15 @@ const routes: Routes = [
   {path: 'categories', component:CategoriesComponent},
   {path: 'cart', component: CartComponent},
   {path: 'view_item/:id', component: SingleproductComponent},
-  {path: 'order',component: OrderComponent},
+  {path: 'orders',component: OrderComponent},
+  {path: 'business-orders',component: BusinessOrdersComponent},
+  {path: 'footer', component: FooterComponent},
+  // {path: 'nav', component: NavigationComponent},
+  {path: 'registerBusiness', component:RegisterBusinessComponent},
+  {path: 'tracking', component: TrackDeliveryComponent},
+
+
+
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
@@ -82,7 +90,7 @@ const routes: Routes = [
     // Driver Routes
 
   {path: 'driver/dash', component: DriverDashComponent},
-  {path: 'view/one', component: ViewOrderComponent},
+  {path: 'driver/view-one/:id', component: ViewOrderComponent},
   {path: 'driver/profile', component: DriverProfileComponent},
   {path: 'driver/track', component: DriverTrackComponent}
 
