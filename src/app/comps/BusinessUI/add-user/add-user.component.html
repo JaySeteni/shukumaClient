@@ -1,7 +1,15 @@
 <body class="bg-white-800">
     <div class="container mx-auto py-8">
       <div class="max-w-md mx-auto bg-white rounded-lg shadow-xl p-6">
-        <h1><span></span></h1>
+        <div>
+        <div  routerLink="/registerBusiness/" class="relative w-6 h-6 overflow-hidden flex justify-center items-center mb-1 bg-gray-100 rounded-full dark:bg-gray-600">
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+          </svg>
+          
+      </div>  
+        </div>
+        
         <h2 class="text-2xl font-semibold text-center text-white bg-gradient-to-r from-pink-500 to-orange-500 mb-6" style="background: linear-gradient(45deg, #FF0080, #FF8C00)"><span></span>User Registration</h2>
         <form  [formGroup]="registerForm" (ngSubmit)="onSignUp()">
           <div class="max-w-sm mx-auto">
@@ -101,7 +109,7 @@
                   <path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12c6.617 0 12-5.383 12-12S18.617 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm5 9h-2v2h-2v-2h-2V9h2V7h2v2h2z"/>
                 </svg>
               </div>
-              <input type="tel" formControlName="tel_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your phone number">
+              <input type="tel" formControlName="contact_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your phone number">
             </div>
   
             <div>

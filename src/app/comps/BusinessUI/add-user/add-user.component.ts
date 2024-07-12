@@ -24,13 +24,12 @@ export class AddUserComponent implements OnInit {
       lname: new FormControl(""),
       username: new FormControl(""),
       email: new FormControl(""),
-      tel_no: new FormControl(""),
+      contact_no: new FormControl(""),
       address: new FormControl(""),
       password: new FormControl(""),
       roles: new FormControl(""),
       role: new FormControl(""),
       business: new FormControl("") 
-      
     });
    }
 
@@ -58,9 +57,10 @@ export class AddUserComponent implements OnInit {
       this.isSuccessful = true
         this.errorMessage = "Registration is successfull!"
         console.log(res)
-        // setTimeout(()=>{
-        //   this.router.navigate(['/login'])
-        // }, 3000)
+
+        setTimeout(()=>{
+          this.router.navigate(['/login'])
+        }, 3000)
 
     }, error: (err)=>{
       console.error(err)
