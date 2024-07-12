@@ -1,5 +1,5 @@
-<div class="login-container">
-    <form [formGroup]="registerForm" (ngSubmit)="onSignUp()"> 
+<div class="container border-3">
+    <form [formGroup]="registerForm" (ngSubmit)="onSignUp()" class="rounded-lg"> 
         <h2 class="tit">Shukuma</h2>
         <div class="message">
           <p>One account</p>
@@ -29,9 +29,13 @@
           <input type="password" formControlName="confirm_password" placeholder="Type Password" id="password"  class="form-control" placeholder="Password" required>
           <div *ngIf="registerForm.get('confirm_password')?.invalid && (registerForm.get('confirm_password')?.dirty || registerForm.get('confirm_password')?.touched)" class="error">
             <div *ngIf="registerForm.get('confirm_password')?.errors?.['required']">Password is required.</div>
-            <div *ngIf="registerForm.get('confirm_password')?.errors?.['required']">Password don't match.</div>
             
-        </div>
+            
+          </div>
+          <div *ngIf="registerForm.get('confirm_password')?.valid && registerForm.get('password')?.valid">
+            <h1>hey</h1>
+            <!-- <div *ngIf="registerForm.get('confirm_password')?.errors?.['required']">Password don't match.</div> -->
+          </div>
         
         
         </div>

@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveToken(data.token)
         this.tokenStorage.saveUser(data)
         this.isSuccessful=true
-        this.errorMessage = "Login is successful!"
+        this.errorMessage = "Login is successfull"
         setTimeout(()=>{
           this.router.navigate(['/userhome'])
         }, 3000)

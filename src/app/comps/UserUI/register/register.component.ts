@@ -28,9 +28,10 @@ export class RegisterComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  comparePasswords(control: FormGroup){
+  comparePasswords(){
 
-    if (control.value.password  !==  control.value.confirmPassword) {
+    if (this.registerForm.get("password")?.value  !== this.registerForm.get("password")?.value) {
+      
       return { passwordsDontMatch: true };
     }
     return null;
