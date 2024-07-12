@@ -9,9 +9,13 @@ import { SignInData } from '../../interfaces/signInData';
   providedIn: 'root'
 })
 export class AuthService {
-  registerBusiness(businessData: UserRegister) {
-    return this.http.post('http://localhost:3000/v1/auth/register', businessData);
-  };
+
+  businessId = ''
+
+  getId(id: any) {
+    return this.businessId = id
+  }
+
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,4 +31,12 @@ export class AuthService {
   login(userData: UserLogin):Observable<any> {
     return this.http.post<any>('http://localhost:3000/v1/auth/signin', userData);
   }
+
+  registerBusiness(payload: any):Observable<any> {
+    return this.http.post<any>('http://localhost:3000/v1/business', payload);
+  }
+  
+
+  
 }
+
