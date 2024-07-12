@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Loader } from "@googlemaps/js-api-loader"
-
-let map: google.maps.Map;
+import { MapTrackingService } from '../../../services/map-tracking.service';
 
 @Component({
   selector: 'app-map',
@@ -11,25 +10,11 @@ let map: google.maps.Map;
 
 export class MapComponent implements OnInit {
 
- 
+ constructor(private location_listener:MapTrackingService){}
 
   ngOnInit(): void {
-    this.initmap();
+    // this.initmap();
   }
 
-  async initmap(){
-    const loader = new Loader({
-      apiKey: "AIzaSyCMzKuxTk9J0bI4m7ppb9-Jg9RSV7lrIBw",
-      version: "weekly",
-    });
-    
-    loader.load().then(async () => {
-      const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
-      map = new Map(document.getElementById("map") as HTMLElement, {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
-      });
-    });
-  }
 }
 

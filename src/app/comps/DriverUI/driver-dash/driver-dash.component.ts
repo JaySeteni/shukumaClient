@@ -24,10 +24,10 @@ export class DriverDashComponent implements OnInit{
 
   getAllOrders(){
 
-    this.ordersService.getAllOrders().subscribe({
+    this.ordersService.getAllDriverOrders("1234567890").subscribe({
       next: (data: any) =>{
 
-        this.orders = data;
+        this.orders = data.reverse();
         
       // this.orders = data.Orders
       console.log('Data received from getAllOrders:', this.orders); // Log the entire response object
@@ -37,6 +37,10 @@ export class DriverDashComponent implements OnInit{
         console.error('Error fetching orders:', err);
       }
     })
+  }
+
+  passOrder(order:Order){
+    this.ordersService.mPassOrder(order);
   }
 
   updateOrderStatus(orderId: string, newStatus: string) {
