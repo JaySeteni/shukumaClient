@@ -27,7 +27,7 @@ export class OrdersService {
   //   }
     
   getAllOrders(): Observable<ProductDbResponse> {
-    return this.http.get<ProductDbResponse>(`${this.baseUrl}/orders`);
+    return this.http.get<ProductDbResponse>(`${this.baseUrl}`);
   }
 
   addOrder(payload: any):Observable<any>{
