@@ -49,6 +49,7 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
 import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
 import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 import { BusinessAdminComponent } from './comps/BusinessUI/business-admin/business-admin.component';
+import { AddUserComponent } from './comps/BusinessUI/add-user/add-user.component';
 
 
 
@@ -93,6 +94,7 @@ import { BusinessAdminComponent } from './comps/BusinessUI/business-admin/busine
     TrackDeliveryComponent,
     DriverTrackComponent,
     BusinessAdminComponent,
+    AddUserComponent,
     
 
   ],

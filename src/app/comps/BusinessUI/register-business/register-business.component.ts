@@ -9,16 +9,11 @@ import { AuthService } from '../../../services/auth/auth.service';
   styleUrl: './register-business.component.css'
 })
 export class RegisterBusinessComponent {
-  
-  signUpBusinesses: any[] = [];
-  signUpObj: any = { 
-    name: '',
-    email: '',
-    address: '',
-    tel_no: '',
-    description:'',
-  };
-  
+  isSuccessful = false
+  isSignUpFailed = false
+  errorMessage = ''
+  business: any
+
   registerForm: FormGroup = new FormGroup({
     name: new FormControl(""),
     email: new FormControl(""),
@@ -26,15 +21,33 @@ export class RegisterBusinessComponent {
     address: new FormControl(""),
     description: new FormControl("")
   });
-  constructor(private _auth: AuthService, private _router: Router) { }
+  constructor(private auth: AuthService, private router: Router) { }
   
   onSignUp() {
-    const {name, email, address, tel_no, description } = this.registerForm.value
+    this.auth
+    console.log((this.registerForm.value))
+
+    if (this.registerForm.invalid) {
+      return; 
+    }
     
-    this._auth.registerBusiness(this.registerForm.value).subscribe({
-      next: ()=> {
-      this._router.navigate(["/admin"])
-      }
-    })
+  this.auth.registerBusiness(this.registerForm.value).subscribe({
+    next: (res)=> {
+      this.isSuccessful = true
+        this.errorMessage = "Registration is successfull!"
+        console.log(res)
+
+        localStorage.setItem("BI", res.id)
+
+        this.auth.getId(res.id)
+        setTimeout(()=>{
+          this.router.navigate(['/login'])
+        }, 3000)
+
+    }, error: (err)=>{
+      console.error(err)
+  }
+})
+
   }
 }

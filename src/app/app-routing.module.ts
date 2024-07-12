@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-// import { HomeComponent } from './comps/BusinessUI/home/home.component';
+import { NgModule } from '@angular/core'
+
 import { UserhomeComponent } from './comps/UserUI/userhome/userhome.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './comps/UserUI/register/register.component';
@@ -19,7 +19,7 @@ import { SettingsComponent } from './comps/UserUI/settings/settings.component';
 import { DriverDashComponent } from './comps/DriverUI/driver-dash/driver-dash.component';
 import { ViewOrderComponent } from './comps/DriverUI/view-order/view-order.component';
 import { DriverProfileComponent } from './comps/DriverUI/driver-profile/driver-profile.component';
-// import { NavigationComponent } from './comps/UserUI/navigation/navigation.component';
+
 import { BusinessprofileComponent } from './comps/BusinessUI/businessprofile/businessprofile.component';
 import { AdminDashboardComponent } from './comps/BusinessUI/admin-dashboard/admin-dashboard.component';
 import { ChatsComponent } from './comps/BusinessUI/chats/chats.component';
@@ -34,11 +34,14 @@ import { RegisterBusinessComponent } from './comps/BusinessUI/register-business/
 import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-delivery.component';
 import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 import { BusinessAdminComponent } from './comps/BusinessUI/business-admin/business-admin.component';
+import { AddUserComponent } from './comps/BusinessUI/add-user/add-user.component';
 
 
 
 const routes: Routes = [
   {path: '', redirectTo:'welcome' , pathMatch: 'full'},
+
+  // Business routes
 
   {path : 'addproduct', component: AddProductComponent},
   {path : 'oneproduct', component: ViewOneProductComponent},
@@ -48,11 +51,20 @@ const routes: Routes = [
   {path: 'stats', component:StatsComponent},
   {path: 'chats', component:ChatsComponent},
   {path: 'dashboard', component:AdminDashboardComponent},
+  {path: 'businessprofile', component: BusinessprofileComponent},
+  {path: 'business-orders',component: BusinessOrdersComponent},
+  {path: 'footer', component: FooterComponent},
+  {path: 'add', component: AddUserComponent},
+  {path: 'registerBusiness', component:RegisterBusinessComponent},
+  {path: 'tracking', component: TrackDeliveryComponent},
+  {path: 'admin', component: BusinessAdminComponent},
+
+  // User routes
+
   {path: 'userhome', component:UserhomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'map', component: MapComponent},
-  {path: 'businessprofile', component: BusinessprofileComponent},
   {path: 'welcome', component:LandingComponent},
   {path: 'category/:catname', component:CategoriesComponent},
   {path: 'product', component: SingleproductComponent},
@@ -61,24 +73,17 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'view_item/:id', component: SingleproductComponent},
   {path: 'order',component: OrderComponent},
-  {path: 'business-orders',component: BusinessOrdersComponent},
-  {path: 'footer', component: FooterComponent},
-  // {path: 'nav', component: NavigationComponent},
-  {path: 'business_reg', component:RegisterBusinessComponent},
-  {path: 'tracking', component: TrackDeliveryComponent},
-  {path: 'admin', component: BusinessAdminComponent},
-
-
-
   {path: 'settings', component: SettingsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'vieworder', component: SingleOrderComponent},
   {path: 'favourites', component:FavouritesComponent},
-  {path: 'spinner', component:SpinnerComponent },  // Driver Routes
+  {path: 'spinner', component:SpinnerComponent }, 
+  
+    // Driver Routes
+
   {path: 'driver/dash', component: DriverDashComponent},
   {path: 'view/one', component: ViewOrderComponent},
   {path: 'driver/profile', component: DriverProfileComponent},
-  {path: 'favourites', component:FavouritesComponent},
   {path: 'driver/track', component: DriverTrackComponent}
 
 ];
