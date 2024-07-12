@@ -33,7 +33,7 @@ export class AuthService {
   }
 
   registerBusiness(payload: any):Observable<any> {
-    return this.http.post<any>('http://localhost:3000/v1/business', payload);
+    return this.http.post<any>('http://localhost:3000/v1/business/', payload);
   }
   
 
