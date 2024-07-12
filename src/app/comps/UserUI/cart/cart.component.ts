@@ -175,7 +175,7 @@ export class CartComponent {
           this.isSuccesful = true
           this.message = res.message
           setTimeout(()=>{
-            this.router.navigateByUrl("/order")
+            this.router.navigateByUrl("/orders")
           },3000)
           
 

@@ -10,16 +10,8 @@ userId: string;
 shippingAddress: {
   address:String,
   coordinates:{
-    lat:{
-      type: Number,
-      required: true,
-      default: 0.0
-    },
-    lng:{
-      type: Number,
-      required: true,
-      default: 0.0
-    }
+    lat:any,
+    lng:any
   }
 },
 deliveryDetails:{
@@ -29,16 +21,10 @@ deliveryDetails:{
     required: true
   },
   coordinates:{
-    lat:{
-      type: Number,
-      required: true,
-      default: 0.0
-    },
-    lng:{
-      type: Number,
-      required: true,
-      default: 0.0
-    }
+    lat: any,
+    
+    lng: any
+    
   },
 },
 items: {
@@ -48,7 +34,7 @@ items: {
   length: number;
 };
 orderNumber: number;
-status: string;
+status: any;
 driverId: string;
 location:{
   lat:any; 

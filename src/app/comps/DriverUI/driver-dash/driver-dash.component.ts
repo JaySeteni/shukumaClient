@@ -27,7 +27,7 @@ export class DriverDashComponent implements OnInit{
     this.ordersService.getAllDriverOrders("1234567890").subscribe({
       next: (data: any) =>{
 
-        this.orders = data;
+        this.orders = data.reverse();
         
       // this.orders = data.Orders
       console.log('Data received from getAllOrders:', this.orders); // Log the entire response object

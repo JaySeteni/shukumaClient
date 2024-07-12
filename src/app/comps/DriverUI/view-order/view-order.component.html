@@ -1,6 +1,6 @@
 <section>
 
-    <button class="long-options">{{ButtonText}}</button>
+    <button *ngIf="ButtonText != 'complete'" (click)="updateOrderStatus()" class="long-options">{{ButtonText}}</button>
 
     <img src="../../../../assets/D183066B-A44A-48E7-88D2-6C123BBFD18B_4_5005_c.jpeg" />
 
@@ -21,9 +21,11 @@
         <label class="price">R200</label>
     </div>
 
+    <div id="map" *ngIf="order?.status == 'in-progress'"></div>
+    
 <div class="divider"></div>    
 
-    <div class="opts">
+    <div *ngIf="ButtonText != 'complete'" class="opts">
         <select class="long-options">
             <option>Cancel</option>
             <option>Reschedule</option>
@@ -31,6 +33,7 @@
         
         <button class="long-options">Confirm</button>
     </div>
+    <p *ngIf="ButtonText == 'complete'" style="width: 100%; text-align: center;">Order Completed</p>
 </section>
 
 <app-driver-bottom-nav></app-driver-bottom-nav>

@@ -27,7 +27,7 @@ export class OrdersService {
   //   }
     
   getAllDriverOrders(driverId:any): Observable<ProductDbResponse> {
-    return this.http.get<ProductDbResponse>(`${this.baseUrl}/${driverId}`);
+    return this.http.get<ProductDbResponse>(`${this.baseUrl}/driver/${driverId}`);
   }
 
   getAllOrders(): Observable<ProductDbResponse> {
@@ -41,16 +41,13 @@ export class OrdersService {
     return this.http.post<any>(`${this.baseUrl}`, payload, {headers})
   }
 
-  fetchOrder(cartId:any):Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}/${cartId}`)
+  fetchOrder(userId:any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/${userId}`)
   }
 
-  updateOrder(orderId: string, updatedOrderData: Partial<Order>): Observable<any> {
-    const url = `${this.baseUrl}/${orderId}`;
-    return this.http.put<any>(url, updatedOrderData)
-      .pipe(
-        catchError(this.handleError)
-      );
+  updateOrder(orderId: any, updatedOrderData:any): Observable<any> {
+    const url = `${this.baseUrl}/update/${orderId}`;
+    return this.http.put<any>(url, updatedOrderData);
   }
 
   private handleError(error: any): Observable<any> {
