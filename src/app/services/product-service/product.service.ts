@@ -26,16 +26,15 @@ export class ProductService {
     return this._http.post<Product>(`${this.baseUrl}articles/`, formData, {headers});
 }
 
+  deleteProduct(id: string) : Observable<Product> {
+    return this._http.delete<Product>(`${this.baseUrl}/articles/${id}`)
+  }
 
-  // deleteProduct(id: string) : Observable<Product> {
-  //   return this._http.delete<Product>(`${this.baseUrl}/articles/${id}`)
-  // }
+  deleteAllProducts() : Observable<Product> {
+    return this._http.delete<Product>(`${this.baseUrl}/articles`)
+  }
 
-  // deleteAllProducts() : Observable<Product> {
-  //   return this._http.delete<Product>(`${this.baseUrl}/articles`)
-  // }
-
-  // updateAProduct(id: string, data: Product) : Observable<Product> {
-  //   return this._http.put<Product>(`${this.baseUrl}/article/${id}`, data)
-  // }
+  updateAProduct(id: string, data: Product) : Observable<Product> {
+    return this._http.put<Product>(`${this.baseUrl}/article/${id}`, data)
+  }
 }
