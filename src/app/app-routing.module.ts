@@ -44,7 +44,7 @@ const routes: Routes = [
   // Business routes
 
   {path : 'addproduct', component: AddProductComponent},
-  {path : 'oneproduct', component: ViewOneProductComponent},
+  {path : 'view_product/:id', component: ViewOneProductComponent},
   {path : 'products', component: ViewProductsComponent},
   {path : 'sidenav',component:SidenavComponent},
   {path: 'settingsBusiness',component:SettingsComponent},

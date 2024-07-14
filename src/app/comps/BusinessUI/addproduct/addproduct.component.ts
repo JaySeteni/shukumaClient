@@ -43,6 +43,7 @@ export class AddProductComponent {
     formData.append('businessId', "66864f8dad57296a97884bc0");
 
     console.log(formData);
+    console.log(this.selectedFile);
     var obj: any = {};
 
     for (let x of formData) {
@@ -51,11 +52,14 @@ export class AddProductComponent {
       obj[key as keyof typeof obj] = value;
     }
 
+    
+
     console.log(obj);
 
     this.productService.createProduct(formData).subscribe({
       next: response => {
         console.log('Product added successfully', response);
+        console.log(response)
         form.reset();
         this.closeModal();
       },

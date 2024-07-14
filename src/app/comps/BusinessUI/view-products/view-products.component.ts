@@ -1,18 +1,31 @@
-import { Component } from '@angular/core';
-import { Product } from '../../../interfaces/product';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product-service/product.service';
+import { ProductDbResponse } from '../../../interfaces/productDbResponse';
+
 @Component({
   selector: 'app-view-products',
   templateUrl: './view-products.component.html',
-  styleUrl: './view-products.component.css'
+  styleUrls: ['./view-products.component.css']
 })
-export class ViewProductsComponent {
+export class ViewProductsComponent implements OnInit {
 
-  products:any
+  products: any[] = [];
 
-  constructor( productService:ProductService) { }
+  constructor(private _productService: ProductService) { }
 
   ngOnInit(): void {
-    
+    this.getAllProducts();
+  }
+
+  getAllProducts(): void {
+    this._productService.getAllProducts().subscribe({
+      next: (data: ProductDbResponse) => {
+        this.products = data.products;
+        console.log(this.products);
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
   }
 }
