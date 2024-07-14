@@ -3,6 +3,8 @@ import { Product } from '../../../interfaces/product';
 import { CartService } from '../../../services/cart-service/cart.service';
 import { OrdersService } from '../../../services/orders/orders.service';
 import { Route, Router, RouterFeature } from '@angular/router';
+import { GetGeolocationService } from '../../../services/get-geolocation.service';
+import { finalize } from 'rxjs';
 import { TokenService } from '../../../service/token.service';
 
 @Component({
@@ -18,18 +20,24 @@ export class CartComponent {
   cart_id :any
   fullCart: any;
   address:string = ""
-  isHidden: boolean = false
+  isHidden: boolean = true
   message = ""
+  coordinates = {
+    lat:0.0,
+    lng:0.0
+  }
   isSuccesful = false
+
+  ButtonText = "CHECK ADDRESS"
 
   constructor(private cartService : CartService, 
             private orderService : OrdersService,
             private router: Router,
+            private propertyGeolocation:GetGeolocationService,
             private tokenService: TokenService ){}
 
   ngOnInit(): void {
     this.getCart()
-
 
     console.log(this.totalAmount)
     this.items = this.cartService.getItems();
@@ -45,6 +53,38 @@ export class CartComponent {
     this.cartService.cartTotal.next(this.totalAmount);
     // localStorage.setItem('for', JSON.stringify(this.items))
 
+  }
+
+  foundProperty:boolean = true
+
+  GetAccuratePropertyGeolocation(){ 
+    if(this.address.trim()){
+      this.propertyGeolocation.GetAddressGeolocation(this.address)
+      .pipe(finalize(() => {
+        // This will execute after a response is gotten whether an error or success. right place to hide a loader
+      })).subscribe({
+        next: (data) => {
+          if(data){
+            this.address = data.formatted_address
+            this.coordinates = data.geometry.location
+            this.ButtonText = "PROCEED TO CHECKOUT";
+    
+            // setTimeout(()=>{
+              this.foundProperty = false
+            // }, 2000)
+            
+          }
+        },
+        error: (error) => {
+          this.ButtonText = "CHECK ADDRESS";
+          alert("We've encounter an error: " + error)
+          console.error(error)
+
+        }
+      });
+      
+    }
+    
   }
 
   removeProduct(item:any,e:Event) {
@@ -125,17 +165,22 @@ export class CartComponent {
   }
 
   placeOrder(){
-    const uid = "66865064ad57296a97884bc3"
-    
+
+    if(this.ButtonText == "CHECK ADDRESS"){
+      this.GetAccuratePropertyGeolocation()
+    }
+    else if(this.ButtonText == "PROCEED TO CHECKOUT"){
+      const uid = "66865064ad57296a97884bc3"
+      
     this.fullCart._id
-    this.orderService.addOrder({userId: uid, cartId:this.fullCart._id, address: this.address}).subscribe(
+    this.orderService.addOrder({userId: uid, cartId:this.fullCart._id, address: {delA:this.address, cod:this.coordinates}}).subscribe(
       {
         next: (res)=>{
           console.log(res)
           this.isSuccesful = true
           this.message = res.message
           setTimeout(()=>{
-            this.router.navigateByUrl("/order")
+            this.router.navigateByUrl("/orders")
           },3000)
           
 
@@ -145,6 +190,8 @@ export class CartComponent {
         }
       }
     )
+    }
+    
   }
 
 }

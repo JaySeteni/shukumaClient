@@ -8,23 +8,31 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddProductComponent {
-  product:any = {
-  category: "",
-  title: "",
-  description: "",
-  price: 0,
-  stock: 0
+  product: any = {
+    category: "",
+    title: "",
+    description: "",
+    price: 0,
+    stock: 0
+  };
 
-}
-selectedFile!: File;
-reader!: FileReader
-imagePreview:any
+  selectedFile!: File;
+  reader!: FileReader;
+  imagePreview: any;
+  isModalOpen = false;
 
-  constructor(
-    private productService: ProductService) {}
+  constructor(private productService: ProductService) {}
 
-    onSubmit(form: NgForm) {
-      const formData: any= new FormData();
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+
+  onSubmit(form: NgForm) {
+    const formData: any = new FormData();
 
       for (let key in this.product) {
         if (key !== 'imgUrl') {
@@ -66,7 +74,6 @@ imagePreview:any
         }
       }
     }
-
 
 
 

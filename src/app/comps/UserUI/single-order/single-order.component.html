@@ -1,4 +1,4 @@
-<div class="order-div w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto pb-4 border-x-2 shadow-xl">
+<!-- <div class="order-div w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto pb-4 border-x-2 shadow-xl">
     <h3 class="font-manrope text-center font-bold text-2xl sm:text-4xl leading-10 text-black mb-11 py-5">
         Order {{orderId.slice(1)}}
     </h3>
@@ -56,5 +56,31 @@
         </button>
     </div>
     <button class="text-center text-blue-600 uppercase underline-offset-2 " routerLink="/orders">back</button>
-</div>
-<!-- <app-footer></app-footer> -->
+</div>-->
+<app-footer></app-footer> 
+
+<section>
+    <img src="../../../../assets/D183066B-A44A-48E7-88D2-6C123BBFD18B_4_5005_c.jpeg"/>
+
+    <h1># {{order?.id}}</h1>
+    <label>Driver: Leon Sch </label>
+    <!-- <label>Address: {{order?.shippingAddress?.address}}</label> -->
+
+    <div class="side-by-side">
+        <label> Item: {{order?.items?.length}}</label>
+
+        <!-- <label>Qty: 1</label> -->
+    </div>
+    
+
+    <div class="side-by-side">
+        <label>Cash</label>
+
+        <label class="price">R200</label>
+    </div>
+
+    <div id="map" *ngIf="order?.status == 'in-progress'"></div>
+    
+<div class="divider"></div>    
+
+</section>

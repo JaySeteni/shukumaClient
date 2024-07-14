@@ -10,7 +10,7 @@
           <p>User Id:   #{{ order.userId }}</p>
           <p class="pb-2">Order Id: #{{ order.id }}</p> 
           <p>Order Description:   {{ order.description }}</p>
-          <p class="pb-2">order address At: {{order.address}}</p>
+          <p class="pb-2">order address At: {{order.shippingAddress.address}}</p>
           <p class="pb-2">Status: {{order.status}}</p>
           <p class="pb-2">Number Of Items: {{ order.items.quantity}}</p>
           <p class="pb-2">ordered Date: {{ order.createdAt }}</p>

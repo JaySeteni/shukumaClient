@@ -12,9 +12,23 @@ export class LandingComponent {
 
   constructor(private route:Router) { }
 
-  mShowLogin(){
+  mLoginBusiness(){
+    setTimeout(() => {
+      this.route.navigate(["driver/dash"]);
+      // this.route.navigate(["userhome"]);
+    }, 500)
+  }
+
+  mLoginUser(){
     setTimeout(() => {
       this.route.navigate(["login"]);
+    }, 500)
+  }
+
+  mLoginDriver(){
+    setTimeout(() => {
+      this.route.navigate(["driver/dash"]);
+      // this.route.navigate(["userhome"]);
     }, 500)
   }
 

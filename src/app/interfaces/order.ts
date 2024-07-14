@@ -3,16 +3,30 @@ isExpanded: any;
 Orders: Order[];
 cartId: string;
 createdAt: any;
-id: unknown;
+id: string;
 description: string;
 total: number;
 userId: string;
-address: {
-  street: string;
-  city: string;
-  postalCode: string;
-  country: string;
-};
+shippingAddress: {
+  address:String,
+  coordinates:{
+    lat:any,
+    lng:any
+  }
+},
+deliveryDetails:{
+  DriverId: {
+    type: String,
+    // ref: 'Driver',
+    required: true
+  },
+  coordinates:{
+    lat: any,
+    
+    lng: any
+    
+  },
+},
 items: {
   productId: unknown;
   quantity: number;
@@ -20,7 +34,7 @@ items: {
   length: number;
 };
 orderNumber: number;
-status: string;
+status: any;
 driverId: string;
 location:{
   lat:any; 
