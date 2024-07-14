@@ -35,21 +35,8 @@ imagePreview:any
       formData.append('businessId',"66864f8dad57296a97884bc0")
       
 
-      console.log(formData)
-      var obj :any = {}
 
-    for (let x of formData){
-      
-      let key = x[0]
-      let value = x[1]
-      obj[key as keyof typeof obj] = value
-     
-   }
-
-    console.log(obj)
-      // for (let i = 0; i < this.product.images.length; i++) {
-      //   formData.append('images', this.product.images[i]);
-      // }
+  
       this.productService.createProduct(formData).subscribe({
         next: response  => {
           console.log('Product added successfully', response);
@@ -61,13 +48,7 @@ imagePreview:any
      });
      }
 
-    //  onFileSelected(event: any) {
-    //   if (event.target.files) {
-    //       this.product.images.file;
-    //       console.log(this.product.images.file)
-    //     }
-    //   }
-
+  
       fileSelect(event: any) {
         if (event.target.files[0]) {
           this.selectedFile = event.target.files[0];
@@ -81,7 +62,6 @@ imagePreview:any
             
           };
     
-          
           
         }
       }
