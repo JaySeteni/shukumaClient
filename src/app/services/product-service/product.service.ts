@@ -8,7 +8,7 @@ import { ProductDbResponse } from '../../interfaces/productDbResponse';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl: string = "http://localhost:3000/v1/products/";
+  private baseUrl: string = "http://localhost:3000/v1/products";
 
   constructor(private _http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class ProductService {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json');
-    return this._http.post<Product>(`${this.baseUrl}articles/`, formData, {headers});
+    return this._http.post<Product>(`${this.baseUrl}/articles`, formData, {headers});
 }
 
   deleteProduct(id: string) : Observable<Product> {

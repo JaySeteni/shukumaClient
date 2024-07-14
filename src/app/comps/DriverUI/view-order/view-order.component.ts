@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Order } from '../../../interfaces/order';
 import { OrdersService } from '../../../services/orders/orders.service';
 import { Loader } from '@googlemaps/js-api-loader';
+import { CartService } from '../../../services/cart-service/cart.service';
 
 let map: google.maps.Map;
 let Destination_marker:any;
@@ -13,6 +14,8 @@ let Driver_marker:any;
   styleUrl: './view-order.component.css'
 })
 export class ViewOrderComponent  implements OnInit{
+item: any;
+  cartService: any;
 
   constructor(private order_service: OrdersService){}
 
@@ -38,6 +41,8 @@ export class ViewOrderComponent  implements OnInit{
     })
 
     this.initmap();
+
+  
   }
 
   updateOrderStatus(){
