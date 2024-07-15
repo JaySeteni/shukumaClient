@@ -1,19 +1,24 @@
-<h1 class="p-4 flex justify-center w-80 text-xl order-gray-200 rounded-lg shadow dark:bg-black-800 dark:border-gray-700"> 
-  Your favorites.
-</h1>
+<app-navigation></app-navigation>
+
+<div class="header flex justify-center">
+  <h1 class="p-4 flex justify-center w-80 text-xl order-gray-200 rounded-lg shadow dark:bg-black-800 dark:border-gray-700"> 
+    Your favorites.
+  </h1>
+</div>
+
 <div class="p-1 flex flex-wrap items-center justify-center"> 
-    <div class="w-80 max-w-md p-4 mb-22 flex m-2 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"  *ngFor="let favorites of favorites">
+    <div class="w-80 max-w-md p-4 mb-22 flex m-2 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"  *ngFor="let favorite of favorites">
       <a routerLink="/orders">
       <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" >
           <li class="py-3 sm:py-4" >
-            <!-- <p class="pb-2">Order Number: {{favorites.indexOf(favorites)+1}} -->
-            <p>User Id:   #{{ favorites.userId }}</p>
-            <p class="pb-2">Order Id: #{{ favorites.itemId }}</p> 
-            <p>Created At:   {{ favorites.createdAt }}</p>
+            <p class="pb-2">favourite Number: {{favorites.indexOf(favorite)+1}}
+            <p>User Id:   #{{ favorite.userId }}</p>
+            <p>Id:   #{{ favorite.id }}</p>
+            <p>Created At:   {{ favorite.createdAt }}</p>
+            <p>items:   {{ favorite.itemId }}</p>
+
   
-            <button class="flex mx-auto p-2 mt-4 bg-orange-500 w-40 justify-center rounded-lg text-uppercase"> 
-            assign to driver
-          </button>
+
           <hr class="bg-red-700 mt-10">
         </li>
       </ul>

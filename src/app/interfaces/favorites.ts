@@ -9,4 +9,6 @@ export interface Favorites {
         unique: Boolean,
       },
       createdAt: any,
+      imageUrl: string,
+      id:any,
 }

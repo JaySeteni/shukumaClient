@@ -10,13 +10,13 @@ import { Order } from '../../interfaces/order';
 })
 export class FavoritesService {
 
-  private baseUrl = "http://localhost:3000/v1/favorites";   
+  private baseUrl = "http://localhost:3000/v1/favourites";   
   favorites: Favorites[] = [];
   error: string | null = null;
 
   constructor( private http:HttpClient) { }
   
-  getAllfavorites(): Observable<Favorites> {
-    return this.http.get<Favorites>(`${this.baseUrl}`);
+  fetchFavs(id: any):Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}`, id)
   }
 }
