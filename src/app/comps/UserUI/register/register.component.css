@@ -29,7 +29,6 @@ form{
 
 form *{
     /* font-family: 'Poppins',sans-serif; */
-    color:#ffffff;
 
     letter-spacing: 0.5px;
     outline: none;
@@ -69,6 +68,7 @@ display: block;
 font-size: 16px;
 font-weight: 500;
 font-family: 'Poppins',sans-serif;
+color: #f3f3f3
 }
 
 input{

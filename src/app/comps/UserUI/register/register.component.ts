@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { min } from 'rxjs';
+import { validate } from 'uuid';
 
 
 
@@ -15,23 +17,26 @@ export class RegisterComponent implements OnInit{
   isSignUpFailed = false
   errorMessage = ''
   registerForm : FormGroup
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  successMessage=""
+
 
   constructor(private _auth: AuthService, private _router: Router, private fb : FormBuilder, private router: Router,) {
     this.registerForm = this.fb.group({
-      username: [''],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      confirm_password: ['', Validators.required]
+      username: new FormControl ('', [Validators.required, Validators.minLength(6)]),
+      email: new FormControl ('', [Validators.required, Validators.email,Validators.pattern(this.emailPattern)]),
+      password: new FormControl ('', [Validators.required, Validators.minLength(6)]),
+      confirm_password: ['', [Validators.required,Validators.minLength(6), this.comparePasswords]]
       })
   }
 
   ngOnInit(): void {
   }
 
-  comparePasswords(){
+  comparePasswords(control: AbstractControl){
 
-    if (this.registerForm.get("password")?.value  !== this.registerForm.get("password")?.value) {
-      
+    if (control.get("password")?.value  !== control.get("password")?.value) {
+      console.log("mojo")
       return { passwordsDontMatch: true };
     }
     return null;
@@ -39,7 +44,7 @@ export class RegisterComponent implements OnInit{
   
 
   onSignUp(){
-    console.log((this.registerForm.value))
+    
     if (this.registerForm.invalid) {
       return; // Prevent submission if form is invalid
     }
@@ -48,12 +53,14 @@ export class RegisterComponent implements OnInit{
       next: (res)=> {
           console.log(res)
           this.isSuccessful = true
-          this.errorMessage = "Login is successful!"
+          this.successMessage = "Registered successfully!"
            setTimeout(()=>{
           this.router.navigate(['/login'])
         }, 3000)
       
       }, error: (err)=>{
+          this.isSignUpFailed = true
+          this.errorMessage = `Signup Failed!. ${err.error.message}`
           console.error(err)
       }
     })

@@ -1,59 +1,80 @@
 <div class="container border-3">
     <form [formGroup]="registerForm" (ngSubmit)="onSignUp()" class="rounded-lg"> 
-        <h2 class="tit">Shukuma</h2>
-        <div class="message">
+        <h2 class="tit text-white">Shukuma</h2>
+        <div class="message text-white">
           <p>One account</p>
           <p>Many possibilites</p>
         </div>
         
         <div class="form-group">
           <label for="userName">Username:</label>
-          <input type="text" formControlName="username" placeholder="Type userName" id="username" class="form-control" placeholder="User Name" required>
+          <input type="text" formControlName="username" placeholder="Type userName" id="username" class="form-control text-blue-800 focus:ring-orange-700 bg-white" placeholder="User Name" required>
+        
+          
+            <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)" class="error text-white">
+            <div *ngIf="registerForm.get('username')?.errors?.['required']">Username is required.</div>
+            <div *ngIf="registerForm.get('username')?.errors?.['minlength']">
+              Last Name must be at least 6 characters long.
+            </div>
+            </div>
+        
         </div>  
         
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" formControlName="email" placeholder="Type Email" id="username" class="form-control" placeholder="email" required>
-          </div>
+            <input type="email" formControlName="email" placeholder="Type Email" id="username" class="form-control  text-blue-800 focus:ring-orange-700 bg-white" placeholder="email" required>
+        
+            <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)" class="error text-white">
+              <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</div>
+              <div *ngIf="registerForm.get('email')?.errors?.['pattern']">Please enter a valid email address</div>
+              </div>
+        </div>
 
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" formControlName="password" placeholder="Type Password" id="password"  class="form-control focus:text-black" placeholder="Password" required>
-            <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="error">
+            <input type="password" formControlName="password" placeholder="Type Password" id="password"  class="form-control  text-blue-800 focus:ring-orange-700 bg-white" placeholder="Password" required>
+            <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="error text-white">
             <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</div>
+            <div *ngIf="registerForm.get('password')?.errors?.['minlength']">
+              password must be at least 6 characters long.
+            </div>
+            
           </div>
           </div>
 
         <div class="form-group">
           <label for="password"> Confirm password:</label>
-          <input type="password" formControlName="confirm_password" placeholder="Type Password" id="password"  class="form-control" placeholder="Password" required>
-          <div *ngIf="registerForm.get('confirm_password')?.invalid && (registerForm.get('confirm_password')?.dirty || registerForm.get('confirm_password')?.touched)" class="error">
+          <input type="password" formControlName="confirm_password" placeholder="Type Password" id="password"  class="form-control  text-blue-800 focus:ring-orange-700 bg-white" placeholder="Password" required>
+          <div *ngIf="registerForm.get('confirm_password')?.invalid && (registerForm.get('confirm_password')?.dirty || registerForm.get('confirm_password')?.touched)" class="error text-white">
             <div *ngIf="registerForm.get('confirm_password')?.errors?.['required']">Password is required.</div>
-            
+            <div *ngIf="registerForm.get('confirm_password')?.errors?.['minlength']">
+              password must be at least 6 characters long.
+            </div>
+            <div *ngIf="registerForm.get('confirm_password')?.errors?.['confirmPasswords']">Password don't match.</div> 
             
           </div>
-          <div *ngIf="registerForm.get('confirm_password')?.valid && registerForm.get('password')?.valid">
-            <h1>hey</h1>
-            <!-- <div *ngIf="registerForm.get('confirm_password')?.errors?.['required']">Password don't match.</div> -->
-          </div>
+          <div *ngIf="registerForm.errors?.['confirmPasswords']" class="text-white">Password don't match.</div> 
+      
         
         
         </div>
 
-        <p  class="other">Already have an account <a routerLink="/login">login</a> </p>
+        <p  class="other text-white">Already have an account? <a routerLink="/login">LOGIN</a> </p>
 
         <div>
-          <div *ngIf="isSuccessful"  class="z-40 w-full text-center ">
-            <span id="badge-dismiss-default" class="inline-flex items-center px-2 py-1 me-2 text-lg font-medium text-black-800 bg-green-500 rounded dark:bg-blue-900 dark:text-blue-300">
-              {{errorMessage}}
-              <button type="button" class="inline-flex items-center p-1 ms-2 text-sm text-black-900 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300" data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
-              <svg class="w-2 h-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-              </svg>
-              <span class="sr-only">Remove badge</span>
-              </button>
-              </span>
+          <div *ngIf="isSuccessful" class="z-40 w-full text-center  ">
+            <div class="btn btn-success text-white px-3">
+              {{successMessage}} 
+             </div>
           </div>
+
+          <div  *ngIf="isSignUpFailed" class="z-40 w-full text-center  " >
+            
+            <div class="btn btn-error text-white px-3">
+              {{errorMessage}} 
+             </div>
+          </div>
+         
         </div>
         <button class="btn btn-primary" type="submit">Register</button>
     </form>

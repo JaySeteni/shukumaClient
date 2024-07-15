@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
   isLogginFailed = false
   isSuccessful = false
   errorMessage = ''
+  successMessage=""
+
   constructor(private router: Router, private fb: FormBuilder, private auth: AuthService, private tokenStorage : TokenService) {
     this.userForm = this.fb.group({
-
-      username: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveToken(data.token)
         this.tokenStorage.saveUser(data)
         this.isSuccessful=true
-        this.errorMessage = "Login is successfull"
+        this.successMessage = "Login is successfull"
         setTimeout(()=>{
           this.router.navigate(['/userhome'])
         }, 3000)
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
       error: (err)=>{
         console.error("An err", err)
         this.isLogginFailed= true
-        this.errorMessage = "Login failed!"
+        this.errorMessage = `Login Failed!. ${err.error.message}`
       }
     })
 
