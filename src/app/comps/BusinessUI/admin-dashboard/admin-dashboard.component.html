@@ -1,6 +1,12 @@
 <app-sidenav></app-sidenav>
 <div class="min-h-full">
     <nav class="bg-transparent">
+      <a (click)="goBack()" class="flex space-x-3 rtl:space-x-reverse">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+        </svg>
+        
+      </a>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex items-center">
@@ -34,20 +40,7 @@
         </div>
     </nav>
 </div>
-<div class="grid grid-cols-3 gap-4 p-4">
-    <div class="bg-violet-500 text-white p-6 rounded-md shadow-md">
-      <h2 class="text-lg font-medium mb-2">Sales</h2>
-      <p class="text-2xl font-bold">{{ salesValue }}</p>
-    </div>
-    <div class="bg-yellow-500 text-white p-6 rounded-md shadow-md">
-      <h2 class="text-lg font-medium mb-2">Visitors</h2>
-      <p class="text-2xl font-bold">{{ visitorsValue }}</p>
-    </div>
-    <div class="bg-orange-500 text-white p-6 rounded-md shadow-md">
-      <h2 class="text-lg font-medium mb-2">Orders</h2>
-      <p class="text-2xl font-bold">{{ ordersValue }}</p>
-    </div>
-  </div>
+
   <!-- <ngx-charts-pie-chart
   [results]="pieChartData"
   [gradient]="gradient"

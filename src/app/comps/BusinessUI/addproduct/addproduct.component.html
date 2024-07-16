@@ -1,110 +1,53 @@
 <div class="bg-white shadow-md rounded-lg p-6">
   <h2 class="text-2xl font-bold mb-4">Add a New Product</h2>
- 
-  <!-- <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="space-y-6">
 
-    <div class="form-group">
-      <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-      <select type="text" class="select select-bordered w-full mt-1" id="location" [(ngModel)]="product.category" name="location" placeholder="Enter location" required>
-        <option value="Cyclinders">Cylinders</option>
-        <option value="Stoves">Stoves</option>
-        <option value="Spares">Spares</option>
-      </select>
-    </div>
+<!-- Dropdown toggle button -->
+<button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Add Product
+</button>
 
-    <div class="form-group">
-      <label for="parking" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
-      <input type="text" [(ngModel)]="product.title" class="input input-bordered w-full mt-1" name="parking" required>
-    </div>
+<!-- Dropdown menu -->
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+  <div class="p-4 bg-white rounded-lg shadow-xl">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="space-y-6">
+      <div class="form-group">
+        <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+        <select type="text" class="select select-bordered w-full mt-1" id="location" [(ngModel)]="product.category" name="location" placeholder="Enter location" required>
+          <option value="cyclinders">Cylinders</option>
+          <option value="stoves">Stoves</option>
+          <option value="spares">Spares</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <label for="rooms" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
-      <input type="text" class="input input-bordered w-full mt-1" id="rooms" [(ngModel)]="product.description" name="rooms" placeholder="Number of rooms" required>
-    </div>
+      <div class="form-group">
+        <label for="parking" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+        <input type="text" [(ngModel)]="product.title" class="input input-bordered w-full mt-1" name="parking" required>
+      </div>
 
-    <div class="form-group">
-      <label for="electricity" class="block text-sm font-medium text-gray-700 mb-1">Price</label>
-      <input type="number" [(ngModel)]="product.price" class="input input-bordered w-full mt-1" name="electricity" required>
-    </div>
+      <div class="form-group">
+        <label for="rooms" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+        <input type="text" class="input input-bordered w-full mt-1" id="rooms" [(ngModel)]="product.description" name="rooms" placeholder="description here..." required>
+      </div>
 
-    <div class="form-group">
-      <label for="bathroom" class="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
-      <input type="number" [(ngModel)]="product.stock" class="input input-bordered w-full mt-1" name="bathroom">
-    </div>
+      <div class="form-group">
+        <label for="electricity" class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+        <input type="number" [(ngModel)]="product.price" class="input input-bordered w-full mt-1" name="electricity" required>
+      </div>
 
-    <div class="form-group">
-      <label for="images" class="block text-sm font-medium text-gray-700 mb-1">Add Image</label>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="form-group">
+        <label for="bathroom" class="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
+        <input type="number" [(ngModel)]="product.stock" class="input input-bordered w-full mt-1" name="bathroom">
+      </div>
+
+      <div class="form-group">
+        <label for="images" class="block text-sm font-medium text-gray-700 mb-1">Add Image</label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <input type="file" class="file-input file-input-bordered w-full mt-1" name="images" (change)="fileSelect($event)">
         </div>
       </div>
 
-    <button type="submit" class="btn btn-secondary w-full"> Add </button>
-  </form>
-</div> -->
-
-<!-- Modal toggle button -->
-<button class="btn btn-primary" (click)="openModal()">Open Modal</button>
-
-<!-- Modal background -->
-<div class="fixed z-10 inset-0 overflow-y-auto" *ngIf="isModalOpen">
-  <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-
-    <!-- Modal overlay -->
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" (click)="closeModal()"></div>
-
-    <!-- Modal panel -->
-    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-      <div>
-        <div class="sm:flex sm:items-start">
-          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Add Product</h3>
-
-            <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="space-y-6">
-              <div class="form-group">
-                <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-                <select type="text" class="select select-bordered w-full mt-1" id="location" [(ngModel)]="product.category" name="location" placeholder="Enter location" required>
-                  <option value="cyclinders">Cylinders</option>
-                  <option value="stoves">Stoves</option>
-                  <option value="spares">Spares</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="parking" class="block text-sm font-medium text-gray-700 mb-1">Title</label>
-                <input type="text" [(ngModel)]="product.title" class="input input-bordered w-full mt-1" name="parking" required>
-              </div>
-
-              <div class="form-group">
-                <label for="rooms" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
-                <input type="text" class="input input-bordered w-full mt-1" id="rooms" [(ngModel)]="product.description" name="rooms" placeholder="description here..." required>
-              </div>
-
-              <div class="form-group">
-                <label for="electricity" class="block text-sm font-medium text-gray-700 mb-1">Price</label>
-                <input type="number" [(ngModel)]="product.price" class="input input-bordered w-full mt-1" name="electricity" required>
-              </div>
-
-              <div class="form-group">
-                <label for="bathroom" class="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
-                <input type="number" [(ngModel)]="product.stock" class="input input-bordered w-full mt-1" name="bathroom">
-              </div>
-
-              <div class="form-group">
-                <label for="images" class="block text-sm font-medium text-gray-700 mb-1">Add Image</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <input type="file" class="file-input file-input-bordered w-full mt-1" name="images" (change)="fileSelect($event)">
-                </div>
-              </div>
-
-              <button type="submit" class="btn btn-secondary w-full"> Add </button>
-            </form>
-
-          </div>
-        </div>
-      </div>
-    </div>
+      <button type="submit" class="btn btn-secondary w-full"> Add </button>
+    </form>
   </div>
 </div>
 

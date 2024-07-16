@@ -14,6 +14,8 @@ h1{
     flex-direction: column;
     gap: 15px;
     height: auto;
+    padding: 5px;
+    margin-bottom: 5rem;
 }
 
 .order-item{

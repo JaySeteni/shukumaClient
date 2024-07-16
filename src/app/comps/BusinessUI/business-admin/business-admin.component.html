@@ -4,7 +4,7 @@
             <h1 class="text-3xl font-bold text-white mb-4 uppercase tracking-wider leading-tight text-center font-sans-serif">
                 Welcome to Mzimkhulu
             </h1>
-            <div flex justify-center md:justify-start>
+            <div class="justify-center md:justify-start">
 
             </div>
         </div>
@@ -15,3 +15,78 @@
     </div>
 
 </div>
+
+<div class="container mx-auto py-8">
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-violet-500 text-white p-6 rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">Sales</h2>
+        <p class="text-2xl font-bold">{{ salesValue }}</p>
+      </div>
+      <div class="bg-yellow-500 text-white p-6 rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">Visitors</h2>
+        <p class="text-2xl font-bold">{{ visitorsValue }}</p>
+      </div>
+      <div class="bg-orange-500 text-white p-6 rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">Orders</h2>
+        <p class="text-2xl font-bold">{{ ordersValue }}</p>
+      </div>
+    </div>
+  
+    <div class="flex justify-center items-center space-x-4 mt-8">
+        <div class="flex flex-col items-center space-y-4">
+            <div class="flex justify-center space-x-4">
+              <a routerLink="/stats" class="w-32 h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-red-500 text-white cursor-pointer">
+                <div class="h-full w-full flex flex-col justify-center items-center rounded-md">
+                  <span>
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                    </svg>
+                  </span>
+                  <p class="text-s font-manrope font-bold">Driver in route</p>
+                </div>
+              </a>
+          
+              <a routerLink="/dashboard" class="w-32 h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-green-500 text-white cursor-pointer">
+                <div class="h-full w-full flex flex-col justify-center items-center rounded-md">
+                  <span>
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                  </span>
+                  <p class="text-s font-manrope font-bold">Delivery Breakdown</p>
+                </div>
+              </a>
+            </div>
+          
+            <div class="flex justify-center space-x-4">
+              <a routerLink="/addproduct" class="w-32 h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-blue-500 text-white cursor-pointer">
+                <div class="h-full w-full flex flex-col justify-center items-center rounded-md">
+                  <span>
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                    </svg>
+                  </span>
+                  <p class="text-s font-manrope font-bold">Products</p>
+                </div>
+              </a>
+            </div>
+          </div>
+      </div>
+      
+    <!-- <div class="grid grid-cols-3 gap-4 mb-6 hidden" id="delivery-breakdown">
+      <div class="bg-gray-100 rounded-lg p-4">
+        <h3 class="text-lg font-medium mb-2">Current Deliveries</h3>
+        <p class="text-4xl font-bold">{{ currentDeliveries }}</p>
+      </div>
+      <div class="bg-gray-100 rounded-lg p-4">
+        <h3 class="text-lg font-medium mb-2">Previous Deliveries</h3>
+        <p class="text-4xl font-bold">{{ previousDeliveries }}</p>
+      </div>
+      <div class="bg-gray-100 rounded-lg p-4">
+        <h3 class="text-lg font-medium mb-2">Total Deliveries</h3>
+        <p class="text-4xl font-bold">{{ currentDeliveries + previousDeliveries }}</p>
+      </div>
+    </div>
+  </div> -->
+  
