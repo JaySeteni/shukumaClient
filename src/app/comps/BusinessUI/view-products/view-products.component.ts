@@ -10,8 +10,12 @@ import { ProductDbResponse } from '../../../interfaces/productDbResponse';
 export class ViewProductsComponent implements OnInit {
 
   products: any[] = [];
+  selectedProduct: any;
+  isUpdateModalOpen: boolean = false;
 
-  constructor(private _productService: ProductService) { }
+  constructor(private _productService: ProductService) {
+    this.getAllProducts();
+   }
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -27,5 +31,16 @@ export class ViewProductsComponent implements OnInit {
         console.log(err);
       }
     });
+  }
+
+  openUpdateModal(product: any) {
+    this.selectedProduct = product;
+    this.isUpdateModalOpen = true;
+  }
+
+  closeUpdateModal() {
+    this.isUpdateModalOpen = false;
+    this.selectedProduct = null;
+    this.getAllProducts(); // Reload products to reflect updates
   }
 }

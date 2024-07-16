@@ -35,6 +35,8 @@ import { TrackDeliveryComponent } from './comps/UserUI/track-delivery/track-deli
 import { DriverTrackComponent } from './comps/DriverUI/driver-track/driver-track.component';
 import { BusinessAdminComponent } from './comps/BusinessUI/business-admin/business-admin.component';
 import { AddUserComponent } from './comps/BusinessUI/add-user/add-user.component';
+import { UpdateproductComponent } from './comps/BusinessUI/updateproduct/updateproduct.component';
+import { DeleteproductComponent } from './comps/BusinessUI/deleteproduct/deleteproduct.component';
 
 
 
@@ -58,6 +60,9 @@ const routes: Routes = [
   {path: 'registerBusiness', component:RegisterBusinessComponent},
   {path: 'tracking', component: TrackDeliveryComponent},
   {path: 'admin', component: BusinessAdminComponent},
+  {path: 'updateproduct', component: UpdateproductComponent},
+  {path: 'deleteproduct', component: DeleteproductComponent},
+  
 
   // User routes
 
