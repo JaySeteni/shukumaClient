@@ -60,8 +60,8 @@ const routes: Routes = [
   {path: 'registerBusiness', component:RegisterBusinessComponent},
   {path: 'tracking', component: TrackDeliveryComponent},
   {path: 'admin', component: BusinessAdminComponent},
-  {path: 'update_product/:id', component: UpdateproductComponent},
-  {path: 'delete_product/:id', component: DeleteproductComponent},
+  {path: 'updateproduct', component: UpdateproductComponent},
+  {path: 'deleteproduct', component: DeleteproductComponent},
   
 
   // User routes

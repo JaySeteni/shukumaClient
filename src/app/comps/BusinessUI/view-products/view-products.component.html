@@ -2,7 +2,7 @@
     <div class="container mx-auto">
       <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Products for Mzimkhulu</h2>
     <app-addproduct></app-addproduct>
-  
+
    <!-- <section id="Projects"
    class="w-fit mx-auto mb-20 grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-5 gap-x-2 mt-10"> -->
 
@@ -62,7 +62,7 @@
           </div>
         </td>
         <td class="border border-gray-300 p-2">
-          <div class="border border-gray-300 rounded-lg flex justify-center items-center text-white bg-green-700 w-11 h-7" [routerLink]="['/update_product', item.id]">
+          <div class="border border-gray-300 rounded-lg flex justify-center items-center text-white bg-green-700 w-11 h-7 cursor-pointer" (click)="openUpdateModal(item)">
             <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-width="2" d="M12 2v20m10-10H2"/>
             </svg>
@@ -79,11 +79,5 @@
     </tbody>
   </table>
   
-  
-  
-
-<!-- </section> -->
-
-
-  
+  <app-updateproduct [product]="selectedProduct" (close)="closeUpdateModal()" *ngIf="isUpdateModalOpen"></app-updateproduct>
   
