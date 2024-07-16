@@ -19,4 +19,8 @@ export class FavoritesService {
   fetchFavs(id: any):Observable<any> {
     return this.http.get<any>(`${this.baseUrl}`, id)
   }
+
+  deleteItem(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/${id}`);
+  }
 }
