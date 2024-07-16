@@ -3,6 +3,7 @@ import { OrdersService } from '../../../services/orders/orders.service';
 import { Favorites } from '../../../interfaces/favorites';
 import { FavoritesService } from '../../../services/favorites/favorites.service';
 import { CartService } from '../../../services/cart-service/cart.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-favourites',
@@ -13,7 +14,7 @@ export class FavouritesComponent {
   favorites: Favorites[] = [];
   error: string | null = null;
 
-  constructor( private favoritesService: FavoritesService) {}
+  constructor( private favoritesService: FavoritesService, private location: Location) {}
 
   ngOnInit(): void {
     this.getAllfavorites()
@@ -35,6 +36,10 @@ export class FavouritesComponent {
         console.error('Error fetching favorites:', err);
       }
     })
+  }
+
+  goBack() {
+    this.location.back();
   }
 }
 
