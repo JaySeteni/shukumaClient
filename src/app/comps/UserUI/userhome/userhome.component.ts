@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy   } from '@angular/core';
 import { ProductService } from '../../../services/product-service/product.service';
 import { Product } from '../../../interfaces/product';
 import { ProductDbResponse } from '../../../interfaces/productDbResponse';
@@ -16,7 +16,18 @@ export class UserhomeComponent implements OnInit {
   Spares :any = []
   catname = "Cylinders"
 
+
   products: any;
+
+  
+  
+  currentIndex = 0;
+
+  private autoSlideInterval: any;
+
+@Input() images: string[] = ["../../../assets/customer_service_generated.jpg", "../../../assets/2287_generated.jpg","../../../assets/customer_service_generated.jpg"];
+@Input() captions: string[] = [];
+@Input() interval: number = 2000;
 
 
   constructor( private _productService: ProductService, private router:Router
@@ -24,8 +35,13 @@ export class UserhomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllProducts()
+    this.startAutoSlide();
+
 }
 
+ngOnDestroy() {
+  clearInterval(this.autoSlideInterval);
+}
 getAllProducts(){
 
   this._productService.getAllProducts().subscribe({
@@ -72,7 +88,21 @@ getValue(value: any){
 
 }
 
+nextSlide() {
+  this.currentIndex = (this.currentIndex + 1) % this.images.indexOf("[:1]");
+}
 
+prevSlide() {
+  this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+}
+
+startAutoSlide() {
+  clearInterval(this.autoSlideInterval);
+  this.autoSlideInterval = setInterval(() => {
+    this.nextSlide();
+  }, 
+  this.interval);
+}
 
 
 

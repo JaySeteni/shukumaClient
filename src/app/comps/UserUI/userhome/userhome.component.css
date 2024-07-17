@@ -34,3 +34,6 @@
   /* text-underline-offset: 10px; */
   text-decoration-thickness: 4px;
 }
+.bg-red-200{
+  color:red;
+}
