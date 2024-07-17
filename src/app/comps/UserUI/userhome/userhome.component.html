@@ -60,14 +60,14 @@
 <div class="carousel">
   <div class="carousel-inner">
     <div class="carousel-item" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex">
-      <img [src]="image" alt="">
+      <img [src]="this.images[this.currentIndex]" alt="">
       <p class="carousel-caption" *ngIf="captions[i]">{{ captions[i] }}</p>
     </div>
   </div>
-  <a class="carousel-control-prev bg-red-200" (click)="prevSlide()">
-    <span class="carousel-control-prev-icon"></span>
+  <a class="carousel-previous carousel-control-prev bg-red-500 color-black" (click)="prevSlide()">
+    <span class="carousel-control-prev-icon color-black"></span>
   </a>
-  <a class="carousel-control-next bg-red-700" (click)="nextSlide()">
+  <a class="carousel-control-next bg-red-500" (click)="nextSlide()">
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>

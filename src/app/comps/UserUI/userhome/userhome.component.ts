@@ -20,22 +20,23 @@ export class UserhomeComponent implements OnInit {
   products: any;
 
   
-  
   currentIndex = 0;
 
   private autoSlideInterval: any;
 
-@Input() images: string[] = ["../../../assets/customer_service_generated.jpg", "../../../assets/2287_generated.jpg","../../../assets/customer_service_generated.jpg"];
-@Input() captions: string[] = [];
-@Input() interval: number = 2000;
+  @Input() images: string[] = ["../../../assets/customer_service_generated.jpg", "../../../assets/2287_generated.jpg","../../../assets/digitalLogistics.webp"];
+  @Input() captions: string[] = [];
+  @Input() interval: number = 5000;
 
 
   constructor( private _productService: ProductService, private router:Router
   ){}
 
   ngOnInit(): void {
-    this.getAllProducts()
-    this.startAutoSlide();
+    console.log("initial carousel image:", this.images[this.currentIndex]);
+
+    this.getAllProducts();
+//  this.startAutoSlide();
 
 }
 
@@ -89,17 +90,26 @@ getValue(value: any){
 }
 
 nextSlide() {
-  this.currentIndex = (this.currentIndex + 1) % this.images.indexOf("[:1]");
+  this.currentIndex = (this.currentIndex + 1) % this.images.length; 
+  console.log("carousel length",this.images.length);
+  console.log("current carousel image:", this.images[this.currentIndex]);
+  console.log("current index", this.currentIndex);
 }
 
 prevSlide() {
   this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+  console.log("current carousel image:", this.images[this.currentIndex]);
+  console.log("current index", this.currentIndex);
 }
 
 startAutoSlide() {
   clearInterval(this.autoSlideInterval);
   this.autoSlideInterval = setInterval(() => {
+    if (this.currentIndex === this.currentIndex) {
     this.nextSlide();
+      console.log("next slide" + this.currentIndex);
+    }
+
   }, 
   this.interval);
 }
