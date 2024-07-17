@@ -34,3 +34,7 @@
   /* text-underline-offset: 10px; */
   text-decoration-thickness: 4px;
 }
+
+.carousel-previous{
+  color:red !important;
+}
