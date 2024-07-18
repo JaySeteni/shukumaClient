@@ -52,6 +52,7 @@ import { BusinessAdminComponent } from './comps/BusinessUI/business-admin/busine
 import { AddUserComponent } from './comps/BusinessUI/add-user/add-user.component';
 import { UpdateproductComponent } from './comps/BusinessUI/updateproduct/updateproduct.component';
 import { DeleteproductComponent } from './comps/BusinessUI/deleteproduct/deleteproduct.component';
+import { FinalnavComponent } from './comps/BusinessUI/finalnav/finalnav.component';
 
 
 
@@ -99,6 +100,7 @@ import { DeleteproductComponent } from './comps/BusinessUI/deleteproduct/deletep
     AddUserComponent,
     UpdateproductComponent,
     DeleteproductComponent,
+    FinalnavComponent,
     
 
   ],

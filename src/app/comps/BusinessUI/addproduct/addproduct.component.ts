@@ -23,13 +23,13 @@ export class AddProductComponent {
 
   constructor(private productService: ProductService) {}
 
-  openModal() {
-    this.isModalOpen = true;
-  }
+  // openModal() {
+  //   this.isModalOpen = true;
+  // }
 
-  closeModal() {
-    this.isModalOpen = false;
-  }
+  // closeModal() {
+  //   this.isModalOpen = false;
+  // }
 
   onSubmit(form: NgForm) {
     const formData: any = new FormData();
