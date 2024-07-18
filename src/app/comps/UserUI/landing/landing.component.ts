@@ -14,21 +14,19 @@ export class LandingComponent {
 
   mLoginBusiness(){
     setTimeout(() => {
-      this.route.navigate(["admin"]);
-      // this.route.navigate(["userhome"]);
+      this.route.navigate(["registerBusiness"]);
     }, 500)
   }
 
   mLoginUser(){
     setTimeout(() => {
-      this.route.navigate(["login"]);
+      this.route.navigate(["register"]);
     }, 500)
   }
 
   mLoginDriver(){
     setTimeout(() => {
       this.route.navigate(["driver/dash"]);
-      // this.route.navigate(["userhome"]);
     }, 500)
   }
 
