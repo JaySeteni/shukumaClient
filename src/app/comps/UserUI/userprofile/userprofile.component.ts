@@ -83,6 +83,7 @@ export class UserprofileComponent implements OnInit {
       next:(data)=>{
         console.log(data)
         this.user= data.user
+        this.tokenService.getRegUser(this.user)
       }, error: (err)=>{
         console.error(err)
       }

@@ -38,6 +38,7 @@ import { AddUserComponent } from './comps/BusinessUI/add-user/add-user.component
 import { UpdateproductComponent } from './comps/BusinessUI/updateproduct/updateproduct.component';
 import { DeleteproductComponent } from './comps/BusinessUI/deleteproduct/deleteproduct.component';
 import { FinalnavComponent } from './comps/BusinessUI/finalnav/finalnav.component';
+import { UserUIComponent } from './comps/user-ui/user-ui.component';
 
 
 
@@ -83,7 +84,7 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   // {path: 'nav', component: NavigationComponent},
   {path: 'registerBusiness', component:RegisterBusinessComponent},
-  // {path: 'tracking', component: TrackDeliveryComponent},
+  {path: 'myinfo', component: UserUIComponent},
 
 
 
