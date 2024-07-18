@@ -46,26 +46,24 @@ export class UserUIComponent implements OnInit {
   onSubmit() {
     const formData: any = new FormData();
 
-      for (let key in this.user) {
-        if (key !== 'imgUrl') {
-          formData.append(key, this.user[key]);
-        }
-      }
+      
       formData.append('imgUrl',this.selectedFile)
       //formData.append()
+
+      console.log(this.registerForm.value)
       
 
 
   
-    //   this.productService.createProduct(formData).subscribe({
-    //     next: response  => {
-    //       console.log('Product added successfully', response);
-    //       form.reset();
-    //     },
-    //     error: error => {
-    //       console.error('Error adding product',formData, error);
-    //      }
-    //  });
+      this.userService.update(this.user.id, formData).subscribe({
+        next: response  => {
+          console.log('User updated successfully', response);
+          // this.registerForm.reset();
+        },
+        error: error => {
+          console.error('Error adding product',formData, error);
+         }
+     });
      }
   
 

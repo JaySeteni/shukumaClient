@@ -3,7 +3,7 @@
       <div class="max-w-md mx-auto rounded-lg bg-white shadow-xl p-6">
         <h1><span></span></h1>
         <h2 class="text-2xl font-semibold text-center text-white bg-gradient-to-r from-pink-500 to-orange-500 mb-6" style="background: linear-gradient(45deg, #FF0080, #FF8C00)"><span></span>Your Profile</h2>
-        <form  [formGroup]="registerForm" >
+        <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
           <div class="max-w-sm mx-auto">
             <label for="business-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               <h1 style="font-size: 15px; color: #333; font-weight: bold; margin-bottom: 10px;"> Userame</h1>
@@ -103,7 +103,7 @@
                   <path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12c6.617 0 12-5.383 12-12S18.617 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm5 9h-2v2h-2v-2h-2V9h2V7h2v2h2z"/>
                 </svg>
               </div>
-              <input type="tel" formControlName="tel_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your phone number">
+              <input type="tel" formControlName="contact_no" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your phone number">
             </div>
   
             <div>
@@ -151,7 +151,7 @@
           </div>
           <div class="flex justify-between mt-5">
             <button type="submit" id="registerBtn" class="bg-primary flex mx-auto hover:bg-blue-600 text-white font-semibold mt-2 py-2 px-4 rounded-md" >Update</button>
-          <button type="submit" id="registerBtn" class="bg-danger flex mx-auto hover:bg-blue-600 text-white font-semibold mt-2 py-2 px-4 rounded-md" >Cancel</button>
+          <button type="" id="registerBtn" class="bg-danger flex mx-auto hover:bg-blue-600 text-white font-semibold mt-2 py-2 px-4 rounded-md" >Cancel</button>
           </div>
           
           
