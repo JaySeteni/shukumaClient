@@ -90,13 +90,12 @@ export class CartComponent {
   removeProduct(item:any,e:Event) {
     // const userId = "66865064ad57296a97884bc3"
     const user = this.tokenService.getUser()
-    console.log(user.userId)
-    
-    const productId = item.productId
-    console.log(productId._id)
-    this.cartService.removeFromCart(user.id.toString(),productId._id).subscribe({
+    console.log(user, item)
+    this.cartService.removeFromCart(user.id,item._id).subscribe({
       next: (res)=>{
         console.log(res)
+        this.getCart()
+        this.cartService.updateCArt(-item.quantity)
       },
       error: (err)=>{
         console.error("",err)
@@ -141,8 +140,8 @@ export class CartComponent {
 
   getCart(){
 
-    const id = "66865064ad57296a97884bc3"
-    this.cartService.getCart(id).subscribe({
+    const user = this.tokenService.getUser()
+    this.cartService.getCart(user.id).subscribe({
       next: (res: any) => {
           this.cartItems1 = res[0].items
           this.fullCart = res[0]

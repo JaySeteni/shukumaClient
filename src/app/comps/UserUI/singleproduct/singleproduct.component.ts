@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../interfaces/product';
 import { CartService } from '../../../services/cart-service/cart.service';
 import { ProductDbResponse } from '../../../interfaces/productDbResponse';
+import { TokenService } from '../../../service/token.service';
 
 @Component({
   selector: 'app-singleproduct',
@@ -20,6 +21,7 @@ export class SingleproductComponent implements OnInit {
     private route: ActivatedRoute,
     private _productService: ProductService,
     private cartService: CartService,
+    private tokenService: TokenService
   ) { }
 
   ngOnInit(): void {
@@ -56,8 +58,8 @@ export class SingleproductComponent implements OnInit {
   }
 
   addToCart(item: Product): void {
-    
-    this.cartService.addtoCart({productId: item.id, quantity: 1}).subscribe({
+    const user = this.tokenService.getUser()
+    this.cartService.addtoCart({productId: item.id, quantity: 1, id: user.id }).subscribe({
       next: (res)=>{
         console.log(res)
         this.cartService.updateCArt(1)
@@ -69,8 +71,8 @@ export class SingleproductComponent implements OnInit {
   }
 
   addToFavs(product: Product): void {
-
-    this.cartService.addToWishlist({userId: "66865064ad57296a97884bc3", itemId: product.id}).subscribe({
+    const user = this.tokenService.getUser()
+    this.cartService.addToWishlist({userId: user.id , itemId: product.id}).subscribe({
       next: (res)=>{
         console.log(res)
         
