@@ -54,7 +54,7 @@ export class CartComponent {
     this.totalAmount = this.cartItems1.reduce((total:any, item:any) => total + (item.productId.price * item.quantity), 0)
     console.log(this.totalAmount)
     this.cartService.cartTotal.next(this.totalAmount);
-    // localStorage.setItem('for', JSON.stringify(this.items))
+    localStorage.setItem('TotalAmount', JSON.stringify(this.totalAmount))
 
   }
 
@@ -168,6 +168,7 @@ export class CartComponent {
 
   placeOrder(){
 
+    console.log(this.cartItems1)
     if(this.ButtonText == "CHECK ADDRESS"){
       this.GetAccuratePropertyGeolocation()
     }

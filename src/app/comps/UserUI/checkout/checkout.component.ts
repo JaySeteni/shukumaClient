@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cart-service/cart.service';
 import { OrdersService } from '../../../services/orders/orders.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -8,14 +9,14 @@ import { OrdersService } from '../../../services/orders/orders.service';
   styleUrl: './checkout.component.css'
 })
 export class CheckoutComponent implements OnInit {
-  totalAmount = JSON.parse(`${localStorage.getItem('Total')}`)
+  totalAmount = JSON.parse(`${localStorage.getItem('TotalAmount')}`) | 0
   cart: any
   items: any
   date: any
   customer: any
 
   tot = 0
-  constructor(private cartService: CartService, private orderService : OrdersService){}
+  constructor(private cartService: CartService, private orderService : OrdersService, private router: Router){}
 
   ngOnInit(): void {
     this.cart = JSON.parse(`${localStorage.getItem('cart_id')}`)
@@ -40,5 +41,11 @@ export class CheckoutComponent implements OnInit {
       }
     })
 
+  }
+
+  
+  clearOrder(){
+    localStorage.removeItem('cart_id')
+    this.router.navigateByUrl('/userhome')
   }
 }
