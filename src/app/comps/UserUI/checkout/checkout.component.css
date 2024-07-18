@@ -3,10 +3,8 @@
     margin: 0;
     box-sizing: border-box;
 }
-.checkoutText{
-    padding-left: 20px;
-    text-transform: uppercase;
-    text-align: center;
+body{
+  height: 100vh
 }
 /* profiile starts */
 

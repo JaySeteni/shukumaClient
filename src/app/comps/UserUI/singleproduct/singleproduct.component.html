@@ -35,9 +35,7 @@
         <span class="text-3xl font-bold text-red-700 dark:text-white">R{{selectedProduct.price}}</span>
       </div>
       <div class="flex items-center justify-between">
-        <div *ngIf="errMessage">
-          item already added
-        </div>
+        
         <div (click)="addToFavs(selectedProduct)" class=" border-none bg-base-100  py-2.5  font-medium rounded-lg text-sm text-center ">
           <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"/>
@@ -46,6 +44,10 @@
 
           <button (click)="addToCart(selectedProduct)" class="  py-2.5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to order</button>
       </div>
+      <div *ngIf="errMessage">
+        <span class="text-xs mt-6 font-bold p-2 bg-red-200 mx-auto rounded-lg shadow-lg ">item already added!</span> 
+        
+       </div>
   </div>
 </div>
 <div *ngIf="!selectedProduct" class="w-full h-44 flex justify-center items-center">

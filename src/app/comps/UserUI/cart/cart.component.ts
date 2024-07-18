@@ -22,6 +22,8 @@ export class CartComponent {
   address:string = ""
   isHidden: boolean = true
   message = ""
+  user:any
+
   coordinates = {
     lat:0.0,
     lng:0.0
@@ -37,6 +39,7 @@ export class CartComponent {
             private tokenService: TokenService ){}
 
   ngOnInit(): void {
+    this.user = this.tokenService.getUser()
     this.getCart()
 
     console.log(this.totalAmount)
@@ -169,7 +172,7 @@ export class CartComponent {
       this.GetAccuratePropertyGeolocation()
     }
     else if(this.ButtonText == "PROCEED TO CHECKOUT"){
-      const uid = "66865064ad57296a97884bc3"
+      const uid = this.user.id
       
     this.fullCart._id
     this.orderService.addOrder({userId: uid, cartId:this.fullCart._id, address: {delA:this.address, cod:this.coordinates}}).subscribe(
@@ -178,8 +181,9 @@ export class CartComponent {
           console.log(res)
           this.isSuccesful = true
           this.message = res.message
+          localStorage.setItem('cart_id', JSON.stringify(this.fullCart._id))
           setTimeout(()=>{
-            this.router.navigateByUrl("/orders")
+            this.router.navigateByUrl("/checkout")
           },3000)
           
 

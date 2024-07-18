@@ -75,7 +75,8 @@ export class SingleproductComponent implements OnInit {
     this.cartService.addToWishlist({userId: user.id , itemId: product.id}).subscribe({
       next: (res)=>{
         console.log(res)
-        
+        this.cartService.updateFavCount(1)
+
       }, error:(err)=>{
         this.errMessage = err.error.message
         console.error(err.error.message)
