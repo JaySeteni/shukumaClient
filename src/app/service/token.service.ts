@@ -10,6 +10,7 @@ const USER_KEY = 'auth-user';
 export class TokenService {
 
   constructor() { }
+  reg_user:any
 
   signOut(): void{
     window.sessionStorage.clear()
@@ -35,6 +36,10 @@ export class TokenService {
       return JSON.parse(user)
     }
     return {}
+  }
+
+  getRegUser(user: any){
+    return this.reg_user = user
   }
 
 }

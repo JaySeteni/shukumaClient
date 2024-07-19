@@ -1,12 +1,15 @@
+<body class= " h-full">
+  
+
 <app-navigation></app-navigation>
 
-<section id="Projects"
+<section id="Projects "
     class="w-fit mx-auto mb-20 grid grid-cols-2 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-5 gap-x-2 mt-10">
 
       <!--✅ Product card 1 - Starts Here 👇 -->
-    <div *ngFor="let item of items" class="w-40 h-52 px-1 shadow-md  rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+    <div *ngFor="let item of items" class="w-40 h-52 px-1 shadow-lg bg-white  rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
         <a>
-          <div class="border-2 h-28 w-full i mt-2 flex justify-center items-center rounded-md ">
+          <div class="border border-teal-400 h-28 w-full i mt-2 flex justify-center items-center rounded-md ">
             <img src="{{item.imageUrl}}"
                     alt="Product" class=" w-28 h-24" /> 
           </div>
@@ -38,3 +41,4 @@
 
 
 <app-footer></app-footer>
+</body>

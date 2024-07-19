@@ -45,6 +45,9 @@ export class OrdersService {
     return this.http.get<any>(`${this.baseUrl}/${userId}`)
   }
 
+  fetchAnOrder(card_id:any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/one/${card_id}`)
+  }
   updateOrder(orderId: any, updatedOrderData:any): Observable<any> {
     const url = `${this.baseUrl}/update/${orderId}`;
     return this.http.put<any>(url, updatedOrderData);

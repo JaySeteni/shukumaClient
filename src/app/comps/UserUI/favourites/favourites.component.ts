@@ -6,6 +6,8 @@ import { CartService } from '../../../services/cart-service/cart.service';
 import { Location } from '@angular/common';
 import { Product } from '../../../interfaces/product';
 import { Router } from '@angular/router';
+import { TokenService } from '../../../service/token.service';
+import { UserService } from '../../../services/user.service';
 
 
 @Component({
@@ -19,18 +21,33 @@ export class FavouritesComponent {
   error: string | null = null;
   item: any[] = [];
   itemId:any;
+  user: any;
 
-  constructor( private favoritesService: FavoritesService, private location: Location, private router: Router ) {}
+  constructor( private favoritesService: FavoritesService, private location: Location, private router: Router, private tokenService: TokenService, private userService :  UserService,) {}
 
   ngOnInit(): void {
-    this.getAllfavorites()
+    this.getUser()
+    
 
   } 
 
-  id = "66865064ad57296a97884bc3"
+async  getUser(){
+    const user = await this.tokenService.getUser()
+    console.log(user)
+    this.userService.getUser(user.id).subscribe({
+      next:(data)=>{
+        console.log(data)
+        this.user= data.user
+        this.getAllfavorites()
+      }, error: (err)=>{
+        console.error(err)
+      }
+    })
+  }
+
   getAllfavorites(){
 
-    this.favoritesService.fetchFavs(this.id).subscribe({
+    this.favoritesService.fetchFavs(this.user.id).subscribe({
       next: (data: any) =>{
 
         this.favorites = data;

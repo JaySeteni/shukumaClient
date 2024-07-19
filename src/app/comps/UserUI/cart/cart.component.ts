@@ -22,6 +22,8 @@ export class CartComponent {
   address:string = ""
   isHidden: boolean = true
   message = ""
+  user:any
+
   coordinates = {
     lat:0.0,
     lng:0.0
@@ -37,6 +39,7 @@ export class CartComponent {
             private tokenService: TokenService ){}
 
   ngOnInit(): void {
+    this.user = this.tokenService.getUser()
     this.getCart()
 
     console.log(this.totalAmount)
@@ -51,7 +54,7 @@ export class CartComponent {
     this.totalAmount = this.cartItems1.reduce((total:any, item:any) => total + (item.productId.price * item.quantity), 0)
     console.log(this.totalAmount)
     this.cartService.cartTotal.next(this.totalAmount);
-    // localStorage.setItem('for', JSON.stringify(this.items))
+    localStorage.setItem('TotalAmount', JSON.stringify(this.totalAmount))
 
   }
 
@@ -90,13 +93,12 @@ export class CartComponent {
   removeProduct(item:any,e:Event) {
     // const userId = "66865064ad57296a97884bc3"
     const user = this.tokenService.getUser()
-    console.log(user.userId)
-    
-    const productId = item.productId
-    console.log(productId._id)
-    this.cartService.removeFromCart(user.id.toString(),productId._id).subscribe({
+    console.log(user, item)
+    this.cartService.removeFromCart(user.id,item._id).subscribe({
       next: (res)=>{
         console.log(res)
+        this.getCart()
+        this.cartService.updateCArt(-item.quantity)
       },
       error: (err)=>{
         console.error("",err)
@@ -141,8 +143,8 @@ export class CartComponent {
 
   getCart(){
 
-    const id = "66865064ad57296a97884bc3"
-    this.cartService.getCart(id).subscribe({
+    const user = this.tokenService.getUser()
+    this.cartService.getCart(user.id).subscribe({
       next: (res: any) => {
           this.cartItems1 = res[0].items
           this.fullCart = res[0]
@@ -166,11 +168,12 @@ export class CartComponent {
 
   placeOrder(){
 
+    console.log(this.cartItems1)
     if(this.ButtonText == "CHECK ADDRESS"){
       this.GetAccuratePropertyGeolocation()
     }
     else if(this.ButtonText == "PROCEED TO CHECKOUT"){
-      const uid = "66865064ad57296a97884bc3"
+      const uid = this.user.id
       
     this.fullCart._id
     this.orderService.addOrder({userId: uid, cartId:this.fullCart._id, address: {delA:this.address, cod:this.coordinates}}).subscribe(
@@ -179,8 +182,9 @@ export class CartComponent {
           console.log(res)
           this.isSuccesful = true
           this.message = res.message
+          localStorage.setItem('cart_id', JSON.stringify(this.fullCart._id))
           setTimeout(()=>{
-            this.router.navigateByUrl("/orders")
+            this.router.navigateByUrl("/checkout")
           },3000)
           
 

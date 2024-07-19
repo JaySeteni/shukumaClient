@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cart-service/cart.service';
 import { BehaviorSubject } from 'rxjs';
+import { UserService } from '../../../services/user.service';
+import { TokenService } from '../../../service/token.service';
 
 @Component({
   selector: 'app-footer',
@@ -14,10 +16,11 @@ export class FooterComponent implements OnInit {
   cartCounter: any;
   cartCount: number = 0;
   @Input() some : any
+  user: any;
 
 
 
-    constructor(private cartService: CartService) { }
+    constructor(private cartService: CartService, private tokenService: TokenService, private userService :  UserService,) { }
     isEmpty=true
 
     fcolor= '#e01219'
@@ -25,15 +28,14 @@ export class FooterComponent implements OnInit {
     ngOnInit(): void {
       this.favListCount$ = this.cartService.favList
       this.cartCount$ = this.cartService.cartItemcount
-
-      this.fetchFavs()
-      this.getCart()
+      this.getUser()
+      
     }
 
     
-  fetchFavs(){
-    const id = "66865064ad57296a97884bc3"
-    this.cartService.fetchFavs(id).subscribe({
+  fetchFavs(user:any){
+    
+    this.cartService.fetchFavs(user.id).subscribe({
       next: (res: any) => {
           this.favsCount = res.length
 
@@ -44,9 +46,9 @@ export class FooterComponent implements OnInit {
     })
   }
 
-  getCart(){
-    const id = "66865064ad57296a97884bc3"
-    this.cartService.getCart(id).subscribe({
+  getCart(user: any){
+    
+    this.cartService.getCart(user.id).subscribe({
       next: (res: any) => {
         console.log(res[0].items.length)
       },
@@ -55,6 +57,23 @@ export class FooterComponent implements OnInit {
       }
     })
     
+  }
+
+  async  getUser(){
+    const user = await this.tokenService.getUser()
+    console.log(user)
+    this.userService.getUser(user.id).subscribe({
+      next:(data)=>{
+        console.log(data)
+        this.user= data.user
+
+        this.fetchFavs(this.user)
+        this.getCart(this.user)
+        
+      }, error: (err)=>{
+        console.error(err)
+      }
+    })
   }
 
 }
