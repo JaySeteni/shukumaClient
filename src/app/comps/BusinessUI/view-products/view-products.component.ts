@@ -24,7 +24,7 @@ export class ViewProductsComponent implements OnInit {
   getAllProducts(): void {
     this._productService.getAllProducts().subscribe({
       next: (data: ProductDbResponse) => {
-        this.products = data.products;
+        this.products = data.products.reverse();
         console.log(this.products);
       },
       error: err => {
