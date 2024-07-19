@@ -20,9 +20,13 @@
             <span class="text-gray-400 mr-3 uppercase text-xs  truncate ">{{favorite.itemId.description}}</span>
         
             <div class="flex items-center mt-2">
-              <button (click)="confirmDelete(favorite.id)" class="border rounded-lg px-2 py-1 bg-red-500 text-white hover:bg-red-700 focus:outline-none focus:ring-red-500 focus:ring-opacity-50">
-                  Delete
-                </button>
+              <button (click)="confirmDelete(favorite.id)" class="border rounded-lg px-2 py-1 bg-red-500 text-white hover:bg-red-700 focus:outline-none focus:ring-red-500 focus:ring-opacity-50 flex items-center">
+                <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z" clip-rule="evenodd"/>
+                </svg>
+                <span class="ml-1">Delete</span>
+              </button>
+              
                 <!-- <p class="text-lg font-bold text-red-700 cursor-auto ">R{{favorite.itemId.price}}</p> -->
                 <div class="ml-auto me-2 ">
                   <div class="border-3 w-20 h-9 rounded-lg flex justify-center items-center  text-white bg-blue-700" routerLink="/view_item/{{favorite.itemId._id}}">
@@ -38,28 +42,3 @@
     </a>
   </div>
 </section>
-<!-- 8
-<div class="p-1 flex flex-wrap items-center justify-center"> 
-    <div class="w-80 max-w-md p-4 mb-22 flex m-2 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"  *ngFor="let favorite of favorites">
-      <a routerLink="/orders">
-      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700" >
-          <li class="py-3 sm:py-4" >
-            <p class="pb-2">favourite Number: {{favorites.indexOf(favorite)+1}}
-            <p>User Id:   #{{ favorite.userId }}</p>
-            <p>Id:   #{{ favorite.id }}</p>
-            <p>Created At:   {{ favorite.createdAt }}</p>
-            <p>items:   {{ favorite.itemId.imageUrl }}</p>
-
-  
-
-          <hr class="bg-red-700 mt-10">
-        </li>
-      </ul>
-      </a>
-    </div>
-  </div>
-
-  <div *ngIf="!favorites">
-    No favorites found.
-  </div>
- -->
