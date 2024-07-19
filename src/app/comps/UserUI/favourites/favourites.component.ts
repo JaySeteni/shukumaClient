@@ -66,18 +66,15 @@ async  getUser(){
   }
 
   confirmDelete(id: any) {
-    console.log(id)
     this.favoritesService.deleteItem(id).subscribe({
       next: (response: any) => {
         console.log(response)
-        // Handle successful deletion (e.g., remove item from UI)
-        // this.item = this.item.filter(favorite => favorite.itemId.id !== itemId); // Use itemId parameter
-        // this.router.navigate(['/another-route']);
+        this.getAllfavorites()
       },
-      // error: (error) => {
-      //   // Handle deletion error (e.g., display error message)
-      //   console.error("Error deleting item:", error);
-      // }
+      error: (err)=>{
+        console.error(err)
+      }
+     
     });
   }
 }
