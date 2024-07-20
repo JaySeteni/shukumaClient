@@ -93,7 +93,6 @@ export class CartComponent {
   removeProduct(item:any,e:Event) {
     // const userId = "66865064ad57296a97884bc3"
     const user = this.tokenService.getUser()
-    console.log(user, item)
     this.cartService.removeFromCart(user.id,item._id).subscribe({
       next: (res)=>{
         console.log(res)
@@ -109,14 +108,26 @@ export class CartComponent {
   }
 
   qntUpdate($event: any) {
-    console.log($event)
     this.Total();
   }
 
   incre(qty: any, index: number){
+    const user = this.tokenService.getUser()
     qty++
     this.cartItems1[index].quantity = qty
-    console.log(this.cartItems1[index].quantity)
+    this.cartItems1
+
+    this.cartService.addtoCart({productId: this.cartItems1[index].productId._id , quantity: 1, id: user.id }).subscribe({
+      next: (res)=>{
+        console.log(res)
+        this.cartService.updateCArt(1)
+        
+            }, error:(err)=>{
+        console.error("here",err)
+      }
+    })
+
+
     // this.items[index].quantity = qty
     // this.items.length
     // this.cartService.cartItemcount.next(this.cartService.cartItemcount.value + 1)
@@ -125,11 +136,22 @@ export class CartComponent {
     this.Total()
   }
   decr(qty: any, index: number){
+    const user = this.tokenService.getUser()
 
     if(qty > 1){
     qty--
     this.cartItems1[index].quantity = qty
-    console.log(this.cartItems1[index].quantity)
+
+    this.cartService.addtoCart({productId: this.cartItems1[index].productId._id , quantity: -1, id: user.id }).subscribe({
+      next: (res)=>{
+        console.log(res)
+        this.cartService.updateCArt(-1)
+        
+            }, error:(err)=>{
+        console.error("here",err)
+      }
+    })
+
 
     // this.items[index].quantity = qty
     // this.items.length;
@@ -148,7 +170,7 @@ export class CartComponent {
       next: (res: any) => {
           this.cartItems1 = res[0].items
           this.fullCart = res[0]
-        console.log(res[0].id) 
+        console.log(res[0]) 
         this.Total()
       },
       error: (err: any) => {
@@ -196,6 +218,20 @@ export class CartComponent {
     )
     }
     
+  }
+
+
+  addToCart(item: Product): void {
+    const user = this.tokenService.getUser()
+    this.cartService.addtoCart({productId: item.id, quantity: 1, id: user.id }).subscribe({
+      next: (res)=>{
+        console.log(res)
+        this.cartService.updateCArt(1)
+            }, error:(err)=>{
+        console.error("here",err)
+      }
+    })
+
   }
 
 }

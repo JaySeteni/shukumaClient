@@ -50,7 +50,7 @@ export class FooterComponent implements OnInit {
     
     this.cartService.getCart(user.id).subscribe({
       next: (res: any) => {
-        console.log(res[0].items.length)
+        console.log(res.length)
       },
       error: (err: any) => {
         console.error("An error occurred while fetching product:", err);

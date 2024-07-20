@@ -23,7 +23,10 @@ export class FavouritesComponent {
   itemId:any;
   user: any;
 
-  constructor( private favoritesService: FavoritesService, private location: Location, private router: Router, private tokenService: TokenService, private userService :  UserService,) {}
+  constructor( private favoritesService: FavoritesService, 
+    private location: Location, 
+    private router: Router, 
+    private tokenService: TokenService, private userService :  UserService, private cartService: CartService) {}
 
   ngOnInit(): void {
     this.getUser()
@@ -69,6 +72,7 @@ async  getUser(){
     this.favoritesService.deleteItem(id).subscribe({
       next: (response: any) => {
         console.log(response)
+        this.cartService.updateFavCount(-1)
         this.getAllfavorites()
       },
       error: (err)=>{
