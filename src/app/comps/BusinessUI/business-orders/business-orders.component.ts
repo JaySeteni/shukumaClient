@@ -15,6 +15,8 @@ import { ProductDbResponse } from '../../../interfaces/productDbResponse';
 export class BusinessOrdersComponent implements OnInit {
   orders: Order[] = [];
   error: string | null = null;
+
+  
   
 
   constructor( private ordersService: OrdersService) {}
