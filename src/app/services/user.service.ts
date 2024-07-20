@@ -10,7 +10,7 @@ export class UserService {
   // .append('content-type', 'application/json')
   .append('Accept', '/')
 
-  user_API = "http://localhost:3000/v1/users"
+  user_API = "https://shukuma.shaper.co.za/v1/users"
   constructor(private http: HttpClient) { }
 
   getUser(id: any):Observable<any>{

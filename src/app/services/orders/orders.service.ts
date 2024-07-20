@@ -13,7 +13,7 @@ import { Order } from '../../interfaces/order';
 })
 export class OrdersService {
 
-    private baseUrl = "http://localhost:3000/v1/orders";   
+    private baseUrl = "https://shukuma.shaper.co.za/v1/orders";   
     orders: Order[] = [];
     error: string | null = null;
   constructor( private http:HttpClient) { }

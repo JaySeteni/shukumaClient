@@ -93,6 +93,7 @@ export class CartComponent {
   removeProduct(item:any,e:Event) {
     // const userId = "66865064ad57296a97884bc3"
     const user = this.tokenService.getUser()
+    console.log(user)
     this.cartService.removeFromCart(user.id,item._id).subscribe({
       next: (res)=>{
         console.log(res)
@@ -166,11 +167,12 @@ export class CartComponent {
   getCart(){
 
     const user = this.tokenService.getUser()
+    console.log(user.id)
     this.cartService.getCart(user.id).subscribe({
       next: (res: any) => {
           this.cartItems1 = res[0].items
           this.fullCart = res[0]
-        console.log(res[0]) 
+        console.log(res) 
         this.Total()
       },
       error: (err: any) => {

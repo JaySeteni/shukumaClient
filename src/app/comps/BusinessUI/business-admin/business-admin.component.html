@@ -1,4 +1,4 @@
-<div class="container mx-auto py-8">
+<div class="container py-8 px-3">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
             <h1 class="text-3xl font-bold text-black mb-4 uppercase tracking-wider leading-tight text-center font-sans-serif">
@@ -15,25 +15,35 @@
     </div>
 
 </div>
-<h2 class="text-black">Stats</h2>
-<div class="container mx-auto py-8">
-    <div class="grid grid-cols-3 gap-4">
-      <div class="bg-violet-500 text-white p-6 rounded-md shadow-md">
+
+<section class="px-2" >
+
+  <div class="container py-8 px-3">
+    <div class="grid grid-cols-3 gap-3">
+      <div class="bg-violet-500 text-white px-2 py-3  rounded-md shadow-md">
         <h2 class="text-lg font-medium mb-2">Sales</h2>
-        <p class="text-2xl font-bold">{{ salesValue }}</p>
+        <p class="text-2xl font-bold">20</p>
       </div>
-      <div class="bg-yellow-500 text-white p-6 rounded-md shadow-md">
+      <div class="bg-yellow-500 text-white px-2 py-3  rounded-md shadow-md">
         <h2 class="text-lg font-medium mb-2">Visitors</h2>
-        <p class="text-2xl font-bold">{{ visitorsValue }}</p>
+        <p class="text-2xl font-bold">30</p>
       </div>
-      <div class="bg-orange-500 text-white p-6 rounded-md shadow-md">
-        <h2 class="text-lg font-medium mb-2">Orders</h2>
-        <p class="text-2xl font-bold">{{ ordersValue }}</p>
+      <div class="bg-orange-500 text-white px-2 py-3 text-center rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2"> Orders</h2>
+        <p class="text-2xl font-bold">10</p>
+      </div>
+      <div class="bg-orange-500 text-white px-2 py-3 text-center rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">OnPromo</h2>
+        <p class="text-2xl font-bold">0</p>
+      </div>
+      <div class="bg-orange-500 text-white px-2 py-3 text-center rounded-md shadow-md">
+        <h2 class="text-lg font-medium mb-2">Products</h2>
+        <p class="text-2xl font-bold">32</p>
       </div>
     </div>
   
-    <div class="grid grid-cols-3 gap-4">
-              <a routerLink="/stats" class="w-32 h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-red-500 text-white cursor-pointer">
+    <div class="grid grid-cols-3 mt-3">
+              <a routerLink="/stats" class=" h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-red-500 text-white cursor-pointer">
                   <span>
                     <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -42,7 +52,7 @@
                   </span>
                   <p class="text-s font-manrope font-bold">Driver in route</p>
               </a>
-              <a routerLink="/dashboard" class="w-32 h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-green-500 text-white cursor-pointer">
+              <a routerLink="/dashboard" class=" h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-green-500 text-white cursor-pointer">
                   <span>
                     <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -50,7 +60,7 @@
                   </span>
                   <p class="text-s font-manrope font-bold">Delivery Breakdown</p>
               </a>
-              <a routerLink="/addproduct" class="w-32 h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-blue-500 text-white cursor-pointer">
+              <a routerLink="/addproduct" class=" h-32 px-1 border shadow-lg duration-500 hover:scale-105 hover:shadow-xl rounded-lg bg-blue-500 text-white cursor-pointer">
                   <span>
                     <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
@@ -72,7 +82,11 @@
         <h3 class="text-lg font-medium mb-2">Total Deliveries</h3>
         <p class="text-4xl font-bold">{{ currentDeliveries + previousDeliveries }}</p>
       </div>
-    </div>
-  </div> -->
+    </div>-->
+    </div> 
+</div>
+</section>
+
+
   <app-finalnav></app-finalnav>
   

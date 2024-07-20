@@ -10,7 +10,7 @@ import { Order } from '../../interfaces/order';
 })
 export class FavoritesService {
 
-  private baseUrl = "http://localhost:3000/v1/favourites";   
+  private baseUrl = "https://shukuma.shaper.co.za/v1/favourites";   
   favorites: Favorites[] = [];
   error: string | null = null;
 

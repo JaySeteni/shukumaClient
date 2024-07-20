@@ -22,8 +22,8 @@ export class CartService {
 
  
 
-  private baseUrl: string = "http://localhost:3000/v1/cart/";
-  private likesUrl: string = "http://localhost:3000/v1/favourites/"
+  private baseUrl: string = "https://shukuma.shaper.co.za/v1/cart/";
+  private likesUrl: string = "https://shukuma.shaper.co.za/v1/favourites/"
   
 
   constructor(private _http: HttpClient) {}
