@@ -9,8 +9,11 @@ import { ProductService } from '../../../services/product-service/product.servic
   styleUrl: './view-one-product.component.css'
 })
 export class ViewOneProductComponent implements OnInit {
-  selectedProduct?: Product;
-   errMessage: any = ""
+  selectedProduct: any = null; // Assume this is populated elsewhere in your code
+  isModalOpen = false;
+  imagePreview: string | ArrayBuffer | null = null;
+  errMessage: string | null = null;
+
 
   constructor( private route: ActivatedRoute, private _productService: ProductService,) { }
   
@@ -30,4 +33,32 @@ export class ViewOneProductComponent implements OnInit {
         }
       });
   }
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+
+  fileSelect(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagePreview = reader.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  onSubmit(form: any) {
+    if (form.valid) {
+      // Handle form submission logic here
+      console.log('Form submitted:', form.value);
+      this.closeModal();
+    }
+  }
 }
+
