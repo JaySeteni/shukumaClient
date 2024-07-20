@@ -1,0 +1,14 @@
+.modal {
+    display: none;
+  }
+  
+  .modal.is-active {
+    display: flex;
+  }
+  
+  .modal-card {
+    max-width: 500px;
+    margin: auto;
+    width: 100%;
+  }
+  
