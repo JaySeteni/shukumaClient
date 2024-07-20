@@ -3,6 +3,8 @@ import { ProductService } from '../../../services/product-service/product.servic
 import { Product } from '../../../interfaces/product';
 import { ProductDbResponse } from '../../../interfaces/productDbResponse';
 import { Router } from '@angular/router';
+import { TokenService } from '../../../service/token.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-userhome',
@@ -27,15 +29,17 @@ export class UserhomeComponent implements OnInit {
   @Input() images: string[] = ["../../../assets/customer_service_generated.jpg", "../../../assets/2287_generated.jpg","../../../assets/digitalLogistics.webp"];
   @Input() captions: string[] = [];
   @Input() interval: number = 5000;
+  user: any;
 
 
-  constructor( private _productService: ProductService, private router:Router
+  constructor( private _productService: ProductService, private router:Router, private tokenService: TokenService, private userService: UserService
   ){}
 
   ngOnInit(): void {
     console.log("initial carousel image:", this.images[this.currentIndex]);
 
     this.getAllProducts();
+    this.getUser()
 //  this.startAutoSlide();
 
 }
@@ -58,6 +62,24 @@ getAllProducts(){
       console.log(err)
     }
   })
+}
+
+getUser(){
+  const user = this.tokenService.getUser()
+  console.log(user)
+  this.userService.getUser(user.id).subscribe({
+    next:(data)=>{
+      console.log(data.user)
+      this.user= data.user
+
+      this.tokenService.getRegUser(this.user)
+    }, error: (err)=>{
+      console.error(err)
+    }
+  })
+
+  
+
 }
 
 filterItemsByCylinders() {
