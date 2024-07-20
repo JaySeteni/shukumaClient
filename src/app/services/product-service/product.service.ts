@@ -35,7 +35,7 @@ import { ProductDbResponse } from '../../interfaces/productDbResponse';
     return this._http.delete<Product>(`${this.baseUrl}/articles`)
   }
 
-  updateAProduct(id: string, data: Product) : Observable<Product> {
+  updateAProduct(id: string, data: FormData) : Observable<Product> {
     return this._http.put<Product>(`${this.baseUrl}/article/${id}`, data)
   }
   }
