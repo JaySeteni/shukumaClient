@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../interfaces/product';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../services/product-service/product.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-view-one-product',
@@ -15,7 +16,11 @@ export class ViewOneProductComponent implements OnInit {
   errMessage: string | null = null;
 
 
-  constructor( private route: ActivatedRoute, private _productService: ProductService,) { }
+  constructor( private route: ActivatedRoute, private _productService: ProductService, private location: Location) { }
+
+  goBack() {
+    this.location.back();
+  }
   
   ngOnInit(): void {
     this.getProduct()
