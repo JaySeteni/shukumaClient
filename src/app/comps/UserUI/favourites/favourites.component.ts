@@ -64,10 +64,6 @@ async  getUser(){
     })
   }
 
-  view(id: Product["id"]){
-      
-  }
-
   confirmDelete(id: any) {
     this.favoritesService.deleteItem(id).subscribe({
       next: (response: any) => {
