@@ -73,7 +73,7 @@ export class SingleOrderComponent implements OnInit {
   
     async initmap(){
       const loader = new Loader({
-        apiKey: "API_HERE",
+        apiKey: "AIzaSyCMzKuxTk9J0bI4m7ppb9-Jg9RSV7lrIBw",
         version: "weekly",
       });
   
