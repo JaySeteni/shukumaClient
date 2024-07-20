@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../../services/product-service/product.service';
 import { NgForm } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-addproduct',
@@ -20,8 +21,11 @@ export class AddProductComponent {
   reader!: FileReader;
   imagePreview: any;
   isModalOpen = false;
+  openedBox: string | null = null;
+  
 
-  constructor(private productService: ProductService) {}
+
+  constructor(private productService: ProductService,  private location: Location) {}
 
   // openModal() {
   //   this.isModalOpen = true;
@@ -30,6 +34,12 @@ export class AddProductComponent {
   // closeModal() {
   //   this.isModalOpen = false;
   // }
+  toggleBox(box: string): void {
+    this.openedBox = this.openedBox === box ? null : box;
+  }
+  goBack() {
+    this.location.back();
+  }
 
   onSubmit(form: NgForm) {
     const formData: any = new FormData();
