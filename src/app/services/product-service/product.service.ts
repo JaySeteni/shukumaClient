@@ -10,6 +10,7 @@ import { ProductDbResponse } from '../../interfaces/productDbResponse';
   export class ProductService {
   private baseUrl: string = "https://shukuma.shaper.co.za/v1/products";
 
+
   constructor(private _http: HttpClient) {}
 
   getAllProducts(): Observable<ProductDbResponse> {

@@ -5,6 +5,7 @@ import { OrdersService } from '../../../services/orders/orders.service';
 import { Order } from '../../../interfaces/order';
 import { ActivatedRoute } from '@angular/router';
 import { ProductDbResponse } from '../../../interfaces/productDbResponse';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -19,7 +20,11 @@ export class BusinessOrdersComponent implements OnInit {
   
   
 
-  constructor( private ordersService: OrdersService) {}
+  constructor( private ordersService: OrdersService, private location: Location) {}
+
+  goBack() {
+    this.location.back();
+  }
 
   ngOnInit(): void {
     this.getAllOrders()
