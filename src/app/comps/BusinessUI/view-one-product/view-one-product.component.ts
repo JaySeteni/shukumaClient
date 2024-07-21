@@ -20,7 +20,6 @@ export class ViewOneProductComponent implements OnInit {
     price: 0,
     stock: 0
   };
-
   selectedProduct: any = null;
   selectedFile!: File;
   reader!: FileReader;
@@ -28,6 +27,7 @@ export class ViewOneProductComponent implements OnInit {
   openedBox: string | null = null;
   id: string | null = null;
   errMessage: any;
+  form: NgForm | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -91,6 +91,21 @@ export class ViewOneProductComponent implements OnInit {
         });
       }
     }
+  }
+
+  onDeleteProduct(id: string): void {
+    this.productService.deleteProduct(id).subscribe({
+      next: (response) => {
+        console.log('Product deleted successfully:', response);
+        this.product = this.product.filter((product: { _id: string; }) => product._id !== id);
+        if (this.selectedProduct._id === id) {
+          this.selectedProduct = null;
+        }
+      },
+      error: (error) => {
+        console.error('Error deleting product:', error);
+      }
+    });
   }
 
   fileSelect(event: any) {
