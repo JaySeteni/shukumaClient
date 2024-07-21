@@ -14,6 +14,7 @@ export class ViewProductsComponent implements OnInit {
   isUpdateModalOpen: boolean = false;
 
   constructor(private _productService: ProductService) {
+
     this.getAllProducts();
    }
 
@@ -44,3 +45,7 @@ export class ViewProductsComponent implements OnInit {
     this.getAllProducts(); // Reload products to reflect updates
   }
 }
+function goBack() {
+  throw new Error('Function not implemented.');
+}
+
