@@ -30,4 +30,5 @@ export class LandingComponent {
     }, 500)
   }
 
+  
 }
