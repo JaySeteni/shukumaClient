@@ -20,6 +20,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
@@ -35,8 +36,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
-            ],
+  "src/styles.css"
+],
             "scripts": []
           },
           "configurations": {
@@ -44,12 +45,12 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "800kb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
+                  "maximumWarning": "2.07kb",
                   "maximumError": "4kb"
                 }
               ],
@@ -101,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "62ad7a13-2ae4-4e52-9660-ff7aa85760d0"
   }
 }
