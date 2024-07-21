@@ -93,9 +93,7 @@ a {
         box-sizing: border-box;
     }
 
-    .login-container {
-        background-color: white;
-    }
+ 
 
     form {
         min-width: 300px;
@@ -114,22 +112,6 @@ a {
         border: none;
     }
 
-    .message {
-        @apply flex flex-col justify-center items-center;
-        font-family: "Roboto Condensed", sans-serif;
-        gap: 5px;
-        margin: 10px 0px;
-    }
-
-    .tit {
-        text-align: center;
-        font-family: "Lato", sans-serif;
-        margin: 10px 0px;
-    }
-
-    form h3 {
-        @apply text-2xl font-semibold text-center;
-    }
 
     form a {
         color: white;
