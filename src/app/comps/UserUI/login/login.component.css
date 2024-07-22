@@ -56,6 +56,7 @@ label {
 input {
     @apply block h-10 w-full bg-opacity-20 rounded-md px-4 mt-2 text-base font-light;
     background-color: rgba(255, 255, 255, 0.07);
+    color: black;
 }
 
 ::placeholder {
@@ -147,9 +148,31 @@ a {
     a {
         color: #389CF9;
         font-weight: bold;
+        font-size: 13px;
+        text-decoration: underline;
     }
 
     .other {
-        margin: 15px 0px;
+        margin: 0px 0px;
         text-align: center;
+        font-size: 14px;
     }
+
+
+    .loader {
+        width: 30px;
+        aspect-ratio: 2;
+        --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+        background: 
+          var(--_g) 0%   50%,
+          var(--_g) 50%  50%,
+          var(--_g) 100% 50%;
+        background-size: calc(100%/3) 50%;
+        animation: l3 1s infinite linear;
+      }
+      @keyframes l3 {
+          20%{background-position:0%   0%, 50%  50%,100%  50%}
+          40%{background-position:0% 100%, 50%   0%,100%  50%}
+          60%{background-position:0%  50%, 50% 100%,100%   0%}
+          80%{background-position:0%  50%, 50%  50%,100% 100%}
+      }
