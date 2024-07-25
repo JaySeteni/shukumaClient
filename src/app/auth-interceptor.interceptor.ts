@@ -27,8 +27,7 @@ export class AuthInterceptor implements HttpInterceptor {
           setHeaders: { 
             'Accept': '*/*',
             Authorization: `Bearer ${this.authToken}`,
-            // x_access_token: this.authToken 
-        
+          
            } });
         console.log("From Auth int", req)
       }

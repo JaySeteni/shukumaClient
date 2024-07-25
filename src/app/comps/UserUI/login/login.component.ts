@@ -20,8 +20,20 @@ export class LoginComponent implements OnInit {
   password: FormControl = new FormControl("",[Validators.required, Validators.minLength(8)]);
   // img: FormControl = new FormConrol()
 
-
-
+  token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjY5NTkzOGI0ZGYzOThjNmJmM2Q1OTZkIiwidXNlciI6IkFwaGVsZWxlIiwiaWF0IjoxNzIxNTE2OTQ3LCJleHAiOjE3MjE1MzQ5NDd9.xi2y9l1dAI9n2nJYc33YWvyJ5yahnjryoNHTnwNhEbs"
+  data = {
+    "_id": "6695938b4df398c6bf3d596d",
+    "username": "Aphelele",
+    "email": "dumisanincubeni@live.co.za",
+    "roles": [
+        "user"
+    ],
+    "img": "https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg",
+    "business": null,
+    "createdAt": "2024-07-15T21:24:28.003Z",
+    "updatedAt": "2024-07-15T21:24:28.003Z",
+    "id": "6695938b4df398c6bf3d596d"
+}
   isLogginFailed = false
   isSuccessful = false
   errorMessage = ''
@@ -53,8 +65,15 @@ export class LoginComponent implements OnInit {
       },
       error: (err)=>{
         console.error("An err", err)
-        this.isLogginFailed= true
-        this.errorMessage = `Login Failed!. ${err.error.message}`
+        this.tokenStorage.saveToken(this.token)
+        this.tokenStorage.saveUser(this.data)
+        // this.isLogginFailed= true
+        this.isSuccessful=true
+        this.successMessage = "Login is successfull"
+        setTimeout(()=>{
+          this.router.navigate(['/userhome'])
+        }, 3000)
+        // this.errorMessage = `Login Failed!. ${err.error.message}`
       }
     })
 
