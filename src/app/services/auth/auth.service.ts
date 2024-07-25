@@ -25,15 +25,15 @@ export class AuthService {
 
 
   registerUser(userData: UserRegister):Observable<any> {
-    return this.http.post<any>('https://shukuma.shaper.co.za/v1/auth/register', userData);
+    return this.http.post<any>('http:/localhost:3000/v1/auth/register', userData);
   }
 
   login(userData: UserLogin):Observable<any> {
-    return this.http.post<any>('https://shukuma.shaper.co.za/v1/auth/signin', userData);
+    return this.http.post<any>('http:/localhost:3000/v1/auth/signin', userData);
   }
 
   registerBusiness(payload: any):Observable<any> {
-    return this.http.post<any>('https://shukuma.shaper.co.za/v1/business/', payload);
+    return this.http.post<any>('http:/localhost:3000/v1/business/', payload);
   }
   
 
